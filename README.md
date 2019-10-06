@@ -1,4 +1,5 @@
 # project-group-15
+Welcome to the ECSE 321 Fall 2019 group 15 project!
 ## Members of Group 15:
 * Darien Muse-Charbonneau
 * Marwan Khan
