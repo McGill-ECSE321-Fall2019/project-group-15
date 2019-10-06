@@ -4,7 +4,7 @@ Welcome to the ECSE 321 Fall 2019 group 15 project!
 * Darien Muse-Charbonneau
 * Marwan Khan
 * Maxime Buteau
-* Mich Riendeau
+* Michel-Alexandre Riendeau
 * Osman Varsee 
 ## Project Description
 In a team of 5, we are working on a tutoring services system as part of a McGill University course (ECSE 321: Introduction to Software Engineering).
