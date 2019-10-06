@@ -5,6 +5,14 @@
       <contents xmi:type="ecore:EAnnotation" xmi:id="_iWgjIOGZEemE4rPfMTA26A" source="codegen">
         <details xmi:id="_iWhKMOGZEemE4rPfMTA26A" key="codegenDirectory" value="/Database/src"/>
         <details xmi:id="_iXASYOGZEemE4rPfMTA26A" key="observedFolders" value="/Database/src"/>
+        <details xmi:id="_Q8r-wOh3EemV9qG5eyfgLA" key="AssociatedSourceCode" value="/Database/src/User.java;1489768301/1;/Database/src/UserRole.java;1894221669/1;/Database/src/Student.java;1418220070/1;/Database/src/Tutor.java;2193866019/1;/Database/src/Manager.java;4218326204/1;/Database/src/Session.java;1675428787/1;/Database/src/Room.java;3017434829/1;/Database/src/Evaluation.java;222553134/1;/Database/src/Course.java;1210199159/1;"/>
+      </contents>
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_mSjlkOh2EemV9qG5eyfgLA" source="preferences">
+        <contents xmi:type="ecore:EAnnotation" xmi:id="_mSjlkeh2EemV9qG5eyfgLA" source="com.yattasolutions.codegen.reverse">
+          <details xmi:id="_mSjlkuh2EemV9qG5eyfgLA" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerNewFiles" value="true"/>
+          <details xmi:id="_mSjlk-h2EemV9qG5eyfgLA" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerChangedFiles" value="true"/>
+          <details xmi:id="_mSjllOh2EemV9qG5eyfgLA" key="com.yattasolutions.codegen.reverse.roundtrip.RemoveDeletedFiles" value="true"/>
+        </contents>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_bRpuYOGbEemE4rPfMTA26A">
