@@ -196,35 +196,6 @@
       <cardinality xmi:id="_tObAiOGcEemE4rPfMTA26A" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_IjvdwOGbEemE4rPfMTA26A" name="User" associationsOut="_X5T5kOGbEemE4rPfMTA26A">
-    <modelElement href="Database.uml#_IjqlQOGbEemE4rPfMTA26A"/>
-    <visualProperties xmi:id="_IjvdweGbEemE4rPfMTA26A" position="706.0,169.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_IjvdwuGbEemE4rPfMTA26A" label="+"/>
-    <attributes xmi:id="_X5Xj8OGbEemE4rPfMTA26A" name="userRole">
-      <modelElement href="Database.uml#_X5GeMeGbEemE4rPfMTA26A"/>
-      <visibility xmi:id="_X5Xj8eGbEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_X5Xj8uGbEemE4rPfMTA26A" label="*" max="-1"/>
-      <type xmi:id="_X5Xj8-GbEemE4rPfMTA26A" name="UserRole">
-        <modelElement href="Database.uml#_Jc4FMOGbEemE4rPfMTA26A"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_bzJ48OGbEemE4rPfMTA26A" name="firstName">
-      <modelElement href="Database.uml#_bzJR4OGbEemE4rPfMTA26A"/>
-      <visibility xmi:id="_bzJ48eGbEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_bzJ48uGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_bzJ48-GbEemE4rPfMTA26A" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_dhm-0OGbEemE4rPfMTA26A" name="lastName">
-      <modelElement href="Database.uml#_dhlJoOGbEemE4rPfMTA26A"/>
-      <visibility xmi:id="_dhm-0eGbEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_dhm-0uGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_dhm-0-GbEemE4rPfMTA26A" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sPJxUOGbEemE4rPfMTA26A" name="Room" associationsIn="__9uNsOGbEemE4rPfMTA26A">
     <modelElement href="Database.uml#_sPJKQOGbEemE4rPfMTA26A"/>
     <visualProperties xmi:id="_sPJxUeGbEemE4rPfMTA26A" position="839.0,52.0" size="-1.0,-1.0"/>
@@ -352,27 +323,6 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Jc4sQOGbEemE4rPfMTA26A" name="UserRole" abstractClass="true" associationsIn="_X5T5kOGbEemE4rPfMTA26A" subclassedBy="_fxD48OGbEemE4rPfMTA26A _gfN_cOGbEemE4rPfMTA26A _hGL40OGbEemE4rPfMTA26A">
-    <modelElement href="Database.uml#_Jc4FMOGbEemE4rPfMTA26A"/>
-    <visualProperties xmi:id="_Jc4sQeGbEemE4rPfMTA26A" position="317.0,180.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_Jc4sQuGbEemE4rPfMTA26A" label="+"/>
-    <attributes xmi:id="_X5VuwOGbEemE4rPfMTA26A" name="user">
-      <modelElement href="Database.uml#_X5EB8eGbEemE4rPfMTA26A"/>
-      <visibility xmi:id="_X5WV0OGbEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_X5WV0eGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_X5WV0uGbEemE4rPfMTA26A" name="User">
-        <modelElement href="Database.uml#_IjqlQOGbEemE4rPfMTA26A"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_JZCRkOGcEemE4rPfMTA26A" name="password">
-      <modelElement href="Database.uml#_JZBDcOGcEemE4rPfMTA26A"/>
-      <visibility xmi:id="_JZCRkeGcEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_JZCRkuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_JZCRk-GcEemE4rPfMTA26A" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KjQecOGbEemE4rPfMTA26A" name="Student" associationsIn="_VEsAYOGcEemE4rPfMTA26A" associationsOut="_DyAXoOGcEemE4rPfMTA26A" generalizations="_gfN_cOGbEemE4rPfMTA26A">
     <modelElement href="Database.uml#_KjP3YOGbEemE4rPfMTA26A"/>
     <visualProperties xmi:id="_KjQeceGbEemE4rPfMTA26A" position="327.0,544.0" size="-1.0,-1.0"/>
@@ -477,6 +427,56 @@
       <visibility xmi:id="_0MOgIeGcEemE4rPfMTA26A" label="+"/>
       <cardinality xmi:id="_0MOgIuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
       <type xmi:id="_0MOgI-GcEemE4rPfMTA26A" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_IjvdwOGbEemE4rPfMTA26A" name="Person" associationsOut="_X5T5kOGbEemE4rPfMTA26A">
+    <modelElement href="Database.uml#_IjqlQOGbEemE4rPfMTA26A"/>
+    <visualProperties xmi:id="_IjvdweGbEemE4rPfMTA26A" position="706.0,169.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_IjvdwuGbEemE4rPfMTA26A" label="+"/>
+    <attributes xmi:id="_X5Xj8OGbEemE4rPfMTA26A" name="userRole">
+      <modelElement href="Database.uml#_X5GeMeGbEemE4rPfMTA26A"/>
+      <visibility xmi:id="_X5Xj8eGbEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_X5Xj8uGbEemE4rPfMTA26A" label="*" max="-1"/>
+      <type xmi:id="_X5Xj8-GbEemE4rPfMTA26A" name="PersonRole">
+        <modelElement href="Database.uml#_Jc4FMOGbEemE4rPfMTA26A"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_bzJ48OGbEemE4rPfMTA26A" name="firstName">
+      <modelElement href="Database.uml#_bzJR4OGbEemE4rPfMTA26A"/>
+      <visibility xmi:id="_bzJ48eGbEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_bzJ48uGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_bzJ48-GbEemE4rPfMTA26A" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_dhm-0OGbEemE4rPfMTA26A" name="lastName">
+      <modelElement href="Database.uml#_dhlJoOGbEemE4rPfMTA26A"/>
+      <visibility xmi:id="_dhm-0eGbEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_dhm-0uGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_dhm-0-GbEemE4rPfMTA26A" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Jc4sQOGbEemE4rPfMTA26A" name="PersonRole" abstractClass="true" associationsIn="_X5T5kOGbEemE4rPfMTA26A" subclassedBy="_fxD48OGbEemE4rPfMTA26A _gfN_cOGbEemE4rPfMTA26A _hGL40OGbEemE4rPfMTA26A">
+    <modelElement href="Database.uml#_Jc4FMOGbEemE4rPfMTA26A"/>
+    <visualProperties xmi:id="_Jc4sQeGbEemE4rPfMTA26A" position="317.0,180.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Jc4sQuGbEemE4rPfMTA26A" label="+"/>
+    <attributes xmi:id="_X5VuwOGbEemE4rPfMTA26A" name="user">
+      <modelElement href="Database.uml#_X5EB8eGbEemE4rPfMTA26A"/>
+      <visibility xmi:id="_X5WV0OGbEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_X5WV0eGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_X5WV0uGbEemE4rPfMTA26A" name="Person">
+        <modelElement href="Database.uml#_IjqlQOGbEemE4rPfMTA26A"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_JZCRkOGcEemE4rPfMTA26A" name="password">
+      <modelElement href="Database.uml#_JZBDcOGcEemE4rPfMTA26A"/>
+      <visibility xmi:id="_JZCRkeGcEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_JZCRkuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_JZCRk-GcEemE4rPfMTA26A" name="String">
         <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </type>
     </attributes>

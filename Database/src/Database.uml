@@ -5,7 +5,7 @@
       <contents xmi:type="ecore:EAnnotation" xmi:id="_iWgjIOGZEemE4rPfMTA26A" source="codegen">
         <details xmi:id="_iWhKMOGZEemE4rPfMTA26A" key="codegenDirectory" value="/Database/src"/>
         <details xmi:id="_iXASYOGZEemE4rPfMTA26A" key="observedFolders" value="/Database/src"/>
-        <details xmi:id="_Q8r-wOh3EemV9qG5eyfgLA" key="AssociatedSourceCode" value="/Database/src/User.java;1489768301/1;/Database/src/UserRole.java;1894221669/1;/Database/src/Student.java;1418220070/1;/Database/src/Tutor.java;2193866019/1;/Database/src/Manager.java;4218326204/1;/Database/src/Session.java;1675428787/1;/Database/src/Room.java;3017434829/1;/Database/src/Evaluation.java;222553134/1;/Database/src/Course.java;1210199159/1;"/>
+        <details xmi:id="_Q8r-wOh3EemV9qG5eyfgLA" key="AssociatedSourceCode" value="/Database/src/Student.java;249879382/1;/Database/src/Tutor.java;1587405680/1;/Database/src/Manager.java;3349737366/1;/Database/src/Session.java;1675428787/1;/Database/src/Room.java;3017434829/1;/Database/src/Evaluation.java;222553134/1;/Database/src/Course.java;1210199159/1;/Database/src/Person.java;2828115489/1;/Database/src/PersonRole.java;590398483/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_mSjlkOh2EemV9qG5eyfgLA" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_mSjlkeh2EemV9qG5eyfgLA" source="com.yattasolutions.codegen.reverse">
@@ -42,7 +42,7 @@
     <elementImport xmi:id="_bUKP0OGbEemE4rPfMTA26A">
       <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </elementImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_IjqlQOGbEemE4rPfMTA26A" name="User">
+    <packagedElement xmi:type="uml:Class" xmi:id="_IjqlQOGbEemE4rPfMTA26A" name="Person">
       <ownedAttribute xmi:id="_X5GeMeGbEemE4rPfMTA26A" name="userRole" type="_Jc4FMOGbEemE4rPfMTA26A" association="_X5EB8OGbEemE4rPfMTA26A">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_X5HFQOGbEemE4rPfMTA26A"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X5HFQeGbEemE4rPfMTA26A" value="*"/>
@@ -54,7 +54,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_Jc4FMOGbEemE4rPfMTA26A" name="UserRole" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_Jc4FMOGbEemE4rPfMTA26A" name="PersonRole" isAbstract="true">
       <ownedAttribute xmi:id="_X5EB8eGbEemE4rPfMTA26A" name="user" type="_IjqlQOGbEemE4rPfMTA26A" association="_X5EB8OGbEemE4rPfMTA26A">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_X5F3IOGbEemE4rPfMTA26A" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X5GeMOGbEemE4rPfMTA26A" value="1"/>

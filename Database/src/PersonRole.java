@@ -2,15 +2,15 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
-public abstract class UserRole{
-   private User user;
+public abstract class PersonRole{
+   private Person user;
    
    @ManyToOne(optional=false)
-   public User getUser() {
+   public Person getUser() {
       return this.user;
    }
    
-   public void setUser(User user) {
+   public void setUser(Person user) {
       this.user = user;
    }
    

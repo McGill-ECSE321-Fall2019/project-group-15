@@ -4,7 +4,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Student extends UserRole{
+public class Student extends PersonRole{
    private Set<Session> session;
    
    @ManyToMany(mappedBy="student" )

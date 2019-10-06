@@ -3,7 +3,7 @@ import java.util.Set;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Tutor extends UserRole{
+public class Tutor extends PersonRole{
    private float hourlyRate;
 
 public void setHourlyRate(float value) {

@@ -3,7 +3,7 @@ import java.util.Set;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Manager extends UserRole{
+public class Manager extends PersonRole{
    private Set<Evaluation> evaluation;
    
    @OneToMany(mappedBy="manager" )
