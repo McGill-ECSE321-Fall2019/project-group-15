@@ -5,7 +5,7 @@
       <contents xmi:type="ecore:EAnnotation" xmi:id="_iWgjIOGZEemE4rPfMTA26A" source="codegen">
         <details xmi:id="_iWhKMOGZEemE4rPfMTA26A" key="codegenDirectory" value="/Database/src"/>
         <details xmi:id="_iXASYOGZEemE4rPfMTA26A" key="observedFolders" value="/Database/src"/>
-        <details xmi:id="_Q8r-wOh3EemV9qG5eyfgLA" key="AssociatedSourceCode" value="/Database/src/Student.java;249879382/1;/Database/src/Tutor.java;1587405680/1;/Database/src/Manager.java;3349737366/1;/Database/src/Session.java;1675428787/1;/Database/src/Room.java;3017434829/1;/Database/src/Evaluation.java;222553134/1;/Database/src/Course.java;1210199159/1;/Database/src/Person.java;2828115489/1;/Database/src/PersonRole.java;590398483/1;"/>
+        <details xmi:id="_Q8r-wOh3EemV9qG5eyfgLA" key="AssociatedSourceCode" value="/Database/src/Student.java;249879382/1;/Database/src/Tutor.java;1587405680/1;/Database/src/Manager.java;3349737366/1;/Database/src/Session.java;3916277093/1;/Database/src/Room.java;3017434829/1;/Database/src/Evaluation.java;222553134/1;/Database/src/Course.java;1210199159/1;/Database/src/Person.java;4097236031/1;/Database/src/PersonRole.java;3954534158/1;/Database/src/SessionType.java;2746180841/1;/Database/src/RoomType.java;1963337533/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_mSjlkOh2EemV9qG5eyfgLA" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_mSjlkeh2EemV9qG5eyfgLA" source="com.yattasolutions.codegen.reverse">
@@ -42,8 +42,13 @@
     <elementImport xmi:id="_bUKP0OGbEemE4rPfMTA26A">
       <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Y3gKQelpEemV9qG5eyfgLA" name="javax">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Y3gxUOlpEemV9qG5eyfgLA" name="persistence">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_Y3p7QOlpEemV9qG5eyfgLA" name="Entity"/>
+      </packagedElement>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjqlQOGbEemE4rPfMTA26A" name="Person">
-      <ownedAttribute xmi:id="_X5GeMeGbEemE4rPfMTA26A" name="userRole" type="_Jc4FMOGbEemE4rPfMTA26A" association="_X5EB8OGbEemE4rPfMTA26A">
+      <ownedAttribute xmi:id="_X5GeMeGbEemE4rPfMTA26A" name="personRole" type="_Jc4FMOGbEemE4rPfMTA26A" association="_X5EB8OGbEemE4rPfMTA26A">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_X5HFQOGbEemE4rPfMTA26A"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X5HFQeGbEemE4rPfMTA26A" value="*"/>
       </ownedAttribute>
@@ -55,7 +60,7 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Jc4FMOGbEemE4rPfMTA26A" name="PersonRole" isAbstract="true">
-      <ownedAttribute xmi:id="_X5EB8eGbEemE4rPfMTA26A" name="user" type="_IjqlQOGbEemE4rPfMTA26A" association="_X5EB8OGbEemE4rPfMTA26A">
+      <ownedAttribute xmi:id="_X5EB8eGbEemE4rPfMTA26A" name="person" type="_IjqlQOGbEemE4rPfMTA26A" association="_X5EB8OGbEemE4rPfMTA26A">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_X5F3IOGbEemE4rPfMTA26A" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X5GeMOGbEemE4rPfMTA26A" value="1"/>
       </ownedAttribute>
@@ -130,6 +135,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tOZLUeGcEemE4rPfMTA26A" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tOZLUuGcEemE4rPfMTA26A" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_3TNewOlpEemV9qG5eyfgLA" name="type" type="_3fOW8OloEemV9qG5eyfgLA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sPJKQOGbEemE4rPfMTA26A" name="Room">
       <ownedAttribute xmi:id="_wWZ6kOGbEemE4rPfMTA26A" name="capacity">
@@ -180,6 +186,14 @@
     <packagedElement xmi:type="uml:Association" xmi:id="_brPdoOGcEemE4rPfMTA26A" name="" memberEnd="_brPdoeGcEemE4rPfMTA26A _brQEseGcEemE4rPfMTA26A"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_phifEOGcEemE4rPfMTA26A" name="" memberEnd="_phjGIOGcEemE4rPfMTA26A _phjGI-GcEemE4rPfMTA26A"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_tOYkQOGcEemE4rPfMTA26A" name="" memberEnd="_tOZLUOGcEemE4rPfMTA26A _tOZLU-GcEemE4rPfMTA26A"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3fOW8OloEemV9qG5eyfgLA" name="SessionType">
+      <ownedLiteral xmi:id="_Y3hYYulpEemV9qG5eyfgLA" name="individualSession"/>
+      <ownedLiteral xmi:id="_Y3h_cOlpEemV9qG5eyfgLA" name="groupSession"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_fYRvoOlpEemV9qG5eyfgLA" name="RoomType">
+      <ownedLiteral xmi:id="_rnRcEulpEemV9qG5eyfgLA" name="smallRoom"/>
+      <ownedLiteral xmi:id="_rnSDIOlpEemV9qG5eyfgLA" name="largeRoom"/>
+    </packagedElement>
     <profileApplication xmi:id="_iWkNgOGZEemE4rPfMTA26A">
       <eAnnotations xmi:id="_iWn34OGZEemE4rPfMTA26A" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
@@ -197,4 +211,13 @@
     <languageName>java</languageName>
   </UMLLabProfile:TargetLanguage>
   <Persistency:JPA1StyledElement xmi:id="_Fm7j0OGaEemE4rPfMTA26A" base_Element="_iIbD0OGZEemE4rPfMTA26A"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Y3gKQOlpEemV9qG5eyfgLA" base_Element="_3fOW8OloEemV9qG5eyfgLA"/>
+  <UMLLabProfile:Annotations xmi:id="_Y3hYYOlpEemV9qG5eyfgLA" base_Element="_3fOW8OloEemV9qG5eyfgLA">
+    <annotations xmi:id="_Y3hYYelpEemV9qG5eyfgLA" name="Entity"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_Y3zsQOlpEemV9qG5eyfgLA" base_Element="_Y3p7QOlpEemV9qG5eyfgLA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_rnQ1AOlpEemV9qG5eyfgLA" base_Element="_fYRvoOlpEemV9qG5eyfgLA"/>
+  <UMLLabProfile:Annotations xmi:id="_rnRcEOlpEemV9qG5eyfgLA" base_Element="_fYRvoOlpEemV9qG5eyfgLA">
+    <annotations xmi:id="_rnRcEelpEemV9qG5eyfgLA" name="Entity"/>
+  </UMLLabProfile:Annotations>
 </xmi:XMI>

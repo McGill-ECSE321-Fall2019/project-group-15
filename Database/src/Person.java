@@ -4,15 +4,15 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Person{
-   private Set<PersonRole> userRole;
+   private Set<PersonRole> personRole;
    
-   @OneToMany(mappedBy="user" )
-   public Set<PersonRole> getUserRole() {
-      return this.userRole;
+   @OneToMany(mappedBy="person" )
+   public Set<PersonRole> getPersonRole() {
+      return this.personRole;
    }
    
-   public void setUserRole(Set<PersonRole> userRoles) {
-      this.userRole = userRoles;
+   public void setPersonRole(Set<PersonRole> personRoles) {
+      this.personRole = personRoles;
    }
    
    private String firstName;
