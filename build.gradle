@@ -1,0 +1,56 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.9.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'application'
+	buildToolsVersion "23.0.2"
+}
+
+
+
+group = 'com.ecse321.tutoringApp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+mainClassName='com.ecse321.tutoringApp.tutoringAppApplication'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+sourceSets {
+  main {
+    java { srcDir 'src/main/java' }
+  }
+  test {
+    java { srcDir 'src/test/java'}
+  }
+}
+
+task compile(type: JavaCompile) {
+  classpath = sourceSets.main.compileClasspath
+  classpath += sourceSets.test.runtimeClasspath
+  sourceSets.test.java.outputDir = file('build/bin')
+  sourceSets.main.java.outputDir = file('build/bin')
+}
+
+repositories {
+	mavenCentral()
+}
+
+jar {
+  destinationDir=file('distributable')
+  manifest {
+    
+    attributes "Main-Class": "$mainClassName"
+  }
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
