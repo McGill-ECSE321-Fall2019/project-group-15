@@ -1,9 +1,9 @@
 # project-group-15
-<<<<<<< HEAD
+
 Welcome to the ECSE 321 Fall 2019 group 15 project! Best team 
 =======
 Welcome to the ECSE 321 Fall 2019 group 15 project! 
->>>>>>> b17574b3506f3343c4ff5e0484a123048fb4944c
+
 
 ## Members of Group 15:
 * Darien Muse-Charbonneau
