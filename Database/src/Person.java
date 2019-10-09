@@ -7,11 +7,11 @@ public class Person{
    private Set<PersonRole> personRole;
    
    @OneToMany(mappedBy="person" )
-   public Set<PersonRole> getPersonRole() {
+   protected Set<PersonRole> getPersonRole() {
       return this.personRole;
    }
    
-   public void setPersonRole(Set<PersonRole> personRoles) {
+   protected void setPersonRole(Set<PersonRole> personRoles) {
       this.personRole = personRoles;
    }
    

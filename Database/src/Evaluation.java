@@ -1,5 +1,7 @@
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import java.util.Set;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Evaluation{
@@ -19,37 +21,53 @@ public void setComment(String value) {
 public String getComment() {
     return this.comment;
 }
-   private Student student;
-   
-   @ManyToOne(optional=false)
-   public Student getStudent() {
-      return this.student;
-   }
-   
-   public void setStudent(Student student) {
-      this.student = student;
-   }
-   
-   private Tutor tutor;
-   
-   @ManyToOne(optional=false)
-   public Tutor getTutor() {
-      return this.tutor;
-   }
-   
-   public void setTutor(Tutor tutor) {
-      this.tutor = tutor;
-   }
-   
-   private Manager manager;
-   
-   @ManyToOne(optional=false)
-   public Manager getManager() {
-      return this.manager;
-   }
-   
-   public void setManager(Manager manager) {
-      this.manager = manager;
-   }
-   
-   }
+private Student student;
+
+@ManyToOne(optional=false)
+public Student getStudent() {
+   return this.student;
+}
+
+public void setStudent(Student student) {
+   this.student = student;
+}
+
+private Manager manager;
+
+@ManyToOne(optional=false)
+public Manager getManager() {
+   return this.manager;
+}
+
+public void setManager(Manager manager) {
+   this.manager = manager;
+}
+
+private Set<Tutor> tutor;
+
+@ManyToMany(mappedBy="evaluation" )
+public Set<Tutor> getTutor() {
+   return this.tutor;
+}
+
+public void setTutor(Set<Tutor> tutors) {
+   this.tutor = tutors;
+}
+
+private boolean isFlagged;
+
+public void setIsFlagged(boolean value) {
+    this.isFlagged = value;
+}
+public boolean isIsFlagged() {
+    return this.isFlagged;
+}
+private int evaluationID;
+
+public void setEvaluationID(int value) {
+    this.evaluationID = value;
+}
+public int getEvaluationID() {
+    return this.evaluationID;
+}
+}
