@@ -134,5 +134,29 @@ public void setType(SessionType value) {
 public SessionType getType() {
     return this.type;
 }
+private String startTime;
+
+public void setStartTime(String value) {
+    this.startTime = value;
+}
+public String getStartTime() {
+    return this.startTime;
+}
+private String endTime;
+
+public void setEndTime(String value) {
+    this.endTime = value;
+}
+public String getEndTime() {
+    return this.endTime;
+}
+private int sessionID;
+
+public void setSessionID(int value) {
+    this.sessionID = value;
+}
+public int getSessionID() {
+    return this.sessionID;
+}
 }
 >>>>>>> b17574b3506f3343c4ff5e0484a123048fb4944c

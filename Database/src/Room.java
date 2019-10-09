@@ -30,15 +30,23 @@ public void setId(String value) {
 public String getId() {
     return this.id;
 }
-   private Set<Session> session;
-   
-   @OneToMany(mappedBy="room" )
-   public Set<Session> getSession() {
-      return this.session;
-   }
-   
-   public void setSession(Set<Session> sessions) {
-      this.session = sessions;
-   }
-   
-   }
+private Set<Session> session;
+
+@OneToMany(mappedBy="room" )
+public Set<Session> getSession() {
+   return this.session;
+}
+
+public void setSession(Set<Session> sessions) {
+   this.session = sessions;
+}
+
+private boolean isAvailable;
+
+public void setIsAvailable(boolean value) {
+    this.isAvailable = value;
+}
+public boolean isIsAvailable() {
+    return this.isAvailable;
+}
+}
