@@ -43,17 +43,6 @@ public void setManager(Manager manager) {
    this.manager = manager;
 }
 
-private Set<Tutor> tutor;
-
-@ManyToMany(mappedBy="evaluation" )
-public Set<Tutor> getTutor() {
-   return this.tutor;
-}
-
-public void setTutor(Set<Tutor> tutors) {
-   this.tutor = tutors;
-}
-
 private boolean isFlagged;
 
 public void setIsFlagged(boolean value) {

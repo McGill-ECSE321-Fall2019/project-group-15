@@ -4,24 +4,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Room{
-<<<<<<< HEAD
-   private int capacity;
-
-public void setCapacity(int value) {
-    this.capacity = value;
-}
-public int getCapacity() {
-    return this.capacity;
-=======
-   private RoomType type;
-
-public void setType(RoomType value) {
-    this.type = value;
-}
+private RoomType type;
+   
+   public void setType(RoomType value) {
+this.type = value;
+    }
 public RoomType getType() {
-    return this.type;
->>>>>>> b17574b3506f3343c4ff5e0484a123048fb4944c
-}
+return this.type;
+    }
 private String id;
 
 public void setId(String value) {
