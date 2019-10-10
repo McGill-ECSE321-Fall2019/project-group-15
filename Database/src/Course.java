@@ -6,6 +6,17 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Course{
+private Set<Tutor> tutor;
+
+@ManyToMany
+public Set<Tutor> getTutor() {
+   return this.tutor;
+}
+
+public void setTutor(Set<Tutor> tutors) {
+   this.tutor = tutors;
+}
+
    private Set<Session> session;
    
    @OneToMany(mappedBy="course" )
@@ -24,27 +35,6 @@ public void setCourseID(String value) {
 }
 public String getCourseID() {
     return this.courseID;
-}
-private Subject subject;
-
-@ManyToOne
-public Subject getSubject() {
-   return this.subject;
-}
-
-public void setSubject(Subject subject) {
-   this.subject = subject;
-}
-
-private Set<Tutor> tutor;
-
-@ManyToMany(mappedBy="course" )
-public Set<Tutor> getTutor() {
-   return this.tutor;
-}
-
-public void setTutor(Set<Tutor> tutors) {
-   this.tutor = tutors;
 }
 
 private String name;
