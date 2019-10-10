@@ -56,3 +56,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
  
+task stage () {
+    dependsOn ':EventRegistration-Backend:assemble'
+}
