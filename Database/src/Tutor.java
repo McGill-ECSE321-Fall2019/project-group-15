@@ -5,6 +5,17 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Tutor extends PersonRole{
+private Set<Course> course;
+
+@ManyToMany(mappedBy="tutor")
+public Set<Course> getCourse() {
+   return this.course;
+}
+
+public void setCourse(Set<Course> courses) {
+   this.course = courses;
+}
+
    private float hourlyRate;
 
 public void setHourlyRate(float value) {
@@ -32,16 +43,6 @@ public void setTutorID(int value) {
 public int getTutorID() {
     return this.tutorID;
 }
-private Set<Evaluation> evaluation;
-
-@ManyToMany
-public Set<Evaluation> getEvaluation() {
-   return this.evaluation;
-}
-
-public void setEvaluation(Set<Evaluation> evaluations) {
-   this.evaluation = evaluations;
-}
 
 private boolean isVerified;
 
@@ -51,15 +52,5 @@ public void setIsVerified(boolean value) {
 public boolean isIsVerified() {
     return this.isVerified;
 }
-   private Set<Course> course;
-   
-   @ManyToMany
-   public Set<Course> getCourse() {
-      return this.course;
-   }
-   
-   public void setCourse(Set<Course> courses) {
-      this.course = courses;
-   }
    
    }
