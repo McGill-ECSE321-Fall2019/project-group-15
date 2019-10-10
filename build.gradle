@@ -57,5 +57,5 @@ dependencies {
 }
  
 task stage () {
-    dependsOn ':tutoringapp:assemble'
+    dependsOn ':tutoringApp:assemble'
 }
