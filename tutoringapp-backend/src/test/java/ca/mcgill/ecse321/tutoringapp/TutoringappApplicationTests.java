@@ -1,4 +1,4 @@
-package com.ecse321.tutoringApp;
+package ca.mcgill.ecse321.tutoringapp;
 
 // import org.junit.Test;
 // import org.junit.runner.RunWith;
@@ -7,10 +7,10 @@ package com.ecse321.tutoringApp;
 
 // @RunWith(SpringRunner.class)
 // @SpringBootTest
-// public class TutoringAppApplicationTests {
+// public class TutoringappApplicationTests {
 
-	// @Test
-	// public void contextLoads() {
-	// }
+// 	@Test
+// 	public void contextLoads() {
+// 	}
 
-//}
+// }
