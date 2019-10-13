@@ -1,9 +1,19 @@
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Set;
 import javax.persistence.Entity;
 
 @Entity
 public class School{
+private int schoolID;
+
+public void setSchoolID(int value) {
+this.schoolID = value;
+}
+@Id
+public int getSchoolID() {
+return this.schoolID;
+}
 private Set<Subject> subject;
    
    @OneToMany(mappedBy="school" )

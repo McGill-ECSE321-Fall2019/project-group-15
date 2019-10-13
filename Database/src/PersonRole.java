@@ -1,8 +1,18 @@
+import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
 public abstract class PersonRole{
+private int roleID;
+
+public void setRoleID(int value) {
+this.roleID = value;
+}
+@Id
+public int getRoleID() {
+return this.roleID;
+}
    private Person person;
    
    @ManyToOne(optional=false)

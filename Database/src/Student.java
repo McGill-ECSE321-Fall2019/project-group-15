@@ -1,3 +1,4 @@
+import javax.persistence.Id;
 import javax.persistence.Entity;
 import java.util.Set;
 import javax.persistence.ManyToMany;
@@ -26,13 +27,13 @@ public class Student extends PersonRole{
    public void setEvaluation(Set<Evaluation> evaluations) {
       this.evaluation = evaluations;
    }
-   
-   private int studentID;
+private int studentID;
 
 public void setStudentID(int value) {
-    this.studentID = value;
+this.studentID = value;
 }
+@Id
 public int getStudentID() {
-    return this.studentID;
+return this.studentID;
 }
 }
