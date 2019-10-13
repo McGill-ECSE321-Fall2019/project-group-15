@@ -4,6 +4,17 @@ import javax.persistence.Entity;
 
 @Entity
 public class School{
+private Set<Subject> subject;
+   
+   @OneToMany(mappedBy="school" )
+   public Set<Subject> getSubject() {
+      return this.subject;
+   }
+   
+   public void setSubject(Set<Subject> subjects) {
+      this.subject = subjects;
+   }
+   
 private SchoolType type;
 
 public void setType(SchoolType value) {
