@@ -8,7 +8,7 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-mainClassName='ca.mcgill.ecse321.tutoringapp.TutoringappApplication.java'
+mainClassName='ca.mcgill.ecse321.tutoringapp.TutoringappApplication'
 
 sourceSets {
   main {
