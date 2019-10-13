@@ -6,6 +6,17 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Course{
+private Subject subject;
+   
+   @ManyToOne
+   public Subject getSubject() {
+      return this.subject;
+   }
+   
+   public void setSubject(Subject subject) {
+      this.subject = subject;
+   }
+   
 private Set<Tutor> tutor;
 
 @ManyToMany
