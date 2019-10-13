@@ -5,6 +5,14 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Session{
+private SessionType type;
+
+public void setType(SessionType value) {
+this.type = value;
+}
+public SessionType getType() {
+return this.type;
+}
    private String date;
 
 public void setDate(String value) {
