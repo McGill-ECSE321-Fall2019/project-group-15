@@ -1,3 +1,5 @@
+package ca.mcgill.ecse321.tutoringapp.Database.src;
+
 import javax.persistence.Id;
 import javax.persistence.Entity;
 import java.util.Set;
