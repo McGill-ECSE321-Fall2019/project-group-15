@@ -5,6 +5,14 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Evaluation{
+private EvaluationType type;
+
+public void setType(EvaluationType value) {
+this.type = value;
+}
+public EvaluationType getType() {
+return this.type;
+}
    private int rating;
 
 public void setRating(int value) {

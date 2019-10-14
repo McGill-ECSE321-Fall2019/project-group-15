@@ -251,6 +251,40 @@
       <cardinality xmi:id="_Kan6WO3lEeml95s0pdFMYA" label="*" max="-1"/>
     </targetRole>
   </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_WT6XgO4cEembUvp5K_8AZw" target="_sPJxUOGbEemE4rPfMTA26A" source="_fZX70OlpEemV9qG5eyfgLA">
+    <modelElement href="Database.uml#_WRqUwO4cEembUvp5K_8AZw"/>
+    <nameVisual xmi:id="_WT6Xge4cEembUvp5K_8AZw" text=""/>
+    <sourceRole xmi:id="_WT6Xgu4cEembUvp5K_8AZw" aggregationKind="NONE" name="type" navigable="true">
+      <modelElement href="Database.uml#_Zhk2EO4LEemF2qylqPiNGQ"/>
+      <stereotypes xmi:id="_WV-0EO4cEembUvp5K_8AZw" name="StyledElement">
+        <modelElement href="Database.uml#_WRGUEO4cEembUvp5K_8AZw"/>
+      </stereotypes>
+      <visibility xmi:id="_WT6Xg-4cEembUvp5K_8AZw" label="+"/>
+      <cardinality xmi:id="_WT6XhO4cEembUvp5K_8AZw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_WT6Xhe4cEembUvp5K_8AZw" aggregationKind="NONE" name="">
+      <modelElement href="Database.uml#_WRqUwe4cEembUvp5K_8AZw"/>
+      <visibility xmi:id="_WT6Xhu4cEembUvp5K_8AZw" label="+"/>
+      <cardinality xmi:id="_WT6Xh-4cEembUvp5K_8AZw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_WVfr4O4cEembUvp5K_8AZw" target="_q9AM8OGbEemE4rPfMTA26A" source="_3gGgsOloEemV9qG5eyfgLA">
+    <modelElement href="Database.uml#_WRq70O4cEembUvp5K_8AZw"/>
+    <nameVisual xmi:id="_WVfr4e4cEembUvp5K_8AZw" text=""/>
+    <sourceRole xmi:id="_WVfr4u4cEembUvp5K_8AZw" aggregationKind="NONE" name="type" navigable="true">
+      <modelElement href="Database.uml#_YEz9IO4LEemF2qylqPiNGQ"/>
+      <stereotypes xmi:id="_WWApQO4cEembUvp5K_8AZw" name="StyledElement">
+        <modelElement href="Database.uml#_WRHiMO4cEembUvp5K_8AZw"/>
+      </stereotypes>
+      <visibility xmi:id="_WVfr4-4cEembUvp5K_8AZw" label="+"/>
+      <cardinality xmi:id="_WVfr5O4cEembUvp5K_8AZw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_WVfr5e4cEembUvp5K_8AZw" aggregationKind="NONE" name="">
+      <modelElement href="Database.uml#_WRri4O4cEembUvp5K_8AZw"/>
+      <visibility xmi:id="_WVfr5u4cEembUvp5K_8AZw" label="+"/>
+      <cardinality xmi:id="_WVfr5-4cEembUvp5K_8AZw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KjQecOGbEemE4rPfMTA26A" name="Student" associationsIn="_VEsAYOGcEemE4rPfMTA26A" associationsOut="_DyAXoOGcEemE4rPfMTA26A" generalizations="_gfN_cOGbEemE4rPfMTA26A">
     <modelElement href="Database.uml#_KjP3YOGbEemE4rPfMTA26A"/>
     <visualProperties xmi:id="_KjQeceGbEemE4rPfMTA26A" position="327.0,544.0" size="-1.0,-1.0"/>
@@ -307,7 +341,7 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_fZX70OlpEemV9qG5eyfgLA" name="RoomType">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_fZX70OlpEemV9qG5eyfgLA" name="RoomType" associationsOut="_WT6XgO4cEembUvp5K_8AZw">
     <modelElement href="Database.uml#_fYRvoOlpEemV9qG5eyfgLA"/>
     <visualProperties xmi:id="_efqsoelpEemV9qG5eyfgLA" position="590.0,99.0" size="161.0,137.0"/>
     <stereotypes xmi:id="_rnVtgOlpEemV9qG5eyfgLA" name="LegacyStyledElement">
@@ -323,74 +357,6 @@
     <literals xmi:id="_rnUfYOlpEemV9qG5eyfgLA" name="largeRoom">
       <modelElement href="Database.uml#_rnSDIOlpEemV9qG5eyfgLA"/>
     </literals>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_MFROUOGcEemE4rPfMTA26A" name="Evaluation" associationsIn="_phk7UOGcEemE4rPfMTA26A" associationsOut="_VEsAYOGcEemE4rPfMTA26A">
-    <modelElement href="Database.uml#_MFQnQOGcEemE4rPfMTA26A"/>
-    <visualProperties xmi:id="_MFROUeGcEemE4rPfMTA26A" position="311.0,777.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_MFROUuGcEemE4rPfMTA26A" label="+"/>
-    <attributes xmi:id="_OTh1oOGcEemE4rPfMTA26A" name="rating">
-      <modelElement href="Database.uml#_OThOkOGcEemE4rPfMTA26A"/>
-      <stereotypes xmi:id="_r0rR4OsJEemc7pIoxFhA0g" name="StyledElement">
-        <modelElement href="Database.uml#_rrwmcOsJEemc7pIoxFhA0g"/>
-      </stereotypes>
-      <visibility xmi:id="_OTh1oeGcEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_OTh1ouGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_OTh1o-GcEemE4rPfMTA26A" name="int">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_PmTsIOGcEemE4rPfMTA26A" name="comment">
-      <modelElement href="Database.uml#_PmSeAOGcEemE4rPfMTA26A"/>
-      <stereotypes xmi:id="_r07wkOsJEemc7pIoxFhA0g" name="StyledElement">
-        <modelElement href="Database.uml#_rrwmcesJEemc7pIoxFhA0g"/>
-      </stereotypes>
-      <visibility xmi:id="_PmTsIeGcEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_PmTsIuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_PmTsI-GcEemE4rPfMTA26A" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_VEtOgOGcEemE4rPfMTA26A" name="student">
-      <modelElement href="Database.uml#_VEqLM-GcEemE4rPfMTA26A"/>
-      <visibility xmi:id="_VEtOgeGcEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_VEtOguGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_VEtOg-GcEemE4rPfMTA26A" name="Student">
-        <modelElement href="Database.uml#_KjP3YOGbEemE4rPfMTA26A"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_phliYOGcEemE4rPfMTA26A" name="manager">
-      <modelElement href="Database.uml#_phjGIOGcEemE4rPfMTA26A"/>
-      <visibility xmi:id="_phliYeGcEemE4rPfMTA26A" label="+"/>
-      <cardinality xmi:id="_phliYuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_phliY-GcEemE4rPfMTA26A" name="Manager">
-        <modelElement href="Database.uml#_Ovl8AOGbEemE4rPfMTA26A"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_qtg1hOsJEemc7pIoxFhA0g" name="isFlagged">
-      <modelElement href="Database.uml#_QKMVYOrpEemnideklHmrUA"/>
-      <stereotypes xmi:id="_r1LoMOsJEemc7pIoxFhA0g" name="StyledElement">
-        <modelElement href="Database.uml#_rrxNgOsJEemc7pIoxFhA0g"/>
-      </stereotypes>
-      <visibility xmi:id="_qtg1hesJEemc7pIoxFhA0g" label="+"/>
-      <cardinality xmi:id="_qtg1husJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
-      <type xmi:id="_qtg1h-sJEemc7pIoxFhA0g" name="boolean">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_qtg1iOsJEemc7pIoxFhA0g" name="evaluationID">
-      <modelElement href="Database.uml#_u4o4UOrsEemnideklHmrUA"/>
-      <stereotypes xmi:id="_r1bf0OsJEemc7pIoxFhA0g" name="StyledElement">
-        <modelElement href="Database.uml#_rrxNgesJEemc7pIoxFhA0g"/>
-      </stereotypes>
-      <stereotypes xmi:id="_qEi5IO4LEemF2qylqPiNGQ" name="PrimaryKey">
-        <modelElement href="Database.uml#_qEiSEO4LEemF2qylqPiNGQ"/>
-      </stereotypes>
-      <visibility xmi:id="_qtg1iesJEemc7pIoxFhA0g" label="+"/>
-      <cardinality xmi:id="_qtg1iusJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
-      <type xmi:id="_qtg1i-sJEemc7pIoxFhA0g" name="int">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </type>
-    </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_LPAxMOGbEemE4rPfMTA26A" name="Tutor" associationsOut="_CfMr8OGcEemE4rPfMTA26A _UJ6QQOsKEemc7pIoxFhA0g" generalizations="_hGL40OGbEemE4rPfMTA26A">
     <modelElement href="Database.uml#_LPAKIOGbEemE4rPfMTA26A"/>
@@ -503,23 +469,6 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_3gGgsOloEemV9qG5eyfgLA" name="SessionType">
-    <modelElement href="Database.uml#_3fOW8OloEemV9qG5eyfgLA"/>
-    <visualProperties xmi:id="_v6NGUeloEemV9qG5eyfgLA" position="1051.0,656.0" size="172.0,134.0"/>
-    <stereotypes xmi:id="_Y38PIOlpEemV9qG5eyfgLA" name="LegacyStyledElement">
-      <modelElement href="Database.uml#_Y3gKQOlpEemV9qG5eyfgLA"/>
-    </stereotypes>
-    <stereotypes xmi:id="_Y4JDcOlpEemV9qG5eyfgLA" name="Annotations">
-      <modelElement href="Database.uml#_Y3hYYOlpEemV9qG5eyfgLA"/>
-    </stereotypes>
-    <visibility xmi:id="_3gGgsuloEemV9qG5eyfgLA" label="+"/>
-    <literals xmi:id="_Y32IgOlpEemV9qG5eyfgLA" name="individualSession">
-      <modelElement href="Database.uml#_Y3hYYulpEemV9qG5eyfgLA"/>
-    </literals>
-    <literals xmi:id="_Y35L0OlpEemV9qG5eyfgLA" name="groupSession">
-      <modelElement href="Database.uml#_Y3h_cOlpEemV9qG5eyfgLA"/>
-    </literals>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_5L3NAOlqEemV9qG5eyfgLA" name="Subject" associationsIn="_JlEyYO3lEeml95s0pdFMYA" associationsOut="_Kan6UO3lEeml95s0pdFMYA">
     <modelElement href="Database.uml#_5L2l8OlqEemV9qG5eyfgLA"/>
     <visualProperties xmi:id="_5L3NAelqEemV9qG5eyfgLA" position="1114.0,242.0" size="160.0,111.0"/>
@@ -555,7 +504,7 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_q9AM8OGbEemE4rPfMTA26A" name="Session" associationsIn="_CfMr8OGcEemE4rPfMTA26A _DyAXoOGcEemE4rPfMTA26A _brR54OGcEemE4rPfMTA26A _tObAgOGcEemE4rPfMTA26A" associationsOut="__9uNsOGbEemE4rPfMTA26A">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_q9AM8OGbEemE4rPfMTA26A" name="Session" associationsIn="_CfMr8OGcEemE4rPfMTA26A _DyAXoOGcEemE4rPfMTA26A _brR54OGcEemE4rPfMTA26A _tObAgOGcEemE4rPfMTA26A _WVfr4O4cEembUvp5K_8AZw" associationsOut="__9uNsOGbEemE4rPfMTA26A">
     <modelElement href="Database.uml#_q8_l4OGbEemE4rPfMTA26A"/>
     <visualProperties xmi:id="_q9AM8eGbEemE4rPfMTA26A" position="900.0,379.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_q9AM8uGbEemE4rPfMTA26A" label="+"/>
@@ -648,6 +597,10 @@
     </attributes>
     <attributes xmi:id="_YE1LQO4LEemF2qylqPiNGQ" name="type">
       <modelElement href="Database.uml#_YEz9IO4LEemF2qylqPiNGQ"/>
+      <stereotypes xmi:id="_WV_bIO4cEembUvp5K_8AZw" name="StyledElement"/>
+      <stereotypes xmi:id="_WWLoYO4cEembUvp5K_8AZw" name="StyledElement">
+        <modelElement href="Database.uml#_WRHiMO4cEembUvp5K_8AZw"/>
+      </stereotypes>
       <visibility xmi:id="_YE1LQe4LEemF2qylqPiNGQ" label="+"/>
       <cardinality xmi:id="_YE1LQu4LEemF2qylqPiNGQ" label="1" max="1" min="1"/>
       <type xmi:id="_YE1LQ-4LEemF2qylqPiNGQ" name="SessionType">
@@ -655,7 +608,7 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sPJxUOGbEemE4rPfMTA26A" name="Room" associationsIn="__9uNsOGbEemE4rPfMTA26A">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sPJxUOGbEemE4rPfMTA26A" name="Room" associationsIn="__9uNsOGbEemE4rPfMTA26A _WT6XgO4cEembUvp5K_8AZw">
     <modelElement href="Database.uml#_sPJKQOGbEemE4rPfMTA26A"/>
     <visualProperties xmi:id="_sPJxUeGbEemE4rPfMTA26A" position="785.0,137.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_sPJxUuGbEemE4rPfMTA26A" label="+"/>
@@ -694,6 +647,10 @@
     </attributes>
     <attributes xmi:id="_ZhmEMO4LEemF2qylqPiNGQ" name="type">
       <modelElement href="Database.uml#_Zhk2EO4LEemF2qylqPiNGQ"/>
+      <stereotypes xmi:id="_WV9l8O4cEembUvp5K_8AZw" name="StyledElement"/>
+      <stereotypes xmi:id="_WWLBUO4cEembUvp5K_8AZw" name="StyledElement">
+        <modelElement href="Database.uml#_WRGUEO4cEembUvp5K_8AZw"/>
+      </stereotypes>
       <visibility xmi:id="_ZhmEMe4LEemF2qylqPiNGQ" label="+"/>
       <cardinality xmi:id="_ZhmEMu4LEemF2qylqPiNGQ" label="1" max="1" min="1"/>
       <type xmi:id="_ZhmEM-4LEemF2qylqPiNGQ" name="RoomType">
@@ -795,6 +752,9 @@
       <stereotypes xmi:id="_VAT8QO4JEemF2qylqPiNGQ" name="StyledElement"/>
       <stereotypes xmi:id="_VAWYgO4JEemF2qylqPiNGQ" name="StyledElement"/>
       <stereotypes xmi:id="_VAdGMO4JEemF2qylqPiNGQ" name="StyledElement"/>
+      <stereotypes xmi:id="_LIirQO4cEembUvp5K_8AZw" name="StyledElement"/>
+      <stereotypes xmi:id="_LIj5YO4cEembUvp5K_8AZw" name="StyledElement"/>
+      <stereotypes xmi:id="_LIzxAO4cEembUvp5K_8AZw" name="StyledElement"/>
       <visibility xmi:id="_qCwoUesJEemc7pIoxFhA0g" label="+"/>
       <cardinality xmi:id="_qCwoUusJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
       <type xmi:id="_qCwoU-sJEemc7pIoxFhA0g" name="SchoolType">
@@ -831,5 +791,115 @@
         <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </type>
     </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_3gGgsOloEemV9qG5eyfgLA" name="SessionType" associationsOut="_WVfr4O4cEembUvp5K_8AZw">
+    <modelElement href="Database.uml#_3fOW8OloEemV9qG5eyfgLA"/>
+    <visualProperties xmi:id="_v6NGUeloEemV9qG5eyfgLA" position="1051.0,656.0" size="172.0,134.0"/>
+    <stereotypes xmi:id="_Y38PIOlpEemV9qG5eyfgLA" name="LegacyStyledElement">
+      <modelElement href="Database.uml#_Y3gKQOlpEemV9qG5eyfgLA"/>
+    </stereotypes>
+    <stereotypes xmi:id="_Y4JDcOlpEemV9qG5eyfgLA" name="Annotations">
+      <modelElement href="Database.uml#_Y3hYYOlpEemV9qG5eyfgLA"/>
+    </stereotypes>
+    <visibility xmi:id="_3gGgsuloEemV9qG5eyfgLA" label="+"/>
+    <literals xmi:id="_Y32IgOlpEemV9qG5eyfgLA" name="individualSession">
+      <modelElement href="Database.uml#_Y3hYYulpEemV9qG5eyfgLA"/>
+    </literals>
+    <literals xmi:id="_Y35L0OlpEemV9qG5eyfgLA" name="groupSession">
+      <modelElement href="Database.uml#_Y3h_cOlpEemV9qG5eyfgLA"/>
+    </literals>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_MFROUOGcEemE4rPfMTA26A" name="Evaluation" associationsIn="_phk7UOGcEemE4rPfMTA26A" associationsOut="_VEsAYOGcEemE4rPfMTA26A">
+    <modelElement href="Database.uml#_MFQnQOGcEemE4rPfMTA26A"/>
+    <visualProperties xmi:id="_MFROUeGcEemE4rPfMTA26A" position="311.0,777.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_MFROUuGcEemE4rPfMTA26A" label="+"/>
+    <attributes xmi:id="_OTh1oOGcEemE4rPfMTA26A" name="rating">
+      <modelElement href="Database.uml#_OThOkOGcEemE4rPfMTA26A"/>
+      <stereotypes xmi:id="_r0rR4OsJEemc7pIoxFhA0g" name="StyledElement">
+        <modelElement href="Database.uml#_rrwmcOsJEemc7pIoxFhA0g"/>
+      </stereotypes>
+      <visibility xmi:id="_OTh1oeGcEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_OTh1ouGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_OTh1o-GcEemE4rPfMTA26A" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_PmTsIOGcEemE4rPfMTA26A" name="comment">
+      <modelElement href="Database.uml#_PmSeAOGcEemE4rPfMTA26A"/>
+      <stereotypes xmi:id="_r07wkOsJEemc7pIoxFhA0g" name="StyledElement">
+        <modelElement href="Database.uml#_rrwmcesJEemc7pIoxFhA0g"/>
+      </stereotypes>
+      <visibility xmi:id="_PmTsIeGcEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_PmTsIuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_PmTsI-GcEemE4rPfMTA26A" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_VEtOgOGcEemE4rPfMTA26A" name="student">
+      <modelElement href="Database.uml#_VEqLM-GcEemE4rPfMTA26A"/>
+      <visibility xmi:id="_VEtOgeGcEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_VEtOguGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_VEtOg-GcEemE4rPfMTA26A" name="Student">
+        <modelElement href="Database.uml#_KjP3YOGbEemE4rPfMTA26A"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_phliYOGcEemE4rPfMTA26A" name="manager">
+      <modelElement href="Database.uml#_phjGIOGcEemE4rPfMTA26A"/>
+      <visibility xmi:id="_phliYeGcEemE4rPfMTA26A" label="+"/>
+      <cardinality xmi:id="_phliYuGcEemE4rPfMTA26A" label="1" max="1" min="1"/>
+      <type xmi:id="_phliY-GcEemE4rPfMTA26A" name="Manager">
+        <modelElement href="Database.uml#_Ovl8AOGbEemE4rPfMTA26A"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_qtg1hOsJEemc7pIoxFhA0g" name="isFlagged">
+      <modelElement href="Database.uml#_QKMVYOrpEemnideklHmrUA"/>
+      <stereotypes xmi:id="_r1LoMOsJEemc7pIoxFhA0g" name="StyledElement">
+        <modelElement href="Database.uml#_rrxNgOsJEemc7pIoxFhA0g"/>
+      </stereotypes>
+      <visibility xmi:id="_qtg1hesJEemc7pIoxFhA0g" label="+"/>
+      <cardinality xmi:id="_qtg1husJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
+      <type xmi:id="_qtg1h-sJEemc7pIoxFhA0g" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_qtg1iOsJEemc7pIoxFhA0g" name="evaluationID">
+      <modelElement href="Database.uml#_u4o4UOrsEemnideklHmrUA"/>
+      <stereotypes xmi:id="_r1bf0OsJEemc7pIoxFhA0g" name="StyledElement">
+        <modelElement href="Database.uml#_rrxNgesJEemc7pIoxFhA0g"/>
+      </stereotypes>
+      <stereotypes xmi:id="_qEi5IO4LEemF2qylqPiNGQ" name="PrimaryKey">
+        <modelElement href="Database.uml#_qEiSEO4LEemF2qylqPiNGQ"/>
+      </stereotypes>
+      <visibility xmi:id="_qtg1iesJEemc7pIoxFhA0g" label="+"/>
+      <cardinality xmi:id="_qtg1iusJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
+      <type xmi:id="_qtg1i-sJEemc7pIoxFhA0g" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_lRkCkO4cEembUvp5K_8AZw" name="type">
+      <modelElement href="Database.uml#_lRjbgO4cEembUvp5K_8AZw"/>
+      <visibility xmi:id="_lRkCke4cEembUvp5K_8AZw" label="+"/>
+      <cardinality xmi:id="_lRkCku4cEembUvp5K_8AZw" label="1" max="1" min="1"/>
+      <type xmi:id="_lRkCk-4cEembUvp5K_8AZw" name="EvaluationType">
+        <modelElement href="Database.uml#_bc_xMO4cEembUvp5K_8AZw"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_bd6XMO4cEembUvp5K_8AZw" name="EvaluationType">
+    <modelElement href="Database.uml#_bc_xMO4cEembUvp5K_8AZw"/>
+    <visualProperties xmi:id="_bd6XMe4cEembUvp5K_8AZw" position="695.0,738.0"/>
+    <stereotypes xmi:id="_bd6XMu4cEembUvp5K_8AZw" name="LegacyStyledElement">
+      <modelElement href="Database.uml#_bdBmYO4cEembUvp5K_8AZw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_bd6XM-4cEembUvp5K_8AZw" name="Annotations">
+      <modelElement href="Database.uml#_bdBmYe4cEembUvp5K_8AZw"/>
+    </stereotypes>
+    <visibility xmi:id="_bd6XNO4cEembUvp5K_8AZw" label="+"/>
+    <literals xmi:id="_bd6XNe4cEembUvp5K_8AZw" name="tutorEval">
+      <modelElement href="Database.uml#_bc_xMe4cEembUvp5K_8AZw"/>
+    </literals>
+    <literals xmi:id="_bd6XNu4cEembUvp5K_8AZw" name="studentEval">
+      <modelElement href="Database.uml#_bc_xMu4cEembUvp5K_8AZw"/>
+    </literals>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
