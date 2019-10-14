@@ -61,5 +61,18 @@ public class tutoringappRepository {
 		Student s = entityManager.find(Student.class, studentID);
 		return s;
 	}
+	
+	@Transactional
+	public Tutor createTutor(int tutorID) {
+		Tutor t = new Tutor();
+		t.setTutorID(tutorID);
+		return t;
+	}
+	
+	@Transactional
+	public Tutor getTutor(int tutorID) {
+		Tutor t = entityManager.find(Tutor.class, tutorID);
+		return t;
+	}
 
 }
