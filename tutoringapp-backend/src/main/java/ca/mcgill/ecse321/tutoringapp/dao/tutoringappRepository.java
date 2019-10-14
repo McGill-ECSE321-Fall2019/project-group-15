@@ -27,7 +27,39 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Subject;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 
 
-
+@Repository
 public class tutoringappRepository {
+	
+	@Autowired
+	EntityManager entityManager;
+	
+	@Transactional
+	public Person createPerson(String firstname, String lastname) {
+		Person p = new Person();
+		p.setFirstName(firstname);
+		p.setLastName(lastname);
+		entityManager.persist(p);
+		return p;
+		
+	}
+	
+	@Transactional
+	public Person getPerson(String firstname) {
+		Person p = entityManager.find(Person.class, firstname);
+		return p;
+	}
+	
+	@Transactional
+	public Student createStudent(int studentID) {
+		Student s = new Student();
+		s.setStudentID(studentID);
+		return s;
+	}
+	
+	@Transactional
+	public Student getStudent(int studentID) {
+		Student s = entityManager.find(Student.class, studentID);
+		return s;
+	}
 
 }
