@@ -25,6 +25,6 @@ Team member's name |Total hours |Responsibility         |
 |-------------------|------------|-----------------------|
 |Darien Muse-Charbonneau        |    19      |         Domain model implementation and Build System               |
 |Marwan Khan         |    20      |         Build system with Heroku              |
-|Maxime Buteau           |    17      |         Persistance layer and Domain model              |
+|Maxime Buteau           |    17      |         Domain model, use cases and project backlog              |
 |Michel-Alexandre Riendeau      |    15      |         System requirements, use case and report             |
 |Osman Warsi      |    16      |         Build System             |
