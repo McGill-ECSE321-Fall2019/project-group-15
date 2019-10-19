@@ -38,15 +38,6 @@ public void setTutor(Set<Tutor> tutors) {
    public void setSession(Set<Session> sessions) {
       this.session = sessions;
    }
-   
-   private String courseID;
-
-public void setCourseID(String value) {
-    this.courseID = value;
-}
-public String getCourseID() {
-    return this.courseID;
-}
 
 private String name;
 
