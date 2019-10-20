@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Subject;
 
 public interface SubjectRepository extends CrudRepository<Subject, String> {
-	Subject findByName(String name);
+	Subject findSubjectByName(String name);
 	void deleteBySubjectName(String name);
 }

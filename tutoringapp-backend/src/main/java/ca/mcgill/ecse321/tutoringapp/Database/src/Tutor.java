@@ -1,8 +1,13 @@
 package ca.mcgill.ecse321.tutoringapp.Database.src;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
 import java.util.Set;
 import javax.persistence.OneToMany;
+
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -37,7 +42,7 @@ public void setSession(Set<Session> sessions) {
    this.session = sessions;
 }
 
-private int tutorID;
+@Id @GeneratedValue int tutorID;
 
 public void setTutorID(int value) {
     this.tutorID = value;
