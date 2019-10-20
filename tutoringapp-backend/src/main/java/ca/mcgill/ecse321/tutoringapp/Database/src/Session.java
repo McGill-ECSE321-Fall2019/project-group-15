@@ -1,7 +1,13 @@
 package ca.mcgill.ecse321.tutoringapp.Database.src;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
+
+import org.springframework.data.annotation.Id;
+
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Set;
 import javax.persistence.ManyToMany;
 
@@ -15,12 +21,12 @@ this.type = value;
 public SessionType getType() {
 return this.type;
 }
-   private String date;
+   private Date date;
 
-public void setDate(String value) {
-    this.date = value;
+public void setDate(Date date) {
+    this.date = date;
 }
-public String getDate() {
+public Date getDate() {
     return this.date;
 }
 private Room room;
@@ -77,23 +83,23 @@ public Manager getManager() {
 public void setManager(Manager manager) {
    this.manager = manager;
 }
-private String startTime;
+private Time startTime;
 
-public void setStartTime(String value) {
+public void setStartTime(Time value) {
     this.startTime = value;
 }
-public String getStartTime() {
+public Time getStartTime() {
     return this.startTime;
 }
-private String endTime;
+private Time endTime;
 
-public void setEndTime(String value) {
+public void setEndTime(Time value) {
     this.endTime = value;
 }
-public String getEndTime() {
+public Time getEndTime() {
     return this.endTime;
 }
-private int sessionID;
+@Id @GeneratedValue int sessionID;
 
 public void setSessionID(int value) {
     this.sessionID = value;

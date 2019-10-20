@@ -257,6 +257,9 @@
     <sourceRole xmi:id="_9wMlcvIeEemJ4Lsj5XK-Kw" aggregationKind="NONE" name="type" navigable="true">
       <modelElement href="Database.uml#_9twVcPIeEemJ4Lsj5XK-Kw"/>
       <stereotypes xmi:id="_9weSQPIeEemJ4Lsj5XK-Kw" name="StyledElement"/>
+      <stereotypes xmi:id="_isDCYPK9EemuUfuENxLFnA" name="StyledElement">
+        <modelElement href="Database.uml#_9twVcfIeEemJ4Lsj5XK-Kw"/>
+      </stereotypes>
       <visibility xmi:id="_9wMlc_IeEemJ4Lsj5XK-Kw" label="+"/>
       <cardinality xmi:id="_9wMldPIeEemJ4Lsj5XK-Kw" label="1" max="1" min="1"/>
     </sourceRole>
@@ -442,9 +445,9 @@
     </attributes>
     <attributes xmi:id="_9t2cEPIeEemJ4Lsj5XK-Kw" name="type">
       <modelElement href="Database.uml#_9twVcPIeEemJ4Lsj5XK-Kw"/>
-      <stereotypes xmi:id="_9t2cEfIeEemJ4Lsj5XK-Kw" name="StyledElement">
-        <modelElement href="Database.uml#_9twVcfIeEemJ4Lsj5XK-Kw"/>
-      </stereotypes>
+      <stereotypes xmi:id="_itTmoPK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itVb0PK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itcwkPK9EemuUfuENxLFnA" name="StyledElement"/>
       <visibility xmi:id="_9t2cEvIeEemJ4Lsj5XK-Kw" label="+"/>
       <cardinality xmi:id="_9t2cE_IeEemJ4Lsj5XK-Kw" label="1" max="1" min="1"/>
       <type xmi:id="_9t2cFPIeEemJ4Lsj5XK-Kw" name="EvaluationType">
@@ -615,9 +618,6 @@
       </stereotypes>
       <visibility xmi:id="_-XnLgeGbEemE4rPfMTA26A" label="+"/>
       <cardinality xmi:id="_-XnLguGbEemE4rPfMTA26A" label="1" max="1" min="1"/>
-      <type xmi:id="_-XnLg-GbEemE4rPfMTA26A" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
     </attributes>
     <attributes xmi:id="__9vb0OGbEemE4rPfMTA26A" name="room">
       <modelElement href="Database.uml#__9rxc-GbEemE4rPfMTA26A"/>
@@ -666,8 +666,8 @@
       </stereotypes>
       <visibility xmi:id="_rEcu1esJEemc7pIoxFhA0g" label="+"/>
       <cardinality xmi:id="_rEcu1usJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
-      <type xmi:id="_rEcu1-sJEemc7pIoxFhA0g" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <type xmi:id="_IHcF0PK-EemuUfuENxLFnA" name="Time">
+        <modelElement href="Database.uml#_IHP4kPK-EemuUfuENxLFnA"/>
       </type>
     </attributes>
     <attributes xmi:id="_rEcu2OsJEemc7pIoxFhA0g" name="endTime">
@@ -677,8 +677,8 @@
       </stereotypes>
       <visibility xmi:id="_rEcu2esJEemc7pIoxFhA0g" label="+"/>
       <cardinality xmi:id="_rEcu2usJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
-      <type xmi:id="_rEcu2-sJEemc7pIoxFhA0g" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <type xmi:id="_JCAQoPK-EemuUfuENxLFnA" name="Time">
+        <modelElement href="Database.uml#_IHP4kPK-EemuUfuENxLFnA"/>
       </type>
     </attributes>
     <attributes xmi:id="_rEcu3OsJEemc7pIoxFhA0g" name="sessionID">
@@ -698,9 +698,9 @@
     <attributes xmi:id="_YE1LQO4LEemF2qylqPiNGQ" name="type">
       <modelElement href="Database.uml#_YEz9IO4LEemF2qylqPiNGQ"/>
       <stereotypes xmi:id="__PSZoPIeEemJ4Lsj5XK-Kw" name="StyledElement"/>
-      <stereotypes xmi:id="__QU7cPIeEemJ4Lsj5XK-Kw" name="StyledElement">
-        <modelElement href="Database.uml#_-4BwMPIeEemJ4Lsj5XK-Kw"/>
-      </stereotypes>
+      <stereotypes xmi:id="_itYfIPK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itZtQPK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itl6gPK9EemuUfuENxLFnA" name="StyledElement"/>
       <visibility xmi:id="_YE1LQe4LEemF2qylqPiNGQ" label="+"/>
       <cardinality xmi:id="_YE1LQu4LEemF2qylqPiNGQ" label="1" max="1" min="1"/>
       <type xmi:id="_YE1LQ-4LEemF2qylqPiNGQ" name="SessionType">
@@ -748,9 +748,9 @@
     <attributes xmi:id="_ZhmEMO4LEemF2qylqPiNGQ" name="type">
       <modelElement href="Database.uml#_Zhk2EO4LEemF2qylqPiNGQ"/>
       <stereotypes xmi:id="__O7NQPIeEemJ4Lsj5XK-Kw" name="StyledElement"/>
-      <stereotypes xmi:id="__QTGQPIeEemJ4Lsj5XK-Kw" name="StyledElement">
-        <modelElement href="Database.uml#_-3-F0PIeEemJ4Lsj5XK-Kw"/>
-      </stereotypes>
+      <stereotypes xmi:id="_itWp8PK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itXRAPK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itnvsPK9EemuUfuENxLFnA" name="StyledElement"/>
       <visibility xmi:id="_ZhmEMe4LEemF2qylqPiNGQ" label="+"/>
       <cardinality xmi:id="_ZhmEMu4LEemF2qylqPiNGQ" label="1" max="1" min="1"/>
       <type xmi:id="_ZhmEM-4LEemF2qylqPiNGQ" name="RoomType">
@@ -855,6 +855,9 @@
       <stereotypes xmi:id="_9DmlMPIeEemJ4Lsj5XK-Kw" name="StyledElement"/>
       <stereotypes xmi:id="_9DoaYPIeEemJ4Lsj5XK-Kw" name="StyledElement"/>
       <stereotypes xmi:id="_9D2c0PIeEemJ4Lsj5XK-Kw" name="StyledElement"/>
+      <stereotypes xmi:id="_itMR4PK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itOuIPK9EemuUfuENxLFnA" name="StyledElement"/>
+      <stereotypes xmi:id="_itqzAPK9EemuUfuENxLFnA" name="StyledElement"/>
       <visibility xmi:id="_qCwoUesJEemc7pIoxFhA0g" label="+"/>
       <cardinality xmi:id="_qCwoUusJEemc7pIoxFhA0g" label="1" max="1" min="1"/>
       <type xmi:id="_qCwoU-sJEemc7pIoxFhA0g" name="SchoolType">
