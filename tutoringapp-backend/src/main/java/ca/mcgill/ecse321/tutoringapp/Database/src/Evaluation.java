@@ -1,7 +1,11 @@
 package ca.mcgill.ecse321.tutoringapp.Database.src;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
+
+import org.springframework.data.annotation.Id;
+
 import java.util.Set;
 import javax.persistence.ManyToMany;
 
@@ -53,7 +57,7 @@ public void setIsFlagged(boolean value) {
 public boolean isIsFlagged() {
     return this.isFlagged;
 }
-private int evaluationID;
+@Id @GeneratedValue int evaluationID;
 
 public void setEvaluationID(int value) {
     this.evaluationID = value;

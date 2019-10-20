@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import ca.mcgill.ecse321.tutoringapp.Database.src.School;
 
 public interface SchoolRepository extends CrudRepository<School, String> {
-	School findByName(String name);
-	void deleteBySchoolId(int id);
+	School findSchoolByName(String name);
+	void deleteBySchoolName(String name);
 }

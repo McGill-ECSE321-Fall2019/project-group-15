@@ -14,13 +14,13 @@ this.type = value;
 public RoomType getType() {
 return this.type;
 }
-private String id;
+private String name;
 
-public void setId(String value) {
-    this.id = value;
+public void setName(String value) {
+    this.name = value;
 }
-public String getId() {
-    return this.id;
+public String getName() {
+    return this.name;
 }
 private Set<Session> session;
 
