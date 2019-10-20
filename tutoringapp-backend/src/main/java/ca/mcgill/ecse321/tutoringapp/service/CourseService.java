@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Subject;
 import ca.mcgill.ecse321.tutoringapp.dao.CourseRepository;
 
 @Service
@@ -17,9 +18,10 @@ public class CourseService {
 	CourseRepository courseRepository;
 	
 	@Transactional
-	public Course createCourse(String name) {
+	public Course addCourse(String name, String id) {
 		Course course = new Course();
 		course.setName(name);
+		course.setCourseID(id);
 		courseRepository.save(course);
 		return course;
 	}
@@ -33,6 +35,18 @@ public class CourseService {
 	@Transactional
 	public List<Course> getAllCourses(){
 		return toList(courseRepository.findAll());
+	}
+	
+	@Transactional
+	public boolean removeCourse(String name) {
+		Course course = courseRepository.findCourseByCourseName(name);
+		
+		if(course == null) {
+			throw new NullPointerException("No such course.");
+		}
+		
+		courseRepository.deleteByCourseName(name);
+		return true;
 	}
 	
 	private <T> List<T> toList(Iterable<T> iterable){
