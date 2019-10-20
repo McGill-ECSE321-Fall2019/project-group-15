@@ -6,5 +6,5 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.School;
 
 public interface SchoolRepository extends CrudRepository<School, String> {
 	School findByName(String name);
-
+	void deleteBySchoolId(int id);
 }
