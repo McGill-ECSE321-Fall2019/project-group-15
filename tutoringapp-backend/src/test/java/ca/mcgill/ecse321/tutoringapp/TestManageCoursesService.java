@@ -1,6 +1,8 @@
-package ca.mcgill.ecse321.tutoringapp.service;
+package ca.mcgill.ecse321.tutoringapp;
 
 import static org.junit.Assert.assertEquals;
+
+
 
 import static org.junit.Assert.fail;
 
@@ -42,11 +44,16 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.SessionType;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Subject;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
+import ca.mcgill.ecse321.tutoringapp.service.CourseService;
+import ca.mcgill.ecse321.tutoringapp.service.PersonService;
+import ca.mcgill.ecse321.tutoringapp.service.SchoolService;
+import ca.mcgill.ecse321.tutoringapp.service.SessionService;
+import ca.mcgill.ecse321.tutoringapp.service.SubjectService;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestTutoringAppService {
+public class TestManageCoursesService {
 	
 	@Autowired
 	PersonRepository personRepository;
@@ -67,7 +74,11 @@ public class TestTutoringAppService {
 	@Autowired
 	SchoolRepository schoolRepository; 
 	@Autowired
-	private TutoringAppService service;
+	private CourseService courseService;
+	@Autowired
+	private SubjectService subjectService;
+	@Autowired
+	private SchoolService schoolService;
 	
 	
 	@After
@@ -89,19 +100,19 @@ public class TestTutoringAppService {
 	@Test
 	public void testAddCourse() {
 		
-		assertEquals(0, service.getAllCourses().size());
+		assertEquals(0, courseService.getAllCourses().size());
 		
 		String name="Intro to software engineering";
 		String id = "ecse321";
 		
 		try {
-			service.addCourse(name,id);
+			courseService.addCourse(name,id);
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			fail();
 		}
 
-		List<Course> allCourses = service.getAllCourses();
+		List<Course> allCourses = courseService.getAllCourses();
 
 		assertEquals(1, allCourses.size());
 		assertEquals(name, allCourses.get(0).getName());
@@ -111,20 +122,20 @@ public class TestTutoringAppService {
 	
 	@Test
 	public void testAddSubject() {
-		assertEquals(0, service.getAllSubject().size());
+		assertEquals(0, subjectService.getAllSubject().size());
 		
 		String name="Chemistry";
 		School school = new School();
 		school.setName("schoolX");
 		
 		try {
-			service.addSubject(name,school);
+			subjectService.addSubject(name,school);
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			fail();
 		}
 
-		List<Subject> allSubjects = service.getAllSubject();
+		List<Subject> allSubjects = subjectService.getAllSubject();
 
 		assertEquals(1, allSubjects.size());
 		assertEquals(name, allSubjects.get(0).getName());
@@ -134,7 +145,7 @@ public class TestTutoringAppService {
 	
 	@Test
 	public void testAddSchool() {
-		assertEquals(0, service.getAllSchool().size());
+		assertEquals(0, schoolService.getAllSchool().size());
 		
 		String name="schoolX";
 		int id = 021;
@@ -142,13 +153,13 @@ public class TestTutoringAppService {
 		
 		
 		try {
-			service.addSchool(name,id,schoolType);
+			schoolService.addSchool(name,id,schoolType);
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			fail();
 		}
 
-		List<School> allSchool = service.getAllSchool();
+		List<School> allSchool = schoolService.getAllSchool();
 
 		assertEquals(1, allSchool.size());
 		assertEquals(name, allSchool.get(0).getName());
@@ -159,14 +170,14 @@ public class TestTutoringAppService {
 	
 	@Test
 	public void testAddCourseNull() {
-		assertEquals(0, service.getAllCourses().size());
+		assertEquals(0, courseService.getAllCourses().size());
 		
 		String name = null;
 		String id = null;
 		String error = null;
 
 		try {
-			service.addCourse(name,id);
+			courseService.addCourse(name,id);
 		} catch (IllegalArgumentException e) {
 			error = e.getMessage();
 		}
@@ -176,20 +187,20 @@ public class TestTutoringAppService {
 		
 
 		// check no change in memory
-		assertEquals(0, service.getAllCourses().size());
+		assertEquals(0, courseService.getAllCourses().size());
 
 	}
 	
 	@Test
 	public void testAddSubjectNull() {
-		assertEquals(0, service.getAllSubject().size());
+		assertEquals(0, subjectService.getAllSubject().size());
 		
 		String name = null;
 		School school = null;
 		String error = null;
 
 		try {
-			service.addSubject(name,school);
+			subjectService.addSubject(name,school);
 		} catch (IllegalArgumentException e) {
 			error = e.getMessage();
 		}
@@ -199,21 +210,22 @@ public class TestTutoringAppService {
 		
 
 		// check no change in memory
-		assertEquals(0, service.getAllSubject().size());
+		assertEquals(0, subjectService.getAllSubject().size());
 
 	}
 	
 	@Test
 	public void testAddSchoolNull() {
-		assertEquals(0, service.getAllSubject().size());
+		assertEquals(0, schoolService.getAllSchool().size());
 		
 		String name = null;
 		int id = 0;
 		SchoolType schoolType;
+		schoolType= null;
 		String error = null;
 
 		try {
-			service.addSchool(name,id,schoolType);
+			schoolService.addSchool(name,id,schoolType);
 		} catch (IllegalArgumentException e) {
 			error = e.getMessage();
 		}
@@ -223,50 +235,23 @@ public class TestTutoringAppService {
 		
 
 		// check no change in memory
-		assertEquals(0, service.getAllSchool().size());
+		assertEquals(0, schoolService.getAllSchool().size());
 
 	}
 	
 	@Test
 	public void testRemoveCourse() {
-		assertEquals(0, service.getAllCourses().size());
-		String error = null;
-		
-		try {
-			service.removeCourse("ecse321");
-		}catch (IllegalArgumentException e) {
-			error = e.getMessage();
-		}
-		
-		assertEquals("Course not removed!", error);
+		assertEquals(true, courseService.removeCourse("ecse321"));
 	}
 	
 	@Test
 	public void testRemoveSubject() {
-		assertEquals(0, service.getAllSubject().size());
-		String error=null;
-		
-		try {
-			service.removeSubject("chemistry");
-		}catch (IllegalArgumentException e) {
-			error = e.getMessage();
-		}
-		
-		assertEquals("Subject not removed!", error);
+		assertEquals(true, subjectService.removeSubject("Chemistry"));
 	}
 	
 	@Test
 	public void testSchoolSubject() {
-		assertEquals(0, service.getAllSchool().size());
-		String error=null;
-		
-		try {
-			service.removeSchool(021);
-		}catch (IllegalArgumentException e) {
-			error = e.getMessage();
-		}
-		
-		assertEquals("School not removed!", error);
+		assertEquals(true, schoolService.removeSchool("schoolX"));
 	}
 	
 
