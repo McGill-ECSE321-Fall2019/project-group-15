@@ -1,8 +1,5 @@
 package ca.mcgill.ecse321.tutoringapp.service;
 
-import java.sql.Date;
-import java.sql.Time;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +14,7 @@ public class SessionService {
 	SessionRepository sessionRepository;
 	
 	@Transactional
-	public Session createSession(Date date, Time startTime, Time endTime) {
+	public Session createSession(String date, String startTime, String endTime) {
 		Session session = new Session();
 		session.setDate(date);
 		session.setStartTime(startTime);
@@ -28,7 +25,7 @@ public class SessionService {
 	
 	@Transactional
 	public Session getSession(Integer ID) {
-		Session session = sessionRepository.findBySessionID(ID);
+		Session session = sessionRepository.findSessionByID(ID);
 		return session;
 	}
 	

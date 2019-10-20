@@ -5,52 +5,56 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Tutor extends PersonRole{
-private Set<Course> course;
-
-@ManyToMany(mappedBy="tutor")
-public Set<Course> getCourse() {
-   return this.course;
-}
-
-public void setCourse(Set<Course> courses) {
-   this.course = courses;
-}
-
    private float hourlyRate;
-
-public void setHourlyRate(float value) {
-    this.hourlyRate = value;
-}
-public float getHourlyRate() {
-    return this.hourlyRate;
-}
-private Set<Session> session;
-
-@OneToMany(mappedBy="tutor" )
-public Set<Session> getSession() {
-   return this.session;
-}
-
-public void setSession(Set<Session> sessions) {
-   this.session = sessions;
-}
-
-private int tutorID;
-
-public void setTutorID(int value) {
-    this.tutorID = value;
-}
-public int getTutorID() {
-    return this.tutorID;
-}
-
-private boolean isVerified;
-
-public void setIsVerified(boolean value) {
-    this.isVerified = value;
-}
-public boolean isIsVerified() {
-    return this.isVerified;
-}
+   
+   public void setHourlyRate(float value) {
+      this.hourlyRate = value;
+   }
+   
+   public float getHourlyRate() {
+      return this.hourlyRate;
+   }
+   
+   private Set<Session> session;
+   
+   @OneToMany(mappedBy="tutor" )
+   public Set<Session> getSession() {
+      return this.session;
+   }
+   
+   public void setSession(Set<Session> sessions) {
+      this.session = sessions;
+   }
+   
+   private int tutorID;
+   
+   public void setTutorID(int value) {
+      this.tutorID = value;
+   }
+   
+   public int getTutorID() {
+      return this.tutorID;
+   }
+   
+   private boolean isVerified;
+   
+   public void setIsVerified(boolean value) {
+      this.isVerified = value;
+   }
+   
+   public boolean isIsVerified() {
+      return this.isVerified;
+   }
+   
+   private Set<Course> course;
+   
+   @ManyToMany(mappedBy="tutor" )
+   public Set<Course> getCourse() {
+      return this.course;
+   }
+   
+   public void setCourse(Set<Course> courses) {
+      this.course = courses;
+   }
    
    }

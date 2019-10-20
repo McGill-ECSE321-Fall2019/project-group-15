@@ -2,11 +2,12 @@ package ca.mcgill.ecse321.tutoringapp.Database.src;
 
 import javax.persistence.Id;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
 
 @Entity
 public abstract class PersonRole{
-private int roleID;
+@Id @GeneratedValue int roleID;
 
 public void setRoleID(int value) {
 this.roleID = value;

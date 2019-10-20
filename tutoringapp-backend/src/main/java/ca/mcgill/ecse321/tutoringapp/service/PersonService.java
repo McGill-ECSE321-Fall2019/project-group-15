@@ -26,24 +26,5 @@ public class PersonService {
 		personRepository.save(person);
 		return person;
 	}
-	
-	@Transactional
-	public Course getCourse(String name) {
-		Course course = courseRepository.findCourseByCourseName(name);
-		return course;
-	}
-	
-	@Transactional
-	public List<Course> getAllCourses(){
-		return toList(courseRepository.findAll());
-	}
-	
-	private <T> List<T> toList(Iterable<T> iterable){
-		List<T> resultList = new ArrayList<T>();
-		for (T t : iterable) {
-			resultList.add(t);
-		}
-		return resultList;
-	}
 
 }

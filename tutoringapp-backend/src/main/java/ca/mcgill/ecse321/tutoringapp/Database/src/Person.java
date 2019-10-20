@@ -7,14 +7,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Person{
-private int personID;
+private String userName;
 
-public void setPersonID(int value) {
-this.personID = value;
+public void setPersonUserName(String value) {
+this.userName = value;
 }
 @Id
-public int getPersonID() {
-return this.personID;
+public String getPersonUserName() {
+return this.userName;
 }
    private Set<PersonRole> personRole;
    

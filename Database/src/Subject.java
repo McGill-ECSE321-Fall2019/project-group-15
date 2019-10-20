@@ -1,11 +1,21 @@
-import javax.persistence.OneToMany;
-import java.util.Set;
-import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import java.util.Set;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Subject{
-private School school;
+   private String name;
+   
+   public void setName(String value) {
+      this.name = value;
+   }
+   
+   public String getName() {
+      return this.name;
+   }
+   
+   private School school;
    
    @ManyToOne
    public School getSchool() {
@@ -26,14 +36,5 @@ private School school;
    public void setCourse(Set<Course> courses) {
       this.course = courses;
    }
-   
-private String name;
-
-public void setName(String value) {
-this.name = value;
-}
-public String getName() {
-return this.name;
-}
    
    }

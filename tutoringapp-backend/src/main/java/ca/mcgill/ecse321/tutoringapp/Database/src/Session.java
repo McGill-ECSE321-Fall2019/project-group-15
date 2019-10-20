@@ -6,8 +6,6 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.data.annotation.Id;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.util.Set;
 import javax.persistence.ManyToMany;
 
@@ -21,12 +19,12 @@ this.type = value;
 public SessionType getType() {
 return this.type;
 }
-   private Date date;
+   private String date;
 
-public void setDate(Date date) {
-    this.date = date;
+public void setDate(String value) {
+    this.date = value;
 }
-public Date getDate() {
+public String getDate() {
     return this.date;
 }
 private Room room;
@@ -83,20 +81,20 @@ public Manager getManager() {
 public void setManager(Manager manager) {
    this.manager = manager;
 }
-private Time startTime;
+private String startTime;
 
-public void setStartTime(Time value) {
+public void setStartTime(String value) {
     this.startTime = value;
 }
-public Time getStartTime() {
+public String getStartTime() {
     return this.startTime;
 }
-private Time endTime;
+private String endTime;
 
-public void setEndTime(Time value) {
+public void setEndTime(String value) {
     this.endTime = value;
 }
-public Time getEndTime() {
+public String getEndTime() {
     return this.endTime;
 }
 @Id @GeneratedValue int sessionID;
