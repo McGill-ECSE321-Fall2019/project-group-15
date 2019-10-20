@@ -83,7 +83,7 @@ public class TutoringAppService {
 		School school = new School();
 		school.setName(name);
 		school.setSchoolID(id);
-		school.setType(schoolType);
+		school.setType(schoolType);;
 		schoolRepository.save(school);
 		return school;
 		
@@ -94,7 +94,7 @@ public class TutoringAppService {
 		return course;
 	}
 	
-	public List<Course> getAllCourses(String name) {
+	public List<Course> getAllCourses() {
 		
 		return toList(courseRepository.findAll());
 	}
@@ -104,7 +104,7 @@ public class TutoringAppService {
 		return subject;
 	}
 	
-	public List<Subject> getAllSubject(String name) {
+	public List<Subject> getAllSubject() {
 		
 		return toList(subjectRepository.findAll());
 	}
@@ -114,21 +114,21 @@ public class TutoringAppService {
 		return school;
 	}
 	
-	public List<School> getAllSchool(String name) {
+	public List<School> getAllSchool() {
 		
 		return toList(schoolRepository.findAll());
 	}
 	
-	public void removeCourse(Course course) {
-		courseRepository.delete(course);;
+	public void removeCourse(String id) {
+		courseRepository.deleteByCourseId(id);
 	}
 	
-	public void removeSubject(Subject subject) {
-		subjectRepository.delete(subject);;
+	public void removeSubject(String name) {
+		subjectRepository.deleteBySubjectName(name);;
 	}
 	
-	public void removeSchool(School school) {
-		schoolRepository.delete(school);
+	public void removeSchool(int id) {
+		schoolRepository.deleteBySchoolId(id);;
 	}
 
 	private <T> List<T> toList(Iterable<T> iterable){
