@@ -37,5 +37,14 @@ this.name = value;
 public String getName() {
 return this.name;
 }
+
+private String description;
+
+public void setDescription(String value) {
+	this.description=value;
+}
+public String getDescription() {
+    return this.description;
+}
    
    }

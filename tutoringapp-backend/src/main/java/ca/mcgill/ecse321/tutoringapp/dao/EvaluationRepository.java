@@ -6,4 +6,7 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Evaluation;
 
 public interface EvaluationRepository extends CrudRepository<Evaluation, Integer> {
 	Evaluation findByEvaluationID(Integer ID);
+	void flagEvalByEvaluationID(Integer ID);
+	void deleteEvalByEvaluationID(Integer ID);
+	
 }

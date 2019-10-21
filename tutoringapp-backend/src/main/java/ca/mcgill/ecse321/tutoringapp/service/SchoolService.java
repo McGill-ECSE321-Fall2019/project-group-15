@@ -21,11 +21,12 @@ public class SchoolService {
 	SchoolRepository schoolRepository;
 	
 	@Transactional
-	public School addSchool(String name, int id, SchoolType schoolType) {
+	public School addSchool(String name, int id, SchoolType schoolType, String description) {
 		School school = new School();
 		school.setName(name);
 		school.setSchoolID(id);
 		school.setType(schoolType);
+		school.setDescription(description);
 		schoolRepository.save(school);
 		return school;
 
