@@ -12,6 +12,7 @@ public interface SessionRepository extends CrudRepository<Session, Integer> {
 	Session findSessionByID(Integer ID);
 	List<Session> findByStudent(Student studentId);
 	List<Session> findByDateAndTime(String date, String time);
+	List<Session> findByDate(String date);
 	List<Session> findByTutor(Tutor tutorId);
 
 }
