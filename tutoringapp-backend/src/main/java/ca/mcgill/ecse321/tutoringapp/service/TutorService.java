@@ -20,11 +20,12 @@ public class TutorService {
 	
 	@Transactional
 	public Tutor addTutor(int id) {
-		
-		
+		Tutor tutor = new Tutor();
+		tutor.setTutorID(id);
+		tutorRepository.save(tutor);
 		return null;
-		
 	}
+	
 	
 	@Transactional
 	public Tutor getTutor(int ID) {
@@ -44,12 +45,12 @@ public class TutorService {
 		return true;
 	}
 	
-	private <T> List<T> removedTutors(Iterable<T> iterable){
-		List<T> resultList = new ArrayList<T>();
-		for (T t : iterable) {
-			resultList.add(t);
-		}
-		return resultList;
+	public <Tutor> List<Tutor> removedTutors(Tutor tutor){
+		List<Tutor> removedTutorList = new ArrayList<Tutor>();
+		removedTutorList.add(tutor);
+		
+		return removedTutorList;
+		
 	}	
 	
 	
