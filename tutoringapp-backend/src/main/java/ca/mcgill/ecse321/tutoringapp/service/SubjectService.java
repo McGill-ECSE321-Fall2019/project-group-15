@@ -18,11 +18,12 @@ public class SubjectService {
 	SubjectRepository subjectRepository;
 	
 	@Transactional
-	public Subject addSubject(String name, School school) {
+	public Subject addSubject(String name, School school, String description) {
 
 		Subject subject = new Subject();
 		subject.setName(name);
 		subject.setSchool(school);
+		subject.setDescription(description);
 		subjectRepository.save(subject);
 		return subject;
 	}

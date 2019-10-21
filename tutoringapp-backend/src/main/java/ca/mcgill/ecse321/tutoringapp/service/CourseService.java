@@ -18,10 +18,11 @@ public class CourseService {
 	CourseRepository courseRepository;
 	
 	@Transactional
-	public Course addCourse(String name, String id) {
+	public Course addCourse(String name, String id, String description) {
 		Course course = new Course();
 		course.setName(name);
 		course.setCourseID(id);
+		course.setDescription(description);
 		courseRepository.save(course);
 		return course;
 	}
