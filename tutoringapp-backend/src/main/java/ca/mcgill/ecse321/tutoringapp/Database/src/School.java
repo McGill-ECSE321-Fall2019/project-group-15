@@ -7,50 +7,33 @@ import javax.persistence.Entity;
 
 @Entity
 public class School{
-private int schoolID;
+	private Set<Subject> subject;
 
-public void setSchoolID(int value) {
-this.schoolID = value;
-}
-@Id
-public int getSchoolID() {
-return this.schoolID;
-}
-private Set<Subject> subject;
-   
-   @OneToMany(mappedBy="school" )
-   public Set<Subject> getSubject() {
-      return this.subject;
-   }
-   
-   public void setSubject(Set<Subject> subjects) {
-      this.subject = subjects;
-   }
-   
-private SchoolType type;
+	@OneToMany(mappedBy="school" )
+	public Set<Subject> getSubject() {
+		return this.subject;
+	}
 
-public void setType(SchoolType value) {
-this.type = value;
-}
-public SchoolType getType() {
-return this.type;
-}
-private String name;
+	public void setSubject(Set<Subject> subjects) {
+		this.subject = subjects;
+	}
 
-public void setName(String value) {
-this.name = value;
-}
-public String getName() {
-return this.name;
-}
+	private SchoolType type;
 
-private String description;
+	public void setType(SchoolType value) {
+		this.type = value;
+	}
+	public SchoolType getType() {
+		return this.type;
+	}
+	private String name;
 
-public void setDescription(String value) {
-	this.description=value;
+	public void setName(String value) {
+		this.name = value;
+	}
+	@Id
+	public String getName() {
+		return this.name;
+	}
+
 }
-public String getDescription() {
-    return this.description;
-}
-   
-   }

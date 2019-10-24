@@ -9,6 +9,6 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.PersonRole;
 
 public interface PersonRoleRepository extends CrudRepository<PersonRole, Integer> {
 	
-	PersonRole findPersonRoleById(Integer ID);
+	PersonRole findPersonRoleByRoleID(Integer roleID);
 	List<PersonRole> findByPerson(Person username);
 }

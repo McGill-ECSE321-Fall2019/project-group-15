@@ -33,12 +33,12 @@ public class SessionService {
 	
 	@Transactional
 	public Session getSession(Integer ID) {
-		Session session = sessionRepository.findSessionByID(ID);
+		Session session = sessionRepository.findSessionBySessionID(ID);
 		return session;
 	}
 	
 	@Transactional
-	public List<Session> getGroupSessionsforADay(String date){
+	public List<Session> getGroupSessionsforADay(Date date){
 		List<Session> groupSessions = new ArrayList<>();
 		for (Session s : sessionRepository.findByDate(date)) {
 			if (s.getType() == SessionType.groupSession) {

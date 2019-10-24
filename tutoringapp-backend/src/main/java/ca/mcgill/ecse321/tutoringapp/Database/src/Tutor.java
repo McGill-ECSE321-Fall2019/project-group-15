@@ -12,52 +12,53 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Tutor extends PersonRole{
-private Set<Course> course;
+	private Set<Course> course;
 
-@ManyToMany(mappedBy="tutor")
-public Set<Course> getCourse() {
-   return this.course;
-}
+	@ManyToMany(mappedBy="tutor")
+	public Set<Course> getCourse() {
+		return this.course;
+	}
 
-public void setCourse(Set<Course> courses) {
-   this.course = courses;
-}
+	public void setCourse(Set<Course> courses) {
+		this.course = courses;
+	}
 
-   private float hourlyRate;
+	private float hourlyRate;
 
-public void setHourlyRate(float value) {
-    this.hourlyRate = value;
-}
-public float getHourlyRate() {
-    return this.hourlyRate;
-}
-private Set<Session> session;
+	public void setHourlyRate(float value) {
+		this.hourlyRate = value;
+	}
+	public float getHourlyRate() {
+		return this.hourlyRate;
+	}
+	private Set<Session> session;
 
-@OneToMany(mappedBy="tutor" )
-public Set<Session> getSession() {
-   return this.session;
-}
+	@OneToMany(mappedBy="tutor" )
+	public Set<Session> getSession() {
+		return this.session;
+	}
 
-public void setSession(Set<Session> sessions) {
-   this.session = sessions;
-}
+	public void setSession(Set<Session> sessions) {
+		this.session = sessions;
+	}
 
-@Id @GeneratedValue int tutorID;
+	private int tutorID;
 
-public void setTutorID(int value) {
-    this.tutorID = value;
-}
-public int getTutorID() {
-    return this.tutorID;
-}
+	public void setTutorID(int value) {
+		this.tutorID = value;
+	}
+	//@Id
+	public int getTutorID() {
+		return this.tutorID;
+	}
 
-private boolean isVerified;
+	private boolean isVerified;
 
-public void setIsVerified(boolean value) {
-    this.isVerified = value;
+	public void setIsVerified(boolean value) {
+		this.isVerified = value;
+	}
+	public boolean isIsVerified() {
+		return this.isVerified;
+	}
+
 }
-public boolean isIsVerified() {
-    return this.isVerified;
-}
-   
-   }

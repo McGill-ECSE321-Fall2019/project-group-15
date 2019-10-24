@@ -21,7 +21,7 @@ public class TutorService {
 	@Transactional
 	public Tutor addTutor(int id) {
 		Tutor tutor = new Tutor();
-		tutor.setTutorID(id);
+		//tutor.setTutorID(id);
 		tutor.setIsVerified(false);
 		tutorRepository.save(tutor);
 		return null;
