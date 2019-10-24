@@ -28,3 +28,15 @@ Team member's name |Total hours |Responsibility         |
 |Maxime Buteau           |    17      |         Domain model, use cases and project backlog              |
 |Michel-Alexandre Riendeau      |    15      |         System requirements, use case and report             |
 |Osman Warsi      |    16      |         Build System             |
+
+## Deliverable 2
+
+The full report can be seen [here](https://github.com/McGill-ECSE321-Fall2019/project-group-15/wiki/Meeting-Notes-%232)
+
+Team member's name |Total hours |Responsibility         |
+|-------------------|------------|-----------------------|
+|Darien Muse-Charbonneau        |          |                        |
+|Marwan Khan         |          |                       |
+|Maxime Buteau           |          |                       |
+|Michel-Alexandre Riendeau      |          |                      |
+|Osman Warsi      |          |                      |
