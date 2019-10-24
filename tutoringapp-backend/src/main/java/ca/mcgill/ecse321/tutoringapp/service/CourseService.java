@@ -18,17 +18,17 @@ public class CourseService {
 	CourseRepository courseRepository;
 	
 	@Transactional
-	public Course addCourse(String name, String id, String description) {
+	public Course addCourse(String name) {
 		Course course = new Course();
 		course.setName(name);
 		//course.setCourseID(id);
-		course.setDescription(description);
+		//course.setDescription(description);
 		courseRepository.save(course);
 		return course;
 	}
 	
 	@Transactional
-	public Course getCourse(String name) {
+	public Course getCourse(String name, String description) {
 		Course course = courseRepository.findCourseByName(name);
 		return course;
 	}
