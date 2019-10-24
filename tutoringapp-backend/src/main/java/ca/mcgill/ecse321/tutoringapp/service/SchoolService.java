@@ -21,12 +21,10 @@ public class SchoolService {
 	SchoolRepository schoolRepository;
 	
 	@Transactional
-	public School addSchool(String name, int id, SchoolType schoolType, String description) {
+	public School addSchool(String name, SchoolType schoolType) {
 		School school = new School();
 		school.setName(name);
-		school.setSchoolID(id);
 		school.setType(schoolType);
-		school.setDescription(description);
 		schoolRepository.save(school);
 		return school;
 
@@ -50,7 +48,7 @@ public class SchoolService {
 			throw new NullPointerException("No such course.");
 		}
 		
-		schoolRepository.deleteBySchoolName(name);
+		schoolRepository.deleteByName(name);
 		return true;
 	}
 	

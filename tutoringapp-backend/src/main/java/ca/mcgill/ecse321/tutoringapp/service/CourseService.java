@@ -21,7 +21,7 @@ public class CourseService {
 	public Course addCourse(String name, String id, String description) {
 		Course course = new Course();
 		course.setName(name);
-		course.setCourseID(id);
+		//course.setCourseID(id);
 		course.setDescription(description);
 		courseRepository.save(course);
 		return course;
@@ -29,7 +29,7 @@ public class CourseService {
 	
 	@Transactional
 	public Course getCourse(String name) {
-		Course course = courseRepository.findCourseByCourseName(name);
+		Course course = courseRepository.findCourseByName(name);
 		return course;
 	}
 	
@@ -40,13 +40,13 @@ public class CourseService {
 	
 	@Transactional
 	public boolean removeCourse(String name) {
-		Course course = courseRepository.findCourseByCourseName(name);
+		Course course = courseRepository.findCourseByName(name);
 		
 		if(course == null) {
 			throw new NullPointerException("No such course.");
 		}
 		
-		courseRepository.deleteByCourseName(name);
+		courseRepository.deleteCourseByName(name);
 		return true;
 	}
 	

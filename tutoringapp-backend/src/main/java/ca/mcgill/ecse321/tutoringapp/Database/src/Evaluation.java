@@ -4,74 +4,73 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
 
-import org.springframework.data.annotation.Id;
-
-import java.util.Set;
-import javax.persistence.ManyToMany;
+import javax.persistence.Id;
 
 @Entity
 public class Evaluation{
-   private int rating;
-   private EvaluationType type;
-   
+	private int rating;
 
-public void setType(EvaluationType value) {
-  this.type = value;
-}
-public EvaluationType getType() {
-  return this.type;
-}
+	private EvaluationType type;
 
-public void setRating(int value) {
-    this.rating = value;
-}
-public int getRating() {
-    return this.rating;
-}
-private String comment;
 
-public void setComment(String value) {
-    this.comment = value;
-}
-public String getComment() {
-    return this.comment;
-}
-private Student student;
+	public void setType(EvaluationType value) {
+		this.type = value;
+	}
+	public EvaluationType getType() {
+		return this.type;
+	}
 
-@ManyToOne(optional=false)
-public Student getStudent() {
-   return this.student;
-}
+	public void setRating(int value) {
+		this.rating = value;
+	}
+	public int getRating() {
+		return this.rating;
+	}
+	private String comment;
 
-public void setStudent(Student student) {
-   this.student = student;
-}
+	public void setComment(String value) {
+		this.comment = value;
+	}
+	public String getComment() {
+		return this.comment;
+	}
+	private Student student;
 
-private Manager manager;
+	@ManyToOne(optional=false)
+	public Student getStudent() {
+		return this.student;
+	}
 
-@ManyToOne(optional=false)
-public Manager getManager() {
-   return this.manager;
-}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 
-public void setManager(Manager manager) {
-   this.manager = manager;
-}
+	private Manager manager;
 
-private boolean isFlagged;
+	@ManyToOne(optional=false)
+	public Manager getManager() {
+		return this.manager;
+	}
 
-public void setIsFlagged(boolean value) {
-    this.isFlagged = value;
-}
-public boolean isIsFlagged() {
-    return this.isFlagged;
-}
-@Id @GeneratedValue int evaluationID;
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
 
-public void setEvaluationID(int value) {
-    this.evaluationID = value;
-}
-public int getEvaluationID() {
-    return this.evaluationID;
-}
+	private boolean isFlagged;
+
+	public void setIsFlagged(boolean value) {
+		this.isFlagged = value;
+	}
+	public boolean isIsFlagged() {
+		return this.isFlagged;
+	}
+	@GeneratedValue private int evaluationID;
+
+	public void setEvaluationID(int value) {
+		this.evaluationID = value;
+	}
+	@Id
+	public int getEvaluationID() {
+		return this.evaluationID;
+	}
 }

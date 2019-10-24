@@ -31,12 +31,12 @@ public class EvaluationService {
 	  return evaluation;
 	}
 	
-	@Transactional
+	/*@Transactional
     public void flagEvaluation(Integer ID) {
 	  Evaluation evaluation = evaluationRepository.findByEvaluationID(ID);
       evaluationRepository.flagEvalByEvaluationID(ID);
 	  evaluation.setIsFlagged(true);
-    }
+    }*/
 	
 	
 	

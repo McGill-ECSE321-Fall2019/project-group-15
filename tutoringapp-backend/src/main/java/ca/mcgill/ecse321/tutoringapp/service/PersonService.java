@@ -19,8 +19,9 @@ public class PersonService {
 	PersonRepository personRepository;
 	
 	@Transactional
-	public Person createPerson(String firstname, String lastname) {
+	public Person createPerson(String username, String firstname, String lastname) {
 		Person person = new Person();
+		person.setUserName(username);
 		person.setFirstName(firstname);
 		person.setLastName(lastname);
 		personRepository.save(person);

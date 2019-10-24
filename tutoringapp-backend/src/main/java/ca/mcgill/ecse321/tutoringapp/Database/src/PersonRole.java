@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public abstract class PersonRole{
-@Id @GeneratedValue int roleID;
+@GeneratedValue private int roleID;
 
 public void setRoleID(int value) {
 this.roleID = value;

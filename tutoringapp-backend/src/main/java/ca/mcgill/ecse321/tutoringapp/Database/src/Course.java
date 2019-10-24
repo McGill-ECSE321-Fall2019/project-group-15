@@ -5,66 +5,59 @@ import java.util.Set;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.ManyToMany;
+import javax.persistence.Id;
 
 @Entity
 public class Course{
-private Subject subject;
-   
-   @ManyToOne
-   public Subject getSubject() {
-      return this.subject;
-   }
-   
-   public void setSubject(Subject subject) {
-      this.subject = subject;
-   }
-   
-private Set<Tutor> tutor;
+	private Subject subject;
 
-@ManyToMany
-public Set<Tutor> getTutor() {
-   return this.tutor;
-}
+	@ManyToOne
+	public Subject getSubject() {
+		return this.subject;
+	}
 
-public void setTutor(Set<Tutor> tutors) {
-   this.tutor = tutors;
-}
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
 
-   private Set<Session> session;
-   
-   @OneToMany(mappedBy="course" )
-   public Set<Session> getSession() {
-      return this.session;
-   }
-   
-   public void setSession(Set<Session> sessions) {
-      this.session = sessions;
-   }
-   
-   private String courseID;
+	private Set<Tutor> tutor;
 
-public void setCourseID(String value) {
-    this.courseID = value;
-}
-public String getCourseID() {
-    return this.courseID;
-}
+	@ManyToMany
+	public Set<Tutor> getTutor() {
+		return this.tutor;
+	}
 
-private String name;
+	public void setTutor(Set<Tutor> tutors) {
+		this.tutor = tutors;
+	}
 
-public void setName(String value) {
-    this.name = value;
-}
-public String getName() {
-    return this.name;
-}
+	private Set<Session> session;
 
-private String description;
+	@OneToMany(mappedBy="course" )
+	public Set<Session> getSession() {
+		return this.session;
+	}
 
-public void setDescription(String value) {
-	this.description=value;
-}
-public String getDescription() {
-    return this.description;
-}
+	public void setSession(Set<Session> sessions) {
+		this.session = sessions;
+	}
+
+	private String name;
+
+	public void setName(String value) {
+		this.name = value;
+	}
+	@Id
+	public String getName() {
+		return this.name;
+	}
+
+	private String description;
+
+	public void setDescription(String value) {
+		this.description=value;
+	}
+	public String getDescription() {
+		return this.description;
+	}
 }
