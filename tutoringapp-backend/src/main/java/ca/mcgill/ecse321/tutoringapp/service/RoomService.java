@@ -21,6 +21,31 @@ public class RoomService {
 	RoomRepository roomRepository;
 
 	@Transactional
+	public Room createRoom(String name, RoomType type) {
+		Room room = new Room();
+		room.setName(name);
+		room.setType(type);
+		roomRepository.save(room);
+		return room;
+	}
+	
+	@Transactional
+	public Room getRoom(String name) {
+		Room room = roomRepository.findRoomByName(name);
+		return room;
+	}
+	
+	@Transactional
+	public List<Room> getAllRooms() {
+		return toList(roomRepository.findAll());
+	}
+	
+	@Transactional
+	public List<Room> getRoomsByType(RoomType type) {
+		return toList(roomRepository.findByTypeEquals(type));
+	}
+	
+	@Transactional
 	public List<Room> getAvailableLargeRoomsForDayStartEnd(Date day, Time startTime, Time endTime) {
 		List<Room> available = new ArrayList<>();
 		for (Room r : roomRepository.findByTypeEquals(RoomType.largeRoom)) {
@@ -69,5 +94,13 @@ public class RoomService {
 			throw new IllegalArgumentException("The room is not available for this time slot");
 		}
 		session.setRoom(room);
+	}
+	
+	private <T> List<T> toList(Iterable<T> iterable){
+		List<T> resultList = new ArrayList<T>();
+		for (T t : iterable) {
+			resultList.add(t);
+		}
+		return resultList;
 	}
 }

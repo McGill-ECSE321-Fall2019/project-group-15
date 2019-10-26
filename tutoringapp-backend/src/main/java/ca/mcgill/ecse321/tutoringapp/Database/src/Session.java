@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Set;
 import javax.persistence.ManyToMany;
 
@@ -85,8 +86,8 @@ public class Session{
 	}
 	private Time startTime;
 
-	public void setStartTime(Time value) {
-		this.startTime = value;
+	public void setStartTime(Time time) {
+		this.startTime = time;
 	}
 	public Time getStartTime() {
 		return this.startTime;
