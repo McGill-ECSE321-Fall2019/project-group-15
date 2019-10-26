@@ -2,6 +2,7 @@ package ca.mcgill.ecse321.tutoringapp.service;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Session;
 import ca.mcgill.ecse321.tutoringapp.Database.src.SessionType;
 import ca.mcgill.ecse321.tutoringapp.dao.SessionRepository;
@@ -20,12 +22,13 @@ public class SessionService {
 	SessionRepository sessionRepository;
 	
 	@Transactional
-	public Session createSession(Date date, Time startTime, Time endTime, SessionType type) {
+	public Session createSession(Date date, Time time, Time time2, SessionType type, Course course) {
 		Session session = new Session();
 		session.setDate(date);
-		session.setStartTime(startTime);
-		session.setEndTime(endTime);
+		session.setStartTime(time);
+		session.setEndTime(time2);
 		session.setType(type);
+		session.setCourse(course);
 		session.setRoom(null);
 		sessionRepository.save(session);
 		return session;
@@ -38,6 +41,11 @@ public class SessionService {
 	}
 	
 	@Transactional
+	public List<Session> getAllSessions() {
+		return toList(sessionRepository.findAll());
+	}
+	
+	@Transactional
 	public List<Session> getGroupSessionsforADay(Date date){
 		List<Session> groupSessions = new ArrayList<>();
 		for (Session s : sessionRepository.findByDate(date)) {
@@ -46,5 +54,12 @@ public class SessionService {
 			}
 		}
 		return groupSessions;
+	}
+	private <T> List<T> toList(Iterable<T> iterable){
+		List<T> resultList = new ArrayList<T>();
+		for (T t : iterable) {
+			resultList.add(t);
+		}
+		return resultList;
 	}
 }

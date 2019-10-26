@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
+import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
+import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.TutorRepository;
 
 @Service
@@ -17,13 +19,15 @@ public class TutorService {
 	
 	@Autowired
 	TutorRepository tutorRepository;
+	@Autowired
+	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
 	public Tutor addTutor(int id) {
 		Tutor tutor = new Tutor();
 		//tutor.setTutorID(id);
 		tutor.setIsVerified(false);
-		tutorRepository.save(tutor);
+		personRoleRepository.save(tutor);
 		return null;
 	}
 	
