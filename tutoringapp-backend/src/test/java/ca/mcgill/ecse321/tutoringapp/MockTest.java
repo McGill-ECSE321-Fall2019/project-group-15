@@ -70,7 +70,7 @@ public class MockTest {
 	
 	private List<Student> studentList = new ArrayList<Student>();
 
-@Before
+/*@Before
 public void setMockOutput() { //method from tutorial
 	when(studentDao.findById(anyInt())).thenAnswer((InvocationOnMock invocation) -> {
 		if(invocation.getArgument(0).equals(STUDENT_KEY)) {
@@ -95,7 +95,7 @@ public void setUp() {
 public void testCreateStudent() {
 	assertNotNull(student); //check if it can create an student
 }
-	
+*/	
 	
 	
 	
