@@ -28,7 +28,7 @@ public class CourseService {
 	}
 	
 	@Transactional
-	public Course getCourse(String name) {
+	public Course getCourse(String name, String description) {
 		Course course = courseRepository.findCourseByName(name);
 		return course;
 	}
