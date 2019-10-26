@@ -95,21 +95,13 @@ public class PersistenceUnitTests {
 	
 	@Before
 	public void clearDatabase() {
-<<<<<<< HEAD:tutoringapp-backend/src/test/java/ca/mcgill/ecse321/tutoringapp/PersistenceUnitTests.java
+		
 		personRoleRepository.deleteAll();
-=======
-		// Fisrt, we clear to avoid exceptions due to inconsistencies
-		personRepository.deleteAll();
-		// Then we can clear the other tables
->>>>>>> origin/master:tutoringapp-backend/src/test/java/ca/mcgill/ecse321/tutoringapp/TestManageCoursesService.java
 		studentRepository.deleteAll();
 		tutorRepository.deleteAll();
-		
 		sessionRepository.deleteAll();
 		courseRepository.deleteAll();
-		
 		evaluationRepository.deleteAll();
-		
 		roomRepository.deleteAll();
 		subjectRepository.deleteAll();
 		schoolRepository.deleteAll();
