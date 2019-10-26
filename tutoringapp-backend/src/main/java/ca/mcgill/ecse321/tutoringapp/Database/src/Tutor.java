@@ -1,5 +1,6 @@
 package ca.mcgill.ecse321.tutoringapp.Database.src;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 
@@ -11,6 +12,7 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
+@DiscriminatorValue("Tutor")
 public class Tutor extends PersonRole{
 	private Set<Course> course;
 

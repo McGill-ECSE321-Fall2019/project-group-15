@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
+import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.StudentRepository;
 
 
@@ -15,25 +17,33 @@ import ca.mcgill.ecse321.tutoringapp.dao.StudentRepository;
 public class StudentService {
 	@Autowired
 	StudentRepository studentRepository;
+	@Autowired
+	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
-	public Student addStudent(int id) {
+	public Student addStudent(String password, Person person) {
 		Student student = new Student();
-		student.setStudentID(id);
-		studentRepository.save(student);
+		student.setPerson(person);
+		student.setPassword(password);
+		personRoleRepository.save(student);
 		return null;
 	}
 	
 	
 	@Transactional
 	public Student getStudent(int ID) {
-		Student student = studentRepository.findStudentByStudentID(ID);
+		Student student = studentRepository.findStudentByRoleID(ID);
 		return student;
 	}
 	
 	@Transactional
+	public List<Student> getAllStudents(){
+		return toList(studentRepository.findAll());
+	}
+	
+	@Transactional
 	public boolean removeStudent(int ID) {
-		Student student = studentRepository.findStudentByStudentID(ID);
+		Student student = studentRepository.findStudentByRoleID(ID);
 
 		if(student == null) {
 			throw new NullPointerException("No such student exist");
@@ -49,6 +59,14 @@ public class StudentService {
 		
 		return removedStudentList;
 		
-	}	
+	}
+	
+	private <T> List<T> toList(Iterable<T> iterable){
+		List<T> resultList = new ArrayList<T>();
+		for (T t : iterable) {
+			resultList.add(t);
+		}
+		return resultList;
+	}
 
 }
