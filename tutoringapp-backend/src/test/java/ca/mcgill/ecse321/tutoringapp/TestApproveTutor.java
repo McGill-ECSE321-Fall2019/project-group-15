@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
+import ca.mcgill.ecse321.tutoringapp.Database.src.PersonRole;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.CourseRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.EvaluationRepository;
@@ -22,6 +24,7 @@ import ca.mcgill.ecse321.tutoringapp.dao.SessionRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.StudentRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.SubjectRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.TutorRepository;
+import ca.mcgill.ecse321.tutoringapp.service.PersonService;
 import ca.mcgill.ecse321.tutoringapp.service.TutorService;
 
 @RunWith(SpringRunner.class)
@@ -47,6 +50,10 @@ public class TestApproveTutor {
 	@Autowired
 	SchoolRepository schoolRepository; 
 	@Autowired
+	private PersonService personService;
+	@Autowired
+	private PersonRole personRole;
+	@Autowired
 	private TutorService tutorService;
 	
 	@After
@@ -63,11 +70,32 @@ public class TestApproveTutor {
 	}
 	
 	@Test
-    public void testAddTutor() {
-		assertEquals(0, tutorService.getAllTutors().size());
+	public void testCreatePerson() {
+		assertEquals(0, personService.getAllPersons().size());
 		
 		String firstName = "John";
 		String lastName = "Doe";
+		String userName = "JohnDoe";
+		
+		try {
+			personService.createPerson(userName, firstName, lastName);
+		} catch (IllegalArgumentException e) {
+			fail();
+		}
+		
+		List<Person> allPersons = personService.getAllPersons();
+		
+		assertEquals( 1, allPersons.size() );
+		assertEquals( firstName , allPersons.get(0).getFirstName() );
+		assertEquals( lastName , allPersons.get(0).getLastName() );
+		assertEquals( userName, allPersons.get(0).getUserName() );
+		
+	}
+		
+	@Test
+    public void testAddTutor() {
+		assertEquals(0, tutorService.getAllTutors().size());
+		
 		Integer id = 260797797;
 		
 		try {
@@ -80,6 +108,7 @@ public class TestApproveTutor {
 		
 		assertEquals( 1, allTutors.size() );
 		assertEquals( id.intValue(), allTutors.get(0).getTutorID() );
+		assertEquals( false, allTutors.get(0).isIsVerified() );
 		
 	}
 	
