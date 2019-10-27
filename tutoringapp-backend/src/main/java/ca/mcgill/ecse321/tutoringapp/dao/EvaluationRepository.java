@@ -10,5 +10,5 @@ public interface EvaluationRepository extends CrudRepository<Evaluation, Integer
 	Evaluation findByEvaluationID(Integer ID);
 	//void flagEvalByEvaluationID(Integer ID);
 	void deleteEvalByEvaluationID(Integer ID);
-	List<Evaluation> findEvalbyID(Integer ID);
+	
 }
