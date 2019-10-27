@@ -97,30 +97,30 @@ public class TestManageCoursesService {
 		
 	}
 	
-//	@Test
-//	public void testAddCourse() {
-//		
-//		assertEquals(0, courseService.getAllCourses().size());
-//		
-//		String name="Intro to software engineering";
-//		//String id = "ecse321";
-//		String description= "learn build systems and inetgration";
-//		
-//		try {
-//			courseService.addCourse(name,description);
-//		} catch (IllegalArgumentException e) {
-//			// Check that no error occurred
-//			fail();
-//		}
-//
-//		List<Course> allCourses = courseService.getAllCourses();
-//
-//		assertEquals(1, allCourses.size());
-//		assertEquals(name, allCourses.get(0).getName());
-//		//assertEquals(name, allCourses.get(0).getCourseID());
-//		assertEquals(description, allCourses.get(0).getDescription());
-//
-//	}
+	@Test
+	public void testAddCourse() {
+		
+		assertEquals(0, courseService.getAllCourses().size());
+		
+		String name="Intro to software engineering";
+		//String id = "ecse321";
+		String description= "learn build systems and inetgration";
+		
+		try {
+			courseService.addCourse(name,description);
+		} catch (IllegalArgumentException e) {
+			// Check that no error occurred
+			fail();
+		}
+
+		List<Course> allCourses = courseService.getAllCourses();
+
+		assertEquals(1, allCourses.size());
+		assertEquals(name, allCourses.get(0).getName());
+		//assertEquals(name, allCourses.get(0).getCourseID());
+		assertEquals(description, allCourses.get(0).getDescription());
+
+	}
 	
 	@Test
 	public void testAddSubject() {
