@@ -11,6 +11,7 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.StudentRepository;
+import net.bytebuddy.description.ByteCodeElement.Token.TokenList;
 
 
 @Service
@@ -20,6 +21,8 @@ public class StudentService {
 	@Autowired
 	PersonRoleRepository personRoleRepository;
 	
+	public List<Student> removedStudentList = new ArrayList<Student>();
+
 	@Transactional
 	public Student addStudent(String password, Person person) {
 		Student student = new Student();
@@ -53,12 +56,13 @@ public class StudentService {
 		return true;
 	}
 	
-	public <Student> List<Student> removedStudents(Student student){
-		List<Student> removedStudentList = new ArrayList<Student>();
+	public <T> void removedStudents(Student student){
+		//List<T> removedStudentList = new ArrayList<T>();
 		removedStudentList.add(student);
-		
+	}
+	
+	public List<Student> getRemovedStudents() {
 		return removedStudentList;
-		
 	}
 	
 	private <T> List<T> toList(Iterable<T> iterable){
