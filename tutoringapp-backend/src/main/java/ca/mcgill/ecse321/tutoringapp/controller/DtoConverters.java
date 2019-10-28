@@ -27,6 +27,28 @@ public class DtoConverters {
 //		return courseDto;
 		
 	}        
+	
+	public static SubjectDto convertToDto(Subject s) {
+		
+		CheckArg(s);
+		
+		if(s==null) {
+			throw new IllegalArgumentException("There is no such subject!");
+		}
+		SubjectDto subjectDto = new SubjectDto(s.getName(),s.getSchool(),s.getDescription());
+		return subjectDto;
+		
+	}        
+	
+	public static SchoolDto convertToDto(School sc) {
+		
+		CheckArg(sc);
+		Set<Subject> subjects= new HashSet<Subject>();
+        for (Subject s : sc.getSubject())
+            subjects.add(new Subject());
+        return new SchoolDto(sc.getName(), sc.getType(), subjects);
+		
+	}        
 
 	static void CheckArg(Object o) {
         if (o == null) {
