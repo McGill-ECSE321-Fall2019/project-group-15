@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
-import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.StudentRepository;
 import net.bytebuddy.description.ByteCodeElement.Token.TokenList;
 
@@ -18,17 +17,16 @@ import net.bytebuddy.description.ByteCodeElement.Token.TokenList;
 public class StudentService {
 	@Autowired
 	StudentRepository studentRepository;
-	@Autowired
-	PersonRoleRepository personRoleRepository;
 	
 	public List<Student> removedStudentList = new ArrayList<Student>();
 
 	@Transactional
-	public Student addStudent(String password, Person person) {
+	public Student addStudent(String password, Person person, int id) {
 		Student student = new Student();
 		student.setPerson(person);
 		student.setPassword(password);
-		personRoleRepository.save(student);
+		student.setStudentId(id);
+		studentRepository.save(student);
 		return null;
 	}
 	
@@ -49,15 +47,17 @@ public class StudentService {
 		Student student = studentRepository.findStudentByRoleID(ID);
 
 		if(student == null) {
-			throw new NullPointerException("No such student exist");
+			throw new NullPointerException("No such student exists");
 		}
 		removedStudents(student);
 		studentRepository.deleteById(ID); 
 		return true;
 	}
 	
+
 	public <T> void removedStudents(Student student){
 		//List<T> removedStudentList = new ArrayList<T>();
+
 		removedStudentList.add(student);
 	}
 	

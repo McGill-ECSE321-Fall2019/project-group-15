@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
+import ca.mcgill.ecse321.tutoringapp.Database.src.PersonRole;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Room;
 import ca.mcgill.ecse321.tutoringapp.Database.src.RoomType;
 import ca.mcgill.ecse321.tutoringapp.Database.src.School;
@@ -167,7 +168,7 @@ public class PersistenceUnitTests {
 		assertEquals(firstName, allPersons.get(0).getFirstName());
 		
 		String firstName2 = "George";
-		person.setFirstName(firstName2);
+		personService.modifyPersonName(person, firstName2, lastName);
 		assertEquals(firstName2, allPersons.get(0).getFirstName());
 	}*/
 	
@@ -178,15 +179,21 @@ public class PersistenceUnitTests {
 		String userName = "maxbuteau";
 		Person person = personService.createPerson(userName, firstName, lastName);
 		String password = "123";
+		int studentId = 1;
 		
 		try {
-			studentService.addStudent(password, person);
+			studentService.addStudent(password, person, studentId);
 		} catch(IllegalArgumentException e) {
 			fail();
 		}
 		List<Student> allStudents = studentService.getAllStudents();
 		assertEquals(1, allStudents.size());
 	}
+	
+	/*@Test
+	public void testAddTutor() {
+		
+	}*/
 	
 	/*@Test
 	public void testCreateRoom() {
