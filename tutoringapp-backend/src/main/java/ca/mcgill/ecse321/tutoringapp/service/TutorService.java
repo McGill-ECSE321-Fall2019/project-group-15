@@ -19,28 +19,26 @@ public class TutorService {
 	
 	@Autowired
 	TutorRepository tutorRepository;
-	@Autowired
-	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
 	public Tutor addTutor(int id) {
 		Tutor tutor = new Tutor();
 		//tutor.setTutorID(id);
 		tutor.setIsVerified(false);
-		personRoleRepository.save(tutor);
+		tutorRepository.save(tutor);
 		return null;
 	}
 	
 	
 	@Transactional
 	public Tutor getTutor(int ID) {
-		Tutor tutor = tutorRepository.findTutorByTutorID(ID);
+		Tutor tutor = tutorRepository.findTutorByTutorId(ID);
 		return tutor;
 	}
 	
 	@Transactional
 	public boolean removeTutor(int ID) {
-		Tutor tutor = tutorRepository.findTutorByTutorID(ID);
+		Tutor tutor = tutorRepository.findTutorByTutorId(ID);
 
 		if(tutor == null) {
 			throw new NullPointerException("No such tutor exist");
@@ -65,7 +63,7 @@ public class TutorService {
 	//Darien
 	@Transactional
 	public void approveTutor(int ID) {
-		Tutor tutor = tutorRepository.findTutorByTutorID(ID);
+		Tutor tutor = tutorRepository.findTutorByTutorId(ID);
 		
 		if(tutor == null) {
 			throw new NullPointerException("No such tutor exists");

@@ -6,7 +6,8 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Manager extends PersonRole{
-   private Set<Evaluation> evaluation;
+	
+	private Set<Evaluation> evaluation;
    
    @OneToMany(mappedBy="manager" )
    public Set<Evaluation> getEvaluation() {
