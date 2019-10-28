@@ -97,7 +97,7 @@ public class TestManageCoursesService {
 		
 	}
 	
-	@Test
+	/*@Test
 	public void testAddCourse() {
 		
 		assertEquals(0, courseService.getAllCourses().size());
@@ -166,6 +166,7 @@ public class TestManageCoursesService {
 
 		List<Subject> allSubjects = subjectService.getAllSubject();
 
+
 		assertEquals(1, allSubjects.size());
 		assertEquals(name, allSubjects.get(0).getName());
 		assertEquals(school, allSubjects.get(0).getSchool());
@@ -220,6 +221,9 @@ public class TestManageCoursesService {
 //		assertEquals(0, subjectService.getAllSubject().size());
 //
 //	}
+
+	}*/
+
 //	
 //	@Test
 //	public void testAddSchoolNull() {

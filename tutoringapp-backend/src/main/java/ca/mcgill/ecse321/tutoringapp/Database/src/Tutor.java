@@ -1,19 +1,24 @@
 package ca.mcgill.ecse321.tutoringapp.Database.src;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-
 import java.util.Set;
 import javax.persistence.OneToMany;
-
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.ManyToMany;
 
 @Entity
-@DiscriminatorValue("Tutor")
 public class Tutor extends PersonRole{
+	
+	private int tutorId;
+	   
+	   public void setTutorId(int value) {
+	      this.tutorId = value;
+	   }
+	   
+	   public int getTutorId() {
+	      return this.tutorId;
+	   }
+	
 	private Set<Course> course;
 
 	@ManyToMany(mappedBy="tutor")
@@ -42,16 +47,6 @@ public class Tutor extends PersonRole{
 
 	public void setSession(Set<Session> sessions) {
 		this.session = sessions;
-	}
-
-	private int tutorID;
-
-	public void setTutorID(int value) {
-		this.tutorID = value;
-	}
-	//@Id
-	public int getTutorID() {
-		return this.tutorID;
 	}
 
 	private boolean isVerified;

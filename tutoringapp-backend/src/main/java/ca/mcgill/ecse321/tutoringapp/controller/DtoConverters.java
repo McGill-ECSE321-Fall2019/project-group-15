@@ -28,6 +28,7 @@ public class DtoConverters {
 		
 	}        
 	
+<<<<<<< HEAD
 	public static SubjectDto convertToDto(Subject s) {
 		
 		CheckArg(s);
@@ -49,6 +50,21 @@ public class DtoConverters {
         return new SchoolDto(sc.getName(), sc.getType(), subjects);
 		
 	}        
+=======
+    public static StudentDto convertToDto(Student student) {
+    	CheckArg(student);
+    	
+    	StudentDto s = new StudentDto(student.getPassword(), student.getPerson());
+    	return s;
+    }
+    
+    public static TutorDto convertToDto(Tutor tutor) {
+    	CheckArg(tutor);
+    	
+    	TutorDto t = new TutorDto(tutor.getPassword(), tutor.getPerson());
+    	return t;
+    }
+>>>>>>> 34393e2c8b0b904705182b7adb5b292785c8fb89
 
 	static void CheckArg(Object o) {
         if (o == null) {
