@@ -27,9 +27,10 @@ public class StudentController {
 	
 	@PostMapping(value =  { "/createStudent", "/createStudent/" })
 	public StudentDto createStudent(@RequestParam("password") String password,
-			@RequestParam("person") Person person) throws IllegalArgumentException {
+			@RequestParam("person") Person person, @RequestParam("studentId") int studentId)
+					throws IllegalArgumentException {
 		try {
-		Student student = studentService.addStudent(password, person);
+		Student student = studentService.addStudent(password, person, studentId);
 		return DtoConverters.convertToDto(student); 
 		}
 		catch (Exception e) {

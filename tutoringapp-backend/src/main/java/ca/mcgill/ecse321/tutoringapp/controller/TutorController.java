@@ -14,7 +14,7 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.*;
 
 @CrossOrigin(origins = "*")
 @RestController
-public class tutorController {
+public class TutorController {
 
 	@Autowired
 	TutorService tutorService;
