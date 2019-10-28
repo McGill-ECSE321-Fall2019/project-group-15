@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
 import ca.mcgill.ecse321.tutoringapp.dao.StudentRepository;
+import net.bytebuddy.description.ByteCodeElement.Token.TokenList;
 
 
 @Service
@@ -17,6 +18,8 @@ public class StudentService {
 	@Autowired
 	StudentRepository studentRepository;
 	
+	public List<Student> removedStudentList = new ArrayList<Student>();
+
 	@Transactional
 	public Student addStudent(String password, Person person, int id) {
 		Student student = new Student();
@@ -51,12 +54,15 @@ public class StudentService {
 		return true;
 	}
 	
-	public List<Student> removedStudents(Student student){
-		List<Student> removedStudentList = new ArrayList<Student>();
+
+	public <T> void removedStudents(Student student){
+		//List<T> removedStudentList = new ArrayList<T>();
+
 		removedStudentList.add(student);
-		
+	}
+	
+	public List<Student> getRemovedStudents() {
 		return removedStudentList;
-		
 	}
 	
 	private <T> List<T> toList(Iterable<T> iterable){

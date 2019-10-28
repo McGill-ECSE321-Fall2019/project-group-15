@@ -27,6 +27,20 @@ public class DtoConverters {
 //		return courseDto;
 		
 	}        
+	
+    public static StudentDto convertToDto(Student student) {
+    	CheckArg(student);
+    	
+    	StudentDto s = new StudentDto(student.getPassword(), student.getPerson());
+    	return s;
+    }
+    
+    public static TutorDto convertToDto(Tutor tutor) {
+    	CheckArg(tutor);
+    	
+    	TutorDto t = new TutorDto(tutor.getPassword(), tutor.getPerson());
+    	return t;
+    }
 
 	static void CheckArg(Object o) {
         if (o == null) {

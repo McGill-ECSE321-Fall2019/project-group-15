@@ -27,7 +27,7 @@ Team member's name |Total hours |Responsibility         |
 |Marwan Khan         |    20      |         Build system with Heroku              |
 |Maxime Buteau           |    17      |         Domain model, use cases and project backlog              |
 |Michel-Alexandre Riendeau      |    15      |         System requirements, use case and report             |
-|Osman Warsi      |    16      |         Build System             |
+|Osman Warsi      |    16      |         Build System, Domain model             |
 
 ## Deliverable 2
 

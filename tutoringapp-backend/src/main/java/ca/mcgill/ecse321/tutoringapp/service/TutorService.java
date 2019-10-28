@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
@@ -20,10 +21,13 @@ public class TutorService {
 	@Autowired
 	TutorRepository tutorRepository;
 	
+	public List<Tutor> removedTutorList = new ArrayList<Tutor>();
+
 	@Transactional
-	public Tutor addTutor(int id) {
+	public Tutor addTutor(String password, Person person) {
 		Tutor tutor = new Tutor();
-		//tutor.setTutorID(id);
+		tutor.setPassword(password);
+		tutor.setPerson(person);
 		tutor.setIsVerified(false);
 		tutorRepository.save(tutor);
 		return null;
@@ -73,13 +77,14 @@ public class TutorService {
 		tutorRepository.save(tutor);
 	}
 		
-	public <Tutor> List<Tutor> removedTutors(Tutor tutor){
-		List<Tutor> removedTutorList = new ArrayList<Tutor>();
+	public <T> void removedTutors(Tutor tutor){
 		removedTutorList.add(tutor);
-		
+	
+	}
+	
+	public List<Tutor> getRemovedTutors() {
 		return removedTutorList;
-		
-	}	
+	}
 	
 	//Darien
 	private <T> List<T> toList(Iterable<T> iterable){

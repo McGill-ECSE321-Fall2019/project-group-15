@@ -50,7 +50,7 @@ public class CourseController {
 	}
 	
 	@PostMapping(value = { "/deleteCourse", "/deleteCourse/" })
-	public boolean deleteCourse(@RequestParam(name = "courseNmae") String courseName) {
+	public boolean deleteCourse(@RequestParam(name = "courseName") String courseName) {
 		courseService.removeCourse(courseName);
 		return true;
 	}
