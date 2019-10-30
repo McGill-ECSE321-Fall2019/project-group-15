@@ -13,22 +13,24 @@ public class EvaluationDto {
   
   public EvaluationDto() {
   }
-  
-  
+   
   public EvaluationDto(int id) {
     this.id = id;
 }
-
-public int getID() {
+  public EvaluationDto(String comment, int rating) {
+    this.comment = comment;
+    this.rating = rating;
+  }
+  public int getID() {
     return id;
 }
   
-
-public String getComment() {
+  public String getComment() {
   return comment;
 }
-public int getRating() {
+  public int getRating() {
   return rating;
 }
-  
+
+
 }

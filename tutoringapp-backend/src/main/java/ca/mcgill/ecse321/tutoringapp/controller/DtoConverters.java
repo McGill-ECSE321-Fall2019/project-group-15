@@ -70,6 +70,12 @@ public class DtoConverters {
     	return t;
     }
 
+    public static EvaluationDto convertToDto(Evaluation evaluation) {
+      CheckArg(evaluation);
+      
+      EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating());
+      return e ;
+    }
 
 	static void CheckArg(Object o) {
         if (o == null) {
