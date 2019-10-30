@@ -28,10 +28,10 @@ public class DtoConverters {
 		
 	}        
 	
-<<<<<<< HEAD
 
-=======
->>>>>>> 74b0c8e89d75fd390fa27b177d8ed1ebd6e14a20
+
+
+
 	public static SubjectDto convertToDto(Subject s) {
 		
 		CheckArg(s);
@@ -53,10 +53,9 @@ public class DtoConverters {
         return new SchoolDto(sc.getName(), sc.getType(), subjects);
 		
 	}        
-<<<<<<< HEAD
 
-=======
->>>>>>> 74b0c8e89d75fd390fa27b177d8ed1ebd6e14a20
+
+
     public static StudentDto convertToDto(Student student) {
     	CheckArg(student);
     	
@@ -70,10 +69,7 @@ public class DtoConverters {
     	TutorDto t = new TutorDto(tutor.getPassword(), tutor.getPerson());
     	return t;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 74b0c8e89d75fd390fa27b177d8ed1ebd6e14a20
 
 	static void CheckArg(Object o) {
         if (o == null) {
