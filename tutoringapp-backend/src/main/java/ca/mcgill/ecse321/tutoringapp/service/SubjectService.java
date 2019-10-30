@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.School;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Subject;
 import ca.mcgill.ecse321.tutoringapp.dao.SubjectRepository;
@@ -39,6 +40,11 @@ public class SubjectService {
 
 		return toList(subjectRepository.findAll());
 	}
+	
+	@Transactional
+	public Subject getSubjectBySubjectName(String name) {
+	        return subjectRepository.findSubjectByName(name);
+	 }
 	
 	@Transactional
 	public boolean removeSubject(String name) {

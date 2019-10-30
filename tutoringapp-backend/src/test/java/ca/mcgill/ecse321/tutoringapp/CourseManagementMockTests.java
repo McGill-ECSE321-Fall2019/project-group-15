@@ -50,13 +50,14 @@ public class CourseManagementMockTests {
 	private static final String COURSE_DESC2="tough course";
 	private List<Course> courseExpectedList = new ArrayList<Course>();
 	
-//	private Subject subject1;
-//	private Subject subject2;
-//	private static final String SUBJECT_NAME1="Chemistry";
-//	private static final String SUBJECT_NAME2="Biology";
-//	private static final String SUBJECT_DESC1="chemical bonds";
-//	private static final String SUBJECT_DESC2="learn plants";
-//	private static final String NONEXISTING_SUBJECT="NotASubject";
+	private Subject subject1;
+	private Subject subject2;
+	private static final String SUBJECT_NAME1="Chemistry";
+	private static final String SUBJECT_NAME2="Biology";
+	private static final String SUBJECT_DESC1="chemical bonds";
+	private static final String SUBJECT_DESC2="learn plants";
+	private static final String NONEXISTING_SUBJECT="NotASubject";
+	private List<Subject> subjectExpectedList = new ArrayList<Subject>();
 	
 	private School school;
 	private School school1;
@@ -100,15 +101,15 @@ public class CourseManagementMockTests {
 		
 		});
 		
-//		when(subjectDao.findSubjectByName(anyString())).thenAnswer((InvocationOnMock invocation) -> {
-//			if(invocation.getArgument(0).equals(SUBJECT_NAME1)) {
-//				return subject1;
-//			}else if(invocation.getArgument(0).equals(SUBJECT_NAME2)){
-//				return subject2;
-//			}
-//			return null;
-//		
-//		});
+		when(subjectDao.findSubjectByName(anyString())).thenAnswer((InvocationOnMock invocation) -> {
+			if(invocation.getArgument(0).equals(SUBJECT_NAME1)) {
+				return subject1;
+			}else if(invocation.getArgument(0).equals(SUBJECT_NAME2)){
+				return subject2;
+			}
+			return null;
+		
+		});
 		
 		
 	}	
@@ -130,6 +131,14 @@ public class CourseManagementMockTests {
 		school1 =mock(School.class);
 		school1 = schoolService.addSchool(SCHOOL_NAME1, schoolType1);
 		schoolExpectedList.add(school1);
+		
+		subject1 =mock(Subject.class);
+		subject1 = subjectService.addSubject(SUBJECT_NAME1, school, SUBJECT_DESC1);
+		subjectExpectedList.add(subject1);
+		
+		subject2 =mock(Subject.class);
+		subject2 = subjectService.addSubject(SUBJECT_NAME2, school1, SUBJECT_DESC2);
+		subjectExpectedList.add(subject2);
 				
 	}
 	
@@ -148,6 +157,13 @@ public class CourseManagementMockTests {
 	}
 	
 	@Test
+	public void testSubjectAddition() {
+		assertNotNull(subject1);
+		assertNotNull(subject2);
+		
+	}
+	
+	@Test
 	public void testCourseQueryFound() {
 		assertEquals(COURSE_NAME1, courseService.getCourseByCourseName(COURSE_NAME1).getName());
 		assertEquals(COURSE_NAME2, courseService.getCourseByCourseName(COURSE_NAME2).getName());
@@ -157,6 +173,13 @@ public class CourseManagementMockTests {
 	public void testSchoolQueryFound() {
 		assertEquals(SCHOOL_NAME, schoolService.getSchoolBySchoolName(SCHOOL_NAME).getName());
 		assertEquals(SCHOOL_NAME1, schoolService.getSchoolBySchoolName(SCHOOL_NAME1).getName());
+		
+	}
+	
+	@Test
+	public void testSubjectQueryFound() {
+		assertEquals(SUBJECT_NAME1, subjectService.getSubjectBySubjectName(SUBJECT_NAME1).getName());
+		assertEquals(SUBJECT_NAME2, subjectService.getSubjectBySubjectName(SUBJECT_NAME2).getName());
 		
 	}
 	
@@ -172,6 +195,12 @@ public class CourseManagementMockTests {
 	}
 	
 	@Test
+	public void testSubjectNotFound() {
+		assertNull(subjectService.getSubjectBySubjectName(NONEXISTING_SUBJECT));
+		
+	}
+	
+	@Test
 	public void testCourseDeletion() {
 		assertEquals(true, courseService.removeCourse(COURSE_NAME1));
 	}
@@ -179,6 +208,11 @@ public class CourseManagementMockTests {
 	@Test
 	public void testSchoolDeletion() {
 		assertEquals(true, schoolService.removeSchool(SCHOOL_NAME));
+	}
+	
+	@Test
+	public void testSubjectDeletion() {
+		assertEquals(true, subjectService.removeSubject(SUBJECT_NAME1));
 	}
 	
 
