@@ -37,10 +37,17 @@ public class CourseManagementMockTests {
 	private Course course2;
 	private static final String COURSE_NAME1="ECSE 321";
 	private static final String COURSE_NAME2="COMP 251";
-	private static final String NONEXISTING_KEY="NotACourse";
+	private static final String NONEXISTING_COURSE="NotACourse";
 	private static final String COURSE_DESC1="alot of work";
 	private static final String COURSE_DESC2="tough course";
 	private List<Course> expectedList = new ArrayList<Course>();
+	
+	private Subject subject1;
+	private Subject subject2;
+	private static final String SUBJECT_NAME1="Chemistry";
+	private static final String SUBJECT_NAME2="Biology";
+	private static final String NONEXISTING_SUBJECT="NotASubject";
+	//private static final School SUBJECT_SCHOOL1="Chemistry";
 	
 	@Before
 	public void setMockOutput() {
@@ -63,6 +70,8 @@ public class CourseManagementMockTests {
 			return null;
 		
 		});
+		
+		
 	}	
 	
 	@Before
@@ -93,7 +102,7 @@ public class CourseManagementMockTests {
 	
 	@Test
 	public void testCourseNotFound() {
-		assertNull(courseService.getCourseByCourseName(NONEXISTING_KEY));
+		assertNull(courseService.getCourseByCourseName(NONEXISTING_COURSE));
 	}
 	
 	@Test
