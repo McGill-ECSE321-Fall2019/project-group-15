@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Evaluation;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.dao.EvaluationRepository;
@@ -50,7 +51,17 @@ public class EvaluationService {
       }
       return resultList;
   }
-	
+	@Transactional
+    public boolean removeEvaluation(Integer ID) {
+        Evaluation eval = evaluationRepository.findByEvaluationID(ID);
+        
+        if(eval == null) {
+            throw new NullPointerException("No such Evaluation.");
+        }
+        
+        evaluationRepository.deleteEvalByEvaluationID(ID);
+        return true;
+    }
 	/*@Transactional
     public void flagEvaluation(Integer ID) {
 	  Evaluation evaluation = evaluationRepository.findByEvaluationID(ID);
