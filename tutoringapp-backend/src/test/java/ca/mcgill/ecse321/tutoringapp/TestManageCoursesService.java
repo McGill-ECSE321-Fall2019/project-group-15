@@ -82,6 +82,7 @@ public class TestManageCoursesService {
 	
 	
 	@After
+	
 	public void clearDatabase() {
 		// Fisrt, we clear to avoid exceptions due to inconsistencies
 		personRepository.deleteAll();
@@ -96,8 +97,7 @@ public class TestManageCoursesService {
 		schoolRepository.deleteAll();
 		
 	}
-	
-	/*@Test
+	@Test
 	public void testAddCourse() {
 		
 		assertEquals(0, courseService.getAllCourses().size());
@@ -222,7 +222,7 @@ public class TestManageCoursesService {
 //
 //	}
 
-	}*/
+//	}
 
 //	
 //	@Test

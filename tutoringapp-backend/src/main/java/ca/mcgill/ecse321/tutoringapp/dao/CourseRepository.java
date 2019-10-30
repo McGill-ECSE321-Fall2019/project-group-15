@@ -6,6 +6,7 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 
 public interface CourseRepository extends CrudRepository<Course, String> {
 	Course findCourseByName(String name);
+	Course findCourseByDescription(String description);
 	void deleteCourseByName(String name);
 	
 

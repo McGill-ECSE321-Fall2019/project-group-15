@@ -37,6 +37,12 @@ public class CourseService {
 		return toList(courseRepository.findAll());
 	}
 	
+	 @Transactional
+	 public Course getCourseByCourseName(String name) {
+	        return courseRepository.findCourseByName(name);
+	 }
+
+	
 	@Transactional
 	public boolean removeCourse(String name) {
 		Course course = courseRepository.findCourseByName(name);

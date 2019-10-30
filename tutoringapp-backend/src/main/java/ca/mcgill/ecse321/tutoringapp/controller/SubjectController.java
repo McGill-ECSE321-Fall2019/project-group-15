@@ -18,7 +18,7 @@ public class SubjectController {
 	private SubjectService subjectService;
 	
 	@PostMapping(value = { "/subject/{subjectName}/{subjectSchool}/{subjectDescription}", "/subject/{subjectName}/{subjectSchool}/{subjectDescription}/" })
-	public SubjectDto createPerson(@PathVariable("subjectName") String subjectName,
+	public SubjectDto addSubject(@PathVariable("subjectName") String subjectName,
 			@PathVariable("subjectSchool") School subjectSchool,@PathVariable("subjectDescription") String subjectDescription)
 			throws IllegalArgumentException {
 		// @formatter:on
