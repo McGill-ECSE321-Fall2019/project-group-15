@@ -76,6 +76,13 @@ public class DtoConverters {
       EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating());
       return e ;
     }
+    
+    public static RoomDto convertToDto(Room room) {
+    	CheckArg(room);
+    	
+    	RoomDto r = new RoomDto(room.getName(), room.getType());
+    	return r;
+    }
 
 	static void CheckArg(Object o) {
         if (o == null) {
