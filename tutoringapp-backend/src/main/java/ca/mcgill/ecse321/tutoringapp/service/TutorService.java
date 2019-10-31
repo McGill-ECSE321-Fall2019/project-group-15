@@ -1,5 +1,6 @@
 package ca.mcgill.ecse321.tutoringapp.service;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Session;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
@@ -38,6 +40,11 @@ public class TutorService {
 	public Tutor getTutor(int ID) {
 		Tutor tutor = tutorRepository.findTutorByTutorId(ID);
 		return tutor;
+	}
+	
+	@Transactional
+	public void assignTutorToGroupSession(Tutor tutor, Session session) {
+		session.setTutor(tutor);
 	}
 	
 	@Transactional
