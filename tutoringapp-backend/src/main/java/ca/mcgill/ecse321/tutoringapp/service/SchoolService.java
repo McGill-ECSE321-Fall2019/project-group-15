@@ -41,11 +41,16 @@ public class SchoolService {
 	}
 	
 	@Transactional
+	 public School getSchoolBySchoolName(String name) {
+	        return schoolRepository.findSchoolByName(name);
+	 }
+	
+	@Transactional
 	public boolean removeSchool(String name) {
 		School school = schoolRepository.findSchoolByName(name);
 		
 		if(school == null) {
-			throw new NullPointerException("No such course.");
+			throw new NullPointerException("No such school.");
 		}
 		
 		schoolRepository.deleteByName(name);

@@ -38,11 +38,11 @@ public class CourseController {
 	@GetMapping(value = { "/allCourses", "/allCourses/" })
 	public List<CourseDto> getAllCourses() {
 		try {
-			List<CourseDto> coursesDto = new ArrayList<>();
+			List<CourseDto> courseDto = new ArrayList<>();
 			for (Course course : courseService.getAllCourses()) {
-				coursesDto.add(DtoConverters.convertToDto(course));
+				courseDto.add(DtoConverters.convertToDto(course));
 			}
-			return coursesDto;
+			return courseDto;
 		}
 		catch(Exception e) {
 			throw new IllegalArgumentException("Could not retrieve information from service");
@@ -50,7 +50,7 @@ public class CourseController {
 	}
 	
 	@PostMapping(value = { "/deleteCourse", "/deleteCourse/" })
-	public boolean deleteCourse(@RequestParam(name = "courseNmae") String courseName) {
+	public boolean deleteCourse(@RequestParam(name = "courseName") String courseName) {
 		courseService.removeCourse(courseName);
 		return true;
 	}

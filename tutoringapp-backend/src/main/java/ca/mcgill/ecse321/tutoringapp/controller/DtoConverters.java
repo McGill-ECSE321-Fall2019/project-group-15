@@ -26,6 +26,7 @@ public class DtoConverters {
 //		CourseDto courseDto = new CourseDto(c.getName(),c.getDescription());
 //		return courseDto;
 		
+
 	}
 	
 	public static PersonDto convertToDto(Person p) {
@@ -38,11 +39,60 @@ public class DtoConverters {
 		CheckArg(r);
 		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
 	}
+
+	}        
+
+	public static SubjectDto convertToDto(Subject s) {
+		
+		CheckArg(s);
+		
+		if(s==null) {
+			throw new IllegalArgumentException("There is no such subject!");
+		}
+		SubjectDto subjectDto = new SubjectDto(s.getName(),s.getSchool(),s.getDescription());
+		return subjectDto;
+		
+	}        
 	
-	public static TutorDto convertToDto (Tutor t) {
-		CheckArg(t);
-		return new TutorDto(t.getTutorID(), t.getHourlyRate(), t.isIsVerified(), t.getPassword(), convertToDto(t.getPerson()));
-	}
+	public static SchoolDto convertToDto(School sc) {
+		
+		CheckArg(sc);
+		Set<Subject> subjects= new HashSet<Subject>();
+        for (Subject s : sc.getSubject())
+            subjects.add(new Subject());
+        return new SchoolDto(sc.getName(), sc.getType(), subjects);
+		
+	}        
+
+
+
+    public static StudentDto convertToDto(Student student) {
+    	CheckArg(student);
+    	
+    	StudentDto s = new StudentDto(student.getPassword(), student.getPerson());
+    	return s;
+    }
+    
+    public static TutorDto convertToDto(Tutor tutor) {
+    	CheckArg(tutor);
+    	
+    	TutorDto t = new TutorDto(tutor.getPassword(), tutor.getPerson());
+    	return t;
+    }
+
+    public static EvaluationDto convertToDto(Evaluation evaluation) {
+      CheckArg(evaluation);
+      
+      EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating());
+      return e ;
+    }
+    
+    public static RoomDto convertToDto(Room room) {
+    	CheckArg(room);
+    	
+    	RoomDto r = new RoomDto(room.getName(), room.getType());
+    	return r;
+    }
 
 	
 	

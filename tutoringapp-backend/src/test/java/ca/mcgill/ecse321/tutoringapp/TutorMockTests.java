@@ -40,8 +40,7 @@ import ca.mcgill.ecse321.tutoringapp.service.SchoolService;
 import ca.mcgill.ecse321.tutoringapp.service.SessionService;
 import ca.mcgill.ecse321.tutoringapp.service.StudentService;
 import ca.mcgill.ecse321.tutoringapp.service.SubjectService;
-
-
+import ca.mcgill.ecse321.tutoringapp.service.TutorService;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -54,50 +53,70 @@ import java.security.Provider.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MockTest {
+public class TutorMockTests {
 
-	@Mock
-	private StudentRepository studentDao;
+	@Mock 
+	private TutorRepository tutorDao;
 	
 	@InjectMocks
-	private StudentService studentService;
-
-	private Student student;
-	private int STUDENT_KEY = 1;
-	private int WRONG_KEY = 2;
+	private TutorService tutorService;
 	
-	private List<Student> studentList = new ArrayList<Student>();
+	private Tutor tutor;
+	
+	private Person person;
+	private String testPassword = "password1";
+	private int tutorId = 1;
+	private int fakeTutorId = 3;
+	
+	private List<Tutor> studentList = new ArrayList<Tutor>();
+	
+	@Before
+	public void setMockOutput() { //method from tutorial
+		when(tutorDao.findById(anyInt())).thenAnswer((InvocationOnMock invocation) -> {
+			if(invocation.getArgument(0).equals(tutorId)) {
+				Tutor tutor = new Tutor();
+				tutor.setTutorId(tutorId);
+				return tutor;
+			} else {
+				return null;
+			}
+		});
+	}
+	
+	/**
+	 * set up the mock
+	 */
+	@Before
+	public void setUp() {
+		tutor = mock(Tutor.class);
+		person = mock(Person.class);
+		tutor = tutorService.addTutor(testPassword, person);
+		tutor.setTutorId(tutorId);
+		studentList.add(tutor);
+	}
 
-/*@Before
-public void setMockOutput() { //method from tutorial
-	when(studentDao.findById(anyInt())).thenAnswer((InvocationOnMock invocation) -> {
-		if(invocation.getArgument(0).equals(STUDENT_KEY)) {
-			Student student = new Student();
-			student.setStudentID(STUDENT_KEY);
-			return student;
-		} else {
-			return null;
-		}
-	});
+	@Test
+	public void testCreateTutor() {
+		assertNotNull(tutor); //check if it can create a tutor
+	}
+
+	@Test
+	public void testTutorNotFound() {
+		assertNull(tutorService.getTutor(fakeTutorId)); 
+	}
+		
+	@Test
+	public void testTutorFound() {
+		assertEquals(tutorId, tutorService.getTutor(tutorId).getTutorId());
+	}
+		
+	@Test
+	public void testTutorRemove() {
+		assertEquals(true, tutorService.removeTutor(tutorId));
+	}
 }
 
 
-@Before
-public void setUp() {
-	student = mock(Student.class);
-	student = studentService.addStudent(5);
-	studentList.add(student);
-}
-
-@Test
-public void testCreateStudent() {
-	assertNotNull(student); //check if it can create an student
-}
-*/	
-	
-	
-	
-	
-}

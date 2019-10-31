@@ -34,6 +34,14 @@ public class PersonService {
 	}
 	
 	@Transactional
+	public Person modifyPersonName(Person person, String newFirstName, String newLastName) {
+		person.setFirstName(newFirstName);
+		person.setLastName(newLastName);
+		personRepository.save(person);
+		return person;
+	}
+	
+	@Transactional
 	public List<Person> getAllPersons(){
 		return toList(personRepository.findAll());
 	}

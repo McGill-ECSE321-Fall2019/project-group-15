@@ -82,6 +82,7 @@ public class TestManageCoursesService {
 	
 	
 	@After
+	
 	public void clearDatabase() {
 		// Fisrt, we clear to avoid exceptions due to inconsistencies
 		personRepository.deleteAll();
@@ -96,7 +97,6 @@ public class TestManageCoursesService {
 		schoolRepository.deleteAll();
 		
 	}
-	
 	@Test
 	public void testAddCourse() {
 		
@@ -122,30 +122,6 @@ public class TestManageCoursesService {
 
 	}
 	
-	@Test
-	public void testAddSubject() {
-		assertEquals(0, subjectService.getAllSubject().size());
-		
-		String name="Chemistry";
-		School school = new School();
-		school.setName("schoolX");
-		String description= "learn chemical reactions";
-		
-		try {
-			subjectService.addSubject(name,school,description);
-		} catch (IllegalArgumentException e) {
-			// Check that no error occurred
-			fail();
-		}
-
-		List<Subject> allSubjects = subjectService.getAllSubject();
-
-		assertEquals(1, allSubjects.size());
-		assertEquals(name, allSubjects.get(0).getName());
-		assertEquals(school, allSubjects.get(0).getSchool());
-		assertEquals(description, allSubjects.get(0).getDescription());
-		
-	}
 	
 	@Test
 	public void testAddSchool() {
@@ -170,52 +146,84 @@ public class TestManageCoursesService {
 	}
 	
 	@Test
-	public void testAddCourseNull() {
-		assertEquals(0, courseService.getAllCourses().size());
-		
-		String name = null;
-		//String id = null;
-		String description= null;
-		String error = null;
-
-		try {
-			courseService.addCourse(name,description);
-		} catch (IllegalArgumentException e) {
-			error = e.getMessage();
-		}
-
-		// check error
-		assertEquals("Course name/description cannot be empty!", error);
-		
-
-		// check no change in memory
-		assertEquals(0, courseService.getAllCourses().size());
-
-	}
-	
-	@Test
-	public void testAddSubjectNull() {
+	public void testAddSubject() {
 		assertEquals(0, subjectService.getAllSubject().size());
 		
-		String name = null;
-		School school = null;
-		String description= null;
-		String error = null;
+		String name="Chemistry";
+		String sname="schoolY";
+		SchoolType schoolType= SchoolType.highSchool;
+		School school = schoolService.addSchool(sname, schoolType);
+		assertEquals(1, schoolService.getAllSchool().size());
 
+		String description= "learn chemical reactions";
+		
 		try {
 			subjectService.addSubject(name,school,description);
 		} catch (IllegalArgumentException e) {
-			error = e.getMessage();
+			// Check that no error occurred
+			fail();
 		}
 
-		// check error
-		assertEquals("Subject name/School/description cannot be empty!", error);
+		List<Subject> allSubjects = subjectService.getAllSubject();
+
+
+		assertEquals(1, allSubjects.size());
+		assertEquals(name, allSubjects.get(0).getName());
+		assertEquals(school, allSubjects.get(0).getSchool());
+		assertEquals(description, allSubjects.get(0).getDescription());
 		
-
-		// check no change in memory
-		assertEquals(0, subjectService.getAllSubject().size());
-
 	}
+	
+//	@Test
+//	public void testAddCourseNull() {
+//		assertEquals(0, courseService.getAllCourses().size());
+//		
+//		String name = null;
+//		//String id = null;
+//		String description= null;
+//		String error = null;
+//
+//		try {
+//			courseService.addCourse(name,description);
+//		} catch (IllegalArgumentException e) {
+//			error = e.getMessage();
+//		}
+//
+//		// check error
+//		assertEquals("Course name/description cannot be empty!", error);
+//		
+//
+//		// check no change in memory
+//		assertEquals(0, courseService.getAllCourses().size());
+//
+//	}
+//	
+//	@Test
+//	public void testAddSubjectNull() {
+//		assertEquals(0, subjectService.getAllSubject().size());
+//		
+//		String name = null;
+//		School school = null;
+//		String description= null;
+//		String error = null;
+//
+//		try {
+//			subjectService.addSubject(name,school,description);
+//		} catch (IllegalArgumentException e) {
+//			error = e.getMessage();
+//		}
+//
+//		// check error
+//		assertEquals("Subject name/School/description cannot be empty!", error);
+//		
+//
+//		// check no change in memory
+//		assertEquals(0, subjectService.getAllSubject().size());
+//
+//	}
+
+//	}
+
 //	
 //	@Test
 //	public void testAddSchoolNull() {

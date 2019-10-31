@@ -21,7 +21,6 @@ public class CourseService {
 	public Course addCourse(String name, String description) {
 		Course course = new Course();
 		course.setName(name);
-		//course.setCourseID(id);
 		course.setDescription(description);
 		courseRepository.save(course);
 		return course;
@@ -37,6 +36,12 @@ public class CourseService {
 	public List<Course> getAllCourses(){
 		return toList(courseRepository.findAll());
 	}
+	
+	 @Transactional
+	 public Course getCourseByCourseName(String name) {
+	        return courseRepository.findCourseByName(name);
+	 }
+
 	
 	@Transactional
 	public boolean removeCourse(String name) {
