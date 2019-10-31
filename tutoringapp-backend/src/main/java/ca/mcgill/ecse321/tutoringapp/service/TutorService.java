@@ -33,7 +33,7 @@ public class TutorService {
 		tutor.setIsVerified(isVerified);
 		tutor.setPassword(password);
 		tutor.setPerson(person);
-		personRoleRepository.save(tutor);
+		tutorRepository.save(tutor);
 		return null;
 	}
 	

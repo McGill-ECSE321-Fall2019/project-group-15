@@ -32,15 +32,13 @@ public class DtoConverters {
 	public static PersonDto convertToDto(Person p) {
 		
 		CheckArg(p);
-        return new PersonDto(p.getPersonID(), p.getFirstName(), p.getLastName(), p.getUserName() );
+        return new PersonDto( p.getFirstName(), p.getLastName(), p.getUserName() );
     }
 	
 	public static PersonRoleDto convertToDto (PersonRole r) {
 		CheckArg(r);
 		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
-	}
-
-	}        
+	}      
 
 	public static SubjectDto convertToDto(Subject s) {
 		
@@ -75,8 +73,7 @@ public class DtoConverters {
     
     public static TutorDto convertToDto(Tutor tutor) {
     	CheckArg(tutor);
-    	
-    	TutorDto t = new TutorDto(tutor.getPassword(), tutor.getPerson());
+    	TutorDto t = new TutorDto(tutor.getTutorId(), tutor.getHourlyRate(), tutor.isIsVerified(), tutor.getPassword(), convertToDto(tutor.getPerson()));
     	return t;
     }
 

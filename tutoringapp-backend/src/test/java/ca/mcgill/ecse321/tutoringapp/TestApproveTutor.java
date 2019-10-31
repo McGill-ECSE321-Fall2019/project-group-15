@@ -73,13 +73,13 @@ public class TestApproveTutor {
 	public void testCreatePerson() {
 		assertEquals(0, personService.getAllPersons().size());
 		
-		Integer personID = 260779779;
+		//Integer personID = 260779779;
 		String firstName = "John";
 		String lastName = "Doe";
 		String userName = "JohnDoe";
 		
 		try {
-			personService.createPerson(personID, userName, firstName, lastName);
+			personService.createPerson(firstName, lastName, userName);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}
@@ -87,7 +87,7 @@ public class TestApproveTutor {
 		List<Person> allPersons = personService.getAllPersons();
 		
 		assertEquals( 1, allPersons.size() );
-		assertEquals( personID.intValue(), allPersons.get(0).getPersonID() );
+		//assertEquals( personID.intValue(), allPersons.get(0).getPersonID() );
 		assertEquals( firstName , allPersons.get(0).getFirstName() );
 		assertEquals( lastName , allPersons.get(0).getLastName() );
 		assertEquals( userName, allPersons.get(0).getUserName() );
@@ -105,7 +105,7 @@ public class TestApproveTutor {
 		Person person = personService.getAllPersons().get(0);
 		
 		try {
-			tutorService.createTutor(tutorID, hourlyRate, isVerified, password, person);
+			tutorService.createTutor(hourlyRate, isVerified, password, person);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}
@@ -113,7 +113,7 @@ public class TestApproveTutor {
 		List<Tutor> allTutors = tutorService.getAllTutors();
 		
 		assertEquals( 1, allTutors.size() );
-		assertEquals( tutorID.intValue(), allTutors.get(0).getTutorID() );
+		assertEquals( tutorID.intValue(), allTutors.get(0).getTutorId() );
 		assertEquals( hourlyRate.doubleValue(), allTutors.get(0).getHourlyRate(), 0.001f );
 		assertEquals( password, allTutors.get(0).getPassword() );
 		assertEquals( person, allTutors.get(0).getPerson() );
@@ -134,7 +134,7 @@ public class TestApproveTutor {
 		assertEquals(1, tutorService.getAllUnverifiedTutors().size());
 		
 		Tutor t = tutorService.getAllTutors().get(0);
-		Integer id = t.getTutorID();
+		Integer id = t.getTutorId();
 		
 		assertEquals(false, tutorService.getTutor(id).isIsVerified());
 		

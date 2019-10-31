@@ -3,22 +3,8 @@ package ca.mcgill.ecse321.tutoringapp.dto;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 
 public class TutorDto {
-	private int id;
-	
-	private String password;
-	private Person person;
-	public TutorDto() {
-		
-	}
-	
-	public TutorDto(String password, Person person) {
-		this.password = password;
-		this.person = person;
-	}
-	
-	public int getID() {
-		return id;
-	}
+
+
 
 	private Integer tutorID;
 	private Float hourlyRate;
@@ -26,6 +12,14 @@ public class TutorDto {
 	//Inherited from PersonRoleDto
 	private String password;
 	private PersonDto person;
+	
+	public TutorDto() {	
+	}
+	
+	public TutorDto(String password, PersonDto person) {
+		this.password = password;
+		this.person = person;
+	}
 	
 	public TutorDto(Integer tutorID) {
 		this(tutorID, null, false, null, null);
@@ -41,6 +35,10 @@ public class TutorDto {
 		this.isVerified = isVerified;
 		this.password = password;
 		this.person = person;
+	}
+	
+	public int getID() {
+		return tutorID;
 	}
 	
 	public Integer getTutorID() {

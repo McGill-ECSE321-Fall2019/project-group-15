@@ -22,9 +22,8 @@ public class PersonService {
 	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
-	public Person createPerson(Integer personID, String firstname, String lastname, String username) {
+	public Person createPerson(String firstname, String lastname, String username) {
 		Person person = new Person();
-		person.setPersonID(personID);
 		person.setUserName(username);
 		person.setFirstName(firstname);
 		person.setLastName(lastname);

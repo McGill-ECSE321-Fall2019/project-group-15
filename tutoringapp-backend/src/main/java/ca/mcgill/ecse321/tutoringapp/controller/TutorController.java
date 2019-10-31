@@ -77,18 +77,18 @@ public class TutorController {
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	@PostMapping(value =  { "/createTutor", "/createTutor/" })
-	public TutorDto createTutor(@RequestParam("password") String password,
-			@RequestParam("person") Person person) throws IllegalArgumentException {
-		try {
-		Tutor tutor = tutorService.addTutor(password, person);
-		return DtoConverters.convertToDto(tutor); 
-		}
-		catch (Exception e) {
-			throw new IllegalArgumentException("Could not create tutor");
-		}
-
-	}
+//	@PostMapping(value =  { "/createTutor", "/createTutor/" })
+//	public TutorDto createTutor(@RequestParam("password") String password,
+//			@RequestParam("person") Person person) throws IllegalArgumentException {
+//		try {
+//		Tutor tutor = tutorService.addTutor(password, person);
+//		return DtoConverters.convertToDto(tutor); 
+//		}
+//		catch (Exception e) {
+//			throw new IllegalArgumentException("Could not create tutor");
+//		}
+//
+//	}
 
 	
 	/**

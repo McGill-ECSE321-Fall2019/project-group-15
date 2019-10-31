@@ -11,54 +11,17 @@ public class PersonDto {
 
 	public PersonDto() {
 	}
-
-	public PersonDto(String firstName, String lastName, String userName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
-	}
-
-
-	public String getFirstName() {
-		return firstName;
-	}
-	
-	public String getLastName() {
-		return lastName;
-	}
-	
-	public void setPersonRoles (List<PersonRoleDto> personRoles) {
-		this.personRoles = personRoles;
-	}
-	
-	public List<PersonRoleDto> getPersonRoles() {
-		return personRoles;
-	}
-
-	private Integer personID;
-	private String firstName;
-	private String lastName;
-	private String userName;
-	private List<PersonRoleDto> personRoles;
-	
-	public PersonDto() {
-	}
 	
 	@SuppressWarnings("unchecked")
-	public PersonDto(Integer personID, String firstName, String lastName, String userName) {
-		this(personID, firstName, lastName, userName, Collections.EMPTY_LIST);
+	public PersonDto(String firstName, String lastName, String userName) {
+		this(firstName, lastName, userName, Collections.EMPTY_LIST);
 	}
 	
-	public PersonDto(Integer personID, String firstName, String lastName, String userName, List<PersonRoleDto> arrayList) {
-		this.personID = personID;
+	public PersonDto(String firstName, String lastName, String userName, List<PersonRoleDto> arrayList) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.personRoles = arrayList;
-	}
-	
-	public Integer getPersonID() {
-		return personID;
 	}
 	
 	public String getFirstName() {
@@ -75,10 +38,6 @@ public class PersonDto {
 	
 	public List<PersonRoleDto> getPersonRoles() {
 		return personRoles;
-	}
-	
-	public void setTutorID(Integer personID) {
-		this.personID = personID;
 	}
 	
 	public void setFirstName(String firstName) {

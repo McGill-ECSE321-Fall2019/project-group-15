@@ -27,7 +27,7 @@ public class PersonController {
 		@RequestParam("lastName") String lastName,
 		@RequestParam("userName") String userName ) 
 		throws IllegalArgumentException {
-		Person person = personService.createPerson(personID, firstName, lastName, userName);
+		Person person = personService.createPerson(firstName, lastName, userName);
 		return DtoConverters.convertToDto(person);
 	}
 

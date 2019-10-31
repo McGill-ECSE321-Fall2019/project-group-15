@@ -93,7 +93,7 @@ public class TutorMockTests {
 	public void setUp() {
 		tutor = mock(Tutor.class);
 		person = mock(Person.class);
-		tutor = tutorService.addTutor(testPassword, person);
+		tutor = tutorService.createTutor(0.0f , false, testPassword, person);
 		tutor.setTutorId(tutorId);
 		studentList.add(tutor);
 	}
