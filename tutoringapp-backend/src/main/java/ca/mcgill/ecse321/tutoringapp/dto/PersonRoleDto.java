@@ -1,5 +1,7 @@
 package ca.mcgill.ecse321.tutoringapp.dto;
 
-public class PersonRoleDto {
+public abstract class PersonRoleDto {
+	
+	private String password;
 
 }
