@@ -26,6 +26,8 @@ public class EvaluationController {
   @PostMapping(value = { "/createEvaluation", "/createEvaluation/" })
   public EvaluationDto createEvaluation(@RequestParam("comment") String comment, 
       @RequestParam("rating") int rating) throws IllegalArgumentException {
+	  System.out.println(comment);
+	  System.out.println(rating);
     if (rating <0 ) {
       throw new IllegalArgumentException("Rating needs to be between 0 and 5");
     }
