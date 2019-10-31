@@ -22,10 +22,16 @@ public class EvaluationController {
   @Autowired
   EvaluationService evalutionService;
   
-  
+  /**
+   * Creating a evaluations
+   * @param comment
+   * @param rating
+   * @return
+   * @throws IllegalArgumentException
+   */
   @PostMapping(value = { "/createEvaluation", "/createEvaluation/" })
-  public EvaluationDto createEvaluation(@RequestParam("comment") String comment, 
-      @RequestParam("rating") int rating) throws IllegalArgumentException {
+  public EvaluationDto createEvaluation(@RequestParam(name="comment") String comment, 
+      @RequestParam(name="rating") int rating) throws IllegalArgumentException {
 	  System.out.println(comment);
 	  System.out.println(rating);
     if (rating <0 ) {
@@ -44,7 +50,10 @@ public class EvaluationController {
   }
     
   }
-  
+  /**
+   * Listing all Evaluations
+   * @return evaluation Data objects
+   */
   @GetMapping(value = { "/allEvaluations", "/allEvaluations/" })
   public List<EvaluationDto> getAllEvaluations() {
       try {
