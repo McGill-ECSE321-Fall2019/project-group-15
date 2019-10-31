@@ -56,7 +56,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MockTest {
+public class StudentMockTests {
 
 	@Mock
 	private StudentRepository studentDao;
@@ -65,17 +65,20 @@ public class MockTest {
 	private StudentService studentService;
 
 	private Student student;
-	private int STUDENT_KEY = 1;
-	private int WRONG_KEY = 2;
+
+	private Person person;
+	private String testPassword = "password1";
+	private int studentId = 1;
+	private int fakeStudentId = 3;
 	
 	private List<Student> studentList = new ArrayList<Student>();
 
-/*@Before
+@Before
 public void setMockOutput() { //method from tutorial
 	when(studentDao.findById(anyInt())).thenAnswer((InvocationOnMock invocation) -> {
-		if(invocation.getArgument(0).equals(STUDENT_KEY)) {
+		if(invocation.getArgument(0).equals(studentId)) {
 			Student student = new Student();
-			student.setStudentID(STUDENT_KEY);
+			student.setStudentId(studentId);
 			return student;
 		} else {
 			return null;
@@ -83,11 +86,14 @@ public void setMockOutput() { //method from tutorial
 	});
 }
 
-
+/**
+ * set up the mock
+ */
 @Before
 public void setUp() {
 	student = mock(Student.class);
-	student = studentService.addStudent(5);
+	person = mock(Person.class);
+	student = studentService.addStudent(testPassword, person, studentId);
 	studentList.add(student);
 }
 
@@ -95,9 +101,20 @@ public void setUp() {
 public void testCreateStudent() {
 	assertNotNull(student); //check if it can create an student
 }
-*/	
+
+@Test
+public void testStudentNotFound() {
+	assertNull(studentService.getStudent(fakeStudentId)); 
+}
 	
+@Test
+public void testStudentFound() {
+	assertEquals(studentId, studentService.getStudent(studentId).getStudentId());
+}
 	
-	
+@Test
+public void testStudentRemove() {
+	assertEquals(true, studentService.removeStudent(studentId));
+}
 	
 }
