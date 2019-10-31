@@ -13,14 +13,18 @@ public class EvaluationDto {
   
   public EvaluationDto() {
   }
+  
+ 
    
   public EvaluationDto(int id) {
     this.id = id;
 }
+  
   public EvaluationDto(String comment, int rating) {
     this.comment = comment;
     this.rating = rating;
   }
+  
   public int getID() {
     return id;
 }
@@ -31,6 +35,5 @@ public class EvaluationDto {
   public int getRating() {
   return rating;
 }
-
 
 }

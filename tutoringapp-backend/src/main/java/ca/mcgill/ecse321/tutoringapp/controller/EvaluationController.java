@@ -60,7 +60,7 @@ public class EvaluationController {
           List<EvaluationDto> evaluationDto = new ArrayList<>();
           for (Evaluation evaluation: evalutionService.getAllEvaluations()) {
             evaluationDto.add(DtoConverters.convertToDto(evaluation));
-            // courseDto.add(DtoConverters.convertToDto(course));
+            
           }
           return evaluationDto;
       }
