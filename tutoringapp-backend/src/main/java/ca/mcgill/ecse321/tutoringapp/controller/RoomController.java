@@ -1,8 +1,13 @@
 package ca.mcgill.ecse321.tutoringapp.controller;
 
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,8 +25,13 @@ public class RoomController {
 	@Autowired
 	RoomService roomService;
 
-	/*
-	 * Create a new room
+	/**
+	 * Create a room
+	 * 
+	 * @param name
+	 * @param type
+	 * @return
+	 * @throws IllegalArgumentException
 	 */
 
 	@PostMapping(value = { "/createRoom", "/createRoom/" })
@@ -43,5 +53,31 @@ public class RoomController {
 			throw new IllegalArgumentException("Please enter valid information");
 		}
 	}
-
+	
+	/**
+	 * 
+	 * @param date
+	 * @param startTime
+	 * @param endTime
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
+	@PostMapping(value = { "/getAvailableLargeRooms", "/getAvailableLargeRooms/" })
+	public List<RoomDto> getAvailableLargeRooms(@RequestParam(name = "date") Date date, @RequestParam(name = "startTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME, pattern = "HH:mm") LocalTime startTime, @RequestParam(name = "endTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME, pattern = "HH:mm") LocalTime endTime) throws IllegalArgumentException {
+		List<RoomDto> availableLargeRoomsDto = new ArrayList<>();
+		if (roomService.getRoomsByType(RoomType.largeRoom).size() == 0) {
+			throw new IllegalArgumentException("There are no existing large rooms");
+		}
+		
+		try {
+			List<Room> largeRooms = roomService.getAvailableLargeRoomsForDayStartEnd(date, Time.valueOf(startTime), Time.valueOf(endTime));
+			for (Room room : largeRooms) {
+				availableLargeRoomsDto.add(DtoConverters.convertToDto(room));
+			}
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
+		return availableLargeRoomsDto;
+	}
 }
