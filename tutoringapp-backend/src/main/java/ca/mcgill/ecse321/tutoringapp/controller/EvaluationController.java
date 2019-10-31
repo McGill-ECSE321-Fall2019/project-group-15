@@ -37,7 +37,7 @@ public class EvaluationController {
       return DtoConverters.convertToDto(evaluation);
   }
   catch(Exception e){
-      throw new IllegalArgumentException("Could not create course");
+      throw new IllegalArgumentException("Could not create evaluation");
   }
     
   }
@@ -61,7 +61,7 @@ public class EvaluationController {
    * @param ID
    * @return
    */
-  @PostMapping(value = { "/deleteCourse", "/deleteCourse/" })
+  @PostMapping(value = { "/deleteEvaluation", "/deleteEvaluation/" })
   public boolean deleteEvaluation(@RequestParam(name = "ID") int ID) {
       evalutionService.removeEvaluation(ID);
       return true;

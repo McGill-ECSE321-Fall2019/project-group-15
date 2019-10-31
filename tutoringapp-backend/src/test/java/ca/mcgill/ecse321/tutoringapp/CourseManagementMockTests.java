@@ -81,15 +81,6 @@ public class CourseManagementMockTests {
 		
 		});
 		
-		when(courseDao.findCourseByDescription(anyString())).thenAnswer((InvocationOnMock invocation) -> {
-			if(invocation.getArgument(0).equals(COURSE_DESC1)) {
-				return course;
-			}else if(invocation.getArgument(0).equals(COURSE_DESC2)){
-				return course2;
-			}
-			return null;
-		
-		});
 		
 		when(schoolDao.findSchoolByName(anyString())).thenAnswer((InvocationOnMock invocation) -> {
 			if(invocation.getArgument(0).equals(SCHOOL_NAME)) {

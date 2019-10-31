@@ -23,9 +23,9 @@ public class CourseController {
 	CourseService courseService;
 	
 	
-	@PostMapping(value = { "/createCourse", "/createCourse/" })
-	public CourseDto createCourse(@RequestParam("courseName") String courseName,
-			@RequestParam("description") String description) throws IllegalArgumentException {
+	@PostMapping(value = { "/createCourse/{courseName}/{description}", "/createCourse/{courseName}/{description}" })
+	public CourseDto createCourse(@PathVariable("courseName") String courseName,
+			@PathVariable("description") String description) throws IllegalArgumentException {
 		try{
 			Course course = courseService.addCourse(courseName,description);
 			return DtoConverters.convertToDto(course);
