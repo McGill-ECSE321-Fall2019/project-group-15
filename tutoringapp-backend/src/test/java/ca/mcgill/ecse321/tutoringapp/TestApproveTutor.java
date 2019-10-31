@@ -114,8 +114,7 @@ public class TestApproveTutor {
 		
 		assertEquals( 1, allTutors.size() );
 		assertEquals( tutorID.intValue(), allTutors.get(0).getTutorID() );
-		//Deprecated
-		assertEquals( hourlyRate.doubleValue(), allTutors.get(0).getHourlyRate() );
+		assertEquals( hourlyRate.doubleValue(), allTutors.get(0).getHourlyRate(), 0.001f );
 		assertEquals( password, allTutors.get(0).getPassword() );
 		assertEquals( person, allTutors.get(0).getPerson() );
 		assertEquals( isVerified, allTutors.get(0).isIsVerified() );
