@@ -100,7 +100,7 @@ public class TutorMockTests {
 
 	@Test
 	public void testCreateTutor() {
-		assertNotNull(tutor); //check if it can create an student
+		assertNotNull(tutor); //check if it can create a tutor
 	}
 
 	@Test
