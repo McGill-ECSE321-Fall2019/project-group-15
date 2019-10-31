@@ -25,15 +25,11 @@ public class DtoConverters {
 		}
 		CourseDto courseDto = new CourseDto(c.getName(),c.getDescription());
 		return courseDto;
-		
-<<<<<<< HEAD
+
 	}        
 	
 
-=======
 
-	}
-	
 	public static PersonDto convertToDto(Person p) {
 		
 		CheckArg(p);
@@ -44,7 +40,7 @@ public class DtoConverters {
 		CheckArg(r);
 		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
 	}      
->>>>>>> f74690443e8c39f78b058bfb132a3993c28ad595
+
 
 	public static SubjectDto convertToDto(Subject s) {
 		
