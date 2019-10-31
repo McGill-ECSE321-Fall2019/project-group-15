@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Session;
+
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
@@ -26,11 +27,12 @@ public class TutorService {
 	public List<Tutor> removedTutorList = new ArrayList<Tutor>();
 
 	@Transactional
-	public Tutor addTutor(String password, Person person) {
+	public Tutor createTutor(float hourlyRate, boolean isVerified, String password, Person person) {
 		Tutor tutor = new Tutor();
+		tutor.setHourlyRate(hourlyRate);
+		tutor.setIsVerified(isVerified);
 		tutor.setPassword(password);
 		tutor.setPerson(person);
-		tutor.setIsVerified(false);
 		tutorRepository.save(tutor);
 		return null;
 	}

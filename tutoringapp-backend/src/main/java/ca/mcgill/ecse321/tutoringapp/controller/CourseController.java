@@ -22,10 +22,16 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 	
-	
-	@PostMapping(value = { "/createCourse", "/createCourse/" })
-	public CourseDto createCourse(@RequestParam("courseName") String courseName,
-			@RequestParam("description") String description) throws IllegalArgumentException {
+	/**
+	 * 
+	 * @param courseName
+	 * @param description
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
+	@PostMapping(value = { "/createCourse/{courseName}/{description}", "/createCourse/{courseName}/{description}" })
+	public CourseDto createCourse(@PathVariable("courseName") String courseName,
+			@PathVariable("description") String description) throws IllegalArgumentException {
 		try{
 			Course course = courseService.addCourse(courseName,description);
 			return DtoConverters.convertToDto(course);
@@ -34,7 +40,10 @@ public class CourseController {
 			throw new IllegalArgumentException("Could not create course");
 		}
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping(value = { "/allCourses", "/allCourses/" })
 	public List<CourseDto> getAllCourses() {
 		try {
@@ -49,6 +58,11 @@ public class CourseController {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param courseName
+	 * @return
+	 */
 	@PostMapping(value = { "/deleteCourse", "/deleteCourse/" })
 	public boolean deleteCourse(@RequestParam(name = "courseName") String courseName) {
 		courseService.removeCourse(courseName);

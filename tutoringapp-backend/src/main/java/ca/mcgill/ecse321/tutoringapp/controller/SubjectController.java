@@ -16,12 +16,14 @@ public class SubjectController {
 	
 	@Autowired
 	private SubjectService subjectService;
+	@Autowired
+	private SchoolService schoolService;
 	
-	@PostMapping(value = { "/subject/{subjectName}/{subjectSchool}/{subjectDescription}", "/subject/{subjectName}/{subjectSchool}/{subjectDescription}/" })
+	@PostMapping(value = { "/subject/{subjectName}/{schoolName}/{subjectDescription}", "/subject/{subjectName}/{schoolName}/{subjectDescription}/" })
 	public SubjectDto addSubject(@PathVariable("subjectName") String subjectName,
-			@PathVariable("subjectSchool") School subjectSchool,@PathVariable("subjectDescription") String subjectDescription)
+			@PathVariable("schoolName") String schoolName,@PathVariable("subjectDescription") String subjectDescription)
 			throws IllegalArgumentException {
-		// @formatter:on
+		School subjectSchool = schoolService.getSchool(schoolName);
 		Subject subject = subjectService.addSubject(subjectName, subjectSchool, subjectDescription);
 		return DtoConverters.convertToDto(subject);
 	}
