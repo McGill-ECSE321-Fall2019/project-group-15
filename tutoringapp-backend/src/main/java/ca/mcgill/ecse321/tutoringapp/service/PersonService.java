@@ -22,7 +22,7 @@ public class PersonService {
 	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
-	public Person createPerson(String username, String firstname, String lastname) {
+	public Person createPerson(String firstname, String lastname, String username) {
 		Person person = new Person();
 		person.setUserName(username);
 		person.setFirstName(firstname);
@@ -46,7 +46,12 @@ public class PersonService {
 	}
 	
 	@Transactional
-	public Person getByUsername(String username) {
+	public Person getPersonByPersonID(Integer personID) {
+		return personRepository.findPersonByPersonID(personID);
+	}
+	
+	@Transactional
+	public Person getPersonByUsername(String username) {
 		return personRepository.findPersonByUserName(username);
 	}
 	

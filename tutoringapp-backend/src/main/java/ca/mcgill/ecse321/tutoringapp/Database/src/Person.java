@@ -11,7 +11,6 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Person{
-
 	private String userName;
 
 	public void setUserName(String value) {

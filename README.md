@@ -31,12 +31,12 @@ Team member's name |Total hours |Responsibility         |
 
 ## Deliverable 2
 
-The full report can be seen [here](https://github.com/McGill-ECSE321-Fall2019/project-group-15/wiki/Meeting-Notes-%232)
+The full report can be seen [here](https://github.com/McGill-ECSE321-Fall2019/project-group-15/wiki/Deliverable-2-Report)
 
 Team member's name |Total hours |Responsibility         |
 |-------------------|------------|-----------------------|
-|Darien Muse-Charbonneau        |          |                        |
-|Marwan Khan         |          |                       |
-|Maxime Buteau           |          |                       |
-|Michel-Alexandre Riendeau      |          |                      |
-|Osman Warsi      |          |                      |
+|Darien Muse-Charbonneau        |    19      |          Implementation of Mock Tests/ DTOs              |
+|Marwan Khan         |    25      |         Controller methods and Tests              | 
+|Maxime Buteau           |      23    |          Persistance Tests and DTOs              |
+|Michel-Alexandre Riendeau      |      22    |         Mock Tests/Controller and wiki             |
+|Osman Warsi      |     22     |     Mock Tests/DTOs and wiki format                 |

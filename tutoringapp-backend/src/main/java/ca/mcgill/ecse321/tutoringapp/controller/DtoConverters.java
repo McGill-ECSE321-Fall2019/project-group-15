@@ -26,9 +26,25 @@ public class DtoConverters {
 		CourseDto courseDto = new CourseDto(c.getName(),c.getDescription());
 		return courseDto;
 		
+<<<<<<< HEAD
 	}        
 	
 
+=======
+
+	}
+	
+	public static PersonDto convertToDto(Person p) {
+		
+		CheckArg(p);
+        return new PersonDto( p.getFirstName(), p.getLastName(), p.getUserName() );
+    }
+	
+	public static PersonRoleDto convertToDto (PersonRole r) {
+		CheckArg(r);
+		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
+	}      
+>>>>>>> f74690443e8c39f78b058bfb132a3993c28ad595
 
 	public static SubjectDto convertToDto(Subject s) {
 		
@@ -63,8 +79,7 @@ public class DtoConverters {
     
     public static TutorDto convertToDto(Tutor tutor) {
     	CheckArg(tutor);
-    	
-    	TutorDto t = new TutorDto(tutor.getPassword(), tutor.getPerson());
+    	TutorDto t = new TutorDto(tutor.getTutorId(), tutor.getHourlyRate(), tutor.isIsVerified(), tutor.getPassword(), convertToDto(tutor.getPerson()));
     	return t;
     }
 
@@ -82,10 +97,12 @@ public class DtoConverters {
     	return r;
     }
 
+	
+	
 	static void CheckArg(Object o) {
         if (o == null) {
             throw new IllegalArgumentException("Trying to convert using a null " + o.getClass().getSimpleName());
         }
-    }
+	}
 
 }
