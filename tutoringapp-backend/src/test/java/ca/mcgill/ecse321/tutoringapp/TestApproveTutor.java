@@ -98,10 +98,14 @@ public class TestApproveTutor {
     public void testAddTutor() {
 		assertEquals(0, tutorService.getAllTutors().size());
 		
-		Integer id = 260797797;
+		Integer tutorID = 260797797;
+		Float hourlyRate = 20.0f;
+		Boolean isVerified = false;
+		String password = "1234";
+		Person person = personService.getAllPersons().get(0);
 		
 		try {
-			tutorService.createTutor(id);
+			tutorService.createTutor(tutorID, hourlyRate, isVerified, password, person);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}
@@ -109,8 +113,12 @@ public class TestApproveTutor {
 		List<Tutor> allTutors = tutorService.getAllTutors();
 		
 		assertEquals( 1, allTutors.size() );
-		assertEquals( id.intValue(), allTutors.get(0).getTutorID() );
-		assertEquals( false, allTutors.get(0).isIsVerified() );
+		assertEquals( tutorID.intValue(), allTutors.get(0).getTutorID() );
+		//Deprecated
+		assertEquals( hourlyRate.doubleValue(), allTutors.get(0).getHourlyRate() );
+		assertEquals( password, allTutors.get(0).getPassword() );
+		assertEquals( person, allTutors.get(0).getPerson() );
+		assertEquals( isVerified, allTutors.get(0).isIsVerified() );
 		
 	}
 	
