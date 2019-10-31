@@ -101,7 +101,7 @@ public class TestApproveTutor {
 		Integer id = 260797797;
 		
 		try {
-			tutorService.addTutor(id);
+			tutorService.createTutor(id);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}

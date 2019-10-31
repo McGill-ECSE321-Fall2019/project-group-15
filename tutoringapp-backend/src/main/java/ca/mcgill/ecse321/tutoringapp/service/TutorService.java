@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
@@ -23,10 +24,13 @@ public class TutorService {
 	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
-	public Tutor addTutor(int id) {
+	public Tutor createTutor(int tutorID, float hourlyRate, boolean isVerified, String password, Person person) {
 		Tutor tutor = new Tutor();
-		tutor.setTutorID(id);
-		tutor.setIsVerified(false);
+		tutor.setTutorID(tutorID);
+		tutor.setHourlyRate(hourlyRate);
+		tutor.setIsVerified(isVerified);
+		tutor.setPassword(password);
+		tutor.setPerson(person);
 		personRoleRepository.save(tutor);
 		return null;
 	}
