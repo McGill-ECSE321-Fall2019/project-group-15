@@ -49,10 +49,9 @@ public class TestApproveTutor {
 	SubjectRepository subjectRepository;
 	@Autowired
 	SchoolRepository schoolRepository; 
+	
 	@Autowired
 	private PersonService personService;
-	@Autowired
-	private PersonRole personRole;
 	@Autowired
 	private TutorService tutorService;
 	
@@ -71,9 +70,9 @@ public class TestApproveTutor {
 	
 	@Test
 	public void testCreatePerson() {
+		clearDatabase();
 		assertEquals(0, personService.getAllPersons().size());
 		
-		//Integer personID = 260779779;
 		String firstName = "John";
 		String lastName = "Doe";
 		String userName = "JohnDoe";
@@ -95,7 +94,7 @@ public class TestApproveTutor {
 	}
 		
 	@Test
-    public void testAddTutor() {
+    public void testCreateTutor() {
 		assertEquals(0, tutorService.getAllTutors().size());
 		
 		Integer tutorID = 260797797;
@@ -123,8 +122,8 @@ public class TestApproveTutor {
 	
 	@Test
 	public void testGetAllUnverifiedTutors() {
-		assertEquals(1, tutorService.getAllTutors().size());
-		assertEquals(1, tutorService.getAllUnverifiedTutors().size());
+		assertEquals(0, tutorService.getAllTutors().size());
+		assertEquals(0, tutorService.getAllUnverifiedTutors().size());
 		
 	}
 	
