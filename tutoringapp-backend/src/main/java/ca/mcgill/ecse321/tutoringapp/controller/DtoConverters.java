@@ -26,11 +26,21 @@ public class DtoConverters {
 //		CourseDto courseDto = new CourseDto(c.getName(),c.getDescription());
 //		return courseDto;
 		
-	}        
+
+	}
 	
+	public static PersonDto convertToDto(Person p) {
+		
+		CheckArg(p);
+        return new PersonDto(p.getPersonID(), p.getFirstName(), p.getLastName(), p.getUserName() );
+    }
+	
+	public static PersonRoleDto convertToDto (PersonRole r) {
+		CheckArg(r);
+		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
+	}
 
-
-
+	}        
 
 	public static SubjectDto convertToDto(Subject s) {
 		
@@ -84,10 +94,12 @@ public class DtoConverters {
     	return r;
     }
 
+	
+	
 	static void CheckArg(Object o) {
         if (o == null) {
             throw new IllegalArgumentException("Trying to convert using a null " + o.getClass().getSimpleName());
         }
-    }
+	}
 
 }
