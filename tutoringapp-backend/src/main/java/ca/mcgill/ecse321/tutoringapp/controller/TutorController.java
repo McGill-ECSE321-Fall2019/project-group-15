@@ -1,5 +1,6 @@
 package ca.mcgill.ecse321.tutoringapp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,17 +35,32 @@ public class TutorController {
 		return DtoConverters.convertToDto(tutor);
 	}
 	
-	
-	
 	@GetMapping(value = {"/getAllTutors/","/getAllTutors/"})
 	public List<TutorDto> getAllTutor() {
 		
-		return null;
+		List<TutorDto> tutorsDto = new ArrayList<>();
+		List<Tutor> allTutors = tutorService.getAllTutors();
+		
+		for (Tutor tutor : allTutors) {
+			tutorsDto.add(DtoConverters.convertToDto(tutor));
+		}
+		
+		return tutorsDto;
 	}
 	
 	@GetMapping(value = {"/getAllUnverifiedTutors/","/getAllUnverifiedTutors/"})
 	public List<TutorDto> getAllUnverifiedTutors () {
-		return null;
+		
+		List<TutorDto> tutorsDto = new ArrayList<>();
+		List<Tutor> allTutors = tutorService.getAllTutors();
+		
+		for (Tutor tutor : allTutors) {
+			if(!tutor.isIsVerified()) {
+				tutorsDto.add(DtoConverters.convertToDto(tutor));
+			}
+		}
+		
+		return tutorsDto;
 	}
 	
 	@GetMapping(value = {"/approveTutor/","/approveTutor/"})
@@ -52,6 +68,9 @@ public class TutorController {
 		@RequestParam("tutorID") Integer tutorID)
 		throws IllegalArgumentException {
 		
+		Tutor tutor = tutorService.getTutor(tutorID);
+		
+		tutor.setIsVerified(true);
 	}
 	
 	
