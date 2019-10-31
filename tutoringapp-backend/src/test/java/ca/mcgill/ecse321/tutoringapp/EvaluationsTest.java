@@ -110,7 +110,7 @@ public class EvaluationsTest {
   
   @Test
   public void testEvalNotFound() {
-    assertNull(evaluationService.getEvaluation(NON_Existing_ID).getComment());
+    assertNull(evaluationService.getEvaluation(NON_Existing_ID));
   }
   
   @Test
