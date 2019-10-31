@@ -22,16 +22,17 @@ public class EvaluationController {
   @Autowired
   EvaluationService evalutionService;
   
-  /**
-   * Creating Evaluation
-   * @param comment
-   * @param rating
-   * @return
-   * @throws IllegalArgumentException
-   */
+  
   @PostMapping(value = { "/createEvaluation", "/createEvaluation/" })
   public EvaluationDto createEvaluation(@RequestParam("comment") String comment, 
       @RequestParam("rating") int rating) throws IllegalArgumentException {
+    if (rating <0 ) {
+      throw new IllegalArgumentException("Rating needs to be between 0 and 5");
+    }
+    
+    if (rating >5) {
+      throw new IllegalArgumentException("Rating needs to be between 0 and 5");
+    }
     try{
       Evaluation evaluation = evalutionService.createEvaluation(rating, comment);
       return DtoConverters.convertToDto(evaluation);
