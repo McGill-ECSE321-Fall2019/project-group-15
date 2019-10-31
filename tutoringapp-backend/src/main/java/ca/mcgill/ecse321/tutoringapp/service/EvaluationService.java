@@ -25,7 +25,11 @@ public class EvaluationService {
         evaluation.setIsFlagged(false);
         evaluationRepository.save(evaluation);
         
-        if ( !(rating > 0 && rating <6)) {
+        if ( rating < 0) {
+          throw new IllegalArgumentException("Rating needs to be between 0 and 5");
+        }
+        
+        if (rating > 5) {
           throw new IllegalArgumentException("Rating needs to be between 0 and 5");
         }
         
