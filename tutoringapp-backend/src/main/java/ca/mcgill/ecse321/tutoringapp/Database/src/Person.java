@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Person{
 	
-	/*private int personID;
+	private int personID;
 	
 	public void setPersonID(int value) {
 		this.personID = value;
@@ -20,7 +20,7 @@ public class Person{
 	@GeneratedValue(strategy = GenerationType.AUTO) 
 	public int getPersonID() {
 		return this.personID;
-	}*/
+	}
 	
 	private String userName;
 

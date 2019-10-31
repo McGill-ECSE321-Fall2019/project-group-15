@@ -19,11 +19,12 @@ public class PersonController {
 	
 	@PostMapping(value = {"/createPerson/", "/createPerson"})
 	public PersonDto createPerson(
+		@PathVariable("personID") Integer personID,
 		@PathVariable("firstName") String firstName,
 		@PathVariable("lastName") String lastName,
 		@PathVariable("userName") String userName ) 
 		throws IllegalArgumentException {
-		Person person = personService.createPerson(userName, firstName, lastName);
+		Person person = personService.createPerson(personID, firstName, lastName, userName);
 		return DtoConverters.convertToDto(person);
 	}
 	

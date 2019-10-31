@@ -73,12 +73,13 @@ public class TestApproveTutor {
 	public void testCreatePerson() {
 		assertEquals(0, personService.getAllPersons().size());
 		
+		Integer personID = 260779779;
 		String firstName = "John";
 		String lastName = "Doe";
 		String userName = "JohnDoe";
 		
 		try {
-			personService.createPerson(userName, firstName, lastName);
+			personService.createPerson(personID, userName, firstName, lastName);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}
@@ -86,6 +87,7 @@ public class TestApproveTutor {
 		List<Person> allPersons = personService.getAllPersons();
 		
 		assertEquals( 1, allPersons.size() );
+		assertEquals( personID.intValue(), allPersons.get(0).getPersonID() );
 		assertEquals( firstName , allPersons.get(0).getFirstName() );
 		assertEquals( lastName , allPersons.get(0).getLastName() );
 		assertEquals( userName, allPersons.get(0).getUserName() );
@@ -112,4 +114,26 @@ public class TestApproveTutor {
 		
 	}
 	
+	@Test
+	public void testGetAllUnverifiedTutors() {
+		assertEquals(1, tutorService.getAllTutors().size());
+		assertEquals(1, tutorService.getAllUnverifiedTutors().size());
+		
+	}
+	
+	@Test
+	public void testApproveTutor() {
+		assertEquals(1, tutorService.getAllTutors().size());
+		assertEquals(1, tutorService.getAllUnverifiedTutors().size());
+		
+		Tutor t = tutorService.getAllTutors().get(0);
+		Integer id = t.getTutorID();
+		
+		assertEquals(false, tutorService.getTutor(id).isIsVerified());
+		
+		tutorService.approveTutor(id);
+		
+		assertEquals(true, tutorService.getAllTutors().get(0).isIsVerified());
+		assertEquals(0, tutorService.getAllUnverifiedTutors().size());
+	}
 }

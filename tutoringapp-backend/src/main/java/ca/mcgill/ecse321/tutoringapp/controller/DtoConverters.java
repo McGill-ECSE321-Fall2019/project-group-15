@@ -31,9 +31,20 @@ public class DtoConverters {
 	public static PersonDto convertToDto(Person p) {
 		
 		CheckArg(p);
-        return new PersonDto(p.getFirstName(), p.getLastName(), p.getUserName() );
+        return new PersonDto(p.getPersonID(), p.getFirstName(), p.getLastName(), p.getUserName() );
     }
+	
+	public static PersonRoleDto convertToDto (PersonRole r) {
+		CheckArg(r);
+		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
+	}
+	
+	public static TutorDto convertToDto (Tutor t) {
+		CheckArg(t);
+		return new TutorDto(t.getTutorID(), t.getHourlyRate(), t.isIsVerified(), t.getPassword(), convertToDto(t.getPerson()));
+	}
 
+	
 	
 	static void CheckArg(Object o) {
         if (o == null) {
