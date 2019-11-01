@@ -27,10 +27,9 @@ public class TutorController {
 		@RequestParam("hourlyRate") Float hourlyRate,
 		@RequestParam("isVerified") Boolean isVerified,
 		@RequestParam("password") String password,
-		@RequestParam("person") Person person,
-		@RequestParam("roleID") Integer roleID)
+		@RequestParam("person") Person person)
 		throws IllegalArgumentException {
-		Tutor tutor = tutorService.createTutor(tutorID, hourlyRate, isVerified, password, person, roleID);
+		Tutor tutor = tutorService.createTutor(hourlyRate, isVerified, password, person, tutorID);
 		return DtoConverters.convertToDto(tutor);
 	}
 	
