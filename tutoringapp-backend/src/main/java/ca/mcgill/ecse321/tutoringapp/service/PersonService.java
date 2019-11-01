@@ -45,10 +45,6 @@ public class PersonService {
 		return toList(personRepository.findAll());
 	}
 	
-	@Transactional
-	public Person getPersonByPersonID(Integer personID) {
-		return personRepository.findPersonByPersonID(personID);
-	}
 	
 	@Transactional
 	public Person getPersonByUsername(String username) {

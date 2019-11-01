@@ -147,13 +147,13 @@ public class PersistenceUnitTests {
 		assertEquals(lastname1, allPersons.get(0).getLastName());
 		assertEquals(username1, allPersons.get(0).getUserName());
 		
-		assertEquals(firstname1, personService.getByUsername(username1).getFirstName());
+		assertEquals(firstname1, personService.getPersonByUsername(username1).getFirstName());
 		
 		assertEquals(firstname2, allPersons.get(1).getFirstName());
 		assertEquals(lastname2, allPersons.get(1).getLastName());
 		assertEquals(username2, allPersons.get(1).getUserName());
 		
-		assertEquals(firstname2, personService.getByUsername(username2).getFirstName());
+		assertEquals(firstname2, personService.getPersonByUsername(username2).getFirstName());
 	}
 	
 	/*@Test

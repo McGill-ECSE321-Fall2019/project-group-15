@@ -23,6 +23,7 @@ public class EvaluationController {
   EvaluationService evalutionService;
   
   /**
+
    *Creating Evaluations
    * @param comment
    * @param rating
@@ -30,8 +31,10 @@ public class EvaluationController {
    * @throws IllegalArgumentException
    */
   @PostMapping(value = { "/createEvaluation", "/createEvaluation/" })
+
   public EvaluationDto createEvaluation(@RequestParam(name ="comment") String comment, 
       @RequestParam(name ="rating") int rating) throws IllegalArgumentException {
+
     if (rating <0 ) {
       throw new IllegalArgumentException("Rating needs to be between 0 and 5");
     }
@@ -49,8 +52,10 @@ public class EvaluationController {
     
   }
   /**
+
    * Listing all evaluations
    * @return
+
    */
   @GetMapping(value = { "/allEvaluations", "/allEvaluations/" })
   public List<EvaluationDto> getAllEvaluations() {
