@@ -139,14 +139,14 @@ public class ApproveTutorMockTest {
 	
 	@Test
 	public void testTutorQueryFound() {
-		Tutor t1 = tutorService.getTutor(ID1);
+		Tutor t1 = tutorService.getTutor(ID1.intValue());
 		assertEquals(ID1.intValue(), t1.getTutorId());
 		assertEquals(HOURLY_RATE1, t1.getHourlyRate(), 0.001f);
 		assertEquals(false, t1.isIsVerified());
 		assertEquals(PASSWORD1, t1.getPassword());
 		assertEquals(person1, t1.getPerson());
 
-		Tutor t2 = tutorService.getTutor(ID2);
+		Tutor t2 = tutorService.getTutor(ID2.intValue());
 		assertEquals(ID2.intValue(), t2.getTutorId());
 		assertEquals(HOURLY_RATE2, t2.getHourlyRate(), 0.001f);
 		assertEquals(false, t2.isIsVerified());
@@ -164,10 +164,10 @@ public class ApproveTutorMockTest {
 		assertNull(tutorService.getTutor(NONEXISTING_ID.intValue()));
 	}
 	
-//	@Test
-//	public void testPersonDeletion() {
-//		assertEquals(true, personService.removePerson(USERNAME1));
-//	}
+	@Test
+	public void testPersonDeletion() {
+		assertEquals(true, personService.removePerson(USERNAME1));
+	}
 	
 	@Test
 	public void testTutorDeletion() {

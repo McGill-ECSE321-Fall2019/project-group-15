@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.CourseRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
 
@@ -48,6 +49,17 @@ public class PersonService {
 //	public Person getPersonByPersonID(Integer personID) {
 //		return personRepository.findPersonByPersonID(personID);
 //	}
+	
+	@Transactional
+	public boolean removePerson(String userName) {
+		Person person = personRepository.findPersonByUserName(userName);
+
+		if(person == null) {
+			throw new NullPointerException("No such person exists");
+		}
+		personRepository.delete(person);
+		return true;
+	}
 	
 	@Transactional
 	public Person getPersonByUsername(String username) {

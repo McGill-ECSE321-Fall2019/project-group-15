@@ -35,14 +35,13 @@ public class TutorService {
 		tutor.setPerson(person);
 		tutor.setRoleID(roleID);
 		tutorRepository.save(tutor);
-		return null;
+		return tutor;
 	}
 	
 	
 	@Transactional
 	public Tutor getTutor(int ID) {
-		Tutor tutor = tutorRepository.findTutorByTutorId(ID);
-		return tutor;
+		return tutorRepository.findTutorByTutorId(ID);
 	}
 	
 	@Transactional
@@ -58,7 +57,7 @@ public class TutorService {
 			throw new NullPointerException("No such tutor exist");
 		}
 		removedTutors(tutor);
-		tutorRepository.deleteById(ID);
+		tutorRepository.delete(tutor);
 		return true;
 	}
 	
