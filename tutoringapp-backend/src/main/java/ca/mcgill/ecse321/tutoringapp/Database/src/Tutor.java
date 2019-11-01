@@ -10,14 +10,14 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Tutor extends PersonRole{
-	@Id
-	private int tutorId;
+	
+	private Integer tutorId;
 	   
 	   public void setTutorId(int value) {
 	      this.tutorId = value;
 	   }
-	   
-	   public int getTutorId() {
+	   @Id
+	   public Integer getTutorId() {
 	      return this.tutorId;
 	   }
 	

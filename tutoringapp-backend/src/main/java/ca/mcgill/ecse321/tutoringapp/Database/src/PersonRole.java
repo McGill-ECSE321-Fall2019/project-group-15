@@ -5,18 +5,20 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class PersonRole{
-	@GeneratedValue private int roleID;
+	 private Integer roleID;
 
 	public void setRoleID(int value) {
 		this.roleID = value;
 	}
 	@Id
-	public int getRoleID() {
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Integer getRoleID() {
 		return this.roleID;
 	}
 	private Person person;

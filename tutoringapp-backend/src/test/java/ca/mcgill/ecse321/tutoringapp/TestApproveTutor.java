@@ -105,7 +105,7 @@ public class TestApproveTutor {
 		Integer roleID = 10;
 		
 		try {
-			tutorService.createTutor(tutorID, hourlyRate, isVerified, password, person, roleID);
+			tutorService.createTutor(hourlyRate, isVerified, password, person, tutorID);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}
@@ -113,7 +113,7 @@ public class TestApproveTutor {
 		List<Tutor> allTutors = tutorService.getAllTutors();
 		
 		assertEquals( 1, allTutors.size() );
-		assertEquals( tutorID.intValue(), allTutors.get(0).getTutorId() );
+		assertEquals( tutorID, allTutors.get(0).getTutorId());
 		assertEquals( hourlyRate.doubleValue(), allTutors.get(0).getHourlyRate(), 0.001f );
 		assertEquals( password, allTutors.get(0).getPassword() );
 		assertEquals( person, allTutors.get(0).getPerson() );
