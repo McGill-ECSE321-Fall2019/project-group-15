@@ -20,10 +20,11 @@ public class SchoolController {
 	
 	@PostMapping(value = { "/addSchool", "/addSchool/" })
 	public SchoolDto addSchool(@RequestParam("schoolName") String schoolName,
-			@RequestParam("schoolType") SchoolType schoolType,
-			@RequestParam("subject") Set<Subject> subject) throws IllegalArgumentException {
+			@RequestParam("schoolType") String schoolType) throws IllegalArgumentException {
 		try{
-			School school = schoolService.addSchool(schoolName,schoolType);
+			
+			SchoolType type = SchoolType.valueOf(schoolType);
+			School school = schoolService.addSchool(schoolName,type);
 			return DtoConverters.convertToDto(school);
 		}
 		catch(Exception e){

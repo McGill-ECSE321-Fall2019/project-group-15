@@ -15,11 +15,12 @@ public class DtoConverters {
 	public static CourseDto convertToDto(Course c) {
 		
 //		CheckArg(c);
-//		Set<Tutor> tutors= new HashSet<Tutor>();
+//		ArrayList<Integer> TutorIds = new ArrayList<Integer>();
 //        for (Tutor t : c.getTutor())
-//            tutors.add(new Tutor());
-//        return new CourseDto(c.getName(), c.getDescription(), tutors);
-//		
+//            TutorIds.add(t.getTutorId());
+//        CourseDto courseDto = new CourseDto(c.getName(), c.getDescription(), TutorIds);
+//        return courseDto;
+        
 		if(c==null) {
 			throw new IllegalArgumentException("There is no such course!");
 		}
@@ -46,9 +47,6 @@ public class DtoConverters {
 		
 		CheckArg(s);
 		
-		if(s==null) {
-			throw new IllegalArgumentException("There is no such subject!");
-		}
 		SubjectDto subjectDto = new SubjectDto(s.getName(),s.getSchool(),s.getDescription());
 		return subjectDto;
 		
@@ -57,10 +55,15 @@ public class DtoConverters {
 	public static SchoolDto convertToDto(School sc) {
 		
 		CheckArg(sc);
-		Set<Subject> subjects= new HashSet<Subject>();
-        for (Subject s : sc.getSubject())
-            subjects.add(new Subject());
-        return new SchoolDto(sc.getName(), sc.getType(), subjects);
+		
+		SchoolDto schoolDto = new SchoolDto(sc.getName(),sc.getType());
+		return schoolDto;
+		
+//		CheckArg(sc);
+//		Set<Subject> subjects= new HashSet<Subject>();
+//        for (Subject s : sc.getSubject())
+//            subjects.add(new Subject());
+//        return new SchoolDto(sc.getName(), sc.getType(), subjects);
 		
 	}        
 

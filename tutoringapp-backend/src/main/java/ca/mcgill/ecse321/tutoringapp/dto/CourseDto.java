@@ -1,5 +1,6 @@
 package ca.mcgill.ecse321.tutoringapp.dto;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
@@ -8,7 +9,7 @@ public class CourseDto {
 
 	private String description;
     private String courseName;
-    private Set<Tutor> tutor;
+    private ArrayList<Integer> tutorIds;
     
     public CourseDto() {
     	
@@ -23,10 +24,10 @@ public class CourseDto {
     	this.description=description;
     }
     
-    public CourseDto(String description, String courseName,Set<Tutor> tutor ) {
+    public CourseDto(String description, String courseName,ArrayList<Integer> tutorIds ) {
     	this.courseName = courseName;
     	this.description=description;
-    	this.tutor=tutor;
+    	this.tutorIds=tutorIds;
     }
     
     public String getCourseName() {
@@ -37,16 +38,9 @@ public class CourseDto {
     	return description;
     }
     
-    public Set<Tutor> getTutor() {
-    	return tutor;
-    }
+    public ArrayList<Integer> getTutorId() {
+		return this.tutorIds;
+	}
     
-    public void setTutor(Set<Tutor> t) {
-    	this.tutor=t;
-    }
-    
-    public void addTutor(Tutor t) {
-    	this.tutor.add(t);
-    }
     
 }
