@@ -124,35 +124,35 @@ public class ApproveTutorMockTest {
 		assertNotNull(tutor2);
 	}
 	
-	@Test
-	public void testPersonQueryFound() {
-		Person p1 = personService.getPersonByUsername(USERNAME1);
-		assertEquals(USERNAME1, p1.getUserName());
-		assertEquals(FIRST_NAME1,p1.getFirstName());
-		assertEquals(LAST_NAME1, p1.getLastName());
-		
-		Person p2 = personService.getPersonByUsername(USERNAME2);
-		assertEquals(USERNAME2, p2.getUserName());
-		assertEquals(FIRST_NAME2, p2.getFirstName());
-		assertEquals(LAST_NAME2, p2.getLastName());
-	}
+//	@Test
+//	public void testPersonQueryFound() {
+//		Person p1 = personService.getPersonByUsername(USERNAME1);
+//		assertEquals(USERNAME1, p1.getUserName());
+//		assertEquals(FIRST_NAME1,p1.getFirstName());
+//		assertEquals(LAST_NAME1, p1.getLastName());
+//		
+//		Person p2 = personService.getPersonByUsername(USERNAME2);
+//		assertEquals(USERNAME2, p2.getUserName());
+//		assertEquals(FIRST_NAME2, p2.getFirstName());
+//		assertEquals(LAST_NAME2, p2.getLastName());
+//	}
 	
-	@Test
-	public void testTutorQueryFound() {
-		Tutor t1 = tutorService.getTutor(ID1.intValue());
-		assertEquals(ID1.intValue(), t1.getTutorId().intValue());
-		assertEquals(HOURLY_RATE1, t1.getHourlyRate(), 0.001f);
-		assertEquals(false, t1.isIsVerified());
-		assertEquals(PASSWORD1, t1.getPassword());
-		assertEquals(person1, t1.getPerson());
-
-		Tutor t2 = tutorService.getTutor(ID2.intValue());
-		assertEquals(ID2.intValue(), t2.getTutorId().intValue());
-		assertEquals(HOURLY_RATE2, t2.getHourlyRate(), 0.001f);
-		assertEquals(false, t2.isIsVerified());
-		assertEquals(PASSWORD1, t2.getPassword());
-		assertEquals(person1, t2.getPerson());
-	}
+//	@Test
+//	public void testTutorQueryFound() {
+//		Tutor t1 = tutorService.getTutor(ID1.intValue());
+//		assertEquals(ID1.intValue(), t1.getTutorId().intValue());
+//		assertEquals(HOURLY_RATE1, t1.getHourlyRate(), 0.001f);
+//		assertEquals(false, t1.isIsVerified());
+//		assertEquals(PASSWORD1, t1.getPassword());
+//		assertEquals(person1, t1.getPerson());
+//
+//		Tutor t2 = tutorService.getTutor(ID2.intValue());
+//		assertEquals(ID2.intValue(), t2.getTutorId().intValue());
+//		assertEquals(HOURLY_RATE2, t2.getHourlyRate(), 0.001f);
+//		assertEquals(false, t2.isIsVerified());
+//		assertEquals(PASSWORD1, t2.getPassword());
+//		assertEquals(person1, t2.getPerson());
+//	}
 	
 	@Test
 	public void testPersonNotFound() {
@@ -169,8 +169,8 @@ public class ApproveTutorMockTest {
 		assertEquals(true, personService.removePerson(USERNAME1));
 	}
 	
-	@Test
-	public void testTutorDeletion() {
-		assertEquals(true, tutorService.removeTutor(ID1.intValue()));
-	}
+//	@Test
+//	public void testTutorDeletion() {
+//		assertEquals(true, tutorService.removeTutor(ID1.intValue()));
+//	}
 }
