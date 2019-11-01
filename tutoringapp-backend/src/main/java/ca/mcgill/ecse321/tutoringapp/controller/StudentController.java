@@ -41,7 +41,7 @@ public class StudentController {
 	/**
 	 * Delete a student with its ID
 	 * @param studentId
-	 * @return
+	 * @returns
 	 * @throws IllegalArgumentException
 	 */
 	@PostMapping(value = { "/deleteStudent", "/deleteStudent/" })
@@ -77,7 +77,7 @@ public class StudentController {
 		List<Student> studentList = studentService.getAllStudents();
 		List<StudentDto> stDtio = new ArrayList<>();
 		for (Student s : studentList) {
-			stDtio.add(DtoConverters.convertToDto(s));
+			stDtio.add(DtoConverters.convertToDto(s)); 
 		}
 		return stDtio;
 
