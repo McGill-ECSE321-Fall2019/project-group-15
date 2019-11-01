@@ -30,7 +30,6 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Subject;
 import ca.mcgill.ecse321.tutoringapp.dao.CourseRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.EvaluationRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
-import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.RoomRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.SchoolRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.SessionRepository;
@@ -77,8 +76,8 @@ public class PersistenceUnitTests {
 	private CourseRepository courseRepository;
 	@Autowired
 	private EvaluationRepository evaluationRepository;
-	@Autowired
-	private PersonRoleRepository personRoleRepository;
+//	@Autowired
+//	private PersonRoleRepository personRoleRepository;
 	@Autowired
 	private PersonRepository personRepository;
 	@Autowired
@@ -97,7 +96,7 @@ public class PersistenceUnitTests {
 	@Before
 	public void clearDatabase() {
 		
-		personRoleRepository.deleteAll();
+//		personRoleRepository.deleteAll();
 		studentRepository.deleteAll();
 		tutorRepository.deleteAll();
 		sessionRepository.deleteAll();

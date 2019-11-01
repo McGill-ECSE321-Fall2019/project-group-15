@@ -102,9 +102,10 @@ public class TestApproveTutor {
 		Boolean isVerified = false;
 		String password = "1234";
 		Person person = personService.getAllPersons().get(0);
+		Integer roleID = 10;
 		
 		try {
-			tutorService.createTutor(hourlyRate, isVerified, password, person);
+			tutorService.createTutor(tutorID, hourlyRate, isVerified, password, person, roleID);
 		} catch (IllegalArgumentException e) {
 			fail();
 		}

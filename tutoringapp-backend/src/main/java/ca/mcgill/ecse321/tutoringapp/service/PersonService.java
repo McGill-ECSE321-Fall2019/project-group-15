@@ -11,15 +11,14 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.dao.CourseRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
-import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 
 @Service
 public class PersonService {
 	
 	@Autowired
 	PersonRepository personRepository;
-	@Autowired
-	PersonRoleRepository personRoleRepository;
+//	@Autowired
+//	PersonRoleRepository personRoleRepository;
 	
 	@Transactional
 	public Person createPerson(String firstname, String lastname, String username) {
@@ -45,10 +44,10 @@ public class PersonService {
 		return toList(personRepository.findAll());
 	}
 	
-	@Transactional
-	public Person getPersonByPersonID(Integer personID) {
-		return personRepository.findPersonByPersonID(personID);
-	}
+//	@Transactional
+//	public Person getPersonByPersonID(Integer personID) {
+//		return personRepository.findPersonByPersonID(personID);
+//	}
 	
 	@Transactional
 	public Person getPersonByUsername(String username) {

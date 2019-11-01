@@ -24,7 +24,8 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ApproveTutorMockTest {
 
 	@Mock
@@ -53,9 +54,12 @@ public class ApproveTutorMockTest {
 	
 	private Tutor tutor1;
 	private Tutor tutor2;
-	private static final Integer Id2 = 1;
-	private static final Integer Id1 = 2;
+	private static final Integer ID1 = 1;
+	private static final Integer ID2 = 2;
 	private static final Integer NONEXISTING_ID = 0;
+	private static final Integer RID1 = 10;
+	private static final Integer RID2 = 20;
+	private static final Integer NONEXISTING_RID = 100;
 	private static final Float HOURLY_RATE1 = 1.0f;
 	private static final Float HOURLY_RATE2 = 2.0f;
 	private static final Float NONEXISTING_HOURLY_RATE = 0.0f;
@@ -78,10 +82,10 @@ public class ApproveTutorMockTest {
 		});
 				
 		when(tutorDao.findById(anyInt())).thenAnswer( (InvocationOnMock invocation) -> {
-			if (invocation.getArgument(0).equals(Id1)) {
+			if (invocation.getArgument(0).equals(ID1.intValue())) {
 				return person1;
 			} 
-			else if (invocation.getArgument(0).equals(Id2)) {
+			else if (invocation.getArgument(0).equals(ID2.intValue())) {
 				return tutor2;
 			} else {
 				return null;
@@ -100,11 +104,11 @@ public class ApproveTutorMockTest {
 		personExpectedList.add(person2);
 		
 		tutor1 = mock(Tutor.class);
-		tutor1 = tutorService.createTutor(HOURLY_RATE1, false, PASSWORD1, person1);
+		tutor1 = tutorService.createTutor(ID1.intValue(), HOURLY_RATE1, false, PASSWORD1, person1, RID1.intValue());
 		tutorExpectedList.add(tutor1);
 		
 		tutor2 = mock(Tutor.class);
-		tutor2 = tutorService.createTutor(HOURLY_RATE2, false, PASSWORD2, person2);
+		tutor2 = tutorService.createTutor(ID2.intValue(), HOURLY_RATE2, false, PASSWORD2, person2, RID2.intValue());
 		tutorExpectedList.add(tutor2);
 	}
 	
@@ -122,14 +126,32 @@ public class ApproveTutorMockTest {
 	
 	@Test
 	public void testPersonQueryFound() {
-		assertEquals(USERNAME1, personService.getPersonByUsername(USERNAME1).getUserName());
-		assertEquals(USERNAME2, personService.getPersonByUsername(USERNAME2).getUserName());
+		Person p1 = personService.getPersonByUsername(USERNAME1);
+		assertEquals(USERNAME1, p1.getUserName());
+		assertEquals(FIRST_NAME1,p1.getFirstName());
+		assertEquals(LAST_NAME1, p1.getLastName());
+		
+		Person p2 = personService.getPersonByUsername(USERNAME2);
+		assertEquals(USERNAME2, p2.getUserName());
+		assertEquals(FIRST_NAME2, p2.getFirstName());
+		assertEquals(LAST_NAME2, p2.getLastName());
 	}
 	
 	@Test
 	public void testTutorQueryFound() {
-		assertEquals(Id1.intValue(), tutorService.getTutor(Id1).getTutorId());
-		assertEquals(Id2.intValue(), tutorService.getTutor(Id2).getTutorId());
+		Tutor t1 = tutorService.getTutor(ID1);
+		assertEquals(ID1.intValue(), t1.getTutorId());
+		assertEquals(HOURLY_RATE1, t1.getHourlyRate(), 0.001f);
+		assertEquals(false, t1.isIsVerified());
+		assertEquals(PASSWORD1, t1.getPassword());
+		assertEquals(person1, t1.getPerson());
+
+		Tutor t2 = tutorService.getTutor(ID2);
+		assertEquals(ID2.intValue(), t2.getTutorId());
+		assertEquals(HOURLY_RATE2, t2.getHourlyRate(), 0.001f);
+		assertEquals(false, t2.isIsVerified());
+		assertEquals(PASSWORD1, t2.getPassword());
+		assertEquals(person1, t2.getPerson());
 	}
 	
 	@Test
@@ -139,16 +161,16 @@ public class ApproveTutorMockTest {
 	
 	@Test
 	public void testTutorNotFound() {
-		assertNull(tutorService.getTutor(NONEXISTING_ID));
+		assertNull(tutorService.getTutor(NONEXISTING_ID.intValue()));
 	}
 	
 //	@Test
 //	public void testPersonDeletion() {
-//		
+//		assertEquals(true, personService.removePerson(USERNAME1));
 //	}
 	
 	@Test
 	public void testTutorDeletion() {
-		assertEquals(true, tutorService.removeTutor(Id1));
+		assertEquals(true, tutorService.removeTutor(ID1.intValue()));
 	}
 }
