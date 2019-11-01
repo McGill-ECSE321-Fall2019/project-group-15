@@ -70,6 +70,7 @@ public class StudentMockTests {
 	private String testPassword = "password1";
 	private int studentId = 1;
 	private int fakeStudentId = 3;
+	private int roleId = 10;
 	
 	private List<Student> studentList = new ArrayList<Student>();
 
@@ -93,7 +94,7 @@ public void setMockOutput() { //method from tutorial
 public void setUp() {
 	student = mock(Student.class);
 	person = mock(Person.class);
-	student = studentService.addStudent(testPassword, person, studentId);
+	student = studentService.addStudent(testPassword, person, studentId, roleId);
 	studentList.add(student);
 }
 

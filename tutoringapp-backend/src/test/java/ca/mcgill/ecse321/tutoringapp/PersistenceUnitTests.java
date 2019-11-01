@@ -179,9 +179,10 @@ public class PersistenceUnitTests {
 		Person person = personService.createPerson(userName, firstName, lastName);
 		String password = "123";
 		int studentId = 1;
+		int roleId = 2;
 		
 		try {
-			studentService.addStudent(password, person, studentId);
+			studentService.addStudent(password, person, studentId, roleId);
 		} catch(IllegalArgumentException e) {
 			fail();
 		}
