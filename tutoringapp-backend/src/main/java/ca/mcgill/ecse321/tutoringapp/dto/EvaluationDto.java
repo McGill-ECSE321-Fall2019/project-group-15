@@ -11,13 +11,14 @@ public class EvaluationDto {
   private StudentDto student;
   private TutorDto tutor;
   
-  public EvaluationDto() {
-  }
-   
-  public EvaluationDto(int id) {
+  
+  public EvaluationDto(int id,  String comment, int rating) {
     this.id = id;
-}
-  public EvaluationDto(String comment, int rating) {
+    this.comment = comment;
+    this.rating = rating;
+  }
+  
+  public EvaluationDto( String comment, int rating) {
     this.comment = comment;
     this.rating = rating;
   }

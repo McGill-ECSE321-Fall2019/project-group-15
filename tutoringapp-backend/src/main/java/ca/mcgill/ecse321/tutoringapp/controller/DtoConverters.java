@@ -14,21 +14,22 @@ public class DtoConverters {
 	
 	public static CourseDto convertToDto(Course c) {
 		
-		CheckArg(c);
-		Set<Tutor> tutors= new HashSet<Tutor>();
-        for (Tutor t : c.getTutor())
-            tutors.add(new Tutor());
-        return new CourseDto(c.getName(), c.getDescription(), tutors);
-		
-//		if(c==null) {
-//			throw new IllegalArgumentException("There is no such course!");
-//		}
-//		CourseDto courseDto = new CourseDto(c.getName(),c.getDescription());
-//		return courseDto;
-		
+//		CheckArg(c);
+//		Set<Tutor> tutors= new HashSet<Tutor>();
+//        for (Tutor t : c.getTutor())
+//            tutors.add(new Tutor());
+//        return new CourseDto(c.getName(), c.getDescription(), tutors);
+//		
+		if(c==null) {
+			throw new IllegalArgumentException("There is no such course!");
+		}
+		CourseDto courseDto = new CourseDto(c.getName(),c.getDescription());
+		return courseDto;
 
-	}
+	}        
 	
+
+
 	public static PersonDto convertToDto(Person p) {
 		
 		CheckArg(p);
@@ -39,6 +40,7 @@ public class DtoConverters {
 		CheckArg(r);
 		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
 	}      
+
 
 	public static SubjectDto convertToDto(Subject s) {
 		
