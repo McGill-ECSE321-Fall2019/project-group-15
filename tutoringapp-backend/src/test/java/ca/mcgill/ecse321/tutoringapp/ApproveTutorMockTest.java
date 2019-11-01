@@ -104,11 +104,11 @@ public class ApproveTutorMockTest {
 		personExpectedList.add(person2);
 		
 		tutor1 = mock(Tutor.class);
-		tutor1 = tutorService.createTutor(ID1.intValue(), HOURLY_RATE1, false, PASSWORD1, person1, RID1.intValue());
+		tutor1 = tutorService.createTutor(HOURLY_RATE1, false, PASSWORD1, person1, ID1.intValue());
 		tutorExpectedList.add(tutor1);
 		
 		tutor2 = mock(Tutor.class);
-		tutor2 = tutorService.createTutor(ID2.intValue(), HOURLY_RATE2, false, PASSWORD2, person2, RID2.intValue());
+		tutor2 = tutorService.createTutor(HOURLY_RATE2, false, PASSWORD2, person2, ID2.intValue());
 		tutorExpectedList.add(tutor2);
 	}
 	
@@ -140,14 +140,14 @@ public class ApproveTutorMockTest {
 	@Test
 	public void testTutorQueryFound() {
 		Tutor t1 = tutorService.getTutor(ID1.intValue());
-		assertEquals(ID1.intValue(), t1.getTutorId());
+		assertEquals(ID1.intValue(), t1.getTutorId().intValue());
 		assertEquals(HOURLY_RATE1, t1.getHourlyRate(), 0.001f);
 		assertEquals(false, t1.isIsVerified());
 		assertEquals(PASSWORD1, t1.getPassword());
 		assertEquals(person1, t1.getPerson());
 
 		Tutor t2 = tutorService.getTutor(ID2.intValue());
-		assertEquals(ID2.intValue(), t2.getTutorId());
+		assertEquals(ID2.intValue(), t2.getTutorId().intValue());
 		assertEquals(HOURLY_RATE2, t2.getHourlyRate(), 0.001f);
 		assertEquals(false, t2.isIsVerified());
 		assertEquals(PASSWORD1, t2.getPassword());

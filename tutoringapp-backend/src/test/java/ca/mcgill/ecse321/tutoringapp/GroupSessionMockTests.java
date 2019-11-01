@@ -110,25 +110,25 @@ public class GroupSessionMockTests {
 		Time endTime = new Time(c.getTimeInMillis());
 		SessionType sessionType = SessionType.groupSession;
 
-		List<Student> groupSession = new ArrayList<>();
+		Set<Student> groupSession = new HashSet<>();
 		String password1 = "123";
 		String firstName1 = "Maxime";
 		String lastName1 = "Buteau";
 		String userName1 = "mbutea";
-		Integer id1 = 1;
+		Integer studentid1 = 1;
 		Person person1 = personService.createPerson(firstName1, lastName1, userName1);
-		Student student1 = studentService.addStudent(password1, person1, id1);
+		Student student1 = studentService.addStudent(password1, person1, studentid1);
 
-		String password2 = "qwerty";
+		/*String password2 = "qwerty";
 		String firstName2 = "John";
 		String lastName2 = "Doe";
 		String userName2 = "jdoe";
-		Integer id2 = 2;
+		Integer studentid2 = 2;
 		Person person2 = personService.createPerson(firstName2, lastName2, userName2);
-		Student student2 = studentService.addStudent(password2, person2, id2);
+		Student student2 = studentService.addStudent(password2, person2, studentid2);*/
 
 		groupSession.add(student1);
-		groupSession.add(student2);
+		//groupSession.add(student2);
 
 		String courseName = "ECSE321";
 		String description = "Cool class";
@@ -138,17 +138,18 @@ public class GroupSessionMockTests {
 		String tutorLast = "Bur";
 		String tutorUserName = "mbur";
 		String tutorpassword = "12345";
+		Integer tutorId = 1;
 		Person person3 = personService.createPerson(tutorFirst, tutorLast, tutorUserName);
 
-		int hourlyRate = 15;
-		Tutor tutor = tutorService.createTutor(hourlyRate, true, tutorpassword, person3);
+		float hourlyRate = 15;
+		Tutor tutor = tutorService.createTutor(hourlyRate, true, tutorpassword, person3, tutorId);
 
 		String error;
 		
-		assertEquals(2, groupSession.size());
+		assertEquals(1, groupSession.size());
 
 		@SuppressWarnings("unchecked")
-		Session session = sessionService.createSession(sessionDate, startTime, endTime, sessionType, course, tutor, (Set<Student>) groupSession);
+		Session session = sessionService.createSession(sessionDate, startTime, endTime, sessionType, course, tutor, groupSession);
 
 		try {
 			session.setRoom(room);
@@ -157,8 +158,5 @@ public class GroupSessionMockTests {
 		}
 		assertEquals(room, session.getRoom());
 	}
-	
-	
-
 
 }

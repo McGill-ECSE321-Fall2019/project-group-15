@@ -26,14 +26,13 @@ public class TutorService {
 	public List<Tutor> removedTutorList = new ArrayList<Tutor>();
 
 	@Transactional
-	public Tutor createTutor(int tutorID, float hourlyRate, boolean isVerified, String password, Person person, int roleID) {
+	public Tutor createTutor(float hourlyRate, boolean isVerified, String password, Person person, Integer tutorID) {
 		Tutor tutor = new Tutor();
 		tutor.setTutorId(tutorID);
 		tutor.setHourlyRate(hourlyRate);
 		tutor.setIsVerified(isVerified);
 		tutor.setPassword(password);
 		tutor.setPerson(person);
-		tutor.setRoleID(roleID);
 		tutorRepository.save(tutor);
 		return tutor;
 	}

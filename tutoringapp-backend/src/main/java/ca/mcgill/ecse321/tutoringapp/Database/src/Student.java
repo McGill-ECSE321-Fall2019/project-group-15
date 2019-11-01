@@ -9,14 +9,14 @@ import org.springframework.data.annotation.Id;
 
 @Entity
 public class Student extends PersonRole{
-	@Id
-	private int studentId;
+	
+	private Integer studentId;
 	   
 	   public void setStudentId(int value) {
 	      this.studentId = value;
 	   }
-	   
-	   public int getStudentId() {
+	   @Id
+	   public Integer getStudentId() {
 	      return this.studentId;
 	   }
 	   
