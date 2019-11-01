@@ -21,11 +21,12 @@ public class StudentService {
 	public List<Student> removedStudentList = new ArrayList<Student>();
 
 	@Transactional
-	public Student addStudent(String password, Person person, int id) {
+	public Student addStudent(String password, Person person, int studentID, int roleID) {
 		Student student = new Student();
 		student.setPerson(person);
 		student.setPassword(password);
-		student.setStudentId(id);
+		student.setStudentId(studentID);
+		student.setRoleID(roleID);
 		studentRepository.save(student);
 		return null;
 	}

@@ -4,11 +4,13 @@ import javax.persistence.Entity;
 import java.util.Set;
 import javax.persistence.OneToMany;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Tutor extends PersonRole{
-	
+	@Id
 	private int tutorId;
 	   
 	   public void setTutorId(int value) {

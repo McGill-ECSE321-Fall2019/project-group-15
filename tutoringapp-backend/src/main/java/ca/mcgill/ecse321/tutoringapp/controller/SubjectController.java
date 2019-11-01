@@ -19,9 +19,9 @@ public class SubjectController {
 	@Autowired
 	private SchoolService schoolService;
 	
-	@PostMapping(value = { "/subject/{subjectName}/{schoolName}/{subjectDescription}", "/subject/{subjectName}/{schoolName}/{subjectDescription}/" })
-	public SubjectDto addSubject(@PathVariable("subjectName") String subjectName,
-			@PathVariable("schoolName") String schoolName,@PathVariable("subjectDescription") String subjectDescription)
+	@PostMapping(value = { "/addSubject", "/addSubject/" })
+	public SubjectDto addSubject(@RequestParam("subjectName") String subjectName,
+			@RequestParam("schoolName") String schoolName,@RequestParam("subjectDescription") String subjectDescription)
 			throws IllegalArgumentException {
 		School subjectSchool = schoolService.getSchool(schoolName);
 		Subject subject = subjectService.addSubject(subjectName, subjectSchool, subjectDescription);
@@ -42,8 +42,8 @@ public class SubjectController {
 		}
 	}
 	
-	@PostMapping(value = { "/deleteSubject/{subjectName}", "/deleteCourse/{subjectName}/" })
-	public boolean deleteSubject(@PathVariable(name = "subjectName") String subjectName) {
+	@PostMapping(value = { "/deleteSubject", "/deleteCourse/" })
+	public boolean deleteSubject(@RequestParam(name = "subjectName") String subjectName) {
 		subjectService.removeSubject(subjectName);
 		return true;
 	}

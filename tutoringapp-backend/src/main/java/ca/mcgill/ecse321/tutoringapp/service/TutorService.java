@@ -15,7 +15,6 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Session;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
-import ca.mcgill.ecse321.tutoringapp.dao.PersonRoleRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.TutorRepository;
 
 @Service
@@ -27,21 +26,22 @@ public class TutorService {
 	public List<Tutor> removedTutorList = new ArrayList<Tutor>();
 
 	@Transactional
-	public Tutor createTutor(float hourlyRate, boolean isVerified, String password, Person person) {
+	public Tutor createTutor(int tutorID, float hourlyRate, boolean isVerified, String password, Person person, int roleID) {
 		Tutor tutor = new Tutor();
+		tutor.setTutorId(tutorID);
 		tutor.setHourlyRate(hourlyRate);
 		tutor.setIsVerified(isVerified);
 		tutor.setPassword(password);
 		tutor.setPerson(person);
+		tutor.setRoleID(roleID);
 		tutorRepository.save(tutor);
-		return null;
+		return tutor;
 	}
 	
 	
 	@Transactional
 	public Tutor getTutor(int ID) {
-		Tutor tutor = tutorRepository.findTutorByTutorId(ID);
-		return tutor;
+		return tutorRepository.findTutorByTutorId(ID);
 	}
 	
 	@Transactional
@@ -57,7 +57,7 @@ public class TutorService {
 			throw new NullPointerException("No such tutor exist");
 		}
 		removedTutors(tutor);
-		tutorRepository.deleteById(ID);
+		tutorRepository.delete(tutor);
 		return true;
 	}
 	

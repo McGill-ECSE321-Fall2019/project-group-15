@@ -65,11 +65,12 @@ public class TutorMockTests {
 	private TutorService tutorService;
 	
 	private Tutor tutor;
-	
 	private Person person;
 	private String testPassword = "password1";
 	private int tutorId = 1;
 	private int fakeTutorId = 3;
+	private int roleId = 10;
+	private int fakeRoleId = 20;
 	
 	private List<Tutor> studentList = new ArrayList<Tutor>();
 	
@@ -93,7 +94,7 @@ public class TutorMockTests {
 	public void setUp() {
 		tutor = mock(Tutor.class);
 		person = mock(Person.class);
-		tutor = tutorService.createTutor(0.0f , false, testPassword, person);
+		tutor = tutorService.createTutor(tutorId, 0.0f , false, testPassword, person, roleId);
 		tutor.setTutorId(tutorId);
 		studentList.add(tutor);
 	}

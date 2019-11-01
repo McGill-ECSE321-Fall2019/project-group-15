@@ -23,12 +23,14 @@ public class TutorController {
 	
 	@PostMapping(value = {"/createTutor/", "/createTutor/"})
 	public TutorDto createTutor (
+		@RequestParam("tutorID") Integer tutorID,
 		@RequestParam("hourlyRate") Float hourlyRate,
 		@RequestParam("isVerified") Boolean isVerified,
 		@RequestParam("password") String password,
-		@RequestParam("person") Person person) 
+		@RequestParam("person") Person person,
+		@RequestParam("roleID") Integer roleID)
 		throws IllegalArgumentException {
-		Tutor tutor = tutorService.createTutor(hourlyRate, isVerified, password, person);
+		Tutor tutor = tutorService.createTutor(tutorID, hourlyRate, isVerified, password, person, roleID);
 		return DtoConverters.convertToDto(tutor);
 	}
 	
