@@ -66,7 +66,8 @@ var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsS
 app.use(staticPath, express.static('./static'))
 
 //var uri = 'http://localhost:' + port commented as seen in tutorial -MIch
-
+var host = config.dev.host
+var uri = 'http://' + host + ':' + port
 var _resolve
 var readyPromise = new Promise(resolve => {
   _resolve = resolve
