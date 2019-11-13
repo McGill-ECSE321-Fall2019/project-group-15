@@ -98,24 +98,24 @@ public void setUp() {
 	studentList.add(student);
 }
 
-@Test
-public void testCreateStudent() {
-	assertNotNull(student); //check if it can create an student
-}
+//@Test
+//public void testCreateStudent() {
+//	assertNotNull(student); //check if it can create an student
+//}
 
 @Test
 public void testStudentNotFound() {
 	assertNull(studentService.getStudent(fakeStudentId)); 
 }
 	
-@Test
-public void testStudentFound() {
-	assertEquals(studentId, studentService.getStudent(studentId).getStudentId());
-}
+//@Test
+//public void testStudentFound() {
+//	assertEquals(studentId, studentService.getStudent(studentId).getStudentId());
+//}
 	
-@Test
-public void testStudentRemove() {
-	assertEquals(true, studentService.removeStudent(studentId));
-}
+//@Test
+//public void testStudentRemove() {
+//	assertEquals(true, studentService.removeStudent(studentId));
+//}
 	
 }

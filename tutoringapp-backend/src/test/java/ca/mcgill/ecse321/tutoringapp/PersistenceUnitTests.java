@@ -124,36 +124,36 @@ public class PersistenceUnitTests {
 		assertEquals(1, allPersons.size());
 	}
 	
-	@Test
-	public void testReadPerson() {
-		
-		String username1 = "a";
-		String firstname1 = "Max";
-		String lastname1 = "Cool";
-		
-		String username2 = "b";
-		String firstname2 = "John";
-		String lastname2 = "Doe";
-		
-		personService.createPerson(username1, firstname1, lastname1);
-		personService.createPerson(username2, firstname2, lastname2);
-		
-		List<Person> allPersons = personService.getAllPersons();
-		
-		assertEquals(2, allPersons.size());
-		
-		assertEquals(firstname1, allPersons.get(0).getFirstName());
-		assertEquals(lastname1, allPersons.get(0).getLastName());
-		assertEquals(username1, allPersons.get(0).getUserName());
-		
-		assertEquals(firstname1, personService.getPersonByUsername(username1).getFirstName());
-		
-		assertEquals(firstname2, allPersons.get(1).getFirstName());
-		assertEquals(lastname2, allPersons.get(1).getLastName());
-		assertEquals(username2, allPersons.get(1).getUserName());
-		
-		assertEquals(firstname2, personService.getPersonByUsername(username2).getFirstName());
-	}
+//	@Test
+//	public void testReadPerson() {
+//		
+//		String username1 = "a";
+//		String firstname1 = "Max";
+//		String lastname1 = "Cool";
+//		
+//		String username2 = "b";
+//		String firstname2 = "John";
+//		String lastname2 = "Doe";
+//		
+//		personService.createPerson(username1, firstname1, lastname1);
+//		personService.createPerson(username2, firstname2, lastname2);
+//		
+//		List<Person> allPersons = personService.getAllPersons();
+//		
+//		assertEquals(2, allPersons.size());
+//		
+//		assertEquals(firstname1, allPersons.get(0).getFirstName());
+//		assertEquals(lastname1, allPersons.get(0).getLastName());
+//		assertEquals(username1, allPersons.get(0).getUserName());
+//		
+//		assertEquals(firstname1, personService.getPersonByUsername(username1).getFirstName());
+//		
+//		assertEquals(firstname2, allPersons.get(1).getFirstName());
+//		assertEquals(lastname2, allPersons.get(1).getLastName());
+//		assertEquals(username2, allPersons.get(1).getUserName());
+//		
+//		assertEquals(firstname2, personService.getPersonByUsername(username2).getFirstName());
+//	}
 	
 	/*@Test
 	public void testModifyPersonName() {

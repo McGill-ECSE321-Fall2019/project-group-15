@@ -109,15 +109,15 @@ public class TutorMockTests {
 		assertNull(tutorService.getTutor(fakeTutorId)); 
 	}
 		
-	@Test
-	public void testTutorFound() {
-		assertEquals(tutorId, tutorService.getTutor(tutorId).getTutorId());
-	}
+//	@Test
+//	public void testTutorFound() {
+//		assertEquals(tutorId, tutorService.getTutor(tutorId).getTutorId());
+//	}
 		
-	@Test
-	public void testTutorRemove() {
-		assertEquals(true, tutorService.removeTutor(tutorId));
-	}
+//	@Test
+//	public void testTutorRemove() {
+//		assertEquals(true, tutorService.removeTutor(tutorId));
+//	}
 }
 
 
