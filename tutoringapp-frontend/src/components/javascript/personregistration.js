@@ -19,17 +19,15 @@ data () {
 		response: []
 		}
 	},
-	//....
-}
-
-//Initialization function
 created: function() {
 	//Test data
 	const p1 = new PersonDto('Osman');
 	const p2 = new PersonDto('Marwan');
 	//Sample initial content
 	this.people = [p1,  p2];
-}
+
+},
+
 
 //event handling method
 methods: {
@@ -40,4 +38,5 @@ methods: {
 	//Reset the name field for the new people
 	this.newPerson = '';
 	}
+}
 }
