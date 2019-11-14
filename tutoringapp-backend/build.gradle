@@ -1,9 +1,8 @@
-plugins {
-	id 'org.springframework.boot'
-	id 'io.spring.dependency-management'
-	id 'java'
-	id 'application'
-}
+apply plugin: 'org.springframework.boot'
+apply plugin: id 'io.spring.dependency-management'
+apply plugin: id 'java'
+apply plugin: id 'application'
+
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
