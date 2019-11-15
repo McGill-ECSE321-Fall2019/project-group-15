@@ -1,5 +1,19 @@
 <template>
 <div id="id">
+    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item href="#">Home</b-nav-item>
+        <b-nav-item href="#" disabled>About</b-nav-item>
+      </b-navbar-nav>
+
+     
+    </b-collapse>
+  </b-navbar>
     <div class="site-wrap">
         <div class="site-section" style="padding-top:10%">
             <div class="container" style="text-align:center; ">
@@ -10,7 +24,7 @@
                         style="margin: 15px; border-radius:2%;"
                         placeholder="Course Name"
                         v-model="newCourse"
-                        />
+                        />  
                 <input @click="createCourse(newCourse, courseDescription)"
                         type="submit"
                         value="Create"
@@ -44,3 +58,8 @@
 
 <script src="./javascript/course.js">
 </script>
+<style scoped>
+h1, h2, h3 {
+    font-family: Century Gothic;
+}
+</style>
