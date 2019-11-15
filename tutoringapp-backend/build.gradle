@@ -1,7 +1,21 @@
+buldscript{
+       ext{
+               springBootVersion ='2.1.2.RELEASE'
+       }
+       repositories{
+               mavenCentral()
+       }
+       dependencies{
+                classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+       }
+}       
+
+
+
 apply plugin: 'org.springframework.boot'
-apply plugin: id 'io.spring.dependency-management'
-apply plugin: id 'java'
-apply plugin: id 'application'
+apply plugin: 'io.spring.dependency-management'
+apply plugin:  'java'
+apply plugin: 'application'
 
 
 group = 'com.example'
