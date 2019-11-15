@@ -20,12 +20,12 @@ function TutorDto(firstName, lastName, id, hourlyRate, password) {
 
 //data variables
 export default {
-    name: 'personregistration',
+    name: 'tutorRegistration',
     data () {
         return {
-            people: [],
-            newPerson: '',
-            errorPerson: '',
+            tutors: [],
+            newTutor: '',
+            errorTutor: '',
             response: []
             }
         },
