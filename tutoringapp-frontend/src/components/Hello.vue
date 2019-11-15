@@ -1,5 +1,5 @@
 <template>
-
+<span class="container">
 
   <div class="hello">
   <div>
@@ -11,7 +11,8 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#">Home</b-nav-item>
-        <b-nav-item href="#" disabled>About</b-nav-item>
+		<b-nav-item href="#about" >About</b-nav-item>
+        <b-nav-item href="#contact" >Contact</b-nav-item>
       </b-navbar-nav>
 
      
@@ -23,7 +24,7 @@
     <h2>{{ msg }}</h2>
     
     <!-- Login Form-->
-    <div>
+    <div class="login-form">
     </br>
     <p>Login as a Manager</p>
   <b-form inline>
@@ -44,8 +45,11 @@
     <b-button variant="primary">Login</b-button>
   </b-form>
 </div>
-   <p>Not a member?</p>
-   <div>
+<!-- Login form ends -->
+<img src="./banner-info.png" alt="Banner">
+   
+   <div class="sign-up">
+   <h3>Not a member?</h3>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       
       
@@ -93,9 +97,26 @@
       <pre class="m-0">{{ form }}</pre>
     </b-card>
   </div>
-   <b-button variant="secondary">Sign up</b-button>
+  
    
   </div>
+  <section class="about" id="about">
+
+<img src="./banner-about.png" alt="Banner">
+<p></p>
+<p></p>
+</section>
+  
+  <section class="contact" id="contact">
+<img src="./banner-contact.png" alt="Banner">
+
+</section>
+  
+  <footer>
+  <p> All Right reserved to Group 15 </p>
+  </footer>
+  
+  </span>
 </template>
 
 <script>
@@ -140,6 +161,7 @@ export default {
 <style scoped>
 body {
   font-family: Century Gothic;
+
 }
 
 h1, h2, h3 {
@@ -159,5 +181,16 @@ li {
 
 a {
   color: #42b983;
+}
+
+.login-form {
+	width: 70%;
+	text-align: left;
+	margin-left: 50px;
+}
+.sign-up {
+	width: 70%;
+	text-align: left;
+	margin-left: 50px;
 }
 </style>
