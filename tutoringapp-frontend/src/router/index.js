@@ -5,6 +5,7 @@ import tutoringApp from '@/components/tutoringApp'
 import Course from '@/components/Course'
 import Tutor from '@/components/Tutor'
 import Evaluation from '@/components/Evaluation'
+import Room from '@/components/Room'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/evaluation',
       name: 'Evaluation',
       component: Evaluation
+    },
+    {
+      path: '/room',
+      name: 'Room',
+      component: Room
     }
   ]
 })
