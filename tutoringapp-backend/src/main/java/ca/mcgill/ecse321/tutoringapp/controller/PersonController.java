@@ -1,5 +1,6 @@
 package ca.mcgill.ecse321.tutoringapp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +23,38 @@ public class PersonController {
 	
 	@PostMapping(value = {"/createPerson/", "/createPerson"})
 	public PersonDto createPerson(
-		@RequestParam("personID") Integer personID,
 		@RequestParam("firstName") String firstName,
 		@RequestParam("lastName") String lastName,
 		@RequestParam("userName") String userName ) 
 		throws IllegalArgumentException {
-		Person person = personService.createPerson(firstName, lastName, userName);
-		return DtoConverters.convertToDto(person);
+		
+		if (personService.getPersonByUsername(userName) != null) {
+			throw new IllegalArgumentException("This username is already taken, please select another one");
+		}
+		
+		try{
+			Person person = personService.createPerson(firstName, lastName, userName);
+			return DtoConverters.convertToDto(person);
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
+		
 	}
 
 	@GetMapping(value = {"/getAllPersons","/getAllPersons/"})
 	public List<PersonDto> getAllPersons() {
-		
-		return null;
+		List<PersonDto> personsDto = new ArrayList<>();
+		try {
+			List<Person> persons = personService.getAllPersons();
+			for (Person person: persons) {
+				personsDto.add(DtoConverters.convertToDto(person));
+			}
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
+		return personsDto;
 	}
 	
 	@GetMapping(value = {"/getPersonByPersonID/","getPersonByPersonID"})

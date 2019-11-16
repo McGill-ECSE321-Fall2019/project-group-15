@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import tutoringApp from '@/components/tutoringApp'
 import Course from '@/components/Course'
+import Tutor from '@/components/Tutor'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/course',
       name: 'Course',
       component: Course
+    },
+    {
+      path: '/tutor',
+      name: 'Tutor',
+      component: Tutor
     }
   ]
 })
