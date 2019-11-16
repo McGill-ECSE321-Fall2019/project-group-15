@@ -23,6 +23,7 @@
     <h1>Manage Rooms</h1>
     <!-- Search -->
 
+
     <!-- Table -->
     <table>
         <tr>
@@ -30,6 +31,27 @@
             <td> {{ rooms[0].type }} </td>
         </tr>
     </table> 
+
+    <!-- Input Table-->
+    <table>
+        <tr>
+            <td>
+                <input type="text" v-model="newRoomName" placeholder="Enter Room Name">
+            </td>
+            <td>
+                <input type="text" v-model="newRoomType" placeholder="Enter Room Type">
+            </td>
+            <td>
+                <button @click="createRoom(newRoomName, newRoomType)">Create Room</button>
+            </td>
+        </tr>
+    </table>
+
+        <!-- New Table -->
+    <div>
+      <b-table  striped hover :items="rooms">
+      </b-table>
+    </div>
 
     <br />
 
@@ -50,6 +72,11 @@ h1, h2, h3 {
 
 .room {
     width: 100%;
+}
+.sign-up {
+	width: 70%;
+	text-align: left;
+	margin-left: 50px;
 }
 </style>
 
