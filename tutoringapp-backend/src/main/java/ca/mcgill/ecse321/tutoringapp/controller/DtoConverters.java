@@ -33,14 +33,15 @@ public class DtoConverters {
 
 	public static PersonDto convertToDto(Person p) {
 		
-		CheckArg(p);
-        return new PersonDto( p.getFirstName(), p.getLastName(), p.getUserName() );
+		CheckArg(p); 
+        PersonDto p1 = new PersonDto( p.getFirstName(), p.getLastName(), p.getUserName());
+        return p1;
     }
 	
-	public static PersonRoleDto convertToDto (PersonRole r) {
+	/*public static PersonRoleDto convertToDto (PersonRole r) {
 		CheckArg(r);
 		return new PersonRoleDto(r.getRoleID(), r.getPassword(), convertToDto(r.getPerson()));
-	}      
+	} */     
 
 
 	public static SubjectDto convertToDto(Subject s) {
@@ -94,6 +95,21 @@ public class DtoConverters {
     	
     	RoomDto r = new RoomDto(room.getName(), room.getType());
     	return r;
+    }
+    
+    public static SessionDto convertToDto(Session session, Course course) {
+    	CheckArg(session);
+    	
+    	CourseDto courseDto = new CourseDto(course.getName());
+    	SessionDto s = new SessionDto(session.getDate(), session.getStartTime(), session.getEndTime(), session.getType(), courseDto);
+    	return s;
+    }
+    
+    public static ManagerDto convertToDto(Manager manager) {
+    	CheckArg(manager);
+    	
+    	ManagerDto m = new ManagerDto(manager.getManagerId());
+    	return m;
     }
 
 	
