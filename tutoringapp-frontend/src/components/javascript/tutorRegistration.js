@@ -1,4 +1,4 @@
-import PersonDto from '@/components/javascript/personregistration.js'
+//import PersonDto from '@/components/javascript/personregistration.js'
 // import axios from 'axios'
 // var config = require('../../config')
 
@@ -43,8 +43,8 @@ created: function () {
     //   });
 
     // Test data
-    const p1 = new PersonDto('John', 'Doe', 'JDoe');
-    const p2 = new PersonDto('Jane', 'Doe', 'JDough');
+    const p1 = 'John';
+    const p2 = 'Jane';
 
     const t1 = new TutorDto(160160160, 20.00, true, 'abc', p1);
     const t2 = new TutorDto(601601601, 20.50, false, '123', p2);

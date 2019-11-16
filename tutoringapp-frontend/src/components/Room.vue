@@ -50,6 +50,10 @@
         <!-- New Table -->
     <div>
       <b-table striped hover :items="rooms">
+        <template v-slot:cell(person)="data">
+
+        </template>
+
       </b-table>
     </div>
 
