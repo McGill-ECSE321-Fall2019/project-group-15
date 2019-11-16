@@ -130,6 +130,7 @@
         <template v-slot:cell(status)="data">
           <b-form-checkbox
             v-model="data.item.status"
+            checked="data.item.isVerified"
             value="Approved"
             unchecked-value="Unapproved"
           >
@@ -173,14 +174,16 @@ export default {
           ID: 160160160,
           name: { firstName: "John", lastName: "Doe" },
           hourlyRate: 20.0,
-          status: "Unapproved"
+          isVerifed: true,
+          status: (this.isVerified ? "Approved" : "Unapproved")        
         },
         {
           isActive: true,
           ID: 601601601,
           name: { firstName: "Jane", lastName: "Doe" },
           hourlyRate: 20.5,
-          status: "Approved"
+          isVerified: false,
+          status: (this.isVerified ? "Approved" : "Unapproved")
         }
       ]
     };
