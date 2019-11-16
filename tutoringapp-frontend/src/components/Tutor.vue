@@ -24,46 +24,46 @@
       <!-- by ID -->
       <b-row class="my-1">
         <b-col sm="2">
-          <label for="input-small">by ID:</label>
+          <label for="input-1">by ID:</label>
         </b-col>
         <b-col sm="5">
-          <b-form-input id="input-small" size="sm" placeholder="Enter ID"></b-form-input>
+          <b-form-input id="input-1" size="sm" placeholder="Enter ID"></b-form-input>
         </b-col>
         <b-col>
-          <b-button>Search</b-button>
+          <b-button id="button-1">Search</b-button>
         </b-col>
       </b-row>
       <!-- by first name -->
       <b-row class="my-1">
         <b-col sm="2">
-          <label for="input-small">by first name:</label>
+          <label for="input-2">by first name:</label>
         </b-col>
         <b-col sm="5">
-          <b-form-input id="input-small" size="sm" placeholder="Enter first name"></b-form-input>
+          <b-form-input id="input-2" size="sm" placeholder="Enter first name"></b-form-input>
         </b-col>
         <b-col>
-          <b-button>Search</b-button>
+          <b-button id="button-2">Search</b-button>
         </b-col>
       </b-row>
       <!-- by last name -->
       <b-row class="my-1">
         <b-col sm="2">
-          <label for="input-small">by last name:</label>
+          <label for="input-3">by last name:</label>
         </b-col>
         <b-col sm="5">
-          <b-form-input id="input-small" size="sm" placeholder="Enter last name"></b-form-input>
+          <b-form-input id="input-3" size="sm" placeholder="Enter last name"></b-form-input>
         </b-col>
         <b-col>
-          <b-button>Search</b-button>
+          <b-button id="button-3">Search</b-button>
         </b-col>
       </b-row>
       <!-- Search all tutors -->
       <b-row>
         <b-col>
-          <b-button>All tutors</b-button>
+          <b-button id="button-4">All tutors</b-button>
         </b-col>
         <b-col>
-          <b-button>All unverified tutors</b-button>
+          <b-button id="button-5">All unverified tutors</b-button>
         </b-col>
       </b-row>
     </b-container>
