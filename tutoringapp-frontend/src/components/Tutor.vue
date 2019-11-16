@@ -26,7 +26,7 @@
           <label for="input-small">by ID:</label>
         </b-col>
         <b-col sm="5">
-          <b-form-input id="input-small" size="sm" placeholder="Enter your name"></b-form-input>
+          <b-form-input id="input-small" size="sm" placeholder="Enter ID"></b-form-input>
         </b-col>
         <b-col>
           <b-button>Search</b-button>
@@ -38,7 +38,7 @@
           <label for="input-small">by first name:</label>
         </b-col>
         <b-col sm="5">
-          <b-form-input id="input-small" size="sm" placeholder="Enter your name"></b-form-input>
+          <b-form-input id="input-small" size="sm" placeholder="Enter first name"></b-form-input>
         </b-col>
         <b-col>
           <b-button>Search</b-button>
@@ -50,7 +50,7 @@
           <label for="input-small">by last name:</label>
         </b-col>
         <b-col sm="5">
-          <b-form-input id="input-small" size="sm" placeholder="Enter your name"></b-form-input>
+          <b-form-input id="input-small" size="sm" placeholder="Enter last name"></b-form-input>
         </b-col>
         <b-col>
           <b-button>Search</b-button>
@@ -67,8 +67,10 @@
       </b-row>
     </b-container>
 
+    <br />
+
     <!-- Table -->
-    <table>
+    <!-- <table>
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -114,12 +116,30 @@
           <b-button variant="danger">Delete</b-button>
         </td>
       </tr>
-    </table>
+    </table>-->
     <!-- New Table -->
     <div>
       <b-table small :fields="fields" :items="items" responsive="sm">
-        <template v-slot:cell(name)="data">
-          {{ data.item.name.firstName }} {{ data.item.name.lastName }}
+        <!-- Name Column -->
+        <template
+          v-slot:cell(name)="data"
+        >{{ data.item.name.firstName }} {{ data.item.name.lastName }}</template>
+
+        <!-- Status Column -->
+        <template v-slot:cell(status)="data">
+          <b-form-checkbox
+            id="data.item.firstName"
+            v-model="data.item.status"
+            name="data.item.firstName"
+            value="Approved"
+            unchecked-value="Unapproved"
+          >
+            <strong>{{ data.item.status }}</strong>
+          </b-form-checkbox>
+        </template>
+        <!-- Delete Column -->
+        <template v-slot:cell(delete)="data">
+          <b-button variant="danger">Delete</b-button>
         </template>
       </b-table>
     </div>
@@ -139,16 +159,30 @@ table {
 export default {
   data() {
     return {
-      status1: "Unapproved",
-      status2: "Unapproved",
+      // status1: "Unapproved",
+      // status2: "Unapproved",
       fields: [
-        'ID', 
-        {key: 'name', label: 'Full Name'}, 
-        'hourlyRate', 
-        'status'],
+        "ID",
+        { key: "name", label: "Full Name" },
+        "hourlyRate",
+        "status",
+        { key: "delete", label: "delete" }
+      ],
       items: [
-        { isActive: true, ID: 160160160, name: {firstName: 'John', lastName: 'Doe'}, hourlyRate: 20.00, status: 'approved' },
-        { isActive: true, ID: 601601601, name: {firstName: 'Jane', lastName: 'Doe'}, hourlyRate: 20.50, status: 'unapproved' }
+        {
+          isActive: true,
+          ID: 160160160,
+          name: { firstName: "John", lastName: "Doe" },
+          hourlyRate: 20.0,
+          status: "Unapproved"
+        },
+        {
+          isActive: true,
+          ID: 601601601,
+          name: { firstName: "Jane", lastName: "Doe" },
+          hourlyRate: 20.5,
+          status: "Approved"
+        }
       ]
     };
   }
