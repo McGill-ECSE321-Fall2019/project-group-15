@@ -54,10 +54,10 @@ created: function () {
 
   methods: {
     createTutor: function (tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword, tutorPerson) {
-      // Create a new person and add it to the list of people
+      // Create a new tutor and add it to the list of tutors
       var t = new TutorDto(tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword, tutorPerson);
       this.people.push(t);
-      // Reset the name field for new people
+      // Reset the fields for new tutors
       this.newTutor = '';
     }
   }
