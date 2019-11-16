@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Manager;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Session;
 import ca.mcgill.ecse321.tutoringapp.Database.src.SessionType;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
@@ -25,7 +26,7 @@ public class SessionService {
 	SessionRepository sessionRepository;
 	
 	@Transactional
-	public Session createSession(Date date, Time time, Time time2, SessionType type, Course course, Tutor tutor, Set<Student> students) {
+	public Session createSession(Date date, Time time, Time time2, SessionType type, Course course, Tutor tutor, Set<Student> students, Manager manager) {
 		Session session = new Session();
 		session.setDate(date);
 		session.setStartTime(time);
@@ -33,6 +34,7 @@ public class SessionService {
 		session.setType(type);
 		session.setCourse(course);
 		session.setRoom(null);
+		session.setManager(manager);
 		session.setStudent(students);
 		sessionRepository.save(session);
 		return session;
