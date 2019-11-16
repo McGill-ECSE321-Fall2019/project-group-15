@@ -24,7 +24,7 @@
     
     <!-- Login Form-->
     <div>
-    </br>
+    
     <p>Login as a Manager</p>
   <b-form inline>
     
