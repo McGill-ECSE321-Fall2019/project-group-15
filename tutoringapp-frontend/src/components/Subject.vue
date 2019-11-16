@@ -59,16 +59,14 @@
                     </div>
                     <hr style="border: 1px solid white; width:60%; opacity:0.4;" />
                     <br>
-<input @click="createSubject(Name,schoolName, description)"
+                        <input @click="createSubject(Name,schoolName, description)"
                         type="submit"
                         value="Create"
                         class="btn btn-primary py-2 px-4 text-white"
                         />
                     
                 </div>
-                
-            </div>
-        </div>
+        
 </template>
 
 <script>
