@@ -49,7 +49,7 @@
 
         <!-- New Table -->
     <div>
-      <b-table  striped hover :items="rooms">
+      <b-table striped hover :items="rooms">
       </b-table>
     </div>
 
@@ -80,36 +80,7 @@ h1, h2, h3 {
 }
 </style>
 
+<!-- src="./javascript/roomRegistration.js" -->
 <script src="./javascript/roomRegistration.js">
-// export default {
-//     name: 'roomRegistration',
-//   data() {
-//     return {
-//         rooms: [],
-//         newRoom: '',
-//         errorRoom: '',
-//         response: []
-//     //   fields: [],
-//     //   items: []
-//     }
-//   },
 
-//   created: function () {
-//       //Test data
-//       const r1 = new RoomDto('TR5090', 'smallRoom');
-//       const r2 = new RoomDto('MC10', 'smallRoom');
-//       //Sample initial content
-//       this.rooms = [r1, r2];
-//   },
-
-//   methods: {
-//       createRoom: function (roomName, roomType) {
-//           // Create a new room and add it to the list of rooms
-//           var r = new RoomDto(roomName, roomType);
-//           this.rooms.push(r);
-//           // Reset the name and roomtype fields for new rooms
-//           this.newRoom = '';
-//       }
-//   }
-// };
 </script>

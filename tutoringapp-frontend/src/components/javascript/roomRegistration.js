@@ -14,8 +14,6 @@ export default {
         newRoom: '',
         errorRoom: '',
         response: []
-    //   fields: [],
-    //   items: []
     }
   },
 

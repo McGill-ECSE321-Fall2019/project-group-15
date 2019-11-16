@@ -26,11 +26,11 @@
         <b-col sm="2">
           <label for="input-1">by ID:</label>
         </b-col>
-        <b-col sm="5">
+        <b-col sm="3">
           <b-form-input id="input-1" size="sm" placeholder="Enter ID"></b-form-input>
         </b-col>
-        <b-col>
-          <b-button id="button-1">Search</b-button>
+        <b-col sm="2">
+          <b-button id="button-1">Search by ID</b-button>
         </b-col>
       </b-row>
       <!-- by first name -->
@@ -38,11 +38,11 @@
         <b-col sm="2">
           <label for="input-2">by first name:</label>
         </b-col>
-        <b-col sm="5">
+        <b-col sm="3">
           <b-form-input id="input-2" size="sm" placeholder="Enter first name"></b-form-input>
         </b-col>
-        <b-col>
-          <b-button id="button-2">Search</b-button>
+        <b-col sm="2">
+          <b-button id="button-2">Search by First Name</b-button>
         </b-col>
       </b-row>
       <!-- by last name -->
@@ -50,20 +50,20 @@
         <b-col sm="2">
           <label for="input-3">by last name:</label>
         </b-col>
-        <b-col sm="5">
+        <b-col sm="3">
           <b-form-input id="input-3" size="sm" placeholder="Enter last name"></b-form-input>
         </b-col>
-        <b-col>
-          <b-button id="button-3">Search</b-button>
+        <b-col sm="2">
+          <b-button id="button-3">Search by Last Name</b-button>
         </b-col>
       </b-row>
       <!-- Search all tutors -->
       <b-row>
-        <b-col>
-          <b-button id="button-4">All tutors</b-button>
+        <b-col sm="2">
+          <b-button id="button-4">All Tutors</b-button>
         </b-col>
-        <b-col>
-          <b-button id="button-5">All unverified tutors</b-button>
+        <b-col sm="2">
+          <b-button id="button-5">All Unverified Tutors</b-button>
         </b-col>
       </b-row>
     </b-container>
@@ -95,6 +95,12 @@
         </template>
       </b-table>
     </div>
+
+    <!-- New New Table -->
+    <!-- <div>
+    <b-table striped hover :items="tutors">
+    </b-table>
+    </div>-->
   </div>
 </template>
 
@@ -126,7 +132,7 @@ export default {
           name: { firstName: "John", lastName: "Doe" },
           hourlyRate: 20.0,
           isVerifed: true,
-          status: (this.isVerified ? "Approved" : "Unapproved")        
+          status: this.isVerified ? "Approved" : "Unapproved"
         },
         {
           isActive: true,
@@ -134,7 +140,7 @@ export default {
           name: { firstName: "Jane", lastName: "Doe" },
           hourlyRate: 20.5,
           isVerified: false,
-          status: (this.isVerified ? "Approved" : "Unapproved")
+          status: this.isVerified ? "Approved" : "Unapproved"
         }
       ]
     };

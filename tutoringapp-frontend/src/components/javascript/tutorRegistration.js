@@ -1,4 +1,4 @@
-import PersonDto from '@/javascript/personregistration.js'
+import PersonDto from '@/components/javascript/personregistration.js'
 // import axios from 'axios'
 // var config = require('../../config')
 
@@ -30,6 +30,7 @@ export default {
             response: []
             }
         },
+
 created: function () {
     // // Initializing people from backend
     //   AXIOS.get(`/tutors`)
@@ -42,8 +43,8 @@ created: function () {
     //   });
 
     // Test data
-    const p1 = new PersonDto('John', 'Doe', 'JDoe');
-    const p2 = new PersonDto('Jane', 'Doe', 'JDough');
+    const p1 = new PersonDto('John');
+    const p2 = new PersonDto('Jane');
 
     const t1 = new TutorDto(160160160, 20.00, true, 'abc', p1);
     const t2 = new TutorDto(601601601, 20.50, false, '123', p2);
@@ -56,9 +57,16 @@ created: function () {
     createTutor: function (tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword, tutorPerson) {
       // Create a new tutor and add it to the list of tutors
       var t = new TutorDto(tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword, tutorPerson);
-      this.people.push(t);
+      this.tutors.push(t);
       // Reset the fields for new tutors
       this.newTutor = '';
+    },
+
+    removeTutor: function (tutor) {
+      //Find tutor with id in tutors
+      var index = this.tutors.indexOf(tutor);
+      //Delete a tutor and remove it from the table
+      this.tutors.splice(index,1);
     }
   }
 
