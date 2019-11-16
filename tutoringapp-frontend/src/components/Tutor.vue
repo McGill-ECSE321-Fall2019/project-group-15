@@ -12,6 +12,7 @@
             <b-nav-item href="#">Home</b-nav-item>
             <b-nav-item href="#about">About</b-nav-item>
             <b-nav-item href="#contact">Contact</b-nav-item>
+            <b-nav-item href="#tutor">Tutors</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -128,9 +129,7 @@
         <!-- Status Column -->
         <template v-slot:cell(status)="data">
           <b-form-checkbox
-            id="data.item.firstName"
             v-model="data.item.status"
-            name="data.item.firstName"
             value="Approved"
             unchecked-value="Unapproved"
           >
@@ -166,7 +165,7 @@ export default {
         { key: "name", label: "Full Name" },
         "hourlyRate",
         "status",
-        { key: "delete", label: "delete" }
+        { key: "delete", label: "Delete" }
       ],
       items: [
         {
