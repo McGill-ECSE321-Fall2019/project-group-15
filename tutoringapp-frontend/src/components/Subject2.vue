@@ -20,7 +20,7 @@
       </b-navbar>
     </div>
     <!-- Header -->
-    <h1>Manage Rooms</h1>
+    <h1>Manage Subjects</h1>
     <!-- Search -->
     <!-- Table -->
     <table>
@@ -35,16 +35,16 @@
     <table>
         <tr>
             <td>
-                <input type="text" v-model="newSubjectName" placeholder="Enter Room Name">
+                <input type="text" v-model="newSubjectName" placeholder="Enter Subject Name">
             </td>
             <td>
-                <input type="text" v-model="newSchoolName" placeholder="Enter Room Type">
+                <input type="text" v-model="newSchoolName" placeholder="Enter School Name">
             </td>
              <td>
-                <input type="text" v-model="newDescription" placeholder="Enter Room Type">
+                <input type="text" v-model="newDescription" placeholder="Enter Description">
             </td>
             <td>
-                <button @click="createSubject(newSubjectName, newSchoolName, newDescription)">Create Room</button>
+                <button @click="createSubject(newSubjectName, newSchoolName, newDescription)">Create Subject</button>
             </td>
         </tr>
     </table>
