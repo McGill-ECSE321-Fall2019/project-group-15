@@ -1,6 +1,6 @@
 <template>
- <div class="evaluation">
-     <!-- Navbar -->
+  <div class="evaluation">
+    <!-- Navbar -->
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
@@ -13,11 +13,12 @@
             <b-nav-item href="#about">About</b-nav-item>
             <b-nav-item href="#contact">Contact</b-nav-item>
             <b-nav-item href="#tutor">Tutors</b-nav-item>
+            <b-nav-item href="#evaluation">Evaluations</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
-     <!-- Header -->
+    <!-- Header -->
     <h1>Moderate Evaluations</h1>
     <!-- Search  -->
     <b-container fluid>
@@ -57,7 +58,7 @@
           <b-button id="button-3">Search</b-button>
         </b-col>
       </b-row>
-       <!-- by Evaluation ID -->
+      <!-- by Evaluation ID -->
       <b-row class="my-4">
         <b-col sm="2">
           <label for="input-4">by Evaluation ID:</label>
@@ -76,20 +77,33 @@
         </b-col>
       </b-row>
     </b-container>
-    
+
     <br />
 
     <!-- Table -->
     <div>
       <b-table small :fields="fields" :items="items" responsive="sm">
+        <!-- Flagged Column -->
+        <template v-slot:cell(isFlagged)="data">
+          <b-form-checkbox
+            v-model="data.item.isFlagged"
+            checked="data.item.isFlagged"
+            value="true"
+            unchecked-value="false"
+          >
+            <strong>{{ data.item.isFlagged }}</strong>
+          </b-form-checkbox>
+        </template>
+        <!-- Rating -->
+        <template v-slot:cell(rating)="data">
+            {{ data.item.rating }}/5
+        </template>
       </b-table>
     </div>
-
- </div>
+  </div>
 </template>
 
 <style scoped>
-
 </style>
 
 <script>
@@ -101,25 +115,26 @@ export default {
         "tutorID",
         "studentID",
         "rating",
-        "comment",
-        "isFlagged"
+        "isFlagged",
+        "comment"
+        
       ],
       items: [
         {
-            evaluationID: 1231,
-            rating: 4,
-            comment: "Best tutor ever!!!",
-            isFlagged: false,
-            tutorID: 160160160,
-            studentID: 696969
+          evaluationID: 1231,
+          rating: 4,
+          comment: "Best tutor ever!!!",
+          isFlagged: false,
+          tutorID: 160160160,
+          studentID: 696969
         },
         {
-            evaluationID: 2312,
-            rating: 1,
-            comment: "Worst tutor ever!!!",
-            isFlagged: true,
-            tutorID: 601601601,
-            studentID: 969696
+          evaluationID: 2312,
+          rating: 1,
+          comment: "Worst tutor ever!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar ante nec risus maximus, ut eleifend justo suscipit. Phasellus eros nunc, semper ac nisi et, dignissim ultricies mi. Etiam ut odio id tellus blandit lacinia eu ac dolor. Sed sagittis libero eget lectus viverra, non pharetra risus accumsan. Integer vitae ex tortor. Phasellus a urna dui. Donec consequat mollis justo id vestibulum. Proin dictum et lectus ac volutpat. Proin maximus sem ante, non pretium ex accumsan sit amet. Curabitur in turpis leo. Mauris libero leo, pellentesque quis tortor eget, rutrum consequat dolor. Aliquam quis finibus urna. Vivamus vitae vulputate mi.",
+          isFlagged: true,
+          tutorID: 601601601,
+          studentID: 969696
         }
       ]
     };
