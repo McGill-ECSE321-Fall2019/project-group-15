@@ -107,6 +107,7 @@ table {
 }
 </style>
 
+<!-- src="./javascript/tutorRegistration.js" -->
 <script>
 export default {
   data() {
