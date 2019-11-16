@@ -2,7 +2,7 @@
 <span class="container">
 
   <div class="hello">
-  <div>
+  
   <b-navbar toggleable="lg" type="dark" variant="info">
     <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
 
