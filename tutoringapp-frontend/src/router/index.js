@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import tutoringApp from '@/components/tutoringApp'
 import Course from '@/components/Course'
 import Tutor from '@/components/Tutor'
+import Evaluation from '@/components/Evaluation'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/tutor',
       name: 'Tutor',
       component: Tutor
+    },
+    {
+      path: '/evaluation',
+      name: 'Evaluation',
+      component: Evaluation
     }
   ]
 })
