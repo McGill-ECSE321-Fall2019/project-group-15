@@ -71,54 +71,6 @@
     <br />
 
     <!-- Table -->
-    <!-- <table>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Hourly Rate</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-      <tr>
-        <td>160160160</td>
-        <td>John Doe</td>
-        <td>20.00</td>
-        <td>
-          <b-form-checkbox
-            id="checkbox-approval"
-            v-model="status1"
-            name="checkbox-approval"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ status1 }}</strong>
-          </b-form-checkbox>
-        </td>
-        <td>
-          <b-button variant="danger">Delete</b-button>
-        </td>
-      </tr>
-      <tr>
-        <td>016016016</td>
-        <td>Jane Doe</td>
-        <td>20.50</td>
-        <td>
-          <b-form-checkbox
-            id="checkbox-approval-1"
-            v-model="status2"
-            name="checkbox-approval-1"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ status2 }}</strong>
-          </b-form-checkbox>
-        </td>
-        <td>
-          <b-button variant="danger">Delete</b-button>
-        </td>
-      </tr>
-    </table>-->
-    <!-- New Table -->
     <div>
       <b-table small :fields="fields" :items="items" responsive="sm">
         <!-- Name Column -->
@@ -159,8 +111,6 @@ table {
 export default {
   data() {
     return {
-      // status1: "Unapproved",
-      // status2: "Unapproved",
       fields: [
         "ID",
         { key: "name", label: "Full Name" },
