@@ -32,7 +32,7 @@ public class Session{
 	}
 	private Room room;
 
-	@ManyToOne(optional=false)
+	@ManyToOne
 	public Room getRoom() {
 		return this.room;
 	}
