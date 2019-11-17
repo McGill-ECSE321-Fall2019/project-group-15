@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import tutoringApp from '@/components/tutoringApp'
+import Student from '@/components/Student'
 import Course from '@/components/Course'
 import Tutor from '@/components/Tutor'
 import Evaluation from '@/components/Evaluation'
 import Room from '@/components/Room'
-
+import Dashboard from '@/components/Dashboard'
 Vue.use(Router)
 
 export default new Router({
@@ -17,9 +17,14 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/app',
-      name: 'tutoringApp',
-      component: tutoringApp
+      path: '/student',
+      name: 'Student',
+      component: Student
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '/course',
