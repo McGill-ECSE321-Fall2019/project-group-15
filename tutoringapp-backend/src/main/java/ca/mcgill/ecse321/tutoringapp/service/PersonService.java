@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
+import ca.mcgill.ecse321.tutoringapp.Database.src.PersonRole;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.CourseRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
@@ -61,7 +62,11 @@ public class PersonService {
 	public Person getPersonByUsername(String username) {
 		return personRepository.findPersonByUserName(username);
 	}
-	
+	@Transactional
+	public void addPersonRole(Person person, PersonRole role) {
+		person.addPersonRole(role);
+		personRepository.save(person);
+	}
 	private <T> List<T> toList(Iterable<T> iterable){
 		List<T> resultList = new ArrayList<T>();
 		for (T t : iterable) {

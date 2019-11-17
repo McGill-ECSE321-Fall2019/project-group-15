@@ -20,7 +20,7 @@ public class Person{
 	public String getUserName() {
 		return this.userName;
 	}
-	private Set<PersonRole> personRole;
+	public Set<PersonRole> personRole;
 
 	@OneToMany(mappedBy="person")
 	protected Set<PersonRole> getPersonRole() {
@@ -29,6 +29,10 @@ public class Person{
 
 	protected void setPersonRole(Set<PersonRole> personRoles) {
 		this.personRole = personRoles;
+	}
+	
+	public void addPersonRole(PersonRole role) {
+		this.personRole.add(role);
 	}
 
 	private String firstName;
