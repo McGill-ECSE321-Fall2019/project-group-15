@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Room;
 import ca.mcgill.ecse321.tutoringapp.Database.src.RoomType;
+import ca.mcgill.ecse321.tutoringapp.dto.CourseDto;
 import ca.mcgill.ecse321.tutoringapp.dto.RoomDto;
 import ca.mcgill.ecse321.tutoringapp.service.RoomService;
 
@@ -80,4 +82,6 @@ public class RoomController {
 		}
 		return availableLargeRoomsDto;
 	}
+	
+	
 }

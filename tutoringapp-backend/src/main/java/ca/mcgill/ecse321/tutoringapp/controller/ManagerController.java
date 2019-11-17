@@ -30,6 +30,7 @@ public class ManagerController {
 		
 		try {
 			Manager manager = managerService.createManager(password, person, managerId);
+			person.personRole.add(manager);
 			return DtoConverters.convertToDto(manager);
 		}
 		catch(Exception e) {

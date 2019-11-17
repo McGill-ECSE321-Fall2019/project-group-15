@@ -1,7 +1,9 @@
 package ca.mcgill.ecse321.tutoringapp.Database.src;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
 
 import javax.persistence.Id;
@@ -64,7 +66,8 @@ public class Evaluation{
 	public boolean isIsFlagged() {
 		return this.isFlagged;
 	}
-	@GeneratedValue private int evaluationID;
+	
+	private int evaluationID;
 
 	public void setEvaluationID(int value) {
 		this.evaluationID = value;

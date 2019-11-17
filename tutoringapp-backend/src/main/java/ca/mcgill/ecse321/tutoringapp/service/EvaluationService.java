@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Course;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Evaluation;
+import ca.mcgill.ecse321.tutoringapp.Database.src.EvaluationType;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Manager;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
+import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
 import ca.mcgill.ecse321.tutoringapp.dao.EvaluationRepository;
 
 @Service
@@ -17,10 +20,14 @@ public class EvaluationService {
 	EvaluationRepository evaluationRepository;
 
 	@Transactional
-    public Evaluation createEvaluation(int rating, String comment) {
+    public Evaluation createEvaluation(int rating, String comment, EvaluationType type, Student student, Manager manager, int id) {
         Evaluation evaluation = new Evaluation();
+        evaluation.setType(type);
         evaluation.setRating(rating);
         evaluation.setComment(comment);
+        evaluation.setStudent(student);
+        evaluation.setManager(manager);
+        evaluation.setEvaluationID(id);
         //Evaluation is NOT flagged when created
         evaluation.setIsFlagged(false);
         evaluationRepository.save(evaluation);
@@ -66,12 +73,11 @@ public class EvaluationService {
         evaluationRepository.deleteEvalByEvaluationID(ID);
         return true;
     }
-	/*@Transactional
-    public void flagEvaluation(Integer ID) {
-	  Evaluation evaluation = evaluationRepository.findByEvaluationID(ID);
-      evaluationRepository.flagEvalByEvaluationID(ID);
+	@Transactional
+    public void flagEvaluation(Evaluation evaluation) {
 	  evaluation.setIsFlagged(true);
-    }*/
+	  evaluationRepository.save(evaluation);
+    }
 	
 	
 	

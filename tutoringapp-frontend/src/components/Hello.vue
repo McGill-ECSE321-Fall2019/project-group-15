@@ -2,7 +2,7 @@
 <span class="container">
 
   <div class="hello">
-  <div>
+  
   <b-navbar toggleable="lg" type="dark" variant="info">
     <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
 
@@ -24,8 +24,12 @@
     <h2>{{ msg }}</h2>
     
     <!-- Login Form-->
+
+    <div>
+    
     <div class="login-form">
     <br>
+
     <p>Login as a Manager</p>
   <b-form inline>
     
@@ -112,9 +116,11 @@
 
 </section>
   
-  <footer>
-  <p> All Right reserved to Group 15 </p>
-  </footer>
+  <section class="footer" id="footer">
+    <br/>
+    <img src="./footer.png" alt="Banner">
+    
+  </section>
   
   </span>
 </template>
@@ -192,5 +198,10 @@ a {
 	width: 70%;
 	text-align: left;
 	margin-left: 50px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
 }
 </style>

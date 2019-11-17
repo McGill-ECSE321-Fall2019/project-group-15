@@ -1,4 +1,5 @@
 <template>
+
 <div class="student">
     <h1> Search Students </h1>
 
@@ -17,3 +18,4 @@
 
 <script src="./javascript/studentRegistration.js">
 </script>
+

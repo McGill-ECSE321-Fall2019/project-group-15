@@ -1,11 +1,7 @@
 package ca.mcgill.ecse321.tutoringapp.service;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +10,6 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Session;
 
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
-import ca.mcgill.ecse321.tutoringapp.dao.PersonRepository;
 import ca.mcgill.ecse321.tutoringapp.dao.TutorRepository;
 
 @Service
@@ -26,11 +21,11 @@ public class TutorService {
 	public List<Tutor> removedTutorList = new ArrayList<Tutor>();
 
 	@Transactional
-	public Tutor createTutor(float hourlyRate, boolean isVerified, String password, Person person, Integer tutorID) {
+	public Tutor createTutor(float hourlyRate, String password, Person person, Integer tutorID) {
 		Tutor tutor = new Tutor();
 		tutor.setTutorId(tutorID);
 		tutor.setHourlyRate(hourlyRate);
-		tutor.setIsVerified(isVerified);
+		tutor.setIsVerified(false);
 		tutor.setPassword(password);
 		tutor.setPerson(person);
 		tutorRepository.save(tutor);

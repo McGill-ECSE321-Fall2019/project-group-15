@@ -10,10 +10,12 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="#">Home</b-nav-item>
-            <b-nav-item href="#about">About</b-nav-item>
-            <b-nav-item href="#contact">Contact</b-nav-item>
-            <b-nav-item href="#tutor">Tutors</b-nav-item>
+           <b-nav-item href="./#/Dashboard">Dashboard</b-nav-item>
+            <b-nav-item href="./#/Tutor">Tutors</b-nav-item>
+            <b-nav-item href="./#/Room">Rooms</b-nav-item>
+            <b-nav-item href="./#/Course">Courses</b-nav-item>
+            <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
+            <b-nav-item href="./#/Student">Students</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -24,12 +26,24 @@
 
 
     <!-- Table -->
-    <table>
-        <tr>
-            <td> {{ rooms[0].name }} </td>
-            <td> {{ rooms[0].type }} </td>
-        </tr>
-    </table> 
+     <div id="table">
+                    <table class="info-table" style="width: 100%; height: 100%;">
+                        
+                        <tr v-for="(room, i) in rooms" v-bind:key="`room-${i}`">
+                            <td style="padding:10px">
+                            </td>
+                            <td style="padding:10px">{{ room.name }}</td>
+                            <td style="padding:10px">{{ room.type }}</td>
+                            
+                        </tr>
+                        <tr>
+                            <th style="padding:10px">Room Name</th>
+                            <th style="padding:10px">Room Type</th>
+                        </tr>
+                    </table>
+					<h6 align="left" style="padding-top:1.6%">Add room</h6>
+                </div>
+
 
     <!-- Input Table-->
     <table>
@@ -45,6 +59,7 @@
             </td>
         </tr>
     </table>
+
 
         <!-- New Table -->
     <div>

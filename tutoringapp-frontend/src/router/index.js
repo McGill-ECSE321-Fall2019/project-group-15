@@ -1,13 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import tutoringApp from '@/components/tutoringApp'
+import Student from '@/components/Student'
 import Course from '@/components/Course'
 import Tutor from '@/components/Tutor'
 import Evaluation from '@/components/Evaluation'
 import Room from '@/components/Room'
 import Person from '@/components/Person'
 import Student from '@/components/Student'
+import Dashboard from '@/components/Dashboard'
+import Subject from '@/components/Subject'
+
+
+
 
 Vue.use(Router)
 
@@ -19,9 +24,14 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/app',
-      name: 'tutoringApp',
-      component: tutoringApp
+      path: '/student',
+      name: 'Student',
+      component: Student
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '/course',
@@ -44,6 +54,7 @@ export default new Router({
       component: Room
     },
     {
+
       path: '/person',
       name: 'Person',
       component: Person
@@ -52,6 +63,11 @@ export default new Router({
       path: '/student',
       name: 'Student',
       component: Student
+    },
+    {
+      path: '/subject',
+      name: 'Subject',
+      component: Subject
     }
   ]
 })

@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
 
 public interface StudentRepository extends CrudRepository<Student, Integer> {
-	Student findStudentByRoleID(Integer ID);
+	Student findStudentByStudentId(Integer ID);
 }

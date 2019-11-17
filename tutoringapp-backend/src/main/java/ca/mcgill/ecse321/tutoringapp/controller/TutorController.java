@@ -20,30 +20,50 @@ public class TutorController {
 
 	@Autowired
 	TutorService tutorService;
+	@Autowired
+	PersonService personService;
 	
 	@PostMapping(value = {"/createTutor/", "/createTutor/"})
 	public TutorDto createTutor (
 		@RequestParam("tutorID") Integer tutorID,
 		@RequestParam("hourlyRate") Float hourlyRate,
-		@RequestParam("isVerified") Boolean isVerified,
 		@RequestParam("password") String password,
-		@RequestParam("person") Person person)
+		@RequestParam("userName") String userName)
 		throws IllegalArgumentException {
-		Tutor tutor = tutorService.createTutor(hourlyRate, isVerified, password, person, tutorID);
-		return DtoConverters.convertToDto(tutor);
+		
+		Person person = personService.getPersonByUsername(userName);
+		if (person == null) {
+			throw new IllegalArgumentException("This person does not exist");
+		}
+		try {
+			Tutor tutor = tutorService.createTutor(hourlyRate, password, person, tutorID);
+			personService.addPersonRole(person, tutor);
+			return DtoConverters.convertToDto(tutor);
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
 	}
 	
 	@GetMapping(value = {"/getAllTutors/","/getAllTutors/"})
-	public List<TutorDto> getAllTutor() {
+	public List<TutorDto> getAllTutor() throws IllegalArgumentException {
 		
 		List<TutorDto> tutorsDto = new ArrayList<>();
 		List<Tutor> allTutors = tutorService.getAllTutors();
-		
-		for (Tutor tutor : allTutors) {
-			tutorsDto.add(DtoConverters.convertToDto(tutor));
+		if (allTutors.size() == 0) {
+			throw new IllegalArgumentException("There are no tutors");
+		}
+		try {
+			for (Tutor tutor : allTutors) {
+				tutorsDto.add(DtoConverters.convertToDto(tutor));
+			}
+			
+			return tutorsDto;
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid info");
 		}
 		
-		return tutorsDto;
 	}
 	
 	@GetMapping(value = {"/getAllUnverifiedTutors/","/getAllUnverifiedTutors/"})
@@ -61,35 +81,23 @@ public class TutorController {
 		return tutorsDto;
 	}
 	
-	@GetMapping(value = {"/approveTutor/","/approveTutor/"})
+	@PostMapping(value = {"/approveTutor/","/approveTutor/"})
 	public void approveTutor(
 		@RequestParam("tutorID") Integer tutorID)
 		throws IllegalArgumentException {
-		
 		Tutor tutor = tutorService.getTutor(tutorID);
+		if (tutor == null) {
+			throw new IllegalArgumentException("The tutor does not exist");
+		}
+		try {
+			tutorService.approveTutor(tutorID);
+			}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
 		
-		tutor.setIsVerified(true);
+		
 	}
-	
-	/**
-	 * create a new tutor in the system
-	 * @param password
-	 * @param person
-	 * @return
-	 * @throws IllegalArgumentException
-	 */
-//	@PostMapping(value =  { "/createTutor", "/createTutor/" })
-//	public TutorDto createTutor(@RequestParam("password") String password,
-//			@RequestParam("person") Person person) throws IllegalArgumentException {
-//		try {
-//		Tutor tutor = tutorService.addTutor(password, person);
-//		return DtoConverters.convertToDto(tutor); 
-//		}
-//		catch (Exception e) {
-//			throw new IllegalArgumentException("Could not create tutor");
-//		}
-//
-//	}
 
 	
 	/**
