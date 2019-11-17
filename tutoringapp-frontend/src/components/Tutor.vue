@@ -113,7 +113,7 @@
       
       <!-- Name Column -->
       <template v-slot:cell(name)="data">
-        {{ data.item.person }}
+        {{ data.item.person.firstName }} {{ data.item.person.lastName }}
       </template>
 
       <!-- Status Column -->
