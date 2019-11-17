@@ -9,11 +9,13 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="#">Home</b-nav-item>
-            <b-nav-item href="#about">About</b-nav-item>
-            <b-nav-item href="#contact">Contact</b-nav-item>
-            <b-nav-item href="#tutor">Tutors</b-nav-item>
-            <b-nav-item href="#evaluation">Evaluations</b-nav-item>
+            <b-nav-item href="./#/Dashboard">Dashboard</b-nav-item>
+            <b-nav-item href="./#/Tutor">Tutors</b-nav-item>
+            <b-nav-item href="./#/Room">Rooms</b-nav-item>
+            <b-nav-item href="./#/Course">Courses</b-nav-item>
+            <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
+            <b-nav-item href="./#/Student">Students</b-nav-item>
+
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -131,7 +133,7 @@ export default {
         {
           evaluationID: 2312,
           rating: 1,
-          comment: "Worst tutor ever!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar ante nec risus maximus, ut eleifend justo suscipit. Phasellus eros nunc, semper ac nisi et, dignissim ultricies mi. Etiam ut odio id tellus blandit lacinia eu ac dolor. Sed sagittis libero eget lectus viverra, non pharetra risus accumsan. Integer vitae ex tortor. Phasellus a urna dui. Donec consequat mollis justo id vestibulum. Proin dictum et lectus ac volutpat. Proin maximus sem ante, non pretium ex accumsan sit amet. Curabitur in turpis leo. Mauris libero leo, pellentesque quis tortor eget, rutrum consequat dolor. Aliquam quis finibus urna. Vivamus vitae vulputate mi.",
+          comment: "Worst tutor ever!!! ",
           isFlagged: true,
           tutorID: 601601601,
           studentID: 969696

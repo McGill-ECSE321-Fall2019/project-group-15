@@ -116,9 +116,11 @@
 
 </section>
   
-  <footer>
-  <p> All Right reserved to Group 15 </p>
-  </footer>
+  <section class="footer" id="footer">
+    <br/>
+    <img src="./footer.png" alt="Banner">
+    
+  </section>
   
   </span>
 </template>
@@ -196,5 +198,10 @@ a {
 	width: 70%;
 	text-align: left;
 	margin-left: 50px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
 }
 </style>

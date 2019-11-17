@@ -7,8 +7,12 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Home</b-nav-item>
-        <b-nav-item href="#" disabled>About</b-nav-item>
+        <b-nav-item href="./#/Dashboard">Dashboard</b-nav-item>
+            <b-nav-item href="./#/Tutor">Tutors</b-nav-item>
+            <b-nav-item href="./#/Room">Rooms</b-nav-item>
+            <b-nav-item href="./#/Course">Courses</b-nav-item>
+            <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
+            <b-nav-item href="./#/Student">Students</b-nav-item>
       </b-navbar-nav>
 
      
