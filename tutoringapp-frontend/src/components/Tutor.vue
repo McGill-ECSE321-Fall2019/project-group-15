@@ -126,7 +126,17 @@
     <div>
     <b-table :items="tutors" :fields="['id','hourlyRate','isVerified', 'status', 'delete']">
       <!-- Status Column -->
-     
+      <template v-slot:cell(status)="data">
+          <b-form-checkbox
+            v-model="data.item.status"
+            checked="data.item.isVerified"
+            @change="toggleIsVerified(data.item)"
+            value="Approved"
+            unchecked-value="Unapproved"
+          >
+            <strong>{{ data.item.status }}</strong>
+          </b-form-checkbox>
+        </template>
       <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
           <b-button 

@@ -98,6 +98,13 @@ export default {
       var index = this.tutors.indexOf(tutor);
       //Delete a tutor and remove it from the table
       this.tutors.splice(index, 1);
+    },
+
+    toggleIsVerified: function (tutor) {
+      //Find tutor with id in tutors
+      var index = this.tutors.indexOf(tutor);
+      //Toggle the tutor's isVerified boolean
+      this.tutors[index].isVerified = !this.tutors[index].isVerified;
     }
   }
 
