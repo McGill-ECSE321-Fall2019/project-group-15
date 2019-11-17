@@ -20,16 +20,21 @@ export default {
   data () {
     return {
       courses: [],
-      errorNewCourse: '',
+      errorCourse: '',
       courseName: '',
       courseDescription: '',
-	  errorMsg: '',
-	  newCourse: '',
-	  newDescription: ''
+	    errorMsg: '',
+	    newCourse: '',
+	    newDescription: ''
     }
   },
   created: function () {
-  	this.fetchData()
+  	  AXIOS.get('/allCourses')
+    .then(response => {
+      this.courses = response.data;
+      this.courses.forEach(course => this.getCourses(course.name))
+    })
+    .catch(e => {this.errorCourse = e});
 },
 
 
@@ -37,7 +42,7 @@ export default {
 methods: {
   createCourse: function (courseName, courseDescription) {
 
-    AXIOS.post(`/createCourse?courseName=` + courseName + `&courseDescription=` + courseDescription, {}, {})
+    AXIOS.post(`/createCourse/?courseName=` + courseName + `&courseDescription=` + courseDescription, {}, {})
           .then(response => {
             // JSON responses are automatically parsed.
           })
@@ -50,29 +55,21 @@ methods: {
 		
   },
 
-  viewAllCourses: function(){
-        // get the tutor information
-        AXIOS.get(`/allCourses/`)
-        .then(response => {
-          // JSON responses are automatically parsed.
-          this.courses = response.data
-        })
-        .catch((err) => {
-	  	console.log(err)
-      	this.errorNewCourse = err.response.data.message
-    	});
+  getCourses: function(courseName){
+        AXIOS.get('/allCourses')
+      .then(response => {
+        if (!response.data || response.data.length <= 0) return;
+
+        let indexPart = this.courses.map(x => x.name).indexOf(courseName);
+        this.courses[indexPart].courseName = [];
+        response.data.forEach(course => {
+          this.courses[indexPart].courseName.push(course);
+        });
+      })
+      .catch(e => {
+        e = e.response.data.message ? e.response.data.message : e;
+        console.log(e);
+      });
   },
-  fetchData() {
-        AXIOS.get(backendUrl + '/allCourses/')
-        .then((resp) => {
-          this.courses = resp.data
-          console.log(resp)
-        })
-        .catch((err) => {
-          console.log(err)
-          this.errorCourseOffering = err.response.data.message
-        })
-    }
-
-
+  
 }
