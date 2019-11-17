@@ -1,4 +1,5 @@
-import PersonDto from '@/components/javascript/personregistration.js'
+//import PersonDto from '@/components/javascript/personregistration.js'
+
 // import axios from 'axios'
 // var config = require('../../config')
 

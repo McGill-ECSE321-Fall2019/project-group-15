@@ -7,6 +7,7 @@ import Tutor from '@/components/Tutor'
 import Evaluation from '@/components/Evaluation'
 import Room from '@/components/Room'
 import Person from '@/components/Person'
+import Student from '@/components/Student'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/person',
       name: 'Person',
       component: Person
+    },
+    {
+      path: '/student',
+      name: 'Student',
+      component: Student
     }
   ]
 })
