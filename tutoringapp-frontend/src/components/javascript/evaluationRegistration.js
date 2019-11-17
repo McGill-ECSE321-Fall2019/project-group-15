@@ -12,7 +12,35 @@ export default {
             evaluations: [],
             newEvaluation: '',
             errorEvaluation: '',
-            response: []
+            response: [],
+            //Static Table
+            fields: [
+                "evaluationID",
+                "tutorID",
+                "studentID",
+                "rating",
+                "isFlagged",
+                "comment"
+                
+              ],
+              items: [
+                {
+                  evaluationID: 1231,
+                  rating: 4,
+                  comment: "Best tutor ever!!!",
+                  isFlagged: false,
+                  tutorID: 160160160,
+                  studentID: 696969
+                },
+                {
+                  evaluationID: 2312,
+                  rating: 1,
+                  comment: "Worst tutor ever!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar ante nec risus maximus, ut eleifend justo suscipit. Phasellus eros nunc, semper ac nisi et, dignissim ultricies mi. Etiam ut odio id tellus blandit lacinia eu ac dolor. Sed sagittis libero eget lectus viverra, non pharetra risus accumsan. Integer vitae ex tortor. Phasellus a urna dui. Donec consequat mollis justo id vestibulum. Proin dictum et lectus ac volutpat. Proin maximus sem ante, non pretium ex accumsan sit amet. Curabitur in turpis leo. Mauris libero leo, pellentesque quis tortor eget, rutrum consequat dolor. Aliquam quis finibus urna. Vivamus vitae vulputate mi.",
+                  isFlagged: true,
+                  tutorID: 601601601,
+                  studentID: 969696
+                }
+              ]
         }
     },
 

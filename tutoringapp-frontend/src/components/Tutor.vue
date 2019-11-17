@@ -70,7 +70,7 @@
 
     <br />
 
-    <!-- Table -->
+    <!-- Static Bootstrap Table -->
     <div>
       <b-table small :fields="fields" :items="items" responsive="sm">
         <!-- Name Column -->
@@ -117,36 +117,4 @@ table {
 </style>
 
 <script src="./javascript/tutorRegistration.js">
-// export default {
-//   data() {
-//     return {
-//       fields: [
-//         "ID",
-//         { key: "name", label: "Full Name" },
-//         "hourlyRate",
-//         "status",
-//         { key: "delete", label: "Delete" }
-//       ],
-//       items: [
-//         {
-//           isActive: true,
-//           ID: 160160160,
-//           name: { firstName: "John", lastName: "Doe" },
-//           hourlyRate: 20.0,
-//           isVerifed: true,
-//           status: (this.isVerified ? "Approved" : "Unapproved")        
-//         },
-//         {
-//           isActive: true,
-//           ID: 601601601,
-//           name: { firstName: "Jane", lastName: "Doe" },
-//           hourlyRate: 20.5,
-//           isVerified: false,
-//           status: (this.isVerified ? "Approved" : "Unapproved")
-//         }
-//       ]
-//     };
-//   }
-// };
-
 </script>
