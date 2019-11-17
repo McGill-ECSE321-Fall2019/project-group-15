@@ -18,6 +18,8 @@ function TutorDto(id, hourlyRate, isVerified, password) {
   this.isVerified = isVerified;
   this.password = password;
   this.person = null;
+
+  this.status = (this.isVerified ? "Approved" : "Unapproved");
 }
 
 //data variables
@@ -75,8 +77,8 @@ export default {
     //const p1 = new PersonDto('John','Doe','JDoe')
     //const p2 = new PersonDto('Jane','Dough','JDough');
 
-    const t1 = new TutorDto(160160160, 20.00, true, 'abc');
-    const t2 = new TutorDto(601601601, 20.50, false, '123');
+    const t1 = new TutorDto(69696969, 20.20, true, 'abc');
+    const t2 = new TutorDto(420420420, 20.40, false, '123');
 
     //Sample initial content
     this.tutors = [t1, t2];

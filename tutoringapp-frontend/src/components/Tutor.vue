@@ -17,8 +17,10 @@
         </b-collapse>
       </b-navbar>
     </div>
+
     <!-- Header -->
     <h1>Search Tutors</h1>
+
     <!-- Search  -->
     <b-container fluid>
       <!-- by ID -->
@@ -68,9 +70,30 @@
       </b-row>
     </b-container>
 
+    <!-- Tutorial Input Table -->
+    <table>
+  <tr>
+    <td>
+        <input type="text" v-model="newTutorID" placeholder="Tutor ID">
+    </td>
+    <td>
+        <input type="text" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
+    </td>
+    <td>
+        <input type="text" v-model="newTutorisVerified" placeholder="Tutor isVerified">
+    </td>
+    <td>
+        <input type="text" v-model="newTutorPassword" placeholder="Tutor Password">
+    </td>
+    <td>
+        <button @click="createTutor(newTutorID, newTutorHourlyRate, newTutorisVerified, newTutorPassword)">Create Tutor</button>
+    </td>
+  </tr>
+</table>
+
     <br />
 
-    <!-- Static Bootstrap Table -->
+    <!-- Static Data Bootstrap Table -->
     <div>
       <b-table small :fields="fields" :items="items" responsive="sm">
         <!-- Name Column -->
@@ -96,24 +119,34 @@
       </b-table>
     </div>
     
-    <!-- Test Bootstrap Table -->
+    <!-- Bootstrap Table -->
     <div>
-    <b-table :items="tutors">
+    <b-table :items="tutors" :fields="['id','hourlyRate','isVerified', 'status', 'delete']">
+      <template v-slot:cell(delete)="data">
+          <b-button variant="danger">Delete</b-button>
+        </template>
     </b-table>
     </div>
+
+    <!-- Tutorial Table -->
+    <table>
+      <tr v-for="tutor in tutors" v-bind:key="tutor" >
+      <td> {{ tutor.id }} </td>
+      <td v-for="person in tutor.person" v-bind:key="person">
+        {{ person.firstName }} {{ person.lastName }}
+      </td>
+      <td> {{ tutor.hourlyRate }} </td>
+      <td> {{ tutor.isVerified }} </td>
+  </tr>
+    </table>
+
 
     
 
   </div>
 </template>
 
-<style scoped>
-table {
-  display: table;
-  border-collapse: separate;
-  border-spacing: 10px;
-  border-color: grey;
-}
+<style>
 </style>
 
 <script src="./javascript/tutorRegistration.js">
