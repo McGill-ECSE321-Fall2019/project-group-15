@@ -4,6 +4,13 @@ function EvaluationDto(id, comment, rating) {
     this.comment = comment;
     this.rating = rating;
 }
+function EvaluationDto(id, comment, rating, studentID, managerID) {
+  this.id = id;
+  this.comment = comment;
+  this.rating = rating;
+  this.studentID = studentID;
+  this.managerID = managerID;
+}
 
 export default {
     name: 'evaluationRegistration',
@@ -45,11 +52,22 @@ export default {
     },
 
     created: function () {
-        //Test data
-        const e1 = new EvaluationDto(123123, "Best Tutor Ever!!!", 5);
-        const e2 = new EvaluationDto(321321, "Worst Tutor Ever!!!", 1);
-        //Sample initial content
-        this.evaluations = [e1, e2];
+        // //Test data
+        // const e1 = new EvaluationDto(123123, "Best Tutor Ever!!!", 5);
+        // const e2 = new EvaluationDto(321321, "Worst Tutor Ever!!!", 1);
+        // //Sample initial content
+        // this.evaluations = [e1, e2];
+
+        AXIOS.get(`/allEvaluations/`)
+        .then(response => {
+          // JSON responses are automatically parsed.
+          this.evaluations = response.data;
+        })
+        .catch(e => {
+          this.errorTutor = e;
+        });
+  
+
     },
 
     methods: {

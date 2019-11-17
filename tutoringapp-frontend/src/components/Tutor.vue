@@ -40,7 +40,7 @@
         </b-col>
       </b-row>
       <!-- by first name -->
-      <b-row class="my-1">
+      <!-- <b-row class="my-1">
         <b-col sm="2">
           <label for="input_2">by first name:</label>
         </b-col>
@@ -52,9 +52,9 @@
           id="button-2"
           @click="getTutorByFirstName(input_2)">Search by First Name</b-button>
         </b-col>
-      </b-row>
+      </b-row> -->
       <!-- by last name -->
-      <b-row class="my-1">
+      <!-- <b-row class="my-1">
         <b-col sm="2">
           <label for="input_3">by last name:</label>
         </b-col>
@@ -66,7 +66,7 @@
           id="button-3"
           @click="getTutorByLastName(input_3)">Search by Last Name</b-button>
         </b-col>
-      </b-row>
+      </b-row> -->
       <!-- Search all tutors -->
       <b-row>
         <b-col sm="2">
@@ -87,20 +87,16 @@
     <table>
   <tr>
     <td>
-        <input type="text" v-model="newTutorID" placeholder="Tutor ID">
-    </td>
-    <td>
-        <input type="text" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
+        <input type="number" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
     </td>
     <td>
         <input type="text" v-model="newTutorPassword" placeholder="Tutor Password">
     </td>
     <td>
-       <Label>Verified?:</Label>
-      <input type="checkbox" v-model="newTutorisVerified">
+        <input type="text" v-model="newTutorUserName" placeholder="Tutor Username">
     </td>
     <td>
-        <button @click="createTutor(newTutorID, newTutorHourlyRate, newTutorisVerified, newTutorPassword)">Create Tutor</button>
+        <button @click="createTutor(newTutorHourlyRate, newTutorPassword, newTutorUserName)">Create Tutor</button>
     </td>
   </tr>
 </table>
@@ -118,7 +114,7 @@
 
       <!-- Status Column -->
       <template v-slot:cell(status)="data">
-          <b-form-checkbox
+          <!-- <b-form-checkbox
             v-model="data.item.status"
             checked="data.item.isVerified"
             @change="toggleIsVerified(data.item)"
@@ -126,13 +122,16 @@
             unchecked-value="Unapproved"
           >
             <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox>
+          </b-form-checkbox> -->
+          <b-button 
+          @click="approveTutor(data.item.id)">
+          Approve</b-button>
         </template>
 
       <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
           <b-button 
-          @click="removeTutor(data.item)"
+          @click="removeTutor(data.item.id)"
           variant="danger">
           Delete</b-button>
         </template>

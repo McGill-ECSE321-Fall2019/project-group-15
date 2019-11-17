@@ -64,8 +64,6 @@
         <!-- New Table -->
     <div>
       <b-table striped hover :items="rooms">
-        
-
       </b-table>
     </div>
 
