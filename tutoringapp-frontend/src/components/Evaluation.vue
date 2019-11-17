@@ -24,42 +24,6 @@
     <h1>Moderate Evaluations</h1>
     <!-- Search  -->
     <b-container fluid>
-      <!-- by Tutor ID -->
-      <b-row class="my-1">
-        <b-col sm="2">
-          <label for="input-1">by Tutor ID:</label>
-        </b-col>
-        <b-col sm="5">
-          <b-form-input id="input-1" size="sm" placeholder="Enter Tutor ID"></b-form-input>
-        </b-col>
-        <b-col>
-          <b-button id="button-1">Search</b-button>
-        </b-col>
-      </b-row>
-      <!-- by Student ID -->
-      <b-row class="my-2">
-        <b-col sm="2">
-          <label for="input-2">by Student ID:</label>
-        </b-col>
-        <b-col sm="5">
-          <b-form-input id="input-2" size="sm" placeholder="Enter Student ID"></b-form-input>
-        </b-col>
-        <b-col>
-          <b-button id="button-2">Search</b-button>
-        </b-col>
-      </b-row>
-      <!-- by Session ID -->
-      <b-row class="my-3">
-        <b-col sm="2">
-          <label for="input-3">by Session ID:</label>
-        </b-col>
-        <b-col sm="5">
-          <b-form-input id="input-3" size="sm" placeholder="Enter Session ID"></b-form-input>
-        </b-col>
-        <b-col>
-          <b-button id="button-3">Search</b-button>
-        </b-col>
-      </b-row>
       <!-- by Evaluation ID -->
       <b-row class="my-4">
         <b-col sm="2">
@@ -108,6 +72,7 @@
 <style scoped>
 </style>
 
+<!-- src="./javascript/evaluationRegistration.js" -->
 <script>
 export default {
   data() {

@@ -1,6 +1,5 @@
 //Testing this out right now
 //Author : Osman
-
 //Dtos
 function PersonDto(firstName, lastName, userName) {
 this.firstName = firstName;
@@ -21,8 +20,8 @@ data () {
 	},
 created: function() {
 	//Test data
-	const p1 = new PersonDto('Osman');
-	const p2 = new PersonDto('Marwan');
+	const p1 = new PersonDto('Osman', 'Varsee', 'OV');
+	const p2 = new PersonDto('Marwan', 'Khan', 'MK');
 	//Sample initial content
 	this.people = [p1,  p2];
 
@@ -31,9 +30,9 @@ created: function() {
 
 //event handling method
 methods: {
-	createPerson: function(personName) {
+	createPerson: function(personFirstName, personLastName, personUserName) {
 	//Create a new person and add it to the list of people
-	var p = new PersonDto(personName);
+	var p = new PersonDto(personFirstName, personLastName, personUserName);
 	this.people.push(p);
 	//Reset the name field for the new people
 	this.newPerson = '';

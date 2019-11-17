@@ -6,8 +6,11 @@ import Course from '@/components/Course'
 import Tutor from '@/components/Tutor'
 import Evaluation from '@/components/Evaluation'
 import Room from '@/components/Room'
+import Person from '@/components/Person'
+import Student from '@/components/Student'
 import Dashboard from '@/components/Dashboard'
 import Subject from '@/components/Subject'
+
 
 
 
@@ -49,6 +52,17 @@ export default new Router({
       path: '/room',
       name: 'Room',
       component: Room
+    },
+    {
+
+      path: '/person',
+      name: 'Person',
+      component: Person
+    },
+    {
+      path: '/student',
+      name: 'Student',
+      component: Student
     },
     {
       path: '/subject',

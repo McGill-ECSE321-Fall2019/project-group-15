@@ -1,7 +1,6 @@
 <template>
 
   <div class="room">
-      
     <!-- Navbar -->
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
@@ -60,6 +59,16 @@
             </td>
         </tr>
     </table>
+
+
+        <!-- New Table -->
+    <div>
+      <b-table striped hover :items="rooms">
+        
+
+      </b-table>
+    </div>
+
     <br />
 
   </div>
@@ -87,5 +96,7 @@ h1, h2, h3 {
 }
 </style>
 
+<!-- src="./javascript/roomRegistration.js" -->
 <script src="./javascript/roomRegistration.js">
+
 </script>
