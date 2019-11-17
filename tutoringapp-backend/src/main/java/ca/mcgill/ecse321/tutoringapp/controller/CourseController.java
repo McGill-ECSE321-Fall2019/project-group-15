@@ -56,6 +56,7 @@ public class CourseController {
 		catch(Exception e) {
 			throw new IllegalArgumentException("Could not retrieve information from service");
 		}
+		
 	}
 	
 	/**
