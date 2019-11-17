@@ -93,10 +93,11 @@
         <input type="text" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
     </td>
     <td>
-        <input type="text" v-model="newTutorisVerified" placeholder="Tutor isVerified">
+        <input type="text" v-model="newTutorPassword" placeholder="Tutor Password">
     </td>
     <td>
-        <input type="text" v-model="newTutorPassword" placeholder="Tutor Password">
+       <Label>Verified?:</Label>
+      <input type="checkbox" v-model="newTutorisVerified">
     </td>
     <td>
         <button @click="createTutor(newTutorID, newTutorHourlyRate, newTutorisVerified, newTutorPassword)">Create Tutor</button>
@@ -105,37 +106,16 @@
 </table>
 
     <br />
-
-    <!-- Static Data Bootstrap Table -->
-    <div>
-      <b-table small :fields="fields" :items="items" responsive="sm">
-        <!-- Name Column -->
-        <template
-          v-slot:cell(name)="data"
-        >{{ data.item.name.firstName }} {{ data.item.name.lastName }}</template>
-
-        <!-- Status Column -->
-        <template v-slot:cell(status)="data">
-          <b-form-checkbox
-            v-model="data.item.status"
-            checked="data.item.isVerified"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox>
-        </template>
-        <!-- Delete Column -->
-        <template v-slot:cell(delete)="data">
-          <b-button variant="danger">Delete</b-button>
-        </template>
-      </b-table>
-    </div>
-
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table :items="tutors" :fields="['id','hourlyRate','isVerified', 'status', 'delete']">
+    <b-table :items="tutors" :fields="['id','name','hourlyRate','isVerified', 'status', 'delete']">
+      
+      <!-- Name Column -->
+      <template v-slot:cell(name)="data">
+        {{ data.item.person }}
+      </template>
+
       <!-- Status Column -->
       <template v-slot:cell(status)="data">
           <b-form-checkbox
@@ -148,6 +128,7 @@
             <strong>{{ data.item.status }}</strong>
           </b-form-checkbox>
         </template>
+
       <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
           <b-button 
@@ -158,22 +139,6 @@
       
     </b-table>
     </div>
-
-    <!-- Tutorial Table -->
-    <table>
-      <tr v-for="tutor in tutors" v-bind:key="tutor" >
-      <td> {{ tutor.id }} </td>
-      <td v-for="person in tutor.person" v-bind:key="person">
-        {{ person.firstName }} {{ person.lastName }}
-      </td>
-      <td> {{ tutor.hourlyRate }} </td>
-      <td> {{ tutor.isVerified }} </td>
-  </tr>
-    </table>
-
-
-    
-
 
   </div>
 </template>
