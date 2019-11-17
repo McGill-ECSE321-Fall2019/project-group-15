@@ -125,9 +125,16 @@
     <!-- Bootstrap Table -->
     <div>
     <b-table :items="tutors" :fields="['id','hourlyRate','isVerified', 'status', 'delete']">
+      <!-- Status Column -->
+     
+      <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
-          <b-button variant="danger">Delete</b-button>
+          <b-button 
+          @click="removeTutor(data.item)"
+          variant="danger">
+          Delete</b-button>
         </template>
+      
     </b-table>
     </div>
 
