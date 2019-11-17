@@ -1,6 +1,7 @@
 //import PersonDto from '@/components/javascript/personregistration.js'
 import axios from 'axios'
 import { log } from "util";
+import Axios from 'axios';
 var config = require("../../../config")
 
 var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port;
@@ -82,7 +83,7 @@ export default {
 
   created: function () {
     // Initializing people from backend
-      AXIOS.get(`/allTutors`)
+      AXIOS.get(`/allTutors/`)
       .then(response => {
         // JSON responses are automatically parsed.
         this.tutors = response.data;
@@ -103,14 +104,14 @@ export default {
   },
 
   methods: {
-    createTutor: function (tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword) {
+    createTutor: function (tutorID, hourlyRate, password, userName) {
       // // Create a new tutor and add it to the list of tutors
       // var t = new TutorDto(tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword);
       // this.tutors.push(t);
       // // Reset the fields for new tutors
       // this.newTutor = '';
 
-      Axios.post('/tutors/'+tutorID, {}, {})
+      AXIOS.post('/createTutor/'+hourlyRate+password+userName, {}, {})
       .then(response => {
         //JSON responses are automatically parsed.
         this.tutors.push(response.data);
@@ -130,8 +131,36 @@ export default {
     },
 
     removeTutor: function (tutor) {
-      //Delete a tutor and remove it from the table
-      this.tutors.splice(this.findTutorIndex(tutor), 1);
+      // //Delete a tutor and remove it from the table
+      // this.tutors.splice(this.findTutorIndex(tutor), 1);
+
+      Axios.post('/deleteTutor/'+tutorID, {}, {})
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors.push(response.data);
+        this.newTutor = '';
+        this.errorTutor = '';
+      })
+      .catch(e => {
+        var errorMsg = e.message;
+        console.log(errorMsg);
+        this.errorTutor = errorMsg;
+      })
+    },
+
+    approveTutor: function (tutorID) {
+      Axios.post('/approveTutor/'+tutorID, {}, {})
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors.push(response.data);
+        this.newTutor = '';
+        this.errorTutor = '';
+      })
+      .catch(e => {
+        var errorMsg = e.message;
+        console.log(errorMsg);
+        this.errorTutor = errorMsg;
+      })
     },
 
     toggleIsVerified: function (tutor) {
@@ -142,10 +171,19 @@ export default {
     },
 
     getAllTutors: function () {
-      //This function gets all tutors
-      const t1 = new TutorDto(69696969, 20.20, true, 'abc');
-      const t2 = new TutorDto(420420420, 20.40, false, '123');
-      this.tutors = [t1, t2];
+      // //This function gets all tutors
+      // const t1 = new TutorDto(69696969, 20.20, true, 'abc');
+      // const t2 = new TutorDto(420420420, 20.40, false, '123');
+      // this.tutors = [t1, t2];
+
+      AXIOS.get(`/allTutors`)
+      .then(response => {
+        // JSON responses are automatically parsed.
+        this.tutors = response.data;
+      })
+      .catch(e => {
+        this.errorTutor = e;
+      });
     },
 
     getAllUnverifiedTutors: function () {
