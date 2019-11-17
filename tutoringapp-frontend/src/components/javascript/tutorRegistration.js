@@ -12,10 +12,19 @@
 // })
 
 //Dtos
-function TutorDto(id, hourlyRate, isVerified, password) {
+function TutorDto(id, hourlyRate, password) {
   this.id = id;
   this.hourlyRate = hourlyRate;
-  this.isVerified = isVerified;
+  this.isVerified = false;
+  this.password = password;
+  this.person = null;
+
+  this.status = (this.isVerified ? "Approved" : "Unapproved");
+}
+function TutorDto(id, hourlyRate, isVerifed, password){
+  this.id = id;
+  this.hourlyRate = hourlyRate;
+  this.isVerified = isVerifed;
   this.password = password;
   this.person = null;
 
@@ -93,19 +102,53 @@ export default {
       this.newTutor = '';
     },
 
+    findTutorIndex: function (tutor) {
+      return this.tutors.indexOf(tutor);
+    },
+
     removeTutor: function (tutor) {
-      //Find tutor with id in tutors
-      var index = this.tutors.indexOf(tutor);
       //Delete a tutor and remove it from the table
-      this.tutors.splice(index, 1);
+      this.tutors.splice(this.findTutorIndex(tutor), 1);
     },
 
     toggleIsVerified: function (tutor) {
       //Find tutor with id in tutors
-      var index = this.tutors.indexOf(tutor);
+      var index = this.findTutorIndex(tutor);
       //Toggle the tutor's isVerified boolean
       this.tutors[index].isVerified = !this.tutors[index].isVerified;
+    },
+
+    getAllTutors: function () {
+      //This function gets all tutors
+      const t1 = new TutorDto(69696969, 20.20, true, 'abc');
+      const t2 = new TutorDto(420420420, 20.40, false, '123');
+      this.tutors = [t1, t2];
+    },
+
+    getAllUnverifiedTutors: function () {
+      //This function gets all unverified tutors
+      this.getAllTutors();
+      this.tutors = this.tutors.filter(tutor => (tutor.isVerified == false));
+    },
+
+    getTutorByID: function (id) {
+      //This function gets a list of tutors from a given ID
+      this.getAllTutors();
+      this.tutors = this.tutors.filter(tutor => (tutor.id == id));
+    },
+
+    getTutorByFirstName: function (firstName) {
+      //This function gets a list of tutors from a given first name
+      this.getAllTutors();
+      this.tutors = this.tutors.filter(tutor => tutor.person.firstName == firstName);
+    },
+
+    getTutorByLastName: function (lastName) {
+      //This function gets a list of tutors from a given last name
+      this.getAllTutors();
+      this.tutors = this.tutors.filter(tutor => tutor.person.lastName == lastName);
     }
+
   }
 
 }
