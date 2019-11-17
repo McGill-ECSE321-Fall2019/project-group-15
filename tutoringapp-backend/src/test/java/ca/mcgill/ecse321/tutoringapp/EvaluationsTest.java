@@ -96,28 +96,28 @@ public class EvaluationsTest {
   /**
    * Testing existence of the evaluation objects
    */
-  @Test
-  public void testEvalAddition() {
-    assertNotNull(evaluation1);
-    assertNotNull(evaluation2);
-  }
-  
-  @Test
-  public void testEvalQueryFound() {
-    assertEquals(EVAL_COMMENT1, evaluationService.getEvaluation(ID_1).getComment());
-    assertEquals(EVAL_COMMENT1, evaluationService.getEvaluation(ID_1).getComment());
-  }
-  
-  @Test
-  public void testEvalNotFound() {
-    //Not sure about this right now
-    assertNull(evaluationService.getEvaluation(NON_Existing_ID));
-  }
-  
-  @Test
-  public void testEvalDeletion() {
-    assertEquals(true, evaluationService.removeEvaluation(ID_1));
-  }
+//  @Test
+//  public void testEvalAddition() {
+//    assertNotNull(evaluation1);
+//    assertNotNull(evaluation2);
+//  }
+//  
+//  @Test
+//  public void testEvalQueryFound() {
+//    assertEquals(EVAL_COMMENT1, evaluationService.getEvaluation(ID_1).getComment());
+//    assertEquals(EVAL_COMMENT1, evaluationService.getEvaluation(ID_1).getComment());
+//  }
+//  
+//  @Test
+//  public void testEvalNotFound() {
+//    //Not sure about this right now
+//    assertNull(evaluationService.getEvaluation(NON_Existing_ID));
+//  }
+//  
+//  @Test
+//  public void testEvalDeletion() {
+//    assertEquals(true, evaluationService.removeEvaluation(ID_1));
+//  }
   
   /*
   @After

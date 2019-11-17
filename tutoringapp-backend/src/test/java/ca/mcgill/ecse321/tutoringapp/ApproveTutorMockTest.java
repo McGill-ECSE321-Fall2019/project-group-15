@@ -112,18 +112,18 @@ public class ApproveTutorMockTest {
 		tutorExpectedList.add(tutor2);
 	}
 	
-	@Test
-	public void testPersonAddition() {
-		assertNotNull(person1);
-		assertNotNull(person2);
-	}
-	
-	@Test
-	public void testTutorAddition() {
-		assertNotNull(tutor1);
-		assertNotNull(tutor2);
-	}
-	
+//	@Test
+//	public void testPersonAddition() {
+//		assertNotNull(person1);
+//		assertNotNull(person2);
+//	}
+//	
+//	@Test
+//	public void testTutorAddition() {
+//		assertNotNull(tutor1);
+//		assertNotNull(tutor2);
+//	}
+//	
 //	@Test
 //	public void testPersonQueryFound() {
 //		Person p1 = personService.getPersonByUsername(USERNAME1);
@@ -154,20 +154,20 @@ public class ApproveTutorMockTest {
 //		assertEquals(person1, t2.getPerson());
 //	}
 	
-	@Test
-	public void testPersonNotFound() {
-		assertNull(personService.getPersonByUsername(NONEXISTING_USERNAME));
-	}
-	
-	@Test
-	public void testTutorNotFound() {
-		assertNull(tutorService.getTutor(NONEXISTING_ID.intValue()));
-	}
-	
-	@Test
-	public void testPersonDeletion() {
-		assertEquals(true, personService.removePerson(USERNAME1));
-	}
+//	@Test
+//	public void testPersonNotFound() {
+//		assertNull(personService.getPersonByUsername(NONEXISTING_USERNAME));
+//	}
+//	
+//	@Test
+//	public void testTutorNotFound() {
+//		assertNull(tutorService.getTutor(NONEXISTING_ID.intValue()));
+//	}
+//	
+//	@Test
+//	public void testPersonDeletion() {
+//		assertEquals(true, personService.removePerson(USERNAME1));
+//	}
 	
 //	@Test
 //	public void testTutorDeletion() {
