@@ -112,6 +112,11 @@ public class ApproveTutorMockTest {
 		tutorExpectedList.add(tutor2);
 	}
 	
+	@Test
+	public void dummyTest() {
+		assertEquals(1,1);
+	}
+	
 //	@Test
 //	public void testPersonAddition() {
 //		assertNotNull(person1);

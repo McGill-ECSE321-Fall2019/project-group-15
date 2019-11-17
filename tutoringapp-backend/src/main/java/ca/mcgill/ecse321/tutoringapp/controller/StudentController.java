@@ -24,14 +24,21 @@ public class StudentController {
 
 	@Autowired
 	StudentService studentService;
+	@Autowired
+	PersonService personService;
 	
-	@PostMapping(value =  { "/createStudent", "/createStudent/" })
+	@PostMapping(value =  { "/createStudent/", "/createStudent" })
 	public StudentDto createStudent(@RequestParam("password") String password,
-			@RequestParam("person") Person person, @RequestParam("studentId") int studentId)
+			@RequestParam("userName") String userName, @RequestParam("studentId") Integer studentId)
 					throws IllegalArgumentException {
+		Person person = personService.getPersonByUsername(userName);
+		if (person == null) {
+			throw new IllegalArgumentException("This person does not exist");
+		}
 		try {
-		Student student = studentService.addStudent(password, person, studentId);
-		return DtoConverters.convertToDto(student); 
+			Student student = studentService.addStudent(password, person, studentId);
+			personService.addPersonRole(person, student);
+			return DtoConverters.convertToDto(student); 
 		}
 		catch (Exception e) {
 			throw new IllegalArgumentException("Could not create student");
@@ -45,9 +52,20 @@ public class StudentController {
 	 * @throws IllegalArgumentException
 	 */
 	@PostMapping(value = { "/deleteStudent", "/deleteStudent/" })
-	public boolean deleteStudent(@RequestParam("studentId") int studentId) throws IllegalArgumentException {
-		studentService.removeStudent(studentId);
-		return true; 
+	public void deleteStudent(@RequestParam("studentId") int studentId) throws IllegalArgumentException {
+		
+		Student student = studentService.getStudent(studentId);
+		if (student == null) {
+			throw new IllegalArgumentException("This student does not exist");
+		}
+		try {
+			studentService.removeStudent(studentId); 
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
+		
+		
 
 	}
 	/**
@@ -74,13 +92,20 @@ public class StudentController {
 	 */
 	@GetMapping(value = { "/allStudents", "/allStudents/" })
 	public List<StudentDto> getAllStudents() throws IllegalArgumentException {
+		List<StudentDto> studentDto = new ArrayList<>();
 		List<Student> studentList = studentService.getAllStudents();
-		List<StudentDto> stDtio = new ArrayList<>();
-		for (Student s : studentList) {
-			stDtio.add(DtoConverters.convertToDto(s)); 
+		if(studentList.size() == 0) {
+			throw new IllegalArgumentException("There are no students");
 		}
-		return stDtio;
-
+		try {
+			for (Student s : studentList) {
+				studentDto.add(DtoConverters.convertToDto(s)); 
+			}
+			return studentDto;
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
 	}
 	/**
 	 * List of all removed students

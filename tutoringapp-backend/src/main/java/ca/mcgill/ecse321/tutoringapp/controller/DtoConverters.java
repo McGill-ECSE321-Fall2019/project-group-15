@@ -73,7 +73,7 @@ public class DtoConverters {
     public static StudentDto convertToDto(Student student) {
     	CheckArg(student);
     	
-    	StudentDto s = new StudentDto(student.getPassword(), student.getPerson());
+    	StudentDto s = new StudentDto(student.getPassword(), convertToDto(student.getPerson()), student.getStudentId());
     	return s;
     }
     
@@ -86,7 +86,7 @@ public class DtoConverters {
     public static EvaluationDto convertToDto(Evaluation evaluation) {
       CheckArg(evaluation);
       
-      EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating());
+      EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating(), evaluation.getType(), DtoConverters.convertToDto(evaluation.getStudent()), evaluation.isIsFlagged(), evaluation.getEvaluationID());
       return e ;
     }
     
