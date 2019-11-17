@@ -104,11 +104,11 @@ public class ApproveTutorMockTest {
 		personExpectedList.add(person2);
 		
 		tutor1 = mock(Tutor.class);
-		tutor1 = tutorService.createTutor(HOURLY_RATE1, false, PASSWORD1, person1, ID1.intValue());
+		tutor1 = tutorService.createTutor(HOURLY_RATE1, PASSWORD1, person1, ID1.intValue());
 		tutorExpectedList.add(tutor1);
 		
 		tutor2 = mock(Tutor.class);
-		tutor2 = tutorService.createTutor(HOURLY_RATE2, false, PASSWORD2, person2, ID2.intValue());
+		tutor2 = tutorService.createTutor(HOURLY_RATE2, PASSWORD2, person2, ID2.intValue());
 		tutorExpectedList.add(tutor2);
 	}
 	
