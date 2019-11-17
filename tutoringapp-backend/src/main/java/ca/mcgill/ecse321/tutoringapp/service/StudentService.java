@@ -27,13 +27,13 @@ public class StudentService {
 		student.setPassword(password);
 		student.setStudentId(studentID);
 		studentRepository.save(student);
-		return null;
+		return student;
 	}
 	
 	
 	@Transactional
 	public Student getStudent(int ID) {
-		Student student = studentRepository.findStudentByRoleID(ID);
+		Student student = studentRepository.findStudentByStudentId(ID);
 		return student;
 	}
 	
@@ -44,13 +44,13 @@ public class StudentService {
 	
 	@Transactional
 	public boolean removeStudent(int ID) {
-		Student student = studentRepository.findStudentByRoleID(ID);
+		Student student = studentRepository.findStudentByStudentId(ID);
 
 		if(student == null) {
 			throw new NullPointerException("No such student exists");
 		}
 		removedStudents(student);
-		studentRepository.deleteById(ID); 
+		studentRepository.delete(student); 
 		return true;
 	}
 	

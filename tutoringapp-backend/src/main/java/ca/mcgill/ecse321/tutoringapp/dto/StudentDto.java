@@ -1,23 +1,43 @@
 package ca.mcgill.ecse321.tutoringapp.dto;
 
-import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
-
 public class StudentDto {
 	
-	private int id;
+	private Integer id;
 	private String password;
-	private Person person;
+	private PersonDto person;
+	
 	public StudentDto() {
 		
 	}
 	
-	public StudentDto(String password, Person person) {
+	public StudentDto(String password, PersonDto person, Integer id) {
 		this.password = password;
 		this.person = person;
+		this.id = id;
 	}
-	
-	public int getID() {
+
+	public Integer getId() {
 		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public PersonDto getPerson() {
+		return person;
+	}
+
+	public void setPerson(PersonDto person) {
+		this.person = person;
 	}
 	
 }
