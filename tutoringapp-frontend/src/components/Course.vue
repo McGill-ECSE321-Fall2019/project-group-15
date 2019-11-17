@@ -7,21 +7,22 @@
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
 
-
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="#">Home</b-nav-item>
-            <b-nav-item href="#about">About</b-nav-item>
-            <b-nav-item href="#contact">Contact</b-nav-item>
-            <b-nav-item href="#tutor">Tutors</b-nav-item>
+           <b-nav-item href="./#/Dashboard">Dashboard</b-nav-item>
+            <b-nav-item href="./#/Tutor">Tutors</b-nav-item>
+            <b-nav-item href="./#/Room">Rooms</b-nav-item>
+            <b-nav-item href="./#/Course">Courses</b-nav-item>
+            <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
+            <b-nav-item href="./#/Student">Students</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
     <!-- Header -->
-    <h1>Manage Courses</h1>
+    <h1>Manage Rooms</h1>
     <!-- Search -->
 
     <b-collapse id="nav-collapse" is-nav>
@@ -33,7 +34,7 @@
             <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
             <b-nav-item href="./#/Student">Students</b-nav-item>
       </b-navbar-nav>
-
+    </b-collapse>
 
 
     <!-- Table -->

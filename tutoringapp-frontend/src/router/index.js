@@ -6,9 +6,7 @@ import Course from '@/components/Course'
 import Tutor from '@/components/Tutor'
 import Evaluation from '@/components/Evaluation'
 import Room from '@/components/Room'
-
 import Dashboard from '@/components/Dashboard'
-
 import Subject from '@/components/Subject'
 
 
