@@ -1,7 +1,6 @@
 <template>
 
   <div class="room">
-      
     <!-- Navbar -->
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
@@ -50,9 +49,7 @@
         <!-- New Table -->
     <div>
       <b-table striped hover :items="rooms">
-        <template v-slot:cell(person)="data">
-
-        </template>
+        
 
       </b-table>
     </div>

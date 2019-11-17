@@ -96,12 +96,14 @@
       </b-table>
     </div>
     
-    <!-- New New Table -->
+    <!-- Test Bootstrap Table -->
     <div>
-    <b-table striped hover :items="tutors">
-      
+    <b-table :items="tutors">
     </b-table>
     </div>
+
+    
+
   </div>
 </template>
 
