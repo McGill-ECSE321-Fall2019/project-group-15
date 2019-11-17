@@ -27,12 +27,24 @@
 
 
     <!-- Table -->
-    <table>
-        <tr>
-            <td> {{ rooms[0].name }} </td>
-            <td> {{ rooms[0].type }} </td>
-        </tr>
-    </table> 
+     <div id="table">
+                    <table class="info-table" style="width: 100%; height: 100%;">
+                        
+                        <tr v-for="(room, i) in rooms" v-bind:key="`room-${i}`">
+                            <td style="padding:10px">
+                            </td>
+                            <td style="padding:10px">{{ room.name }}</td>
+                            <td style="padding:10px">{{ room.type }}</td>
+                            
+                        </tr>
+                        <tr>
+                            <th style="padding:10px">Room Name</th>
+                            <th style="padding:10px">Room Type</th>
+                        </tr>
+                    </table>
+					<h6 align="left" style="padding-top:1.6%">Add room</h6>
+                </div>
+
 
     <!-- Input Table-->
     <table>
@@ -48,13 +60,6 @@
             </td>
         </tr>
     </table>
-
-        <!-- New Table -->
-    <div>
-      <b-table  striped hover :items="rooms">
-      </b-table>
-    </div>
-
     <br />
 
   </div>
@@ -83,35 +88,4 @@ h1, h2, h3 {
 </style>
 
 <script src="./javascript/roomRegistration.js">
-// export default {
-//     name: 'roomRegistration',
-//   data() {
-//     return {
-//         rooms: [],
-//         newRoom: '',
-//         errorRoom: '',
-//         response: []
-//     //   fields: [],
-//     //   items: []
-//     }
-//   },
-
-//   created: function () {
-//       //Test data
-//       const r1 = new RoomDto('TR5090', 'smallRoom');
-//       const r2 = new RoomDto('MC10', 'smallRoom');
-//       //Sample initial content
-//       this.rooms = [r1, r2];
-//   },
-
-//   methods: {
-//       createRoom: function (roomName, roomType) {
-//           // Create a new room and add it to the list of rooms
-//           var r = new RoomDto(roomName, roomType);
-//           this.rooms.push(r);
-//           // Reset the name and roomtype fields for new rooms
-//           this.newRoom = '';
-//       }
-//   }
-// };
 </script>
