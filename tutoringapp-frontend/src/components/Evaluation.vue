@@ -66,6 +66,12 @@
         </template>
       </b-table>
     </div>
+
+<!-- Bootstrap Table -->
+<b-table :items="evaluations" >
+</b-table>
+
+
   </div>
 </template>
 
@@ -73,6 +79,7 @@
 </style>
 
 <!-- src="./javascript/evaluationRegistration.js" -->
+
 <script src="./javascript/evaluationRegistration.js>
 // export default {
 //   data() {
@@ -107,4 +114,7 @@
 //     };
 //   }
 // };
+
+<script src="./javascript/evaluationRegistration.js">
+
 </script>

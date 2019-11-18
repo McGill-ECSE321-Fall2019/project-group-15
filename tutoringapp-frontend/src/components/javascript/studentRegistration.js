@@ -25,8 +25,9 @@ export default {
         //Test data
         const s1 = new StudentDto('42069', 'abcd');
         const s2 = new StudentDto('69420', '1234');
+        const s3 = new StudentDto('31','pass');
         //Sample initial content
-        this.students = [s1, s2];
+        this.students = [s1, s2,s3];
     },
 
     methods: {

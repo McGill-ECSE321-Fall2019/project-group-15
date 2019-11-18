@@ -40,7 +40,7 @@
         </b-col>
       </b-row>
       <!-- by first name -->
-      <b-row class="my-1">
+      <!-- <b-row class="my-1">
         <b-col sm="2">
           <label for="input_2">by first name:</label>
         </b-col>
@@ -52,9 +52,9 @@
           id="button-2"
           @click="getTutorByFirstName(input_2)">Search by First Name</b-button>
         </b-col>
-      </b-row>
+      </b-row> -->
       <!-- by last name -->
-      <b-row class="my-1">
+      <!-- <b-row class="my-1">
         <b-col sm="2">
           <label for="input_3">by last name:</label>
         </b-col>
@@ -66,7 +66,7 @@
           id="button-3"
           @click="getTutorByLastName(input_3)">Search by Last Name</b-button>
         </b-col>
-      </b-row>
+      </b-row> -->
       <!-- Search all tutors -->
       <b-row>
         <b-col sm="2">
@@ -87,58 +87,34 @@
     <table>
   <tr>
     <td>
-        <input type="text" v-model="newTutorID" placeholder="Tutor ID">
-    </td>
-    <td>
-        <input type="text" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
-    </td>
-    <td>
-        <input type="text" v-model="newTutorisVerified" placeholder="Tutor isVerified">
+        <input type="number" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
     </td>
     <td>
         <input type="text" v-model="newTutorPassword" placeholder="Tutor Password">
     </td>
     <td>
-        <button @click="createTutor(newTutorID, newTutorHourlyRate, newTutorisVerified, newTutorPassword)">Create Tutor</button>
+        <input type="text" v-model="newTutorUserName" placeholder="Tutor Username">
+    </td>
+    <td>
+        <button @click="createTutor(newTutorHourlyRate, newTutorPassword, newTutorUserName)">Create Tutor</button>
     </td>
   </tr>
 </table>
 
     <br />
-
-    <!-- Static Data Bootstrap Table -->
-    <div>
-      <b-table small :fields="fields" :items="items" responsive="sm">
-        <!-- Name Column -->
-        <template
-          v-slot:cell(name)="data"
-        >{{ data.item.name.firstName }} {{ data.item.name.lastName }}</template>
-
-        <!-- Status Column -->
-        <template v-slot:cell(status)="data">
-          <b-form-checkbox
-            v-model="data.item.status"
-            checked="data.item.isVerified"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox>
-        </template>
-        <!-- Delete Column -->
-        <template v-slot:cell(delete)="data">
-          <b-button variant="danger">Delete</b-button>
-        </template>
-      </b-table>
-    </div>
-
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table :items="tutors" :fields="['id','hourlyRate','isVerified', 'status', 'delete']">
+    <b-table :items="tutors" :fields="['id','name','hourlyRate','isVerified', 'status', 'delete']">
+      
+      <!-- Name Column -->
+      <template v-slot:cell(name)="data">
+        {{ data.item.person.firstName }} {{ data.item.person.lastName }}
+      </template>
+
       <!-- Status Column -->
       <template v-slot:cell(status)="data">
-          <b-form-checkbox
+          <!-- <b-form-checkbox
             v-model="data.item.status"
             checked="data.item.isVerified"
             @change="toggleIsVerified(data.item)"
@@ -146,34 +122,22 @@
             unchecked-value="Unapproved"
           >
             <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox>
+          </b-form-checkbox> -->
+          <b-button 
+          @click="approveTutor(data.item.id)">
+          Approve</b-button>
         </template>
+
       <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
           <b-button 
-          @click="removeTutor(data.item)"
+          @click="removeTutor(data.item.id)"
           variant="danger">
           Delete</b-button>
         </template>
       
     </b-table>
     </div>
-
-    <!-- Tutorial Table -->
-    <table>
-      <tr v-for="tutor in tutors" v-bind:key="tutor" >
-      <td> {{ tutor.id }} </td>
-      <td v-for="person in tutor.person" v-bind:key="person">
-        {{ person.firstName }} {{ person.lastName }}
-      </td>
-      <td> {{ tutor.hourlyRate }} </td>
-      <td> {{ tutor.isVerified }} </td>
-  </tr>
-    </table>
-
-
-    
-
 
   </div>
 </template>
