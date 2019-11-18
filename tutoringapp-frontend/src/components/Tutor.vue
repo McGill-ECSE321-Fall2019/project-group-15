@@ -80,6 +80,11 @@
           id="button-5"
           @click="getAllUnverifiedTutors()">All Unverified Tutors</b-button>
         </b-col>
+        <b-col sm="2">
+          <b-button 
+          id="button-6"
+          @click="getRemovedTutors()">All removed Tutors</b-button>
+        </b-col>
       </b-row>
     </b-container>
 

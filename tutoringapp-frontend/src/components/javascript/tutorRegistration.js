@@ -201,6 +201,18 @@ export default {
 
     },
 
+    getRemovedTutors: function (){
+      AXIOS.get(`/removedTutors/`)
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors = response.data;
+      })
+      .catch(e => {
+        this.errorTutor = e;
+      });
+
+    },
+
     getTutorByID: function (id) {
       // //This function gets a list of tutors from a given ID
       // this.getAllTutors();
