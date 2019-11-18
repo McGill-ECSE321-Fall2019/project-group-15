@@ -25,18 +25,16 @@ public class TutorController {
 	
 	@PostMapping(value = {"/createTutor/", "/createTutor/"})
 	public TutorDto createTutor (
-		@RequestParam("tutorID") Integer tutorID,
 		@RequestParam("hourlyRate") Float hourlyRate,
 		@RequestParam("password") String password,
 		@RequestParam("userName") String userName)
 		throws IllegalArgumentException {
-		
 		Person person = personService.getPersonByUsername(userName);
 		if (person == null) {
 			throw new IllegalArgumentException("This person does not exist");
 		}
 		try {
-			Tutor tutor = tutorService.createTutor(hourlyRate, password, person, tutorID);
+			Tutor tutor = tutorService.createTutor(hourlyRate, password, person);
 			personService.addPersonRole(person, tutor);
 			return DtoConverters.convertToDto(tutor);
 		}

@@ -21,11 +21,15 @@ public class StudentService {
 	public List<Student> removedStudentList = new ArrayList<Student>();
 
 	@Transactional
-	public Student addStudent(String password, Person person, Integer studentID) {
+	public Student addStudent(String password, Person person) {
 		Student student = new Student();
 		student.setPerson(person);
 		student.setPassword(password);
-		student.setStudentId(studentID);
+		int id = 0;
+		while(studentRepository.findStudentByStudentId(id) != null) {
+			id++;
+		}
+		student.setStudentId(id);
 		studentRepository.save(student);
 		return student;
 	}
@@ -53,7 +57,6 @@ public class StudentService {
 		studentRepository.delete(student); 
 		return true;
 	}
-	
 
 	public <T> void removedStudents(Student student){
 		//List<T> removedStudentList = new ArrayList<T>();
