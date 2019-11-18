@@ -80,5 +80,5 @@
 
 <!-- src="./javascript/evaluationRegistration.js" -->
 
-<script >
+<script src = "./javascript/evaluationRegistration.js">
 </script>
