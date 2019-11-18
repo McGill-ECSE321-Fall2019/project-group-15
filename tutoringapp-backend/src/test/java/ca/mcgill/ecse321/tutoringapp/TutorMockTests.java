@@ -90,19 +90,19 @@ public class TutorMockTests {
 	/**
 	 * set up the mock
 	 */
-	@Before
+	/*@Before
 	public void setUp() {
 		tutor = mock(Tutor.class);
 		person = mock(Person.class);
 		tutor = tutorService.createTutor(0.0f , testPassword, person, tutorId);
 		tutor.setTutorId(tutorId);
 		studentList.add(tutor);
-	}
+	}*/
 
-	@Test
+	/*@Test
 	public void testCreateTutor() {
 		assertNotNull(tutor); //check if it can create a tutor
-	}
+	}*/
 
 	@Test
 	public void testTutorNotFound() {

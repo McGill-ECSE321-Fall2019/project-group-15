@@ -21,8 +21,12 @@ public class TutorService {
 	public List<Tutor> removedTutorList = new ArrayList<Tutor>();
 
 	@Transactional
-	public Tutor createTutor(float hourlyRate, String password, Person person, Integer tutorID) {
+	public Tutor createTutor(float hourlyRate, String password, Person person) {
 		Tutor tutor = new Tutor();
+		int tutorID = 0;
+		while(tutorRepository.findTutorByTutorId(tutorID) != null) {
+			tutorID++;
+		}
 		tutor.setTutorId(tutorID);
 		tutor.setHourlyRate(hourlyRate);
 		tutor.setIsVerified(false);
