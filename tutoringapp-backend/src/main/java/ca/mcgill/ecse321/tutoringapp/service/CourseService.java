@@ -51,7 +51,7 @@ public class CourseService {
 			throw new NullPointerException("No such course.");
 		}
 		
-		courseRepository.deleteCourseByName(name);
+		courseRepository.delete(course);
 		return true;
 	}
 	

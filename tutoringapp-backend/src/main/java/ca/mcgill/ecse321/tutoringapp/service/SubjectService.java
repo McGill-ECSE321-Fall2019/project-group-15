@@ -54,7 +54,7 @@ public class SubjectService {
 			throw new NullPointerException("No such subject.");
 		}
 		
-		subjectRepository.deleteByName(name);
+		subjectRepository.delete(subject);
 		return true;
 	}
 	
