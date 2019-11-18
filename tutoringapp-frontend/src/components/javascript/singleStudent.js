@@ -61,6 +61,42 @@ export default {
           },
           reloadPage(){
             window.location.reload()
+          },
+
+          getAllStudents: function(){
+            AXIOS.get(`/allStudents/`).then(response =>{this.students = response.data;})
+        .then(() => {
+            for (var i = 0; i < this.students.length; i++) {
+              var student = this.students[i];
+        
+            }    
+          })
+          .catch(error => {
+            alert(error);
+          });    
+          },
+
+          getRemovedStudents: function() {
+            AXIOS.get(`/removedStudents/`)
+            .then(response =>{
+              this.students = response.data;
+            })
+            .catch( error => {
+              alert(error)
+            })
+          },
+
+          getStudentByID: function(studentId) {
+            AXIOS.get(`/student/`+`?studentId=`+studentId)
+            .then(response =>{
+              this.students = [response.data];
+            })
+            .catch( error => {
+              alert(error)
+            })
           }
+
+
+
       }
 };
