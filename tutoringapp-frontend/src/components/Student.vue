@@ -2,34 +2,17 @@
   <div class="student">
     <h1>Students</h1>
 
-    <input
-      class="text"
-      type="text"
-      style="margin: 15px; border-radius:2%;"
-      placeholder="Password"
-      v-model="newPassword"
-    />
-    <input
-      class="text"
-      type="text"
-      style="margin: 15px; border-radius:2%;"
-      placeholder="Username"
-      v-model="newUserName"
-    />
-    <input
-      class="text"
-      type="text"
-      style="margin: 15px; border-radius:2%;"
-      placeholder="Student ID"
-      v-model="newStudentID"
-    />
-    <input @click="createSubject(Name,schoolName, description)"
-                        type="submit"
-                        value="Create"
-                        class="btn btn-primary py-2 px-4 text-white"
-                        />
     <!-- Bootstrap Table -->
-    <b-table :items="students"></b-table>
+    <b-table :items="students" :fields="['id', 'name', 'userName','delete']">
+      <template
+        v-slot:cell(name)="data"
+      >{{ data.item.person.firstName }} {{ data.item.person.lastName }}</template>
+      <template v-slot:cell(userName)="data">{{ data.item.person.userName }}</template>
+
+      <template v-slot:cell(delete)="data">
+        <b-button @click="removeStudent(data.item.id)" variant="danger">Delete</b-button>
+      </template>
+    </b-table>
 
     <!-- Static Table -->
   </div>
