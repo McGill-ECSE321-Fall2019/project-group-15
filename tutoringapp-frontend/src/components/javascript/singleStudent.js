@@ -16,13 +16,17 @@ export default {
             students: [], 
             fields: {
                 id: {
-                    label: "ID",
+                    label: "id",
                     sortable: true
                 },
                 pass: {
                     label: "Password",
                     sortable: true
-                }
+                },
+                firstName: {
+                    label: "First Name",
+                    sortable: true
+                },
             }
         };
     },
@@ -31,9 +35,8 @@ export default {
         .then(() => {
             for (var i = 0; i < this.students.length; i++) {
               var student = this.students[i];
+        
             }    
-                
-            //this.$refs.table.refresh();
           })
           .catch(error => {
             alert(error);
@@ -41,8 +44,23 @@ export default {
       },
     
       methods: {
-          createStudent: {
-              
+          removeStudent : function(studentId) {
+              AXIOS.post(`/deleteStudent`+ "/?studentId=" +studentId, {}, {})
+              .then(response => {
+                //JSON responses are automatically parsed.
+                this.tutors.push(response.data);
+                this.newTutor = '';
+                this.errorTutor = '';
+                
+              })
+              .catch(e => {
+                var errorMsg = e.message;
+                console.log(errorMsg);
+                this.errorTutor = errorMsg;
+              })
+          },
+          reloadPage(){
+            window.location.reload()
           }
       }
 };

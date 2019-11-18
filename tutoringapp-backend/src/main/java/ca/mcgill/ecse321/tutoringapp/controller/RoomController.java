@@ -55,6 +55,24 @@ public class RoomController {
 		}
 	}
 	
+	@GetMapping(value = { "/getAllRooms", "/getAllRooms/" })
+	public List<RoomDto> getAllRooms() throws IllegalArgumentException {
+		List<Room> rooms = roomService.getAllRooms();
+		List<RoomDto> roomsDto = new ArrayList<>();
+		if (rooms.size() == 0) {
+			throw new IllegalArgumentException("There are no rooms");
+		}
+		try {
+			for (Room room : rooms) {
+				roomsDto.add(DtoConverters.convertToDto(room));
+			}
+			return roomsDto;
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid information");
+		}
+	}
+	
 	/**
 	 * 
 	 * @param date

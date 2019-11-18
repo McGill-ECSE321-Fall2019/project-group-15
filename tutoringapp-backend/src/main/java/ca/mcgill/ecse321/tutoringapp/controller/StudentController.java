@@ -29,14 +29,14 @@ public class StudentController {
 	
 	@PostMapping(value =  { "/createStudent/", "/createStudent" })
 	public StudentDto createStudent(@RequestParam("password") String password,
-			@RequestParam("userName") String userName, @RequestParam("studentId") Integer studentId)
+			@RequestParam("userName") String userName)
 					throws IllegalArgumentException {
 		Person person = personService.getPersonByUsername(userName);
 		if (person == null) {
 			throw new IllegalArgumentException("This person does not exist");
 		}
 		try {
-			Student student = studentService.addStudent(password, person, studentId);
+			Student student = studentService.addStudent(password, person);
 			personService.addPersonRole(person, student);
 			return DtoConverters.convertToDto(student); 
 		}
@@ -64,9 +64,6 @@ public class StudentController {
 		catch(Exception e) {
 			throw new IllegalArgumentException("Please enter valid information");
 		}
-		
-		
-
 	}
 	/**
 	 * Gets a student with its ID

@@ -79,5 +79,6 @@
 </style>
 
 <!-- src="./javascript/evaluationRegistration.js" -->
-<script src="./javascript/evaluationRegistration.js">
+
+<script >
 </script>

@@ -1,7 +1,6 @@
 //import PersonDto from '@/components/javascript/personregistration.js'
 import axios from 'axios'
 import { log } from "util";
-import Axios from 'axios';
 var config = require("../../../config")
 
 var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port;
@@ -104,14 +103,14 @@ export default {
   },
 
   methods: {
-    createTutor: function (tutorID, hourlyRate, password, userName) {
+    createTutor: function (hourlyRate, password, userName) {
       // // Create a new tutor and add it to the list of tutors
       // var t = new TutorDto(tutorID, tutorHourlyRate, tutorIsVerified, tutorPassword);
       // this.tutors.push(t);
       // // Reset the fields for new tutors
       // this.newTutor = '';
 
-      AXIOS.post('/createTutor/'+hourlyRate+password+userName, {}, {})
+      AXIOS.post(`/createTutor/`+`?hourlyRate=`+hourlyRate+`&password=`+password+`&userName=`+userName, {}, {})
       .then(response => {
         //JSON responses are automatically parsed.
         this.tutors.push(response.data);
@@ -130,11 +129,11 @@ export default {
       return this.tutors.indexOf(tutor);
     },
 
-    removeTutor: function (tutor) {
+    removeTutor: function (tutorID) {
       // //Delete a tutor and remove it from the table
       // this.tutors.splice(this.findTutorIndex(tutor), 1);
 
-      Axios.post('/deleteTutor/'+tutorID, {}, {})
+      AXIOS.post(`/deleteTutor/`+`?tutorId=`+tutorID, {}, {})
       .then(response => {
         //JSON responses are automatically parsed.
         this.tutors.push(response.data);
@@ -149,7 +148,7 @@ export default {
     },
 
     approveTutor: function (tutorID) {
-      Axios.post('/approveTutor/'+tutorID, {}, {})
+      AXIOS.post('/approveTutor/'+`?tutorID=`+tutorID, {}, {})
       .then(response => {
         //JSON responses are automatically parsed.
         this.tutors.push(response.data);
@@ -188,14 +187,40 @@ export default {
 
     getAllUnverifiedTutors: function () {
       //This function gets all unverified tutors
-      this.getAllTutors();
-      this.tutors = this.tutors.filter(tutor => (tutor.isVerified == false));
+      // this.getAllTutors();
+      // this.tutors = this.tutors.filter(tutor => (tutor.isVerified == false));
+
+      AXIOS.get(`/getAllUnverifiedTutors/`)
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors = response.data;
+      })
+      .catch(e => {
+        this.errorTutor = e;
+      });
+
     },
 
     getTutorByID: function (id) {
-      //This function gets a list of tutors from a given ID
-      this.getAllTutors();
-      this.tutors = this.tutors.filter(tutor => (tutor.id == id));
+      // //This function gets a list of tutors from a given ID
+      // this.getAllTutors();
+      // this.tutors = this.tutors.filter(tutor => (tutor.id == id));
+
+      AXIOS.get(`/tutor/`+`?tutorId=`+id)
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors = [response.data];
+        this.newTutor = '';
+        this.errorTutor = '';
+      })
+      .catch(e => {
+        var errorMsg = e.message;
+        console.log(errorMsg);
+        this.errorTutor = errorMsg;
+      })
+
+
+
     },
 
     getTutorByFirstName: function (firstName) {
