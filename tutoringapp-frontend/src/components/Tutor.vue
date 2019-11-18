@@ -105,11 +105,17 @@
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table :items="tutors" :fields="['id','name','hourlyRate','isVerified', 'status', 'delete']">
+    <b-table :items="tutors" :fields="['id','name','username','hourlyRate','isVerified', 'status', 'delete']">
       
       <!-- Name Column -->
       <template v-slot:cell(name)="data">
         {{ data.item.person.firstName }} {{ data.item.person.lastName }}
+      </template>
+
+      <!-- Username Column -->
+      <template v-slot:cell(username)="data">
+        {{ data.item.person.userName }}
+
       </template>
 
       <!-- Status Column -->
