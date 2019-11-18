@@ -40,3 +40,15 @@ Team member's name |Total hours |Responsibility         |
 |Maxime Buteau           |      23    |          Persistance Tests and DTOs              |
 |Michel-Alexandre Riendeau      |      22    |         Mock Tests/Controller and wiki             |
 |Osman Warsi      |     22     |     Mock Tests/DTOs and wiki format                 |
+
+## Deliverable 3
+
+The full report can be seen [here](https://github.com/McGill-ECSE321-Fall2019/project-group-15/wiki/Deliverable-3-Report)
+
+Team member's name |Total hours |Responsibility         |
+|-------------------|------------|-----------------------|
+|Darien Muse-Charbonneau        |    28      |          Vue.js for tutors and calling backend               |
+|Marwan Khan         |    31      |         Travis-CI fix and Vue.js implementation              | 
+|Maxime Buteau           |      29    |          Backend/Database/RESTful fixes            |
+|Michel-Alexandre Riendeau      |      28    |         Vue.js initial setup, calling backend and wiki             |
+|Osman Warsi      |     28     |     Full vue.js organisation and display                |
