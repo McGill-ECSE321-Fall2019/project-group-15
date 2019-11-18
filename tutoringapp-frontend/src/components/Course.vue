@@ -44,10 +44,10 @@
       <b-table :items="courses" :fields="['name', 'description', 'delete']">
       <template
         v-slot:cell(name)="data"
-      >{{ data.item.courseName }}
+      >{{ data.item.description }}
       </template>
       <template v-slot:cell(description)="data">
-        {{ data.item.description}}
+        {{ data.item.courseName}}
         </template>
         <template v-slot:cell(delete)="data">
           <b-button 
