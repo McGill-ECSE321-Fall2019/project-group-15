@@ -94,7 +94,7 @@ public class ApproveTutorMockTest {
 		});
 	}
 	
-	@Before
+	/*@Before
 	public void setUpMocks() {
 		person1 = mock(Person.class);
 		person1 = personService.createPerson(FIRST_NAME1, LAST_NAME1, USERNAME1);
@@ -111,7 +111,7 @@ public class ApproveTutorMockTest {
 		tutor2 = mock(Tutor.class);
 		tutor2 = tutorService.createTutor(HOURLY_RATE2, PASSWORD2, person2, ID2.intValue());
 		tutorExpectedList.add(tutor2);
-	}
+	}*/
 	
 	@Test
 	public void dummyTest() {

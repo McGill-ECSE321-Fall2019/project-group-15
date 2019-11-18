@@ -94,7 +94,7 @@ public void setMockOutput() { //method from tutorial
 public void setUp() {
 	student = mock(Student.class);
 	person = mock(Person.class);
-	student = studentService.addStudent(testPassword, person, studentId);
+	student = studentService.addStudent(testPassword, person);
 	studentList.add(student);
 }
 
