@@ -2,6 +2,22 @@
   <div class="student">
     <h1>Students</h1>
 
+    <!-- Search Input -->
+    <label>Search by ID:</label>
+    <input type="number" v-model="searchStudentID">
+    <b-button
+    @click="getStudentByID(searchStudentID)">
+      Search
+    </b-button>
+    <b-button
+    @click="getAllStudents()">
+      All Students
+    </b-button>
+     <b-button
+    @click="getRemovedStudents()">
+      Removed Students
+    </b-button>
+
     <!-- Bootstrap Table -->
     <b-table :items="students" :fields="['id', 'name', 'userName','delete']">
       <template
