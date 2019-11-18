@@ -1,3 +1,14 @@
+import axios from 'axios'
+var config = require('../../../config')
+
+var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+var backendUrl =  'http://' + config.dev.backendHost + ':' + config.dev.backendPort
+
+var AXIOS = axios.create ({
+  baseURL: backendUrl,
+  headers: {'Access-Control-Allow-Origin': frontendUrl }
+})
+
 //Dtos
 function EvaluationDto(id, comment, rating) {
     this.id = id;
@@ -45,20 +56,33 @@ export default {
     },
 
     created: function () {
-        //Test data
-        const e1 = new EvaluationDto(123123, "Best Tutor Ever!!!", 5);
-        const e2 = new EvaluationDto(321321, "Worst Tutor Ever!!!", 1);
-        //Sample initial content
-        this.evaluations = [e1, e2];
+        AXIOS.get(`/evaluations`)
+        .then(response => {
+          this.evaluations = response.data
+        })
+        .catch(e => {
+          this.errorEvaluation = e;
+        });
     },
 
     methods: {
-        createEvaluation: function () {
-            // Create a new evaluation and add it to the list of evaluations
-          var e = new EvaluationDto(evaluationID, evaluationComment, evaluationRating);
-          this.evaluations.push(e);
-          // Reset the fields for new evaluations
-          this.newEvaluation = '';
+        createEvaluation: function (evaluationID) {
+          AXIOS.post(`/evaluations/`+evaluationID, {}, {})
+          .then(response => {
+            this.evaluations.push(response.data)
+            this.newEvaluation = ''
+            this.errorEvaluation = ''
+          })
+          .catch ( e => {
+            var errorMsg = e.message
+            console.log(errorMsg)
+            this.errorEvaluation = errorMsg
+          });
+          //   // Create a new evaluation and add it to the list of evaluations
+          // var e = new EvaluationDto(evaluationID, evaluationComment, evaluationRating);
+          // this.evaluations.push(e);
+          // // Reset the fields for new evaluations
+          // this.newEvaluation = '';
         }
     }
 
