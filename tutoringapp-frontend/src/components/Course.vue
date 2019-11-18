@@ -38,11 +38,27 @@
     <br />
 
     <!-- Bootstrap Table -->
+     <!-- Bootstrap Table -->
     <div>
-      <b-table :items="courses" :fields="['courseName', 'description']">
-        <template v-slot:cell(name)="data">{{ data.item.name }}</template>
-        <template v-slot:cell(description)="data">{{ data.item.description}}</template>
-      </b-table>
+    
+      <b-table :items="courses" :fields="['name', 'description', 'delete']">
+      <template
+        v-slot:cell(name)="data"
+      >{{ data.item.courseName }}
+      </template>
+      <template v-slot:cell(description)="data">
+        {{ data.item.description}}
+        </template>
+        <template v-slot:cell(delete)="data">
+          <b-button 
+          variant="danger"
+          > Delete </b-button>
+        </template>
+
+
+
+    </b-table>
+    
     </div>
   </div>
 </template>

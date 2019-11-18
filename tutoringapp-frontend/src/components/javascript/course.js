@@ -58,14 +58,29 @@ methods: {
   },
 
   getCourses: function(courseName){
-       AXIOS.get(`/allTutors`)
+       AXIOS.get(`/allCourses`)
       .then(response => {
         // JSON responses are automatically parsed.
-        this.tutors = response.data;
+        this.courses = response.data;
       })
       .catch(e => {
-        this.errorTutor = e;
+        this.errorCourse = e;
       });
   },
+
+  deleteCourse: function(courseName) {
+    AXIOS.post(`/deleteCourses`+`?courseName=`+courseName)
+    .then(response => {
+      //JSON responses are automatically parsed.
+      this.courses.push(response.data);
+      this.newCourse = '';
+      this.errorCourse = '';
+    })
+    .catch(e => {
+      var errorMsg = e.message;
+      console.log(errorMsg);
+      this.errorCourse = errorMsg;
+    })
+  }
   
 }
