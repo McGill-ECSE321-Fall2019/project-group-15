@@ -2,7 +2,7 @@ import axios from 'axios'
 var config = require('../../../config')
 
 var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
-var backendUrl =  'http://' + config.dev.backendHost + ':' + config.dev.backendPort
+var backendUrl = "https://tutoringapp-15.herokuapp.com/";
 
 var AXIOS = axios.create ({
   baseURL: backendUrl,
@@ -28,6 +28,17 @@ function EvaluationDto(id, comment, rating, studentID, managerID) {
   this.studentID = studentID;
   this.managerID = managerID;
 }
+
+function EvaluationDto(comment, rating, type, isFlagged, student, tutor, id) {
+  this.comment = comment;
+  this.rating = rating;
+  this.type = type;
+  this.isFlagged = isFlagged;
+  this.student = student;
+  this.tutor = tutor;
+  this.id = id;
+}
+
 
 export default {
     name: 'evaluationRegistration',
