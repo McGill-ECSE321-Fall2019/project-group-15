@@ -19,6 +19,9 @@ function EvaluationDto(id, comment, rating) {
     this.tutor = null;
     this.id = id;
     this.type = null;
+
+    this.visibleComment = (this.isFlagged ? '' : comment)
+
     
 }
 function EvaluationDto(id, comment, rating, studentID, managerID) {
@@ -27,6 +30,10 @@ function EvaluationDto(id, comment, rating, studentID, managerID) {
   this.rating = rating;
   this.studentID = studentID;
   this.managerID = managerID;
+  this.isFlagged = false;
+
+  this.visibleComment = (this.isFlagged ? '' : comment)
+
 }
 
 function EvaluationDto(comment, rating, type, isFlagged, student, tutor, id) {
@@ -37,6 +44,8 @@ function EvaluationDto(comment, rating, type, isFlagged, student, tutor, id) {
   this.student = student;
   this.tutor = tutor;
   this.id = id;
+
+  this.visibleComment = (this.isFlagged ? '' : comment)
 }
 
 
@@ -103,8 +112,8 @@ export default {
     },
 
     methods: {
-        createEvaluation: function (evaluationID) {
-          AXIOS.post(`/evaluations/`+evaluationID, {}, {})
+        createEvaluation: function (comment, rating, type, studentId, managerId) {
+          AXIOS.post(`/createEvaluation/`+`?comment`+comment+`&rating=`+rating+`&type=`+type+'&stundentId='+studentId+`&managerId=`+ManagerId, {}, {})
           .then(response => {
             this.evaluations.push(response.data)
             this.newEvaluation = ''
@@ -131,8 +140,31 @@ export default {
           .catch(e => {
             var errorMsg = e.message;
             console.log(errorMsg);
+            this.errorEvaluation = errorMsg;
+          })
+        },
+        flagEvaluation: function(evaluationID) {
+          AXIOS.post(`/flagEvaluation/`+`?ID=`+evaluationID, {}, {})
+          .then(response => {
+            this.evaluations.push(response.data)
+            this.newEvaluation=''
+            this.errorEvaluation=''
+          })
+          .catch(e => {
+            var errorMsg = e.message;
+            console.log(errorMsg);
             this.errorTutor = errorMsg;
           })
+        },
+        getAllEvaluations: function () {
+          AXIOS.get(`/allEvaluations/`)
+          .then(response => {
+            this.evaluations = response.data
+          })
+          .catch(e => {
+            this.errorEvaluation = e;
+          });
+
         }
     }
 
