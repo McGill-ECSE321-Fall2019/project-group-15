@@ -80,41 +80,5 @@
 
 <!-- src="./javascript/evaluationRegistration.js" -->
 
-<script src="./javascript/evaluationRegistration.js>
-// export default {
-//   data() {
-//     return {
-//       fields: [
-//         "evaluationID",
-//         "tutorID",
-//         "studentID",
-//         "rating",
-//         "isFlagged",
-//         "comment"
-        
-//       ],
-//       items: [
-//         {
-//           evaluationID: 1231,
-//           rating: 4,
-//           comment: "Best tutor ever!!!",
-//           isFlagged: false,
-//           tutorID: 160160160,
-//           studentID: 696969
-//         },
-//         {
-//           evaluationID: 2312,
-//           rating: 1,
-//           comment: "Worst tutor ever!!! ",
-//           isFlagged: true,
-//           tutorID: 601601601,
-//           studentID: 969696
-//         }
-//       ]
-//     };
-//   }
-// };
-
-<script src="./javascript/evaluationRegistration.js">
-
+<script >
 </script>
