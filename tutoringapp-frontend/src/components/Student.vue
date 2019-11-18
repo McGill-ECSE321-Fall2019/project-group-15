@@ -36,6 +36,10 @@
     @click="getRemovedStudents()">
       Removed Students
     </b-button>
+    <b-button
+    @click="update()">
+      Update List
+    </b-button>
 
     <!-- Bootstrap Table -->
     <b-table :items="students" :fields="['id', 'name', 'userName','delete']">

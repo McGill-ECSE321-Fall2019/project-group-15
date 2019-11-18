@@ -128,6 +128,9 @@ export default {
     findTutorIndex: function (tutor) {
       return this.tutors.indexOf(tutor);
     },
+    update(){
+      window.location.reload();
+    },
 
     removeTutor: function (tutorID) {
       // //Delete a tutor and remove it from the table

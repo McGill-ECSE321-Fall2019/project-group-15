@@ -35,7 +35,6 @@ export default {
         .then(() => {
             for (var i = 0; i < this.students.length; i++) {
               var student = this.students[i];
-        
             }    
           })
           .catch(error => {
@@ -59,8 +58,9 @@ export default {
                 this.errorTutor = errorMsg;
               })
           },
-          reloadPage(){
-            window.location.reload()
+          update(){
+            window.location.reload();
+            location = location;
           },
 
           getAllStudents: function(){
@@ -95,8 +95,6 @@ export default {
               alert(error)
             })
           }
-
-
 
       }
 };
