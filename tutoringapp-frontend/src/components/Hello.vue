@@ -1,21 +1,20 @@
 <template>
-<span class="container">
-
-  <div class="hello">
+<span class="body">
+<div class="hello">
   
-  <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
+  <b-navbar toggleable="lg" type="dark" variant="dark">
+    <b-navbar-brand href="#">
+      <img src="./logo.png" alt="Logo">
+    </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#">Home</b-nav-item>
-		<b-nav-item href="#about" >About</b-nav-item>
+		    <b-nav-item href="#about" >About</b-nav-item>
         <b-nav-item href="#contact" >Contact</b-nav-item>
       </b-navbar-nav>
-
-     
     </b-collapse>
   </b-navbar>
 </div>
@@ -30,7 +29,7 @@
     <div class="login-form">
     <br>
 
-    <p>Login as a Manager</p>
+    <h3>Login as a Manager</h3>
   <b-form inline>
     
 
@@ -45,9 +44,9 @@
       placeholder="enter password"
     ></b-input>
     <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
-<a href="./#/Dashboard">
-    <b-button variant="primary">Login</b-button>
-  </a>
+    <a href="./#/Dashboard">
+      <b-button variant="primary">Login</b-button>
+    </a>
   </b-form>
 </div>
 <!-- Login form ends -->
@@ -179,10 +178,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-body {
+<style >
+.body {
   font-family: Century Gothic;
-
+  
 }
 
 h1, h2, h3 {

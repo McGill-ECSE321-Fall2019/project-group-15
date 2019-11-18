@@ -1,9 +1,11 @@
 <template>
-  <div class="evaluation">
+  <div class="body">
     <!-- Navbar -->
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
+       <b-navbar toggleable="lg" type="dark" variant="dark">
+         <b-navbar-brand href="#">
+      <img src="./logo.png" alt="Logo">
+    </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,6 +17,7 @@
             <b-nav-item href="./#/Course">Courses</b-nav-item>
             <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
             <b-nav-item href="./#/Student">Students</b-nav-item>
+            <b-nav-item href="./#/Subject">Subjects</b-nav-item>
 
           </b-navbar-nav>
         </b-collapse>
