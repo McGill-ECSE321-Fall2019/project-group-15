@@ -148,7 +148,7 @@ export default {
     },
 
     approveTutor: function (tutorID) {
-      AXIOS.post('/approveTutor/'+tutorID, {}, {})
+      AXIOS.post('/approveTutor/'+`?tutorID=`+tutorID, {}, {})
       .then(response => {
         //JSON responses are automatically parsed.
         this.tutors.push(response.data);
@@ -187,14 +187,40 @@ export default {
 
     getAllUnverifiedTutors: function () {
       //This function gets all unverified tutors
-      this.getAllTutors();
-      this.tutors = this.tutors.filter(tutor => (tutor.isVerified == false));
+      // this.getAllTutors();
+      // this.tutors = this.tutors.filter(tutor => (tutor.isVerified == false));
+
+      AXIOS.get(`/getAllUnverifiedTutors/`)
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors = response.data;
+      })
+      .catch(e => {
+        this.errorTutor = e;
+      });
+
     },
 
     getTutorByID: function (id) {
-      //This function gets a list of tutors from a given ID
-      this.getAllTutors();
-      this.tutors = this.tutors.filter(tutor => (tutor.id == id));
+      // //This function gets a list of tutors from a given ID
+      // this.getAllTutors();
+      // this.tutors = this.tutors.filter(tutor => (tutor.id == id));
+
+      AXIOS.get(`/tutor/`+`?tutorId=`+id)
+      .then(response => {
+        //JSON responses are automatically parsed.
+        this.tutors = [response.data];
+        this.newTutor = '';
+        this.errorTutor = '';
+      })
+      .catch(e => {
+        var errorMsg = e.message;
+        console.log(errorMsg);
+        this.errorTutor = errorMsg;
+      })
+
+
+
     },
 
     getTutorByFirstName: function (firstName) {

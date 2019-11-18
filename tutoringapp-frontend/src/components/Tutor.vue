@@ -84,7 +84,7 @@
     </b-container>
 
     <!-- Tutorial Input Table -->
-    <table>
+    <!-- <table>
   <tr>
     <td>
         <input type="number" v-model="newTutorHourlyRate" placeholder="Tutor Hourly Rate">
@@ -99,13 +99,13 @@
         <button @click="createTutor(newTutorHourlyRate, newTutorPassword, newTutorUserName)">Create Tutor</button>
     </td>
   </tr>
-</table>
+</table> -->
 
     <br />
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table :items="tutors" :fields="['id','name','username','hourlyRate','isVerified', 'status', 'delete']">
+    <b-table v-model="table_1" :items="tutors" :fields="['id','name','username','hourlyRate','isVerified', 'status', 'delete']">
       
       <!-- Name Column -->
       <template v-slot:cell(name)="data">
