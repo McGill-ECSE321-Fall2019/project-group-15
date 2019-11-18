@@ -6,9 +6,10 @@ import java.util.Set;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 
 public class CourseDto {
-
+	
+	private String courseName;
 	private String description;
-    private String courseName;
+    
     
     
     public CourseDto() {
@@ -16,10 +17,10 @@ public class CourseDto {
     }
     
     public CourseDto(String courseName) {
-    	this(null, courseName);
+    	this(courseName, null);
     }
     
-    public CourseDto(String description, String courseName) {
+    public CourseDto(String courseName, String description) {
     	this.courseName = courseName;
     	this.description=description;
     }

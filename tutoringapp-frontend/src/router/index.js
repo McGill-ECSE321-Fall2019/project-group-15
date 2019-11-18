@@ -9,6 +9,7 @@ import Room from '@/components/Room'
 import Person from '@/components/Person'
 import Dashboard from '@/components/Dashboard'
 import Subject from '@/components/Subject'
+import Session from '@/components/Session'
 
 Vue.use(Router)
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/subject',
       name: 'Subject',
       component: Subject
+    },
+    {
+      path: '/session',
+      name: 'Session',
+      component: Session
     }
   ]
 })
