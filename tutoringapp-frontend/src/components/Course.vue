@@ -20,7 +20,7 @@
       </b-navbar>
     </div>
 
-   
+  
       
     <!-- Tutorial Input Table -->
     <table>
@@ -41,35 +41,15 @@
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table :items="tutors" :fields="['Course Name' , 'Course Description']">
-      
-      <!-- Name Column -->
-      <template v-slot:cell(name)="data">
-        {{ data.item.person.firstName }} {{ data.item.person.lastName }}
-      </template>
+    
+      <b-table :items="courses" :fields="['name', 'description']">
+      <template
+        v-slot:cell(name)="data"
+      >{{ data.item }}</template>
+      <template v-slot:cell(description)="data">{{ data.item.description}}</template>
 
-      <!-- Status Column -->
-      <template v-slot:cell(status)="data">
-          <b-form-checkbox
-            v-model="data.item.status"
-            checked="data.item.isVerified"
-            @change="toggleIsVerified(data.item)"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox>
-        </template>
-
-      <!-- Delete Column -->
-      <template v-slot:cell(delete)="data">
-          <b-button 
-          @click="removeTutor(data.item)"
-          variant="danger">
-          Delete</b-button>
-        </template>
-      
     </b-table>
+    
     </div>
 
   </div>
@@ -78,5 +58,5 @@
 <style>
 </style>
 
-<script src="./javascript/tutorRegistration.js">
+<script src="./javascript/course.js">
 </script>
