@@ -1,9 +1,11 @@
 <template>
-  <div class="tutor">
+  <div class="body">
     <!-- Navbar -->
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="#">Tutoring S15stem</b-navbar-brand>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+         <b-navbar-brand href="#">
+      <img src="./logo.png" alt="Logo">
+    </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,13 +17,15 @@
             <b-nav-item href="./#/Course">Courses</b-nav-item>
             <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
             <b-nav-item href="./#/Student">Students</b-nav-item>
+            <b-nav-item href="./#/Subject">Subjects</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
 
     <!-- Header -->
-    <h1>Search Tutors</h1>
+    <div class="top">
+    <h3>Search Tutors</h3>
 
     <!-- Search  -->
     <b-container fluid>
@@ -39,6 +43,7 @@
           @click="getTutorByID(input_1)">Search by ID</b-button>
         </b-col>
       </b-row>
+      
       <!-- by first name -->
       <!-- <b-row class="my-1">
         <b-col sm="2">
@@ -87,6 +92,7 @@
         </b-col>
       </b-row>
     </b-container>
+    </div>
 
     <!-- Tutorial Input Table -->
     <!-- <table>
@@ -154,6 +160,10 @@
 </template>
 
 <style>
+.top{
+  margin-left: 2%;
+  display: flex;
+}
 </style>
 
 <script src="./javascript/tutorRegistration.js">
