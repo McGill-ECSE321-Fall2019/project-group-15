@@ -33,7 +33,7 @@
           <b-form-input id="input-4" size="sm" placeholder="Enter Evaluation ID"></b-form-input>
         </b-col>
         <b-col>
-          <b-button id="button-4">Search</b-button>
+          <b-button id="button-4" >Search</b-button>
         </b-col>
       </b-row>
       <!-- Search all Evaluations -->
@@ -46,29 +46,29 @@
 
     <br />
 
-    <!-- Table -->
-    <div>
-      <b-table small :fields="fields" :items="items" responsive="sm">
-        <!-- Flagged Column -->
-        <template v-slot:cell(isFlagged)="data">
-          <b-form-checkbox
-            v-model="data.item.isFlagged"
-            checked="data.item.isFlagged"
-            value="true"
-            unchecked-value="false"
-          >
-            <strong>{{ data.item.isFlagged }}</strong>
-          </b-form-checkbox>
-        </template>
-        <!-- Rating -->
-        <template v-slot:cell(rating)="data">
-            {{ data.item.rating }}/5
-        </template>
-      </b-table>
-    </div>
+    
 
 <!-- Bootstrap Table -->
-<b-table :items="evaluations" >
+<b-table :items="evaluations" :fields="['rating','comment', 'student',  'isFlagged', 'action', ]" >
+  <template v-slot:cell(student)="data">
+    {{ data.item.student.person.firstName}} {{ data.item.student.person.lastName }}
+
+  </template>
+   <template v-slot:cell(tutor)="data">
+    {{ data.item.tutor.person.firstName}} {{ data.item.tutor.person.lastName }}
+
+  </template>
+  <template v-slot:cell(action)="data">
+    <b-button variant="danger"> Delete</b-button>
+
+  </template>
+  <template v-slot:cell(isFlagged)="data">
+    <b-form-checkbox v-model="data.item.isFlagged"
+    checked="data.item.isFlagged"
+    > 
+    </b-form-checkbox>
+
+  </template>
 </b-table>
 
 
