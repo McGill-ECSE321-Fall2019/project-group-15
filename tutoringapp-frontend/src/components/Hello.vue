@@ -45,9 +45,8 @@
       placeholder="enter password"
     ></b-input>
     <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
-<a href="./#/Dashboard">
+
     <b-button variant="primary">Login</b-button>
-  </a>
   </b-form>
 </div>
 <!-- Login form ends -->
@@ -95,7 +94,7 @@
         </b-form-checkbox-group>
       </b-form-group>
 
-      <b-button type="submit" variant="primary" @click="createPerson(this.form.firstname, this.form.lastname, this.form.personUserName)">Submit</b-button>
+      <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
     <b-card class="mt-3" header="Form Data Result">
@@ -131,10 +130,6 @@ export default {
   name: 'hello',
   data () {
     return {
-      people: [],
-		newPerson: '',
-		errorPerson: '',
-		response: [],
       msg: '',
       form: {
           email: '',
@@ -147,20 +142,10 @@ export default {
     }
   },
    methods: {
-     createPerson: function(personFirstName, personLastName, personUserName) {
-	//Create a new person and add it to the list of people
-	var p = new PersonDto(personFirstName, personLastName, personUserName);
-	this.people.push(p);
-	//Reset the name field for the new people
-	this.newPerson = '';
-	},
       onSubmit(evt) {
         evt.preventDefault()
-        createPerson(this.form.firstname, this.form.lastname, this.form.personUserName)
-        alert(JSON.stringify(this.form.personUserName))
-      
-      
-    },
+        alert(JSON.stringify(this.form))
+      },
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
