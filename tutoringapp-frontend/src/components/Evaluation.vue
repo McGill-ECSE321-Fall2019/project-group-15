@@ -59,16 +59,24 @@
 
   </template>
   <template v-slot:cell(action)="data">
-    <b-button variant="danger"> Delete</b-button>
+    <b-button 
+    variant="danger"
+    @click="deleteEvaluation(data.item.id)"
+    > Delete</b-button>
 
   </template>
   <template v-slot:cell(isFlagged)="data">
     <b-form-checkbox v-model="data.item.isFlagged"
     checked="data.item.isFlagged"
-    > 
+    @change="flagEvaluation(data.item.id)"
+    >
     </b-form-checkbox>
-
   </template>
+
+  <template v-slot:cell(comment)="data">
+    {{ data.item.visibleComment }}
+  </template>
+
 </b-table>
 
 
