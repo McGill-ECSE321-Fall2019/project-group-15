@@ -72,7 +72,7 @@
           id="input-2"
           v-model="form.lastname"
           required
-          placeholder="Enter Last name"
+          placeholder="Enter your Last name"
         ></b-form-input>
       </b-form-group>
 
@@ -81,7 +81,7 @@
           id="input-2"
           v-model="form.username"
           required
-          placeholder="Enter username"
+          placeholder="Enter your username"
         ></b-form-input>
       </b-form-group>
 
