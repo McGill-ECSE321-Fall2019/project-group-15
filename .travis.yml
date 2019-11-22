@@ -1,0 +1,12 @@
+language: java
+script:
+- ./gradlew build
+deploy:
+  provider: heroku
+  api_key:
+    secure: 69612476-7721-4c0b-adae-a4893ddc465c
+  app: tutoringapp-15
+  provider: heroku
+  api_key:
+    secure: 69612476-7721-4c0b-adae-a4893ddc465c
+  app: tutoringapp-frontend-15
