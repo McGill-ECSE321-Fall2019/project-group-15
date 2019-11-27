@@ -59,5 +59,15 @@ public class Tutor extends PersonRole{
 	public boolean isIsVerified() {
 		return this.isVerified;
 	}
+	private Set<Evaluation> evaluation;
+
+	@OneToMany(mappedBy="tutor" )
+	public Set<Evaluation> getEvaluation() {
+		return this.evaluation;
+	}
+
+	public void setEvaluation(Set<Evaluation> evaluations) {
+		this.evaluation = evaluations;
+	}
 
 }

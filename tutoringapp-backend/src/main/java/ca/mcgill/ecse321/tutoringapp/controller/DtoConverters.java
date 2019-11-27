@@ -86,7 +86,7 @@ public class DtoConverters {
     public static EvaluationDto convertToDto(Evaluation evaluation) {
       CheckArg(evaluation);
       
-      EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating(), evaluation.getType(), DtoConverters.convertToDto(evaluation.getStudent()), evaluation.isIsFlagged(), evaluation.getEvaluationID());
+      EvaluationDto e = new EvaluationDto(evaluation.getComment(), evaluation.getRating(), evaluation.getType(), DtoConverters.convertToDto(evaluation.getStudent()),DtoConverters.convertToDto(evaluation.getTutor()), evaluation.isIsFlagged(), evaluation.getEvaluationID());
       return e ;
     }
     
