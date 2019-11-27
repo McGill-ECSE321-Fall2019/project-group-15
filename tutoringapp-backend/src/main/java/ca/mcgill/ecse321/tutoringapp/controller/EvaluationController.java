@@ -43,7 +43,6 @@ public class EvaluationController {
 	public EvaluationDto createEvaluation(@RequestParam(name ="comment") String comment, 
 			@RequestParam(name ="rating") Integer rating, @RequestParam(name = "type") EvaluationType type, @RequestParam(name = "studentId") Integer studentId, @RequestParam(name = "managerId") Integer managerId) throws IllegalArgumentException {
 		
-		int evaluationID = evalutionService.getAllEvaluations().size();
 		if (rating <0 ) {
 			throw new IllegalArgumentException("Rating needs to be between 0 and 5");
 		}
@@ -60,7 +59,7 @@ public class EvaluationController {
 			throw new IllegalArgumentException("This student does not exist");
 		}
 		try{
-			Evaluation evaluation = evalutionService.createEvaluation(rating, comment, type, student, manager, evaluationID);
+			Evaluation evaluation = evalutionService.createEvaluation(rating, comment, type, student, manager);
 			return DtoConverters.convertToDto(evaluation);
 		}
 		catch(Exception e){

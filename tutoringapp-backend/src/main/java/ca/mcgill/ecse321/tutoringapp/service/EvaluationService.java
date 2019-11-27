@@ -20,14 +20,18 @@ public class EvaluationService {
 	EvaluationRepository evaluationRepository;
 
 	@Transactional
-    public Evaluation createEvaluation(int rating, String comment, EvaluationType type, Student student, Manager manager, int id) {
+    public Evaluation createEvaluation(int rating, String comment, EvaluationType type, Student student, Manager manager) {
         Evaluation evaluation = new Evaluation();
+        int evaluationID = 0;
+		while(evaluationRepository.findByEvaluationID(evaluationID) != null) {
+			evaluationID++;
+		}
         evaluation.setType(type);
         evaluation.setRating(rating);
         evaluation.setComment(comment);
         evaluation.setStudent(student);
         evaluation.setManager(manager);
-        evaluation.setEvaluationID(id);
+        evaluation.setEvaluationID(evaluationID);
         //Evaluation is NOT flagged when created
         evaluation.setIsFlagged(false);
         evaluationRepository.save(evaluation);
