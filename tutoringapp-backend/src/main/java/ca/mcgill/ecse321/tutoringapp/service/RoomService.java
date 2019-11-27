@@ -96,6 +96,15 @@ public class RoomService {
 		session.setRoom(room);
 	}
 	
+	@Transactional
+	public void deleteRoom(String name) {
+		Room room = roomRepository.findRoomByName(name);
+		if (room == null) {
+			throw new IllegalArgumentException("This room does not exist");
+		}
+		roomRepository.delete(room);
+	}
+	
 	private <T> List<T> toList(Iterable<T> iterable){
 		List<T> resultList = new ArrayList<T>();
 		for (T t : iterable) {

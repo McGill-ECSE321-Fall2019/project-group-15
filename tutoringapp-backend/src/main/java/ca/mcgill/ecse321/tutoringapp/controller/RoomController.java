@@ -101,5 +101,15 @@ public class RoomController {
 		return availableLargeRoomsDto;
 	}
 	
+	@PostMapping(value = { "/deleteRoom", "/deleteRoom/" })
+	public void deleteRoom(@RequestParam(name = "name") String name) {
+		try {
+			roomService.deleteRoom(name);
+		}
+		catch(Exception e) {
+			throw new IllegalArgumentException("Please enter valid info");
+		}
+	}
+	
 	
 }
