@@ -38,7 +38,7 @@ public class TutorService {
 	
 	
 	@Transactional
-	public Tutor getTutor(int ID) {
+	public Tutor getTutor(Integer ID) {
 		return tutorRepository.findTutorByTutorId(ID);
 	}
 	
