@@ -12,12 +12,13 @@ var AXIOS = axios.create({
 })
 
 //Dtos
-function RoomDto (name, type, isAvailable, sessions) {
-    this.name = name;
+function RoomDto (roomName, type, isAvailable, sessions) {
+    this.roomName = roomName;
     this.type = type;
     this.isAvailable = isAvailable;
     this.sessions = sessions;
 }
+
 
 export default {
     name: 'roomRegistration',
@@ -31,11 +32,6 @@ export default {
   },
 
   created: function () {
-    //   //Test data
-    //   const r1 = new RoomDto('TR5090', 'smallRoom', true, null);
-    //   const r2 = new RoomDto('MC10', 'smallRoom', false, null);
-    //   //Sample initial content
-    //   this.rooms = [r1, r2];
 
     AXIOS.get(`/getAllRooms/`)
       .then(response => {
@@ -50,28 +46,47 @@ export default {
 
   methods: {
       createRoom: function (roomName, roomType) {
-        //   // Create a new room and add it to the list of rooms
-        //   var r = new RoomDto(roomName, roomType, true, null);
-        //   this.rooms.push(r);
-        //   // Reset the name and roomtype fields for new rooms
-        //   this.newRoom = '';
 
-        Axios.post('/createRoom/'+name+roomType, {}, {})
+        var e = document.getElementById("selectMenue");
+        var strUser = e.options[e.selectedIndex].text;
+        AXIOS.post(`/createRoom/?roomName=`+roomName+`&roomType=`+strUser, {}, {})
       .then(response => {
         //JSON responses are automatically parsed.
         this.tutors.push(response.data);
-        this.newTutor = '';
-        this.errorTutor = '';
+        this.errorRoom = '';
+        this.newRoom = '';
       })
       .catch(e => {
         var errorMsg = e.message;
         console.log(errorMsg);
-        this.errorTutor = errorMsg;
+        this.errorRoom = errorMsg;
       })
 
-      }
+      },
+
+      deleteRoom: function(roomName) {
+        AXIOS.post(`/deleteRoom/`+`?name=`+roomName, {}, {})
+        .then(response => {
+          //JSON responses are automatically parsed.
+          this.tutors.push(response.data);
+          this.errorRoom = '';
+          this.newRoom = '';
+        })
+        .catch(e => {
+          var errorMsg = e.message;
+          console.log(errorMsg);
+          this.errorRoom = errorMsg;
+        })
+      },
+
+      update(){
+            window.location.reload();
+            location = location;
+          },
   }
 }
+
+
 
 // import axios from 'axios'
 // var config = require('../../../config')
