@@ -14,6 +14,7 @@
         <b-nav-item href="#">Home</b-nav-item>
 		    <b-nav-item href="#about" >About</b-nav-item>
         <b-nav-item href="#contact" >Contact</b-nav-item>
+        
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

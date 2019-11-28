@@ -24,13 +24,17 @@
       </b-navbar>
     </div>
 
+    <img src="./tutor-menu.png" alt="Banner" class="image-tutor">
+
     <!-- Header -->
     <div class="top">
-    <h3>Search Tutors</h3>
+     
+    <h2>Search Tutors</h2>
 
     <!-- Search  -->
     <b-container fluid>
       <!-- by ID -->
+         
       <b-row class="my-1">
         <b-col sm="2">
           <label for="input_1">by ID:</label>
@@ -39,8 +43,7 @@
           <b-form-input type="number" v-model="input_1" size="sm" placeholder="Enter ID"></b-form-input>
         </b-col>
         <b-col sm="2">
-          <b-button 
-          id="button-1"
+          <b-button variant="outline-success"
           @click="getTutorByID(input_1)">Search by ID</b-button>
         </b-col>
       </b-row>
@@ -74,7 +77,8 @@
         </b-col>
       </b-row> -->
       <!-- Search all tutors -->
-      <b-row>
+      
+      <b-row class="rowtwo"> 
         <b-col sm="2">
           <b-button 
           id="button-4"
@@ -84,8 +88,9 @@
         <b-col sm="2">
           <b-button 
           id="button-5"
-          @click="getAllUnverifiedTutors()">All Unverified Tutors</b-button>
+          @click="getAllUnverifiedTutors()" >All Unverified Tutors</b-button>
         </b-col>
+        <p>      </p>
         <b-col sm="2">
           <b-button 
           id="button-6"
@@ -98,6 +103,9 @@
         </b-col>
       </b-row>
     </b-container>
+    <div>
+  
+</div>
     </div>
 
     <!-- Tutorial Input Table -->
@@ -117,12 +125,12 @@
     </td>
   </tr>
 </table> -->
-
+<b-button block variant="primary" class="refresh" @click="update()">Refresh List</b-button>
     <br />
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table v-model="table_1" :items="tutors" :fields="['id','name','username','hourlyRate','isVerified', 'status', 'delete']">
+    <b-table v-model="table_1" :items="tutors" :fields="['id','name','username','hourlyRate', 'status', 'delete']">
       
       <!-- Name Column -->
       <template v-slot:cell(name)="data">
@@ -135,28 +143,26 @@
 
       </template>
 
+      <!-- Hourly Rate Column -->
+      <template v-slot:cell(hourlyRate)="data">
+        ${{ data.item.hourlyRate }}/hour
+      </template>
+
       <!-- Status Column -->
       <template v-slot:cell(status)="data">
-          <!-- <b-form-checkbox
-            v-model="data.item.status"
-            checked="data.item.isVerified"
-            @change="toggleIsVerified(data.item)"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox> -->
-          <b-button 
-          @click="approveTutor(data.item.id)">
-          Approve</b-button>
+          {{ data.item.isVerified ? "Approved" : "Unapproved" }}
         </template>
 
       <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
+         <b-button 
+          @click="approveTutor(data.item.id)">
+          Approve</b-button>
           <b-button 
           @click="removeTutor(data.item.id)"
           variant="danger">
           Delete</b-button>
+          
         </template>
       
     </b-table>
@@ -166,8 +172,22 @@
 </template>
 
 <style>
+.image-tutor {
+  width: 50%;
+}
+.refresh {
+  margin-left: 70%;
+  margin-right: 3%;
+  width: 20%;
+}
+.rowtwo {
+  margin-top: 6%;
+  border: 1px;
+  border-color: black;
+}
 .top{
-  margin-left: 2%;
+  margin-top: 6%;
+  margin-left: 6%;
   display: flex;
 }
 </style>
