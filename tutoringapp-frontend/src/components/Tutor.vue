@@ -130,7 +130,7 @@
     
     <!-- Bootstrap Table -->
     <div>
-    <b-table v-model="table_1" :items="tutors" :fields="['id','name','username','hourlyRate','isVerified', 'status', 'delete']">
+    <b-table v-model="table_1" :items="tutors" :fields="['id','name','username','hourlyRate', 'status', 'delete']">
       
       <!-- Name Column -->
       <template v-slot:cell(name)="data">
@@ -143,28 +143,26 @@
 
       </template>
 
+      <!-- Hourly Rate Column -->
+      <template v-slot:cell(hourlyRate)="data">
+        ${{ data.item.hourlyRate }}/hour
+      </template>
+
       <!-- Status Column -->
       <template v-slot:cell(status)="data">
-          <!-- <b-form-checkbox
-            v-model="data.item.status"
-            checked="data.item.isVerified"
-            @change="toggleIsVerified(data.item)"
-            value="Approved"
-            unchecked-value="Unapproved"
-          >
-            <strong>{{ data.item.status }}</strong>
-          </b-form-checkbox> -->
-          <b-button 
-          @click="approveTutor(data.item.id)">
-          Approve</b-button>
+          {{ data.item.isVerified ? "Approved" : "Unapproved" }}
         </template>
 
       <!-- Delete Column -->
       <template v-slot:cell(delete)="data">
+         <b-button 
+          @click="approveTutor(data.item.id)">
+          Approve</b-button>
           <b-button 
           @click="removeTutor(data.item.id)"
           variant="danger">
           Delete</b-button>
+          
         </template>
       
     </b-table>
