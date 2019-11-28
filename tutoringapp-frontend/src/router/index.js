@@ -11,6 +11,7 @@ import Dashboard from '@/components/Dashboard'
 import Subject from '@/components/Subject'
 import Session from '@/components/Session'
 import School from '@/components/School'
+import Notification from '@/components/Notification'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/subject',
       name: 'Subject',
       component: Subject
+    },
+    {
+      path: '/notification',
+      name: 'Notification',
+      component: Notification
     },
     {
       path: '/session',
