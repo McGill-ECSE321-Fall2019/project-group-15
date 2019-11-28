@@ -80,9 +80,10 @@ public class EvaluationService {
         return true;
     }
 	@Transactional
-    public void flagEvaluation(Evaluation evaluation) {
-	  evaluation.setIsFlagged(true);
-	  evaluationRepository.save(evaluation);
+    public void flagEvaluation(int ID) {
+		Evaluation evaluation = evaluationRepository.findByEvaluationID(ID);
+		evaluation.setIsFlagged(true);
+		evaluationRepository.save(evaluation);
     }
 	
 	

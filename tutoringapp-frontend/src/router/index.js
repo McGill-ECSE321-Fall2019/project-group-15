@@ -10,6 +10,7 @@ import Person from '@/components/Person'
 import Dashboard from '@/components/Dashboard'
 import Subject from '@/components/Subject'
 import Session from '@/components/Session'
+import School from '@/components/School'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/session',
       name: 'Session',
       component: Session
+    },
+    {
+      path: '/school',
+      name: 'School',
+      component: School
     }
   ]
 })

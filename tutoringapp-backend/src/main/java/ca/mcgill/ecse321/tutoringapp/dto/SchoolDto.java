@@ -31,11 +31,11 @@ public class SchoolDto {
 		this.subject=subject;
 	}
 	
-	public String schoolName() {
+	public String getSchoolName() {
 		return schoolName;
 	}
 	
-	public SchoolType schoolType() {
+	public SchoolType getSchoolType() {
 		return schoolType;
 	}
 	
