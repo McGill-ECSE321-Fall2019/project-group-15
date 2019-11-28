@@ -11,7 +11,7 @@ import Dashboard from '@/components/Dashboard'
 import Subject from '@/components/Subject'
 import Session from '@/components/Session'
 import School from '@/components/School'
-
+import Notification from '@/components/Notification'
 Vue.use(Router)
 
 export default new Router({
@@ -65,6 +65,11 @@ export default new Router({
       path: '/session',
       name: 'Session',
       component: Session
+    },
+    {
+      path: '/notifications',
+      name: 'Notification',
+      component: Notification
     },
     {
       path: '/school',

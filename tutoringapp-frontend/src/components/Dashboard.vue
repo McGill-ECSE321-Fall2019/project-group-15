@@ -8,7 +8,13 @@
                     <b-navbar-nav>
                         <b-nav-item href="#myProfile">My Profile</b-nav-item>
                         <b-nav-item href="./" >Logout</b-nav-item>
-                       
+                       <div class="text-center">
+                           <a href="./#/Notifications">
+                            <b-button variant="primary">
+                                Notifications <b-badge variant="light"></b-badge>
+                            </b-button>
+                            </a>
+</div>
                     </b-navbar-nav>
                 </b-collapse>
             </b-navbar>
