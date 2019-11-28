@@ -63,6 +63,11 @@
   </template>
   <!-- Action Column -->
   <template v-slot:cell(action)="data">
+    <b-button v-model="data.item.flagged"
+    @click="flagEvaluation(data.item.id)"
+    >Flag
+    </b-button>
+
     <b-button 
     variant="danger"
     @click="deleteEvaluation(data.item.id)"
@@ -71,11 +76,7 @@
     </template>
     <!-- Flagged Column -->
   <template v-slot:cell(flagged)="data">
-    <b-button v-model="data.item.flagged"
-    @click="flagEvaluation(data.item.id)"
-    >
-    {{ data.item.flagged }}
-    </b-button>
+    {{ data.item.flagged ? "Flagged" : "Unflagged" }}
   </template>
   <!-- Comment Column -->
   <template v-slot:cell(comment)="data">
