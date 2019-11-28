@@ -14,9 +14,7 @@
         <b-nav-item href="#">Home</b-nav-item>
 		    <b-nav-item href="#about" >About</b-nav-item>
         <b-nav-item href="#contact" >Contact</b-nav-item>
-        <a href="./#/Notification">
-        <b-button squared variant="primary">Notifications</b-button>
-      </a>
+        
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

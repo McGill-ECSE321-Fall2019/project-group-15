@@ -6,7 +6,9 @@
 <br/>
 <br/>
 <br/>
+<a href="https://www.paypal.com/ca/signin">
 <b-button variant="outline-primary">Purchase now!</b-button>
+</a>
 <br/>
 <br/>
 <a href="./#/Dashboard">
