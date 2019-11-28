@@ -83,6 +83,7 @@
 
     
   </b-card>
+  <div id="calendar"></div>
 </div>
     </div>
     </div>
@@ -91,6 +92,7 @@
 </template>
 <script>
 </script>
+
 <style>
 body {
   font-family: Century Gothic;
