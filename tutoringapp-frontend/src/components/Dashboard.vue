@@ -8,7 +8,9 @@
                     <b-navbar-nav>
                         <b-nav-item href="#myProfile">My Profile</b-nav-item>
                         <b-nav-item href="./" >Logout</b-nav-item>
-                       
+                        <a href="./#/Notification">
+                       <b-button variant="success">Notification</b-button>
+                        </a>
                     </b-navbar-nav>
                 </b-collapse>
             </b-navbar>
