@@ -48,9 +48,50 @@
       <b-button variant="primary">Login</b-button>
     </a>
   </b-form>
+  <br/>
+  <img src="./banner-info.png" alt="Banner">
+   <h3>Login as a Student</h3>
+  <b-form inline>
+    
+
+    <label class="sr-only" for="inline-form-input-username">Student ID</label>
+    <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+      <b-input id="inline-form-input-username" placeholder="Student ID"></b-input>
+    </b-input-group>
+<label class="sr-only" for="inline-form-input-name">Password</label>
+    <b-input
+      id="inline-form-input-name"
+      class="mb-2 mr-sm-2 mb-sm-0"
+      placeholder="enter password"
+    ></b-input>
+    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
+    <a href="./#/Dashboard">
+      <b-button variant="primary">Login</b-button>
+    </a>
+  </b-form>
+  <br/>
+   <h3>Login as a Tutor</h3>
+  <b-form inline>
+    
+
+    <label class="sr-only" for="inline-form-input-username">Tutor ID</label>
+    <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+      <b-input id="inline-form-input-username" placeholder="Tutor ID"></b-input>
+    </b-input-group>
+<label class="sr-only" for="inline-form-input-name">Password</label>
+    <b-input
+      id="inline-form-input-name"
+      class="mb-2 mr-sm-2 mb-sm-0"
+      placeholder="enter password"
+    ></b-input>
+    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
+    <a href="./#/Dashboard">
+      <b-button variant="primary">Login</b-button>
+    </a>
+  </b-form>
 </div>
 <!-- Login form ends -->
-<img src="./banner-info.png" alt="Banner">
+<br/>
    
    <div class="sign-up">
    <h3>Not a member?</h3>
@@ -90,12 +131,12 @@
       <b-form-group id="input-group-4">
         <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
           <b-form-checkbox value="me">Send me confirmation email</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
+         
         </b-form-checkbox-group>
       </b-form-group>
 
-      <b-button type="submit" variant="primary" @click="createPerson(this.form.firstname, this.form.lastname, this.form.personUserName)">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" variant="primary" @click="createPerson(this.form.firstname, this.form.lastname, this.form.personUserName)">Sign up as a Manager</b-button>
+   
     </b-form>
   <br/>
   </div>
@@ -103,14 +144,28 @@
    
   </div>
   <section class="about" id="about">
+    <div>
+    
+    
+     <b-card-group deck>
+      <b-card bg-variant="primary" text-variant="white" header="About" class="text-center">
+        <b-card-text>Tutoring S15tem is still under development, However this BETA version is enough to get you started to manage your first class</b-card-text>
+      </b-card>
+       </b-card-group>
 
-<img src="./banner-about.png" alt="Banner">
+
 <p></p>
 <p></p>
+</div>
 </section>
   
   <section class="contact" id="contact">
-<img src="./banner-contact.png" alt="Banner">
+      <b-card-group deck>
+       <b-card bg-variant="dark" header="Contact Us" text-variant="white" class="text-center">
+        <b-card-text>Contact our Team! We are always open for feedback: tutorings15tem@live.com / +1 248 703-0079.</b-card-text>
+      </b-card>
+       </b-card-group>
+
 
 </section>
   
@@ -187,6 +242,7 @@ h1, h2, h3 {
   font-family: Century Gothic;
 }
 
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -199,6 +255,9 @@ li {
 
 a {
   color: #42b983;
+}
+.about-page {
+  background: rgb(0, 123, 255);
 }
 
 .login-form {
