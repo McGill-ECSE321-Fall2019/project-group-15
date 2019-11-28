@@ -46,17 +46,6 @@ public class Evaluation{
 	public void setStudent(Student student) {
 		this.student = student;
 	}
-	
-	private Tutor tutor;
-
-	@ManyToOne(optional=false)
-	public Tutor getTutor() {
-		return this.tutor;
-	}
-
-	public void setTutor(Tutor tutor) {
-		this.tutor = tutor;
-	}
 
 	private Manager manager;
 

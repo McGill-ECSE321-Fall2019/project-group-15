@@ -11,7 +11,6 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.EvaluationType;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Manager;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Person;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
-import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dao.EvaluationRepository;
 
 @Service
@@ -21,7 +20,7 @@ public class EvaluationService {
 	EvaluationRepository evaluationRepository;
 
 	@Transactional
-    public Evaluation createEvaluation(int rating, String comment, EvaluationType type, Student student, Tutor tutor, Manager manager) {
+    public Evaluation createEvaluation(int rating, String comment, EvaluationType type, Student student, Manager manager) {
         Evaluation evaluation = new Evaluation();
         int evaluationID = 0;
 		while(evaluationRepository.findByEvaluationID(evaluationID) != null) {
@@ -31,7 +30,6 @@ public class EvaluationService {
         evaluation.setRating(rating);
         evaluation.setComment(comment);
         evaluation.setStudent(student);
-        evaluation.setTutor(tutor);
         evaluation.setManager(manager);
         evaluation.setEvaluationID(evaluationID);
         //Evaluation is NOT flagged when created

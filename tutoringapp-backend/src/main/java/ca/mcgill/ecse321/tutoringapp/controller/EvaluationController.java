@@ -14,13 +14,11 @@ import ca.mcgill.ecse321.tutoringapp.Database.src.Evaluation;
 import ca.mcgill.ecse321.tutoringapp.Database.src.EvaluationType;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Manager;
 import ca.mcgill.ecse321.tutoringapp.Database.src.Student;
-import ca.mcgill.ecse321.tutoringapp.Database.src.Tutor;
 import ca.mcgill.ecse321.tutoringapp.dto.CourseDto;
 import ca.mcgill.ecse321.tutoringapp.dto.EvaluationDto;
 import ca.mcgill.ecse321.tutoringapp.service.EvaluationService;
 import ca.mcgill.ecse321.tutoringapp.service.ManagerService;
 import ca.mcgill.ecse321.tutoringapp.service.StudentService;
-import ca.mcgill.ecse321.tutoringapp.service.TutorService;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -32,8 +30,6 @@ public class EvaluationController {
 	ManagerService managerService;
 	@Autowired
 	StudentService studentService;
-	@Autowired
-	TutorService tutorService;
 
 	/**
 
@@ -45,7 +41,7 @@ public class EvaluationController {
 	 */
 	@PostMapping(value = { "/createEvaluation", "/createEvaluation/" })
 	public EvaluationDto createEvaluation(@RequestParam(name ="comment") String comment, 
-			@RequestParam(name ="rating") Integer rating, @RequestParam(name = "type") EvaluationType type, @RequestParam(name = "studentId") Integer studentId, @RequestParam(name = "tutorId") Integer tutorId, @RequestParam(name = "managerId") Integer managerId) throws IllegalArgumentException {
+			@RequestParam(name ="rating") Integer rating, @RequestParam(name = "type") EvaluationType type, @RequestParam(name = "studentId") Integer studentId, @RequestParam(name = "managerId") Integer managerId) throws IllegalArgumentException {
 		
 		if (rating <0 ) {
 			throw new IllegalArgumentException("Rating needs to be between 0 and 5");
@@ -62,12 +58,8 @@ public class EvaluationController {
 		if (student==null) {
 			throw new IllegalArgumentException("This student does not exist");
 		}
-		Tutor tutor = tutorService.getTutor(tutorId);
-		if (tutor==null) {
-			throw new IllegalArgumentException("This tutor does not exist");
-		}
 		try{
-			Evaluation evaluation = evalutionService.createEvaluation(rating, comment, type, student, tutor, manager);
+			Evaluation evaluation = evalutionService.createEvaluation(rating, comment, type, student, manager);
 			return DtoConverters.convertToDto(evaluation);
 		}
 		catch(Exception e){
