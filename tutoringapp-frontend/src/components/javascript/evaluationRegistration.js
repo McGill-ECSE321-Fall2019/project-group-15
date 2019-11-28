@@ -144,7 +144,7 @@ export default {
           })
         },
         flagEvaluation: function(evaluationID) {
-          AXIOS.post(`/flagEvaluation/`+`?ID=`+evaluationID, {}, {})
+          AXIOS.post(`/flagEvaluation/`+`?evaluationID=`+evaluationID, {}, {})
           .then(response => {
             this.evaluations.push(response.data)
             this.newEvaluation=''

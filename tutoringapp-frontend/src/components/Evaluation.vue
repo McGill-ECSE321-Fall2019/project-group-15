@@ -52,34 +52,37 @@
     
 
 <!-- Bootstrap Table -->
-<b-table :items="evaluations" :fields="['rating','comment', 'student',  'isFlagged', 'action', ]" >
+<b-table :items="evaluations" :fields="['id', 'rating','comment', 'student', 'tutor' , 'flagged', 'action']" >
+  <!-- Student Column -->
   <template v-slot:cell(student)="data">
     {{ data.item.student.person.firstName}} {{ data.item.student.person.lastName }}
-
   </template>
+  <!-- Tutor Column -->
    <template v-slot:cell(tutor)="data">
     {{ data.item.tutor.person.firstName}} {{ data.item.tutor.person.lastName }}
-
   </template>
+  <!-- Action Column -->
   <template v-slot:cell(action)="data">
     <b-button 
     variant="danger"
     @click="deleteEvaluation(data.item.id)"
-    > Delete</b-button>
-
-  </template>
-  <template v-slot:cell(isFlagged)="data">
-    <b-form-checkbox v-model="data.item.isFlagged"
-    checked="data.item.isFlagged"
-    @change="flagEvaluation(data.item.id)"
+    >Delete
+    </b-button>
+    </template>
+    <!-- Flagged Column -->
+  <template v-slot:cell(flagged)="data">
+    <b-button v-model="data.item.flagged"
+    @click="flagEvaluation(data.item.id)"
     >
-    </b-form-checkbox>
+    {{ data.item.flagged }}
+    </b-button>
   </template>
-
+  <!-- Comment Column -->
   <template v-slot:cell(comment)="data">
-    {{ data.item.visibleComment }}
+    {{ (data.item.flagged ? "" : data.item.comment) }}
   </template>
-
+ 
+  
 </b-table>
 
 
