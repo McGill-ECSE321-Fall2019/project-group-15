@@ -20,6 +20,7 @@
             <b-nav-item href="./#/Evaluation">Evaluations</b-nav-item>
             <b-nav-item href="./#/Student">Students</b-nav-item>
             <b-nav-item href="./#/Subject">Subjects</b-nav-item>
+            <b-nav-item href="./#/Session">Sessions</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

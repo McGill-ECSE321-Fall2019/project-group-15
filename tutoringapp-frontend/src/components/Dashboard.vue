@@ -55,6 +55,12 @@
             </div>
         </a>
         </div>
+        <a href="./#/Session">
+            <div class="buttons">
+                <button class="btn-hover color-1">Sessions</button>
+        </div>
+        </a>
+        </div>
      
     <div class="column">
         <p></p>
