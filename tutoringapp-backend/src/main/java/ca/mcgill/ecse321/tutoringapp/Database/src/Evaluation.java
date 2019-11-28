@@ -76,4 +76,15 @@ public class Evaluation{
 	public int getEvaluationID() {
 		return this.evaluationID;
 	}
+	
+	private Tutor tutor;
+
+	@ManyToOne(optional=false)
+	public Tutor getTutor() {
+		return this.tutor;
+	}
+
+	public void setTutor(Tutor tutor) {
+		this.tutor = tutor;
+	}
 }

@@ -16,12 +16,13 @@ public class EvaluationDto {
   private int id;
   
   
-  public EvaluationDto(String comment, int rating, EvaluationType type, StudentDto student, boolean flagged, int id) {
+  public EvaluationDto(String comment, int rating, EvaluationType type, StudentDto student, TutorDto tutor, boolean flagged, int id) {
     this.comment = comment;
     this.rating = rating;
     this.type = type;
     this.student = student;
     this.isFlagged = flagged;
+    this.tutor = tutor;
     this.id = id;
   }
   
@@ -76,6 +77,14 @@ public boolean isFlagged() {
 
 public void setFlagged(boolean isFlagged) {
 	this.isFlagged = isFlagged;
+}
+
+public int getId() {
+	return id;
+}
+
+public void setId(int id) {
+	this.id = id;
 }
 
 
