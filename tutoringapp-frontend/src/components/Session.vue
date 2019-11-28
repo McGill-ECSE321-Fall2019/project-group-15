@@ -54,8 +54,10 @@
      <!-- Bootstrap Table -->
     <div>
     
-      <b-table :items="sessions" :fields="['date']">
-      
+      <b-table :items="sessions" :fields="['date','startTime', 'endTime', 'type', 'course', 'tutor','delete']">
+       <template v-slot:cell(delete)="data">
+        <b-button variant="danger">Delete</b-button>
+      </template>
 
 
 
