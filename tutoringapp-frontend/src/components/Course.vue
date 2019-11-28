@@ -23,7 +23,9 @@
         </b-collapse>
       </b-navbar>
     </div>
-
+    <br/>
+<img src="./courses-menu.png" alt="Banner" class="image-tutor">
+<br/>
     <!-- Tutorial Input Table -->
     <table>
       <tr>
@@ -68,6 +70,9 @@
 </template>
 
 <style>
+.image-tutor {
+  width: 50%;
+}
 </style>
 
 <script src="./javascript/course.js">

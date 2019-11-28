@@ -43,6 +43,7 @@
       <b-row class="my-5">
         <b-col>
           <b-button id="button-5">All Evaluations</b-button>
+          <b-button block variant="primary" class="refresh" @click="update()">Refresh List</b-button>
         </b-col>
       </b-row>
     </b-container>

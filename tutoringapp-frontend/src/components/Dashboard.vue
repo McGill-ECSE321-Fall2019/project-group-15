@@ -29,7 +29,7 @@
     class="mb-2"
   >
   <b-card-text>
-      Here you can find out the different components you can accsess by navigating on the buttons on the left
+     Here you can find a list of items you can manage. We have made it as simple as possible for you!
 </b-card-text>
   </b-card>
 

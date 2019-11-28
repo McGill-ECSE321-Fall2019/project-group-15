@@ -25,8 +25,9 @@
         </b-collapse>
       </b-navbar>
     </div>
+    <img src="./subject-menu.png" alt="Banner" class="image-tutor">
     <!-- Header -->
-    <h1>Manage Subjects</h1>
+
     <!-- Search -->
     <!-- Table -->
     <table>
@@ -80,6 +81,9 @@ h1, h2, h3 {
 
 .room {
     width: 100%;
+}
+.image-tutor {
+  width: 50%;
 }
 .sign-up {
 	width: 70%;
