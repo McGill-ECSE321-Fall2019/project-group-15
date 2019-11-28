@@ -19,6 +19,19 @@
             
 <br/>
 <br/>
+ <b-card
+    title="Welcome to your dashboard"
+    
+    img-alt="Image"
+    img-top
+    tag="article"
+    style="max-width: 20rem;"
+    class="mb-2"
+  >
+  <b-card-text>
+      Here you can find out the different components you can accsess by navigating on the buttons on the left
+</b-card-text>
+  </b-card>
 
 <div class="row">
     <div class="column">
@@ -41,49 +54,37 @@
             </div>
         </a>
 
-        <a href="./#/Evaluation">
-            <div class="buttons">
-                <button class="btn-hover color-1">Evaluations</button>
-            </div>
-        </a>
+        
         <a href="./#/Student">
             <div class="buttons">
                 <button class="btn-hover color-1">Students</button>
             </div>
+        </a>
+        
+        </div>
+        <div>
+        <a href="./#/Session">
+            <div class="buttons">
+                <button class="btn-hover color-1">Sessions</button>
+        </div>
         </a>
         <a href="./#/Subject">
             <div class="buttons">
                 <button class="btn-hover color-1">Subjects</button>
             </div>
         </a>
-        </div>
-        <a href="./#/Session">
+        <a href="./#/Evaluation">
             <div class="buttons">
-                <button class="btn-hover color-1">Sessions</button>
-        </div>
+                <button class="btn-hover color-1">Evaluations</button>
+            </div>
         </a>
+        </div>
         </div>
      
     <div class="column">
         <p></p>
         <div>
-  <b-card
-    title="Welcome to your dashboard"
-    
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-   
-    <b-card-text>
-      Here you can find out the different components you can accsess by navigating on the buttons on the left
-    </b-card-text>
-
-    
-  </b-card>
-  <div id="calendar"></div>
+ 
 </div>
     </div>
     </div>
@@ -148,6 +149,10 @@ a {
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
+}
+
+.mb-2 {
+    margin-left: 6%;
 }
 
 .btn-hover:hover {

@@ -97,9 +97,7 @@
           @click="getRemovedTutors()">All removed Tutors</b-button>
         </b-col>
         <b-col sm="2">
-          <b-button 
-          id="button-7"
-          @click="update()">Refresh List</b-button>
+          
         </b-col>
       </b-row>
     </b-container>

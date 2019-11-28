@@ -169,6 +169,17 @@
 
 
 </section>
+</section>
+  
+  <section class="contact" id="contact">
+      <b-card-group deck>
+       <b-card bg-variant="dark" header="Help us Improve" text-variant="white" class="text-center">
+        <b-card-text>We're always looking for improvements, Click here to go to our repository</b-card-text>
+      </b-card>
+       </b-card-group>
+
+
+</section>
   
   <section class="footer" id="footer">
     <br/>

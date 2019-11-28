@@ -23,8 +23,11 @@
         </b-collapse>
       </b-navbar>
     </div>
+    <br/>
+
+    <img src="./room-menu.png" alt="Banner" class="image-tutor">
     <!-- Header -->
-    <h1>Manage Rooms</h1>
+    
     <!-- Search -->
 
     <!-- Table -->
@@ -44,9 +47,13 @@
     </div>
  -->
     <!-- Input Table-->
+    <br/>
+    <br/>
+      <div class="roomenter">
     <table>
       <tr>
         <td>
+        
           <input type="text" v-model="newRoomName" placeholder="Enter Room Name" />
         </td>
         <select id="selectMenue">
@@ -63,7 +70,9 @@
     
       </tr>
     </table>
-
+</div>
+<br/>
+<br/>
     <!-- New Table -->
     <div>
       <b-table :items="rooms" :fields="['roomName','roomType','delete']">
@@ -98,6 +107,9 @@ h3 {
   text-align: left;
   margin-left: 50px;
 }
+.image-tutor {
+  width: 50%;
+}
 
 .dropbtn {
   background-color: #3498db;
@@ -129,7 +141,9 @@ h3 {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-
+.roomenter {
+  margin-left: 6%;
+}
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
