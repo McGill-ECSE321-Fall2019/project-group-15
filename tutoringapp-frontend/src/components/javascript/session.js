@@ -10,13 +10,13 @@ var AXIOS = axios.create({
 })
 
 
-function SessionDto(date, startTime, endTime, type, course) {
+function SessionDto(date, startTime, endTime, type, course, tutor) {
 		this.date = date;
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.type = type;
 		this.course = course;
-		this.managerName= null
+		this.tutor= tutor; 
 }
 
 export default {
@@ -30,7 +30,9 @@ export default {
     }
   },
   created: function () {
-  	 
+    const s2 = new SessionDto('2019-11-27','15:00','16:00', 'Individual','ECSE 321', 'SpongeBob');
+     const s1 = new SessionDto('2019-11-08','09:00','10:30', 'Group','ECSE 321', 'Harry Potter');
+     this.sessions = [s2,s1];
 },
 
 

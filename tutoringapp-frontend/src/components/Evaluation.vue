@@ -52,7 +52,7 @@
     
 
 <!-- Bootstrap Table -->
-<b-table :items="evaluations" :fields="['id', 'rating','comment', 'student', 'tutor' , 'flagged', 'action']" >
+<b-table :items="evaluations" :fields="['id', 'rating','comment', 'student', 'tutor' , 'type', 'flagged', 'action']" >
   <!-- Student Column -->
   <template v-slot:cell(student)="data">
     {{ data.item.student.person.firstName}} {{ data.item.student.person.lastName }}
