@@ -33,7 +33,12 @@ public class SessionController {
 	ManagerService managerService;
 	
 	@PostMapping(value = { "/createSession", "/createSession/" })
-	public SessionDto createSession(@RequestParam(name = "date") String date, @RequestParam(name = "startTime") String startTime, @RequestParam(name = "endTime") String endTime, @RequestParam(name = "type") SessionType type, @RequestParam(name = "course") String courseName, @RequestParam(name = "managerName") Integer managerId) throws IllegalArgumentException {
+	public SessionDto createSession(@RequestParam(name = "date") String date, 
+									@RequestParam(name = "startTime") String startTime, 
+									@RequestParam(name = "endTime") String endTime, 
+									@RequestParam(name = "type") SessionType type, 
+									@RequestParam(name = "course") String courseName, 
+									@RequestParam(name = "managerId") Integer managerId) throws IllegalArgumentException {
 		Course course = courseService.getCourseByCourseName(courseName);
 		if (course == null) {
 			throw new IllegalArgumentException("This course does not exist");

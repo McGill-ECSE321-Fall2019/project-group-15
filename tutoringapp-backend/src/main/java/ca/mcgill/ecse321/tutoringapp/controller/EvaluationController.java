@@ -92,10 +92,10 @@ public class EvaluationController {
 	public EvaluationDto flagEvaluation(@RequestParam(name = "evaluationID") int ID) throws IllegalArgumentException{
 		Evaluation evaluation = evalutionService.getEvaluation(ID);
 		if (evaluation == null) {
-			throw new IllegalArgumentException("The evaluation does not exist");
+			throw new IllegalArgumentException("This evaluation does not exist");
 		}
 		try {
-			evalutionService.flagEvaluation(evaluation);
+			evalutionService.flagEvaluation(ID);
 			return DtoConverters.convertToDto(evaluation);
 		}
 		catch(Exception e) {
