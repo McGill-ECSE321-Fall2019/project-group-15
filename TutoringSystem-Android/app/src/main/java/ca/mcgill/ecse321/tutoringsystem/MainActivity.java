@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
                     Intent myIntent = new Intent(view.getContext(), Tutors_Activity.class);
                     startActivityForResult(myIntent, 0);
                 }
+                if(position==0){
+                    Intent myIntent = new Intent(view.getContext(), Tutors_Activity.class);
+                    startActivityForResult(myIntent, 0);
+                }
             }
         });
 
