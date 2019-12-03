@@ -46,7 +46,7 @@ public class Tutors_Activity extends AppCompatActivity {
 //        mNames.add("marwan");
 //        mNames.add("osman");
 
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mUsernames);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mNames);
 
         listView.setAdapter(arrayAdapter);
         
@@ -101,7 +101,7 @@ public class Tutors_Activity extends AppCompatActivity {
 
 //            @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-
+                Log.d(TAG, "Restful GET call failure");
                 try {
 
                     error += errorResponse.get("message").toString();
