@@ -16,7 +16,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import cz.msebera.android.httpclient.entity.mime.Header;
+//import cz.msebera.android.httpclient.entity.mime.Header;
+import cz.msebera.android.httpclient.Header;
 
 public class Tutors_Activity extends AppCompatActivity {
 
@@ -37,8 +38,6 @@ public class Tutors_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         initTutorNames();
 
@@ -58,7 +57,7 @@ public class Tutors_Activity extends AppCompatActivity {
         // Restfull call: all students
         HttpUtils.get("allTutors/", new RequestParams(), new JsonHttpResponseHandler() {
 
-//            @Override
+ //           @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
 
                 // Clear lists
@@ -68,21 +67,32 @@ public class Tutors_Activity extends AppCompatActivity {
                 mHourlyRate.clear();
                 mIsVerified.clear();
 
+
                 for( int i = 0; i < response.length(); i++){
                         try {
 
                             Log.d(TAG, "Restful GET call succesfull (" + i + ").");
                             // Add Student Names
-                            mNames.add(response.getJSONObject(i).getString("firstName") + " "
-                                    + response.getJSONObject(i).getString("lastName"));
+//                            mNames.add(response.getJSONObject(i).getString("firstName") + " "
+//                                    + response.getJSONObject(i).getString("lastName"));
+                            JSONObject obj1 = response.getJSONObject(i);
+                            JSONObject person1 = obj1.getJSONObject("person");
+                            mNames.add(person1.getString("firstName") + " " + person1.getString("lastName"));
 
-                            arrayAdapter.notifyDataSetChanged();
+
 
                             // Add Student IDs
                             mIDs.add(response.getJSONObject(i).getString("tutorID"));
 
-                            // Add Student Majors & Years
-                            mUsernames.add(response.getJSONObject(i).getString("userName"));
+//                            // Add Student Majors & Years
+
+                            // Get current json object
+
+                            // add all items
+                          JSONObject obj = response.getJSONObject(i);
+                          JSONObject person = obj.getJSONObject("person");
+                          mUsernames.add(person.getString("userName"));
+
 
                             // Add Student email
                             mHourlyRate.add(response.getJSONObject(i).getString("hourlyRate"));

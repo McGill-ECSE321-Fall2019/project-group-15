@@ -5,4 +5,6 @@
     <string name="roomsActivity">Settings</string>
     <string name="coursesActivity">Settings</string>
     <string name="schoolActivity">Settings</string>
+    <string name="evaluationsActivity">Settings</string>
+    <string name="studentsActivity">Settings</string>
 </resources>
