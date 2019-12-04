@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(position==4) {
                     Intent myIntent = new Intent(view.getContext(), School_Activity.class);
+                    startActivityForResult(myIntent, 0);
                 }
                 if(position==1){
                     Intent myIntent = new Intent(view.getContext(), Students_Activity.class);
