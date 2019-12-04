@@ -34,11 +34,13 @@ public class Students_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tutors);
 
         initstudentNames();
 
-        ListView listView = (ListView) findViewById(R.id.listview);
+
+        ListView listView = (ListView) findViewById(R.id.tutorList);
+
 //        mNames.add("marwan");
 //        mNames.add("osman");
 

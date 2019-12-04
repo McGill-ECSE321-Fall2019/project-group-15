@@ -36,7 +36,7 @@ public class Courses_Activity extends AppCompatActivity {
         // INSERT TO END OF THE METHOD AFTER AUTO-GENERATED CODE
         // initialize error message text view
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_courses);
 
         initCourses();
 

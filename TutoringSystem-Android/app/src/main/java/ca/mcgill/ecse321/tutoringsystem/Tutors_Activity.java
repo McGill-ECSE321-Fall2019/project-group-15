@@ -37,17 +37,18 @@ public class Tutors_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tutors);
 
         initTutorNames();
 
-        ListView listView = (ListView) findViewById(R.id.listview);
+        ListView listView = (ListView) findViewById(R.id.tutorList);
 //        mNames.add("marwan");
 //        mNames.add("osman");
 
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mNames);
 
         listView.setAdapter(arrayAdapter);
+
         
     }
 

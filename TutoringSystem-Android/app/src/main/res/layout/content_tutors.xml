@@ -19,8 +19,35 @@
 
             <ListView
                 android:id="@+id/tutorList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_width="303dp"
+                android:layout_height="541dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="59dp"
+                android:layout_marginBottom="49dp"
+                android:background="#00B91616" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tutorList"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Search Tutor" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tutorList"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="83dp"
+                android:layout_marginBottom="9dp"
+                android:text="@android:string/search_go" />
+
         </RelativeLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
