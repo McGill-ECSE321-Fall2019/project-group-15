@@ -56,7 +56,7 @@ public class Courses_Activity extends AppCompatActivity {
     private void initCourses() {
         Log.d(TAG, "initCourses: preparing courses names.");
 
-        // Restfull call: all students
+        // Restfull call: all courses
         HttpUtils.get("allCourses/", new RequestParams(), new JsonHttpResponseHandler() {
 
             //           @Override
@@ -71,20 +71,8 @@ public class Courses_Activity extends AppCompatActivity {
                     try {
 
                         Log.d(TAG, "Restful GET call succesfull (" + i + ").");
-                        // Add Student Names
-//                            mNames.add(response.getJSONObject(i).getString("firstName") + " "
-//                                    + response.getJSONObject(i).getString("lastName"));
-
 
                         courses.add(response.getJSONObject(i).getString("courseName") + "  " +response.getJSONObject(i).getString("description"));
-
-//                            // Add Student Majors & Years
-
-                        // Get current json object
-
-                        // add all items
-                        // roomSize.add(response.getJSONObject(i).getString("roomType"));
-
 
                     }catch (JSONException e) {
                         Log.d(TAG, e.getMessage());

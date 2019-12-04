@@ -55,7 +55,7 @@ public class Rooms_Activity extends AppCompatActivity  {
     private void initRooms() {
         Log.d(TAG, "initTutorNames: preparing tutor names.");
 
-        // Restfull call: all students
+        // Restfull call: all rooms
         HttpUtils.get("getAllRooms/", new RequestParams(), new JsonHttpResponseHandler() {
 
             //           @Override
@@ -70,20 +70,8 @@ public class Rooms_Activity extends AppCompatActivity  {
                     try {
 
                         Log.d(TAG, "Restful GET call succesfull (" + i + ").");
-                        // Add Student Names
-//                            mNames.add(response.getJSONObject(i).getString("firstName") + " "
-//                                    + response.getJSONObject(i).getString("lastName"));
-
 
                         room.add(response.getJSONObject(i).getString("roomName") + "  " +response.getJSONObject(i).getString("roomType"));
-
-//                            // Add Student Majors & Years
-
-                        // Get current json object
-
-                        // add all items
-                       // roomSize.add(response.getJSONObject(i).getString("roomType"));
-
 
                     }catch (JSONException e) {
                         Log.d(TAG, e.getMessage());
