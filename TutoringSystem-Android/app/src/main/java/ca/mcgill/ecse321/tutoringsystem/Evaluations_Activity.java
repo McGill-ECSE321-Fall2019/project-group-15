@@ -89,7 +89,7 @@ public class Evaluations_Activity extends AppCompatActivity {
                         mStudentNames.add(personStudent.getString("firstName") + " " + personStudent.getString("lastName"));
                         mTutorNames.add(personTutor.getString("firstName") + " " + personTutor.getString("lastName"));
 
-                        mEvaluations.add("id: " + mIDs.get(i) + ", comment: " + mComments.get(i) + ", rating: " + mRatings.get(i) + ", student: " + mStudentNames.get(i) + ", tutor: " + mTutorNames.get(i) + ", type: " + mTypes.get(i) + ", flagged: " + mIsFlagged.get(i));
+                        mEvaluations.add("ID: " + mIDs.get(i) + "\nComment: " + mComments.get(i) + "\nRating: " + mRatings.get(i) + "\nStudent: " + mStudentNames.get(i) + "\nTutor: " + mTutorNames.get(i) + "\nType: " + mTypes.get(i) + "\nFlagged: " + mIsFlagged.get(i));
 
                     }catch (JSONException e) {
                         Log.d(TAG, e.getMessage());
