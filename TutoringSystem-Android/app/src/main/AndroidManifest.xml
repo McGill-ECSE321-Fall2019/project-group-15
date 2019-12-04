@@ -25,6 +25,18 @@
             android:name=".Tutors_Activity"
             android:label="@string/tutorsActivity" >
         </activity>
+        <activity
+        android:name=".Rooms_Activity"
+        android:label="@string/roomsActivity" >
+    </activity>
+        <activity
+            android:name=".Courses_Activity"
+            android:label="@string/coursesActivity" >
+        </activity>
+        <activity
+            android:name=".School_Activity"
+            android:label="@string/schoolActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         listView = (ListView) findViewById(R.id.listview);
-        final String[] values = new String[]{"Tutors", "Students", "Courses"};
+        final String[] values = new String[]{"Tutors", "Students", "Courses", "Rooms", "School"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.activity_list_item, android.R.id.text1, values);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -42,6 +42,18 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0){
                     Intent myIntent = new Intent(view.getContext(), Tutors_Activity.class);
+                    startActivityForResult(myIntent, 0);
+                }
+                if(position==3) {
+                    Intent myIntent = new Intent(view.getContext(), Rooms_Activity.class);
+                    startActivityForResult(myIntent, 0);
+                }
+                if(position==2) {
+                    Intent myIntent = new Intent(view.getContext(), Courses_Activity.class);
+                    startActivityForResult(myIntent, 0);
+                }
+                if(position==4) {
+                    Intent myIntent = new Intent(view.getContext(), School_Activity.class);
                     startActivityForResult(myIntent, 0);
                 }
             }
