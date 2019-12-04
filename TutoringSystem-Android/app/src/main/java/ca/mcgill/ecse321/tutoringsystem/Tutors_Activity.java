@@ -19,6 +19,9 @@ import java.util.ArrayList;
 //import cz.msebera.android.httpclient.entity.mime.Header;
 import cz.msebera.android.httpclient.Header;
 
+/**
+ * This class is the container for storing and retrieving Tutors
+ */
 public class Tutors_Activity extends AppCompatActivity {
 
     private static final String TAG = "Tutors_Activity";
@@ -51,6 +54,9 @@ public class Tutors_Activity extends AppCompatActivity {
         
     }
 
+    /**
+     * Retrieve all tutors in the database upon initialization
+     */
     private void initTutorNames() {
         Log.d(TAG, "initTutorNames: preparing tutor names.");
 

@@ -19,6 +19,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
+/**
+ * This class is the container for storing and retrieving Rooms
+ */
 public class Rooms_Activity extends AppCompatActivity  {
     private String error = null;
     private static final String TAG = "Rooms_Activity";
@@ -46,7 +49,9 @@ public class Rooms_Activity extends AppCompatActivity  {
 
     }
 
-
+    /**
+     * Retrieve all rooms in the database upon initialization
+     */
     private void initRooms() {
         Log.d(TAG, "initTutorNames: preparing tutor names.");
 
