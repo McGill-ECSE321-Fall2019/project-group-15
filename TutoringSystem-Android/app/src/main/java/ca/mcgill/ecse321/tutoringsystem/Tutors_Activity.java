@@ -45,7 +45,7 @@ public class Tutors_Activity extends AppCompatActivity {
 //        mNames.add("marwan");
 //        mNames.add("osman");
 
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mIDs);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mNames);
 
         listView.setAdapter(arrayAdapter);
         
@@ -75,6 +75,10 @@ public class Tutors_Activity extends AppCompatActivity {
                             // Add Student Names
 //                            mNames.add(response.getJSONObject(i).getString("firstName") + " "
 //                                    + response.getJSONObject(i).getString("lastName"));
+                            JSONObject obj1 = response.getJSONObject(i);
+                            JSONObject person1 = obj1.getJSONObject("person");
+                            mNames.add(person1.getString("firstName") + " " + person1.getString("lastName"));
+
 
 
                             // Add Student IDs
@@ -85,7 +89,10 @@ public class Tutors_Activity extends AppCompatActivity {
                             // Get current json object
 
                             // add all items
-                           mUsernames.add(response.getJSONObject(i).getString("userName"));
+                          JSONObject obj = response.getJSONObject(i);
+                          JSONObject person = obj.getJSONObject("person");
+                          mUsernames.add(person.getString("userName"));
+
 
                             // Add Student email
                             mHourlyRate.add(response.getJSONObject(i).getString("hourlyRate"));
