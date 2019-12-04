@@ -28,6 +28,10 @@
         <activity
             android:name=".Evaluations_Activity"
             android:label="@string/evaluationsActivity">
+</activity>
+<activity
+            android:name=".Students_Activity"
+            android:label="@string/studentsActivity">
         </activity>
     </application>
 
