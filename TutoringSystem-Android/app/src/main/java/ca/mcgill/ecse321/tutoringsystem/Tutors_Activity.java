@@ -16,7 +16,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-//import cz.msebera.android.httpclient.entity.mime.Header;
 import cz.msebera.android.httpclient.Header;
 
 /**
@@ -46,8 +45,6 @@ public class Tutors_Activity extends AppCompatActivity {
         initTutorNames();
 
         ListView listView = (ListView) findViewById(R.id.tutorList);
-//        mNames.add("marwan");
-//        mNames.add("osman");
 
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mTutors);
 
@@ -62,7 +59,7 @@ public class Tutors_Activity extends AppCompatActivity {
     private void initTutorNames() {
         Log.d(TAG, "initTutorNames: preparing tutor names.");
 
-        // Restfull call: all students
+        // Restfull call: all tutors
         HttpUtils.get("allTutors/", new RequestParams(), new JsonHttpResponseHandler() {
 
  //           @Override

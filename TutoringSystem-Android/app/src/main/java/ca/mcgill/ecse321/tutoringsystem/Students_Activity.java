@@ -44,9 +44,6 @@ public class Students_Activity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.tutorList);
 
-//        mNames.add("marwan");
-//        mNames.add("osman");
-
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, students);
 
         listView.setAdapter(arrayAdapter);
@@ -81,11 +78,7 @@ public class Students_Activity extends AppCompatActivity {
 
                         // Add Student IDs
                         //studentIDs.add(response.getJSONObject(i).getString("id"));
-
-//                            // Add Student Majors & Years
-
-                        // Get current json object
-
+                        
                         // add all items
                         JSONObject student = response.getJSONObject(i);
                         JSONObject person = student.getJSONObject("person");

@@ -56,7 +56,7 @@ public class School_Activity extends AppCompatActivity {
     private void initCourses() {
         Log.d(TAG, "initSchool: preparing school names.");
 
-        // Restfull call: all students
+        // Restfull call: all schools
         HttpUtils.get("allSchools/", new RequestParams(), new JsonHttpResponseHandler() {
 
             //           @Override
@@ -71,20 +71,8 @@ public class School_Activity extends AppCompatActivity {
                     try {
 
                         Log.d(TAG, "Restful GET call succesfull (" + i + ").");
-                        // Add Student Names
-//                            mNames.add(response.getJSONObject(i).getString("firstName") + " "
-//                                    + response.getJSONObject(i).getString("lastName"));
-
 
                         school.add(response.getJSONObject(i).getString("schoolName") + "  " +response.getJSONObject(i).getString("schoolType"));
-
-//                            // Add Student Majors & Years
-
-                        // Get current json object
-
-                        // add all items
-                        // roomSize.add(response.getJSONObject(i).getString("roomType"));
-
 
                     }catch (JSONException e) {
                         Log.d(TAG, e.getMessage());
