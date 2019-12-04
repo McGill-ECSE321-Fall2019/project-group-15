@@ -2,6 +2,9 @@
     <string name="app_name">TutoringSystem-Android</string>
     <string name="action_settings">Settings</string>
     <string name="tutorsActivity">Settings</string>
+    <string name="roomsActivity">Settings</string>
+    <string name="coursesActivity">Settings</string>
+    <string name="schoolActivity">Settings</string>
     <string name="evaluationsActivity">Settings</string>
     <string name="studentsActivity">Settings</string>
 </resources>
