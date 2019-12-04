@@ -39,11 +39,11 @@ public class School_Activity extends AppCompatActivity {
         // INSERT TO END OF THE METHOD AFTER AUTO-GENERATED CODE
         // initialize error message text view
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tutors);
 
         initCourses();
 
-        ListView listView = (ListView) findViewById(R.id.listview);
+        ListView listView = (ListView) findViewById(R.id.tutorList);
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, school);
 
         listView.setAdapter(arrayAdapter);

@@ -41,11 +41,11 @@ public class Evaluations_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tutors);
 
         initEvaluationNames();
 
-        ListView listView = (ListView) findViewById(R.id.listview);
+        ListView listView = (ListView) findViewById(R.id.tutorList);
 
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mEvaluations);
 

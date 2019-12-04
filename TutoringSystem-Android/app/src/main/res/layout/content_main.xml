@@ -15,27 +15,44 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="1261dp">
 
             <ListView
                 android:id="@+id/listview"
-                android:layout_width="304dp"
-                android:layout_height="496dp"
+                android:layout_width="match_parent"
+                android:layout_height="323dp"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="67dp"
-                android:layout_marginBottom="18dp" />
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="#009B1212" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="389dp"
                 android:layout_height="84dp"
-                android:layout_above="@+id/listview"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="-6dp"
                 android:text="Welcome to Admin Dashboard"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+            <CalendarView
+                android:id="@+id/calendarView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listview"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="20dp"
+                android:paddingTop="0dp" />
+
         </RelativeLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
