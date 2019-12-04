@@ -52,3 +52,17 @@ Team member's name |Total hours |Responsibility         |
 |Maxime Buteau           |      29    |          Backend/Database/RESTful fixes            |
 |Michel-Alexandre Riendeau      |      28    |         Vue.js initial setup, calling backend and wiki             |
 |Osman Warsi      |     28     |     Full vue.js organisation and display                |
+
+
+## Deliverable 4
+
+The full report can be seen [here](https://github.com/McGill-ECSE321-Fall2019/project-group-15/wiki/Deliverable-4-Report)
+
+Team member's name |Total hours |Responsibility         |
+|-------------------|------------|-----------------------|
+|Darien Muse-Charbonneau        |    14      |          Android backend (Evaluation)               |
+|Marwan Khan         |    17      |         Overall android backend and setup              | 
+|Maxime Buteau           |      13   |          Android backend and wiki           |
+|Michel-Alexandre Riendeau      |      13   | Course/Room/Subjects view and wiki             |
+|Osman Warsi      |     15     |     Full android frontend layout                |
+
