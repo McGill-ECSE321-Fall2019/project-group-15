@@ -18,6 +18,9 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
+/**
+ * This class is the container for storing and retrieving Students
+ */
 public class Students_Activity extends AppCompatActivity {
     private static final String TAG = "Students_Activity";
 
@@ -49,7 +52,9 @@ public class Students_Activity extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
 
     }
-
+    /**
+     * Retrieve all students in the database upon initialization
+     */
     private void initstudentNames() {
         Log.d(TAG, "initStudentNames: preparing tutor names.");
 

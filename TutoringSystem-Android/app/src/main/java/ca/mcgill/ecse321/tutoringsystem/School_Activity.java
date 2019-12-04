@@ -19,6 +19,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
+/**
+ * This class is the container for storing and retrieving Schools
+ */
 public class School_Activity extends AppCompatActivity {
 
     private String error = null;
@@ -47,7 +50,9 @@ public class School_Activity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Retrieve all schools in the database upon initialization
+     */
     private void initCourses() {
         Log.d(TAG, "initSchool: preparing school names.");
 

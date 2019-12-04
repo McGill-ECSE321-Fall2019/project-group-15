@@ -18,6 +18,9 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
+/**
+ * This class is the container for storing and retrieving Evaluations
+ */
 public class Evaluations_Activity extends AppCompatActivity {
     private static final String TAG = "Evaluations_Activity";
     private String error=null;
@@ -50,6 +53,9 @@ public class Evaluations_Activity extends AppCompatActivity {
 
     }
 
+    /**
+     * Retrieve all evaluations in the database upon initialization
+     */
     private void initEvaluationNames() {
         Log.d(TAG, "initEvaluations: preparing evaluations.");
 
